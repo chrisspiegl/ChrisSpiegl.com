@@ -1,0 +1,147 @@
+<!DOCTYPE html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="ir-site-verification-token" value="-676786771"><title>Time in Milliseconds | Chris Spiegl</title><link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/favicon/apple-touch-icon-57x57.png"><link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/favicon/apple-touch-icon-114x114.png"><link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/favicon/apple-touch-icon-72x72.png"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon/apple-touch-icon-144x144.png"><link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/favicon/apple-touch-icon-60x60.png"><link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/favicon/apple-touch-icon-120x120.png"><link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/favicon/apple-touch-icon-76x76.png"><link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon/apple-touch-icon-152x152.png"><link rel="icon" type="image/png" href="/assets/favicon/favicon-196x196.png" sizes="196x196"><link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96"><link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16"><link rel="icon" type="image/png" href="/assets/favicon/favicon-128.png" sizes="128x128"><meta name="application-name" content="ChrisSpiegl"><meta name="msapplication-TileColor" content="#cc5630"><meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="/assets/favicon/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="/assets/favicon/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="/assets/favicon/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="/assets/favicon/mstile-310x310.png"><link rel="stylesheet" href="/assets/style.css"><link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Chris Spiegl Atom Feed"></head><body><header class="container"><section><img id="avatar" srcset="/assets/images/other/avatar-2015-05-17-at-18-31-56-square-mini-320w.jpg 640w, /assets/images/other/avatar-2015-05-17-at-18-31-56-square-mini-640w.jpg 1280w, /assets/images/other/avatar-2015-05-17-at-18-31-56-square-mini-1280w.jpg 1920w" src="/assets/images/other/avatar-2015-05-17-at-18-31-56-square-mini.jpg" alt=""><div class="text"><h1><a href="/">Chris Spiegl</a></h1><p><small><em>Currently in <a href="/location">Hof, Germany</a></em></small></p></div></section><nav class="navMain"><ul><li><a href="/">Home</a></li><li><a href="/blog">Blog</a></li><li><a href="/now">Now</a></li><li><a href="/consulting">Consulting</a></li><li><a href="/courses" title="Skillshare Profile — External Link" target="_blank">Courses</a></li><li><a href="/gear">Gear</a></li><li><a href="/books">Books</a></li><li><a href="/movies">Movies</a></li><li><a href="/youtube" title="YouTube Profile — External Link" target="_blank">YouTube</a></li><li><a href="/instagram" title="Instagram Profile — External Link" target="_blank">Instagram</a></li><li><a href="/twitter" title="Twitter Profile — External Link" target="_blank">Twitter</a></li><li><a href="/newsletter">Newsletter</a></li><li><a href="/newsletter/archive" title="Creation Overview" target="_blank">Creations</a></li><li><a href="/podcast">Podcast</a></li><li><a href="/support">Support</a></li><li><a href="/more">More</a></li></ul></nav></header><section id="content"><article class="container"><h1>Time in Milliseconds</h1><p>Just a simple millisecond timer for tests and stuff.</p><style media="screen" type="text/css">#timedate, #timedate span, #timedate div {
+  font-family: monospace !important;
+}
+
+#timecomb, #datecomb {
+  width: 100%;
+}
+
+#timedate {
+  font-size: 4rem;
+  text-align: center;
+  width: 100%;
+  margin: 4rem auto 8rem;
+  color:#fff;
+  padding: 2rem;
+}
+</style><div id="timedate"><div id="datecomb">JavaScript</div><div id="timecomb">Is Needed</div></div><script type="text/javascript">console.log('Loading Time Display');
+/*!
+* FitText.js 1.0 jQuery free version
+*
+* Copyright 2011, Dave Rupert http://daverupert.com
+* Released under the WTFPL license
+* http://sam.zoy.org/wtfpl/
+* Modified by Slawomir Kolodziej http://slawekk.info
+*
+* Date: Tue Aug 09 2011 10:45:54 GMT+0200 (CEST)
+*/
+(function(){
+
+  var addEvent = function (el, type, fn) {
+    if (el.addEventListener)
+      el.addEventListener(type, fn, false);
+    else
+      el.attachEvent('on'+type, fn);
+  };
+
+  var extend = function(obj,ext){
+    for(var key in ext)
+      if(ext.hasOwnProperty(key))
+        obj[key] = ext[key];
+    return obj;
+  };
+
+  window.fitText = function (el, kompressor, options) {
+
+    var settings = extend({
+      'minFontSize' : -1/0,
+      'maxFontSize' : 1/0
+    },options);
+
+    var fit = function (el) {
+      var compressor = kompressor || 1;
+
+      var resizer = function () {
+        el.style.fontSize = Math.max(Math.min(el.clientWidth / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + 'px';
+      };
+
+      // Call once to set.
+      resizer();
+
+      // Bind events
+      // If you have any js library which support Events, replace this part
+      // and remove addEvent function (or use original jQuery version)
+      addEvent(window, 'resize', resizer);
+      addEvent(window, 'orientationchange', resizer);
+    };
+
+    if (el.length)
+      for(var i=0; i<el.length; i++)
+        fit(el[i]);
+    else
+      fit(el);
+
+    // return set of elements
+    return el;
+  };
+})();
+
+function docReady(fn) {
+  // see if DOM is already available
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+      // call on next available tick
+      setTimeout(fn, 1);
+  } else {
+      document.addEventListener("DOMContentLoaded", fn);
+  }
+}
+
+// START CLOCK SCRIPT
+
+Number.prototype.pad = function(n) {
+  let r;
+  for (r = this.toString(); r.length < n; r = 0 + r);
+  return r;
+};
+
+window.fitText(document.getElementById('datecomb'), 1)
+window.fitText(document.getElementById('timecomb'), 1.1)
+
+function updateClock() {
+  const now = new Date()
+  const milli = now.getMilliseconds(),
+    sec = now.getSeconds(),
+    min = now.getMinutes(),
+    hou = now.getHours(),
+    mo = now.getMonth(),
+    dy = now.getDate(),
+    yr = now.getFullYear();
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  // const tags = ["month", "day", "year", "hour", "minute", "second", "millisecond"]
+  // const corr = [months[mo], dy, yr, hou.pad(2), min.pad(2), sec.pad(2), milli.pad(3)]
+  // for (let i = 0; i < tags.length; i++) {
+  //   document.getElementById(tags[i]).firstChild.nodeValue = corr[i]
+  // }
+  const datestr = `${months[mo]} ${dy}, ${yr}`
+  const timestr = `${hou.pad(2)} : ${min.pad(2)} : ${sec.pad(2)} . ${milli.pad(3)}`
+  document.getElementById('datecomb').firstChild.nodeValue = datestr
+  document.getElementById('timecomb').firstChild.nodeValue = timestr
+}
+
+docReady(function() {
+  // DOM is loaded and ready for manipulation here
+  updateClock();
+  window.setInterval("updateClock()", 1);
+});
+
+// END CLOCK SCRIPT
+
+</script><div class="content feedback"><p>Any issues? Email me <a href="mailto:chris@chrisspiegl.com?subject=Instaspaces Problem">chris@chrisspiegl.com</a>.</p><p>Would like to support me in creating more tools and services like this?</p><p><a href="/patron">Buy me a Tea&amp;Cookie</a></p></div></article></section><footer class="container"><section id="search"><form action="https://duckduckgo.com/" method="get"><input type="hidden" name="ia" value="web"><input type="hidden" name="sites" value="chrisspiegl.com"><input class="text-center" type="text" name="q" value="" placeholder="Search for anything on ChrisSpiegl.com" required><input class="btn btn-block" type="submit" value="Search"></form></section><nav class="navFooter"><ul><li><a href="/uncopyright">Uncopyrighted</a></li><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/legal-disclosure">Legal Disclosure</a></li></ul><ul><li style="text-align: center"><a href="/chrisspiegl.asc">PGP Public Key</a> fingerprint:<br>42AC D474 675C C855 32F2 E9F7 AC6B 04AE E280 9F96</li></ul></nav></footer><script src="https://cdn.jsdelivr.net/npm/littlefoot@3.3/dist/littlefoot.min.js"></script><script type="application/javascript">littlefoot.default({
+  buttonTemplate: `<sup
+                    aria-expanded="false"
+                    aria-label="Footnote <% number %>"
+                    class="footnote-ref">
+                    <a
+                    href="#<% reference %>"
+                    class="footnote-ref"
+                    id="<% reference %>"
+                    data-footnote-identifier="<% reference %>"
+                    data-footnote-style="default"
+                    alt="See Footnote <% number %>"
+                    rel="footnote"
+                    data-footnote-content="<% content %>">
+                        <% number %>
+                </a></sup>`
+})
+Array.prototype.forEach.call(document.querySelectorAll('.footnotes.footnote-print-only, .footnotes .footnote-print-only'), e => e.classList.remove('footnote-print-only'))
+Array.prototype.forEach.call(document.querySelectorAll('.footnote-backref'), (el) => { el.href = el.href.replace('#', '#lf-') })</script></body>

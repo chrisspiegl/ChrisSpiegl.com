@@ -1,0 +1,9 @@
+---
+layout: gear
+pagination:
+  data: gear
+  size: 1
+  alias: gear
+  addAllPagesToCollections: true
+permalink: /gear/{{ gear.Slug }}/index.html
+---

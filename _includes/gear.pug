@@ -1,0 +1,24 @@
+extends layout
+block content
+  article.container.post
+    - const titleCombined = `${gear.Title}`
+    - const linkAmazon = (gear.Link.includes('amazon')) ? `https://assoc-redirect.amazon.com/g/r/${gear.Link}?tag=cstrax-20` : gear.Link
+
+    a(href=page.url, title="Permalink"): img(src=`/assets/images/gear/${gear.Slug}.png`)
+    h2
+      a(href=page.url, title="Permalink")!= titleCombined
+    p Last Updated:
+      = ' '
+      time(datetime=global.dateHtml(page.date), pubdate="pubdate")= global.dateReadable(page.date)
+      = ' '
+      a(class="permalink", title="Permalink" href=page.url) ∞
+
+    p
+      ul
+        if linkAmazon
+          li Reviews & Details on #[a(href=linkAmazon) Amazon]
+
+    div.excerpt= gear.excerpt
+
+    div.linkBack
+      a(href="/gear") List of all the Gear

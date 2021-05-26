@@ -1,0 +1,122 @@
+<!DOCTYPE html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="ir-site-verification-token" value="-676786771"><title>Instagram Paragraph Whitespaces | Chris Spiegl</title><link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/favicon/apple-touch-icon-57x57.png"><link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/favicon/apple-touch-icon-114x114.png"><link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/favicon/apple-touch-icon-72x72.png"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon/apple-touch-icon-144x144.png"><link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/favicon/apple-touch-icon-60x60.png"><link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/favicon/apple-touch-icon-120x120.png"><link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/favicon/apple-touch-icon-76x76.png"><link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon/apple-touch-icon-152x152.png"><link rel="icon" type="image/png" href="/assets/favicon/favicon-196x196.png" sizes="196x196"><link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96"><link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16"><link rel="icon" type="image/png" href="/assets/favicon/favicon-128.png" sizes="128x128"><meta name="application-name" content="ChrisSpiegl"><meta name="msapplication-TileColor" content="#cc5630"><meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="/assets/favicon/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="/assets/favicon/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="/assets/favicon/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="/assets/favicon/mstile-310x310.png"><link rel="stylesheet" href="/assets/style.css"><link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Chris Spiegl Atom Feed"></head><body><header class="container"><section><img id="avatar" srcset="/assets/images/other/avatar-2015-05-17-at-18-31-56-square-mini-320w.jpg 640w, /assets/images/other/avatar-2015-05-17-at-18-31-56-square-mini-640w.jpg 1280w, /assets/images/other/avatar-2015-05-17-at-18-31-56-square-mini-1280w.jpg 1920w" src="/assets/images/other/avatar-2015-05-17-at-18-31-56-square-mini.jpg" alt=""><div class="text"><h1><a href="/">Chris Spiegl</a></h1><p><small><em>Currently in <a href="/location">Hof, Germany</a></em></small></p></div></section><nav class="navMain"><ul><li><a href="/">Home</a></li><li><a href="/blog">Blog</a></li><li><a href="/now">Now</a></li><li><a href="/consulting">Consulting</a></li><li><a href="/courses" title="Skillshare Profile — External Link" target="_blank">Courses</a></li><li><a href="/gear">Gear</a></li><li><a href="/books">Books</a></li><li><a href="/movies">Movies</a></li><li><a href="/youtube" title="YouTube Profile — External Link" target="_blank">YouTube</a></li><li><a href="/instagram" title="Instagram Profile — External Link" target="_blank">Instagram</a></li><li><a href="/twitter" title="Twitter Profile — External Link" target="_blank">Twitter</a></li><li><a href="/newsletter">Newsletter</a></li><li><a href="/newsletter/archive" title="Creation Overview" target="_blank">Creations</a></li><li><a href="/podcast">Podcast</a></li><li><a href="/support">Support</a></li><li><a href="/more">More</a></li></ul></nav></header><section id="content"><article class="container"><h1>Instagram Paragraph Whitespaces</h1><p class="text-center"><a href="https://youtu.be/osFm3XstkDo">Tutorial Video on YouTube</a></p><p>Making paragraphs work on Instagram is a pain. You can&apos;t have whitespaces at the end of any line, empty lines have to have some kind of character (otherwise they get removed), and it&apos;s really easy to mess these things up.</p><p>This mini tool automatically removes the whitespaces at the end of each line and puts invisble characters into the empty lines. This way you have nice looking paragraphs! #YAY</p><style media="screen" type="text/css">.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.notifyjs-corner {
+  left: 0 !important;
+  right: 0 !important;
+}
+.notifyjs-corner .notifyjs-wrapper, .notifyjs-corner .notifyjs-container {
+  width: 80vw !important;
+  text-align: center;
+  margin: 3px auto !important;
+}
+
+.notifyjs-bootstrap-base {
+  background-image: none !important;
+}
+
+textarea {
+  padding: .5rem;
+}
+</style><div style="width: 100%; margin: .5rem auto;"><textarea id="txtDescription" name="" placeholder="Write Instagram Description here.   Once you're done, hit that `Make Whitespaces` button.   Now you can copy the text and bring it back to Instagram!   Enjoy ❤" oninput="return changeTextarea();" style="width:100%; height: 40vh; margin: 1rem 0 2rem;"></textarea><div id="changedStatus" style="line-height: 3rem; font-weight: bold;text-align: center;">Click &quot;Make Whitespaces&quot; to transform.</div><div id="characterCount" style="line-height: 3rem; font-weight: bold;text-align: center;">0 / 2200</div><div class="side-by-side"><button class="btn btn-block" id="btnChange" onclick="return changeText();" type="">Make Whitespaces</button><button class="btn btn-block" id="btnCopy" data-clipboard-target="#txtDescription" type="">Copy to Clipboard</button></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/notifyjs-browser@0.4/dist/notify.min.js"></script><script type="text/javascript">console.log('Loading Instagram Whitespace App');
+
+
+$.notify.defaults({
+  position: 'top center',
+});
+
+const iOS = ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].indexOf(navigator.platform) >= 0;
+const changeStatus = document.getElementById("changedStatus");
+const textarea = document.getElementById('txtDescription');
+const clipboard = new ClipboardJS('#btnCopy', {});
+
+let statusTextarea = false;
+
+clipboard.on('success', function(e) {
+  console.info('Action:', e.action);
+  console.info('Text:', e.text);
+  console.info('Trigger:', e.trigger);
+  if (statusTextarea == true) {
+    $.notify("Copied to clipboard!", 'success');
+  } else {
+    $.notify("Copied without transformation.", 'warn')
+  }
+  e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+  $.notify("Could not copy text, copy manually!", "error");
+  console.error('Action:', e.action);
+  console.error('Trigger:', e.trigger);
+});
+
+const changeTextarea = () => {
+  console.log('called changeTextarea');
+  changeStatus.innerHTML = "Changed text, click again to update.";
+  changeStatus.classList.remove("green");
+  changeStatus.classList.add("red");
+  statusTextarea = false;
+  characterCount.innerHTML = `${makeWhitespaces(textarea.value).length}/ 2200`
+};
+
+const changeText = () => {
+  console.log('called changeText');
+  let text = textarea.value.trim();
+  let textNew = (text.length == 0) ? '' : makeWhitespaces(text);
+  textarea.value = textNew;
+  statusTextarea = true;
+  $.notify("Updated Whitespaces for Instagram.", 'success');
+  changeStatus.innerHTML = "Updated Whitespaces for Instagram.";
+  changeStatus.classList.add("green");
+  changeStatus.classList.remove("red");
+};
+
+const makeWhitespaces = (text) => {
+  text = text.trim(); // remove all empty lines at beginning and end
+  let lines = text.split('\n'); // for singular processing
+  let textNew = '';
+  let previousEmpty = false; // remember so we can skip all following empty lines
+  for(let i=0, length1=lines.length; i < length1; i++) {
+    let line = lines[i].trim();
+    if (previousEmpty && line.length==0) {
+      // skip second empty line
+    } else {
+      previousEmpty = false;
+      if (line.length == 0) {
+        // line = '⠀⠀⠀⠀⠀⠀⠀⠀⠀'; // replace empty line with special white space
+        line = '⠀⠀'; // replace empty line with special white space
+        previousEmpty = true; // remember so we can skip the following empty lines
+      }
+      textNew += line;
+      textNew += '\n';
+    }
+  }
+  textNew = textNew.trim(); // trim all empty lines at beginning and end
+  console.log(textNew); // output for workflow
+  return textNew;
+}
+
+</script><div class="content feedback"><p>Any issues? Email me <a href="mailto:chris@chrisspiegl.com?subject=Instaspaces Problem">chris@chrisspiegl.com</a>.</p><p>Would like to support me in creating more tools and services like this?</p><p><a href="/patron">Buy me a Tea&amp;Cookie</a></p></div></article></section><footer class="container"><section id="search"><form action="https://duckduckgo.com/" method="get"><input type="hidden" name="ia" value="web"><input type="hidden" name="sites" value="chrisspiegl.com"><input class="text-center" type="text" name="q" value="" placeholder="Search for anything on ChrisSpiegl.com" required><input class="btn btn-block" type="submit" value="Search"></form></section><nav class="navFooter"><ul><li><a href="/uncopyright">Uncopyrighted</a></li><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/legal-disclosure">Legal Disclosure</a></li></ul><ul><li style="text-align: center"><a href="/chrisspiegl.asc">PGP Public Key</a> fingerprint:<br>42AC D474 675C C855 32F2 E9F7 AC6B 04AE E280 9F96</li></ul></nav></footer><script src="https://cdn.jsdelivr.net/npm/littlefoot@3.3/dist/littlefoot.min.js"></script><script type="application/javascript">littlefoot.default({
+  buttonTemplate: `<sup
+                    aria-expanded="false"
+                    aria-label="Footnote <% number %>"
+                    class="footnote-ref">
+                    <a
+                    href="#<% reference %>"
+                    class="footnote-ref"
+                    id="<% reference %>"
+                    data-footnote-identifier="<% reference %>"
+                    data-footnote-style="default"
+                    alt="See Footnote <% number %>"
+                    rel="footnote"
+                    data-footnote-content="<% content %>">
+                        <% number %>
+                </a></sup>`
+})
+Array.prototype.forEach.call(document.querySelectorAll('.footnotes.footnote-print-only, .footnotes .footnote-print-only'), e => e.classList.remove('footnote-print-only'))
+Array.prototype.forEach.call(document.querySelectorAll('.footnote-backref'), (el) => { el.href = el.href.replace('#', '#lf-') })</script></body>

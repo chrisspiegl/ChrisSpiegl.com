@@ -1,0 +1,38 @@
+extends layout
+block content
+  .container.post
+    - const titleCombined = `${title} by ${author}`
+    - const linkAmazon = `https://assoc-redirect.amazon.com/g/r/https://amazon.com/dp/${isbn}?tag=cstrax-20`
+    .book-list
+      div.cover-photo
+        if cover
+          img(src=meta.imageResizer(640, 0, `/assets/images/book/${cover}.png`) title=titleCombined onerror="this.src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found'")
+        else
+          img(src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found' title=titleCombined)
+      div.details
+        h2= titleCombined
+        p Last Updated:
+          = ' '
+          time(datetime=global.dateHtml(page.date), pubdate="pubdate")= global.dateReadable(page.date)
+          = ' '
+          a(class="permalink", title="Permalink" href=page.url) ∞
+
+        ul
+          li Author: #[=author]
+          li Would Recommend: #[=rating]/10
+          if dateReleased
+            li Date Released: #[=global.dateReadable(dateReleased)]
+          if dateRead
+            li Date Read: #[=global.dateReadable(dateRead)]
+          if isbn
+            li ISBN: #[a(href=linkAmazon)= isbn]
+          if linkAmazon
+            li Reviews & Details on #[a(href=linkAmazon) Amazon]
+
+    div.excerpt: p= excerpt
+
+    if content
+      h3 My Notes
+      div.content!= content
+
+    div.linkBack: p: a(href="/books") List of all Books
