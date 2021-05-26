@@ -1,0 +1,138 @@
+---
+title: Instagram Paragraph Whitespaces
+---
+
+h1 Instagram Paragraph Whitespaces
+
+p.text-center: a(href='https://youtu.be/osFm3XstkDo') Tutorial Video on YouTube
+
+p Making paragraphs work on Instagram is a pain. You can&apos;t have whitespaces at the end of any line, empty lines have to have some kind of character (otherwise they get removed), and it&apos;s really easy to mess these things up.
+p This mini tool automatically removes the whitespaces at the end of each line and puts invisble characters into the empty lines. This way you have nice looking paragraphs! #YAY
+
+style(media="screen" type="text/css").
+  .green {
+    background-color: green;
+  }
+
+  .red {
+    background-color: red;
+  }
+
+  .notifyjs-corner {
+    left: 0 !important;
+    right: 0 !important;
+  }
+  .notifyjs-corner .notifyjs-wrapper, .notifyjs-corner .notifyjs-container {
+    width: 80vw !important;
+    text-align: center;
+    margin: 3px auto !important;
+  }
+
+  .notifyjs-bootstrap-base {
+    background-image: none !important;
+  }
+
+  textarea {
+    padding: .5rem;
+  }
+
+div(style='width: 100%; margin: .5rem auto;')
+  textarea#txtDescription(name='' placeholder="Write Instagram Description here. \
+  Once you're done, hit that `Make Whitespaces` button. \
+  Now you can copy the text and bring it back to Instagram! \
+  Enjoy ❤" oninput='return changeTextarea();' style='width:100%; height: 40vh; margin: 1rem 0 2rem;')
+  #changedStatus(style='line-height: 3rem; font-weight: bold;text-align: center;') Click &quot;Make Whitespaces&quot; to transform.
+  #characterCount(style='line-height: 3rem; font-weight: bold;text-align: center;') 0 / 2200
+  .side-by-side
+    button#btnChange.btn.btn-block(onclick='return changeText();' type='') Make Whitespaces
+    button#btnCopy.btn.btn-block(data-clipboard-target='#txtDescription' type='') Copy to Clipboard
+
+
+script(src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js")
+script(src="https://cdn.jsdelivr.net/npm/clipboard@2.0/dist/clipboard.min.js")
+script(src="https://cdn.jsdelivr.net/npm/notifyjs-browser@0.4/dist/notify.min.js")
+
+script(type="text/javascript").
+  console.log('Loading Instagram Whitespace App');
+
+
+  $.notify.defaults({
+    position: 'top center',
+  });
+
+  const iOS = ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].indexOf(navigator.platform) >= 0;
+  const changeStatus = document.getElementById("changedStatus");
+  const textarea = document.getElementById('txtDescription');
+  const clipboard = new ClipboardJS('#btnCopy', {});
+
+  let statusTextarea = false;
+
+  clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+    if (statusTextarea == true) {
+      $.notify("Copied to clipboard!", 'success');
+    } else {
+      $.notify("Copied without transformation.", 'warn')
+    }
+    e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+    $.notify("Could not copy text, copy manually!", "error");
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+  });
+
+  const changeTextarea = () => {
+    console.log('called changeTextarea');
+    changeStatus.innerHTML = "Changed text, click again to update.";
+    changeStatus.classList.remove("green");
+    changeStatus.classList.add("red");
+    statusTextarea = false;
+    characterCount.innerHTML = `${makeWhitespaces(textarea.value).length}/ 2200`
+  };
+
+  const changeText = () => {
+    console.log('called changeText');
+    let text = textarea.value.trim();
+    let textNew = (text.length == 0) ? '' : makeWhitespaces(text);
+    textarea.value = textNew;
+    statusTextarea = true;
+    $.notify("Updated Whitespaces for Instagram.", 'success');
+    changeStatus.innerHTML = "Updated Whitespaces for Instagram.";
+    changeStatus.classList.add("green");
+    changeStatus.classList.remove("red");
+  };
+
+  const makeWhitespaces = (text) => {
+    text = text.trim(); // remove all empty lines at beginning and end
+    let lines = text.split('\n'); // for singular processing
+    let textNew = '';
+    let previousEmpty = false; // remember so we can skip all following empty lines
+    for(let i=0, length1=lines.length; i < length1; i++) {
+      let line = lines[i].trim();
+      if (previousEmpty && line.length==0) {
+        // skip second empty line
+      } else {
+        previousEmpty = false;
+        if (line.length == 0) {
+          // line = '⠀⠀⠀⠀⠀⠀⠀⠀⠀'; // replace empty line with special white space
+          line = '⠀⠀'; // replace empty line with special white space
+          previousEmpty = true; // remember so we can skip the following empty lines
+        }
+        textNew += line;
+        textNew += '\n';
+      }
+    }
+    textNew = textNew.trim(); // trim all empty lines at beginning and end
+    console.log(textNew); // output for workflow
+    return textNew;
+  }
+
+
+div.content.feedback
+  p Any issues? Email me #[a(href='mailto:chris@chrisspiegl.com?subject=Instaspaces Problem') chris@chrisspiegl.com].
+  p Would like to support me in creating more tools and services like this?
+  p: a(href='/patron') Buy me a Tea&amp;Cookie

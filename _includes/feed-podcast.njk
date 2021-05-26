@@ -1,0 +1,52 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" xmlns:media="http://www.rssboard.org/media-rss" version="2.0">
+  <channel>
+    <title>{{ meta.podcast.title }}</title>
+    <link>{{ meta.podcast.url }}</link>
+    <language>en-us</language>
+    <atom:link href="{{ meta.podcast.url }}/podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <copyright>{{ meta.podcast.copyright }}</copyright>
+    <itunes:subtitle>{{ meta.podcast.subtitle }}</itunes:subtitle>
+    <itunes:author>{{ meta.podcast.author.name }}</itunes:author>
+    <itunes:summary>{{ meta.podcast.summary }}</itunes:summary>
+    <itunes:keywords>{{ meta.podcast.keywords }}</itunes:keywords>
+    <description>{{ meta.podcast.description }}</description>
+    <itunes:owner>
+      <itunes:name>{{ meta.podcast.author.name }}</itunes:name>
+      <itunes:email>{{ meta.podcast.author.email }}</itunes:email>
+    </itunes:owner>
+    <itunes:image href="{{ meta.podcast.image.url }}"/>
+
+    {%- for category in meta.podcast.categories -%}
+    <itunes:category text="{{ category }}"></itunes:category>
+    {%- endfor %}
+
+    {%- for podcast in collections.podcasts %}
+    {% set absolutePostUrl %}{{ podcast.url | url | absoluteUrl(meta.podcast.url) }}{% endset %}
+    <item>
+      <title>{{ podcast.data.title }}</title>
+      <itunes:title>{{ podcast.data.title }}</itunes:title>
+      <itunes:author>{{ podcast.data.author }}</itunes:author>
+      <itunes:subtitle>{{ podcast.data.subtitle }}</itunes:subtitle>
+      <itunes:summary>
+      <![CDATA[
+      {{ podcast.data.summary }}
+      ]]>
+      </itunes:summary>
+      <description>
+      <![CDATA[
+      {{ podcast.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
+      ]]>
+      </description>
+      <itunes:image href="{{ podcast.data.image }}"/>
+      <enclosure url="{{ '/podcast/'+podcast.fileSlug+'.mp3' | absoluteUrl(meta.podcast.url) }}" length="{{ meta.podcast.size('/podcast/'+podcast.fileSlug+'.mp3') }}" type="audio/mpeg"/>
+      {# <itunes:duration>{{ meta.podcast.duration(podcast.file) }}</itunes:duration> #}
+      <itunes:season>{{ podcast.season }}</itunes:season>
+      <itunes:episode>{{ podcast.episode }}</itunes:episode>
+      <itunes:episodeType>{{ podcast.type }}</itunes:episodeType>
+      <guid isPermaLink="false">{{ absolutePostUrl }}</guid>
+      <pubDate>{{ post.date | rssDate }}</pubDate>
+      <itunes:explicit>{{ "YES" if podcast.explicit else "NO" }}</itunes:explicit>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>

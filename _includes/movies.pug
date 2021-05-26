@@ -1,0 +1,25 @@
+extends layout
+block content
+  .container
+
+    != content
+
+    - postList = (postList) ? collections[postList] : collections.posts
+    each post in postList
+      if (post.data)
+        - const titleCombined = `${post.data.title} (${post.data.yearReleased})`
+        article.movie-list
+          div.cover-photo
+            if post.data.cover
+              a(href=post.url): img(src=meta.imageResizer(640, 0, `/assets/images/book/${post.data.cover}.png`) title=titleCombined onerror="this.src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found'")
+            else
+              a(href=post.url): img(src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found' title=titleCombined)
+          div.details
+            h2.postTitle: a(href=post.url)= titleCombined
+            p.postDetails
+              if post.data.dateWatched
+                span.dateWatched Date Watched: #[= global.dateReadableShort(post.data.dateWatched)]
+                = ' ⋅ '
+              span.dateRead Would Recommend: #[= post.data.rating]/10
+            p= post.data.excerpt
+            p #[a(href=post.url) Read my notes], or go to the #[a(href=imdb) IMDB Page] for details and reviews.

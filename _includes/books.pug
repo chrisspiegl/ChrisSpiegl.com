@@ -1,0 +1,26 @@
+extends layout
+block content
+  .container
+
+    != content
+
+    - postList = (postList) ? collections[postList] : collections.posts
+    each post in postList
+      if (post.data)
+        - const titleCombined = `${post.data.title} by ${post.data.author}`
+        - const linkAmazon = `https://assoc-redirect.amazon.com/g/r/https://amazon.com/dp/${post.data.isbn}?tag=cstrax-20`
+        article.book-list
+          div.cover-photo
+            if post.data.cover
+              a(href=post.url): img(src=meta.imageResizer(640, 0, `/assets/images/book/${post.data.cover}.png`) title=titleCombined onerror="this.src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found'")
+            else
+              a(href=post.url): img(src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found' title=titleCombined)
+          div.details
+            h2.postTitle: a(href=post.url)= titleCombined
+            p.bookDetails
+              if (post.data.dateRead)
+                span.dateRead Date Read: #[= global.dateReadableShort(post.data.dateRead)]
+                = ' ⋅ '
+              span.wouldRecommend Would Recommend: #[= post.data.rating]/10
+            p= post.data.excerpt
+            p #[a(href=post.url) Read my notes], or go to the #[a(href=linkAmazon) Amazon page] for details and reviews.

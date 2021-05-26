@@ -1,5 +1,5 @@
-# Created by https://www.gitignore.io/api/node
-# Edit at https://www.gitignore.io/?templates=node
+_site_development
+post/**/draft-*
 
 ### Node ###
 # Logs
@@ -90,5 +90,3 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-
-# End of https://www.gitignore.io/api/node

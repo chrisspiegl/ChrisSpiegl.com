@@ -1,0 +1,33 @@
+extends layout
+block content
+  .container.post
+    - const titleCombined = `${title} (${yearReleased})`
+    .movie-list
+      div.cover-photo
+        if cover
+          a(href=imdb): img(src=meta.imageResizer(640, 0, `/assets/images/book/${cover}.png`) title=titleCombined onerror="this.src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found'")
+        else
+          a(href=imdb): img(src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found' title=titleCombined)
+      div.details
+        h2
+          a(href=((data && post.data.externalLink) ? data.externalLink : page.url), title=(data && post.data.externalLink) ? "External Link" : "Permalink")!= titleCombined
+        p Last Updated:
+          = ' '
+          time(datetime=global.dateHtml(page.date), pubdate="pubdate")= global.dateReadable(page.date)
+          = ' '
+          a(class="permalink", title="Permalink" href=page.url) ∞
+
+        ul
+          li Would Recommend: #[=rating]/10
+          if dateWatched
+            li Date Watched: #[=global.dateReadable(dateWatched)]
+          if imdb
+            li Reviews & Details on #[a(href=imdb) IMDB]
+
+        div.excerpt: p= excerpt
+
+    if content
+      h3 My Notes
+      div.content!= content
+
+    div.linkBack: p: a(href="/movies") List of all Movies & Shows
