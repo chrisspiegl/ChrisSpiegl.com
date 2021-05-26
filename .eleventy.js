@@ -96,7 +96,6 @@ module.exports = (config) => {
     return [...uniqueTags];
   })
 
-
   let md = markdownIt({
     html: true,
     breaks: true,
@@ -149,7 +148,29 @@ module.exports = (config) => {
     md.use(markdownItResponsive, {
       responsive: {
         srcset: {
-          "*": [
+          "*.jpg": [
+            {
+              width: 320,
+              rename: { suffix: "-320w" },
+            },
+            {
+              width: 640,
+              rename: { suffix: "-640w" },
+            },
+            {
+              width: 1280,
+              rename: { suffix: "-1280w" },
+            },
+            {
+              width: 1920,
+              rename: { suffix: "-1920w" },
+            },
+            // {
+            //   width: 3840,
+            //   rename: { suffix: "-3840w" },
+            // },
+          ],
+          "*.png": [
             {
               width: 320,
               rename: { suffix: "-320w" },
@@ -172,6 +193,7 @@ module.exports = (config) => {
             // },
           ],
         },
+
         sizes: {
         //   "*": "(max-width: 320px), (max-width: 640px), (max-width: 1280px), 1920px",
         },
