@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "run-s dev",
+    "start": "run-s eleventy:dev",
     "dev": "run-s clean:dev eleventy:dev",
     "build": "run-s clean:prod eleventy:prod",
     "eleventy:dev": "cross-env NODE_ENV=development eleventy --serve",
@@ -13,7 +13,7 @@
     "clean:prod": "shx rm -rf _site_production",
     "check": "linkinator -r -c 10 ./_site; true",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "rsync -avzPO --no-perms --no-owner --no-group --delete ./_site/ swMain:/var/www/chrisspiegl.com"
+    "deploy": "rsync -avzPOh --no-perms --no-owner --no-group --delete -e 'ssh -o ClearAllForwardings=yes' ./_site_production/ swMain:/var/www/chrisspiegl.com"
   },
   "keywords": [],
   "author": {
@@ -32,6 +32,7 @@
     "clean-css": "^4.2.3",
     "concurrently": "^5.3.0",
     "critical": "^2.0.6",
+    "cross-env": "^7.0.3",
     "cssesc": "^3.0.0",
     "csvtojson": "^2.0.10",
     "eleventy-plugin-embed-everything": "^1.13.2",
@@ -47,9 +48,11 @@
     "markdown-it-footnote": "^3.0.3",
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
-    "sharp": "^0.25.4",
-    "cross-env": "^7.0.3",
     "npm-run-all": "^4.1.5",
+    "sharp": "^0.25.4",
     "shx": "^0.3.3"
+  },
+  "dependencies": {
+    "qrcode": "^1.4.4"
   }
 }

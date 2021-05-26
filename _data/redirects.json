@@ -298,6 +298,10 @@
     "slug": "tea"
   },
   {
+    "destination": "https://liberapay.com/ChrisSpiegl/donate",
+    "slug": "liberapay"
+  },
+  {
     "destination": "https://ChrisSpiegl.com/protheme",
     "slug": "themeco"
   },
