@@ -1,0 +1,26 @@
+extends layout
+block content
+  .container
+
+    != content
+    - postList = (postList) ? collections[postList] : collections.posts
+    each post in postList
+      article.post.blog
+        header
+          if post.data && post.data.externalLink
+            if post.data.imageHero
+              .image-hero: a(href=post.data.externalLink, title="External", target="_blank"): img(srcset=`${meta.imageResizer(640, 0, post.data.imageHero)} 640w, ${meta.imageResizer(1280, 0, post.data.imageHero)} 1280w, ${meta.imageResizer(1920, 0, post.data.imageHero)} 1920w` src=meta.imageResizer(1280, 0, post.data.imageHero), alt="")
+            h1: a(href=post.data.externalLink, title="External", target="_blank")= post.data.title
+          else
+            if post.data.imageHero
+              .image-hero: a(href=post.url, title="Permalink"): img(srcset=`${meta.imageResizer(640, 0, post.data.imageHero)} 640w, ${meta.imageResizer(1280, 0, post.data.imageHero)} 1280w, ${meta.imageResizer(1920, 0, post.data.imageHero)} 1920w` src=meta.imageResizer(1280, 0, post.data.imageHero), alt="")
+            h1: a(href=post.url, title="Permalink")= post.data.title
+
+          p
+            time(datetime=global.dateHtml(post.date), pubdate="pubdate")= global.dateReadable(post.date)
+            = ' '
+            a(class="permalink", title="Permalink" href=post.url) ∞
+
+        div.content!= post.data.content
+
+    div.linkBack: p: a(href="/archive") Archive of all Articles

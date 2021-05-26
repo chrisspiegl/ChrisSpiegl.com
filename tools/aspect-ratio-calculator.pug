@@ -1,0 +1,582 @@
+---
+title: Aspect Ratio Calculator
+---
+
+h1 Aspect Ratio Calculator
+
+p Multiple times per month I ask myself: what aspect ratio is this pixel amount? This is the tool that helps me know better.
+p Use the form below to calculate the missing value for a particular aspect ratio. This is useful, for example, when resizing photos or video.
+
+style(type='text/css' media='screen').
+  .aspectratio .calcWraper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .aspectratio .calcWraper.calcLabel {
+  margin: 0;
+  }
+  .aspectratio .calcWraper.calcOldInput,
+  .aspectratio .calcWraper.calcNewInput {
+  width: calc(100% / 2 - 20px );
+  }
+  .aspectratio .calcOldWidth,
+  .aspectratio .calcNewWidth {
+  border-bottom: 2px solid black;
+  }
+  .aspectratio .calcBetween {
+  width: 20px;
+  text-align: center;
+  }
+  .aspectratio .calcWraper input {
+  border: 1px solid black;
+  background-color: #BDE5F8;
+  color: #101318;
+  font-size: 1rem;
+  padding: .5rem;
+  width: 100%;
+  }
+  .aspectratio .rounding {
+  text-align: center;
+  }
+  .aspectratio .rounding .checkboxInput {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  }
+  .aspectratio input.calculated {
+  background-color: #DFF2BF;
+  border-color: #4F8A10;
+  }
+  .aspectratio #ratioExampleBox {
+  display: flex;
+  background: gray;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  }
+  .aspectratio #ratioExampleBox p {
+  margin: auto;
+  /* Important */
+  text-align: center;
+  }
+  .aspectratio #alert {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  border-color: #D8000C;
+  text-align: center;
+  }
+  .aspectratio #ratio {
+  overflow: hidden;
+  }
+  @media all and (min-width: 767px) {
+  .aspectratio .calcWraper .calcOldWidth,
+  .aspectratio .calcWraper .calcNewWidth,
+  .aspectratio .calcWraper .calcOldHeight,
+  .aspectratio .calcWraper .calcNewHeight {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  align-items: center;
+  justify-content: center;
+  }
+  .aspectratio .calcWraper .calcLabel {
+  width: calc(100%/3*1.2);
+  text-align: right;
+  padding-right: .5rem;
+  }
+  .aspectratio .calcWraper .calcInput {
+  width: calc(100%/3*1.8);
+  }
+  }
+
+.aspectratio.paragraph
+  .calcWraper
+    .calcOldInput
+      .calcOldWidth
+        label.calcLabel Old Width:
+        .calcInput: input#oldWidth.numberInput(name='oldWidth' tabindex='1' type='number' placeholder='Old Width' value='1920')
+      .calcOldHeight
+        label.calcLabel Old Height:
+        .calcInput: input#oldHeight.numberInput(name='oldHeight' tabindex='2' type='number' placeholder='Old Height' value='1080')
+    .calcBetween
+      | =
+    .calcNewInput
+      .calcNewWidth
+        label.calcLabel New Width:
+        .calcInput: input#newWidth.numberInput(name='newWidth' tabindex='3' type='number' placeholder='New Width' value='16')
+      .calcNewHeight
+        label.calcLabel New Height:
+        .calcInput: input#newHeight.numberInput(name='newHeight' tabindex='4' type='number' placeholder='New Height' value='9')
+  .rounding
+    input#roundResult.checkboxInput(name='roundResult' tabindex='5' type='checkbox' checked='true')
+    = ' '
+    | Round results to the nearest whole number
+  #alert(style='display: none;') The values entered are not valid.
+  #ratio(style='display: none;')
+    ul
+      li
+        | The aspect ratio (closest full fraction) is:
+        = ' '
+        span#aspectRatioFraction(style='font-weight: bold;')
+      li
+        | The aspect ratio (in decimals) is: 1:
+        = ' '
+        span#aspectRatioDecimals(style='font-weight: bold;')
+      li
+        | Pixel count (full):
+        = ' '
+        span#megaPixels(style='font-weight: bold;')
+        = ' '
+        |  pixels
+      li
+        | Pixel count (round):
+        = ' '
+        span#megaPixelsMega(style='font-weight: bold;')
+        = ' '
+        |  mega pixels
+    div
+      #ratioExampleBox: p
+
+script(src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js")
+script(type="text/javascript").
+  const $ = jQuery
+  $(function () {
+    console.log('Aspect Ratio Calculator App');
+
+
+    const $alert = $('#alert')
+    $alert.hide(true)
+    const $ratio = $('#ratio')
+    $ratio.hide(true)
+    const $inputs = $('.numberInput')
+    const $oldWidth = $('#oldWidth')
+    const $oldHeight = $('#oldHeight')
+    const $newWidth =  $('#newWidth')
+    const $newHeight =  $('#newHeight')
+    const $aspectRatioDecimals = $('#aspectRatioDecimals')
+    const $aspectRatioFraction = $('#aspectRatioFraction')
+    const $ratioExampleBox = $('#ratioExampleBox')
+    const $roundResult = $('#roundResult')
+    const $megaPixels = $('#megaPixels')
+    const $megaPixelsMega = $('#megaPixelsMega')
+
+    let calculate = 'height'
+
+
+    function calcStuff () {
+      let aspectRatio = 0
+
+      switch ($(this).attr('id')) {
+        case 'oldWidth':
+          break;
+        case 'oldHeight':
+          break;
+        case 'newWidth':
+          calculate = 'height'
+          break;
+        case 'newHeight':
+          calculate = 'width'
+          break;
+        default:
+          // statements_def
+          break;
+      }
+
+      let oldWidth = $oldWidth.val()
+      let oldHeight = $oldHeight.val()
+      let newWidth = $newWidth.val()
+      let newHeight = $newHeight.val()
+      const roundResult = $roundResult.is(":checked")
+
+      if (parseFloat(oldWidth) && parseFloat(oldHeight) && ((calculate === 'height' && parseFloat(newWidth)) || (calculate === 'width' && parseFloat(newHeight)))) {
+        $alert.hide()
+        $ratio.show()
+        $ratioExampleBox.css('height', '150px')
+
+        // let aspectRatio = (oldWidth > oldHeight) ? (oldWidth / oldHeight) : (oldHeight / oldWidth)
+        let aspectRatio = (oldWidth / oldHeight)
+        if (calculate === 'height') {
+          newHeight = newWidth / aspectRatio
+          $newWidth.removeClass('calculated')
+          $newHeight.addClass('calculated')
+          if (roundResult) newHeight = Math.round(newHeight)
+          $newHeight.val(newHeight)
+        } else {
+          newWidth = newHeight * aspectRatio
+          $newWidth.addClass('calculated')
+          $newHeight.removeClass('calculated')
+          if (roundResult) newWidth = Math.round(newWidth)
+          $newWidth.val(newWidth)
+        }
+
+        if (oldHeight > oldWidth)
+          $ratioExampleBox.css('width', parseFloat($ratioExampleBox.css('height')) / aspectRatio + 'px')
+        else
+          $ratioExampleBox.css('width', parseFloat($ratioExampleBox.css('height')) * aspectRatio + 'px')
+
+        // let fraction = aspectRatio;
+        // let len = fraction.toString().length - 2;
+
+        // let denominator = Math.pow(10, len);
+        // let numerator = fraction * denominator;
+
+        // let divisor = gcd(numerator, denominator);    // Should be 5
+
+        let denominator = oldWidth
+        let numerator = oldHeight
+        let divisor = gcd(numerator, denominator);    // Should be 5
+
+        numerator /= divisor;                         // Should be 687
+        denominator /= divisor;                       // Should be 2000
+
+        let aspectRatioFraction = Math.floor(denominator) + '/' + Math.floor(numerator)
+
+        $ratioExampleBox.find('p').text(aspectRatioFraction)
+        $aspectRatioDecimals.text(aspectRatio)
+        $aspectRatioFraction.text(aspectRatioFraction)
+        $megaPixels.text((oldWidth*oldHeight).toLocaleString())
+        $megaPixelsMega.text(Math.round(oldWidth*oldHeight/10000)/100).toLocaleString()
+      } else {
+        $alert.show()
+        $ratio.hide()
+      }
+
+    }
+
+    const gcd = function(a, b) {
+      if (b < 0.01) return a;                // Since there is a limited precision we need to limit the value.
+
+      return gcd(b, Math.floor(a % b));           // Discard any fractions due to limitations in precision.
+    }
+
+    $inputs.on('change paste keyup', calcStuff)
+    $roundResult.on('change paste keyup', calcStuff)
+
+    calcStuff()
+
+
+
+    function myCalc(oldWidth, oldHeight) {
+      let aspectRatio = (oldWidth / oldHeight)
+      let denominator = oldWidth
+      let numerator = oldHeight
+      let divisor = gcd(numerator, denominator);    // Should be 5
+
+      numerator /= divisor;                         // Should be 687
+      denominator /= divisor;                       // Should be 2000
+
+      let aspectRatioFraction = Math.floor(denominator) + '/' + Math.floor(numerator)
+      console.log('width: ', oldWidth);
+      console.log('height: ', oldHeight);
+      console.log('fraction: ', aspectRatioFraction);
+      console.log('ratio: ', aspectRatio.toFixed(3));
+    }
+
+  });
+
+h2 Explanation / Instructions
+
+ol
+  li Enter your values into <code>Old Width</code> and <code>Old Height</code>respectively.
+  li Enter one of the values of <code>New Width</code> or <code>New Height</code>.
+  li The missing value will be calculated automatically.
+  li You can change all values at any time, the calculation updated automatically.
+
+h2 Formula
+
+p You have a photo or video that is 2400 x 3000 pixels in resolution, but you'd like to send a file that is only 400px in width to your client for review. To calculate the new height of your photo you can use the following formula (or the calculator above):
+pre: code (org. height / org. width) x new width = new height
+p With the example numbers above, this would be the calculation:
+pre: code (2400 / 3000) x 400 = 320
+
+h2 Resolutions & Aspect Ratios for Social Media
+
+h3 Instagram
+
+p You should always check and be aware of the fact, that on your Instagram Feed, people will only see the center square (1:1) part of the photo post, video post, and IGTV upload.
+
+.tbl-resp(role='table' aria-label='Destinations')
+  .flex-table.header(role='rowgroup')
+    .flex-row.first(role='columnheader') Group
+    .flex-row(role='columnheader') Name
+    .flex-row(role='columnheader') Width
+    .flex-row(role='columnheader') Height
+    .flex-row(role='columnheader') Aspect Ratio
+  .flex-table.row(role='rowgroup')
+    .flex-row.rowspan.first Photo Post
+    .column
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Portrait
+        .flex-cell(role='cell') 4:5
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 1350px
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Square
+        .flex-cell(role='cell') 1:1
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 1080px
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Landscape
+        .flex-cell(role='cell') 1.91:1
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 608px
+  .flex-table.row(role='rowgroup')
+    .flex-row.rowspan.first Video Post
+    .column
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Portrait
+        .flex-cell(role='cell') 4:5
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 1350px
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Square
+        .flex-cell(role='cell') 1:1
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 1080px
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Landscape
+        .flex-cell(role='cell') 1.91:1
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 608px
+  .flex-table.row(role='rowgroup')
+    .flex-row.rowspan.first Story Post
+    .column
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Portrait
+        .flex-cell(role='cell') 9:16
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 1920px
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Landscape
+        .flex-cell(role='cell') 1.91:1
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 608px
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Live
+        .flex-cell(role='cell') 9:16
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 1920px
+  .flex-table.row(role='rowgroup')
+    .flex-row.rowspan.first IGTV
+    .column
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Portrait
+        .flex-cell(role='cell') 9:16
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 1920px
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Landscape
+        .flex-cell(role='cell') 16:9
+        .flex-cell(role='cell') 1920px
+        .flex-cell(role='cell') 1080px
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') IGTV Cover
+        .flex-cell(role='cell') 4:5
+        .flex-cell(role='cell') 1080px
+        .flex-cell(role='cell') 1350px
+  .flex-table.row(role='rowgroup')
+    .flex-row.rowspan.first Other
+    .column
+      .flex-row(role='rowgroup')
+        .flex-cell(role='cell') Profile Photo
+        .flex-cell(role='cell') 1:1
+        .flex-cell(role='cell') 180px
+        .flex-cell(role='cell') 180px
+
+h2 Resolutions & Aspect Ratios for Filmmaking
+
+.tbl-resolutions(role='table' aria-label='Destinations')
+  .flex-table.header(role='rowgroup')
+    .flex-row.first(role='columnheader') Name
+    .flex-row(role='columnheader') Width
+    .flex-row(role='columnheader') Height
+    .flex-row(role='columnheader') Aspect Ratio (convention)
+    .flex-row(role='columnheader') Aspect Ratio (decimal)
+    .flex-row(role='columnheader') Pixels
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') NTSC
+    .flex-row(role='cell') 640px
+    .flex-row(role='cell') 480px
+    .flex-row(role='cell') 4/3
+    .flex-row(role='cell') 1.333
+    .flex-row(role='cell') 307,200
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') DV NTSC
+    .flex-row(role='cell') 720px
+    .flex-row(role='cell') 480px
+    .flex-row(role='cell') 3/2
+    .flex-row(role='cell') 1.500
+    .flex-row(role='cell') 345,600
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') DV PAL
+    .flex-row(role='cell') 720px
+    .flex-row(role='cell') 576px
+    .flex-row(role='cell') 5/4
+    .flex-row(role='cell') 1.250
+    .flex-row(role='cell') 414,720
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') HDTV 720
+    .flex-row(role='cell') 1280px
+    .flex-row(role='cell') 720px
+    .flex-row(role='cell') 16/9
+    .flex-row(role='cell') 1.777
+    .flex-row(role='cell') 921,600
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') HDV 720
+    .flex-row(role='cell') 1280px
+    .flex-row(role='cell') 720px
+    .flex-row(role='cell') 16/9
+    .flex-row(role='cell') 1.777
+    .flex-row(role='cell') 921,600
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') HDTV 1080
+    .flex-row(role='cell') 1920px
+    .flex-row(role='cell') 1080px
+    .flex-row(role='cell') 16/9
+    .flex-row(role='cell') 1.777
+    .flex-row(role='cell') 2,073,600
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') HDV 1080
+    .flex-row(role='cell') 1440px
+    .flex-row(role='cell') 1080px
+    .flex-row(role='cell') 4/3
+    .flex-row(role='cell') 1.333
+    .flex-row(role='cell') 1,555,200
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') UltraWide FHD
+    .flex-row(role='cell') 2560px
+    .flex-row(role='cell') 1080px
+    .flex-row(role='cell') 21&ratio;9
+    .flex-row(role='cell') 2.333
+    .flex-row(role='cell') 2,764,800
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') 2K Academy
+    .flex-row(role='cell') 1828px
+    .flex-row(role='cell') 1332px
+    .flex-row(role='cell') 457/333
+    .flex-row(role='cell') 1.372
+    .flex-row(role='cell') 2,434,896
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') 2K Full Aperture
+    .flex-row(role='cell') 2048px
+    .flex-row(role='cell') 1536px
+    .flex-row(role='cell') 4/3
+    .flex-row(role='cell') 1.333
+    .flex-row(role='cell') 3,145,728
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') DCI 2K (full frame)
+    .flex-row(role='cell') 2048px
+    .flex-row(role='cell') 1080px
+    .flex-row(role='cell') 1.90/1
+    .flex-row(role='cell') 1.90
+    .flex-row(role='cell') 2,211,840
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') 4K UHD-1
+    .flex-row(role='cell') 3840px
+    .flex-row(role='cell') 2160px
+    .flex-row(role='cell') 16/9
+    .flex-row(role='cell') 1.777
+    .flex-row(role='cell') 8,294,400
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') 4K Academy
+    .flex-row(role='cell') 3656px
+    .flex-row(role='cell') 2664px
+    .flex-row(role='cell') 457/333
+    .flex-row(role='cell') 1.372
+    .flex-row(role='cell') 9,739,584
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') DCI 4K (full frame)
+    .flex-row(role='cell') 4096px
+    .flex-row(role='cell') 2160px
+    .flex-row(role='cell') 1.90/1
+    .flex-row(role='cell') 1.90
+    .flex-row(role='cell') 8,847,360
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') 4K Full Aperture
+    .flex-row(role='cell') 4096px
+    .flex-row(role='cell') 3072px
+    .flex-row(role='cell') 4/3
+    .flex-row(role='cell') 1.333
+    .flex-row(role='cell') 12,582,912
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') Ultra-Wide QHD
+    .flex-row(role='cell') 3440px
+    .flex-row(role='cell') 1440px
+    .flex-row(role='cell') 21&ratio;9
+    .flex-row(role='cell') 2.333
+    .flex-row(role='cell') 4,953,600
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') WQUXGA
+    .flex-row(role='cell') 3840px
+    .flex-row(role='cell') 2400px
+    .flex-row(role='cell') 16/10
+    .flex-row(role='cell') 1.60
+    .flex-row(role='cell') 9,216,000
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') Ultra-Wide 4K
+    .flex-row(role='cell') 3840px
+    .flex-row(role='cell') 1600px
+    .flex-row(role='cell') 21&ratio;9
+    .flex-row(role='cell') 2.333
+    .flex-row(role='cell') 6,144,000
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') 5K
+    .flex-row(role='cell') 5120px
+    .flex-row(role='cell') 2880px
+    .flex-row(role='cell') 16/9
+    .flex-row(role='cell') 1.777
+    .flex-row(role='cell') 14,745,600
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') Ultra-Wide 5K
+    .flex-row(role='cell') 5120px
+    .flex-row(role='cell') 2160px
+    .flex-row(role='cell') 21&ratio;9
+    .flex-row(role='cell') 2.333
+    .flex-row(role='cell') 11,059,200
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') 6K
+    .flex-row(role='cell') 6144px
+    .flex-row(role='cell') 3160px
+    .flex-row(role='cell')
+    .flex-row(role='cell') 1.94
+    .flex-row(role='cell') 19,415,040
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') 8K UHD-2
+    .flex-row(role='cell') 7680px
+    .flex-row(role='cell') 4320px
+    .flex-row(role='cell') 16/9
+    .flex-row(role='cell') 1.777
+    .flex-row(role='cell') 33,177,600
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') DCI 8K (8K Full Format)
+    .flex-row(role='cell') 8192px
+    .flex-row(role='cell') 4320px
+    .flex-row(role='cell') 1.90/1
+    .flex-row(role='cell') 1.90
+    .flex-row(role='cell') 35,389,440
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') Ultra-Wide 10K
+    .flex-row(role='cell') 10240px
+    .flex-row(role='cell') 4320px
+    .flex-row(role='cell') 21&ratio;9
+    .flex-row(role='cell') 2.333
+    .flex-row(role='cell') 44,236,800
+  .flex-table.row(role='rowgroup')
+    .flex-row.first(role='cell') 16K
+    .flex-row(role='cell') 15360px
+    .flex-row(role='cell') 8640px
+    .flex-row(role='cell') 16/9
+    .flex-row(role='cell') 1.777
+    .flex-row(role='cell') 132,710,400
+p.text-center A list of more common resolutions can be found on #[a(href='https://en.wikipedia.org/wiki/List_of_common_resolutions') WikiPedia].
+
+div.content.feedback
+  p Any issues? Email me #[a(href='mailto:chris@chrisspiegl.com?subject=Aspect Ratio Calculator Problem') chris@chrisspiegl.com].
+  p Would like to support me in creating more tools and services like this?
+  p: a(href='//patron') Buy me a Tea&amp;Cookie

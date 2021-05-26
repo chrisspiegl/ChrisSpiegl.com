@@ -1,0 +1,1570 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"channels",
+				"channelsRequested"
+			],
+			[
+				"videos",
+				"videosRequested\tempty"
+			],
+			[
+				"video",
+				"video\tempty"
+			],
+			[
+				"log",
+				"log\tlog"
+			],
+			[
+				"for",
+				"for_of"
+			],
+			[
+				"value",
+				"valueOriginal"
+			],
+			[
+				"working",
+				"workingBlocks"
+			],
+			[
+				"workingBlo",
+				"workingBlocks"
+			],
+			[
+				"boxDa",
+				"boxDates"
+			],
+			[
+				"avail",
+				"availableDateFirst\tany"
+			],
+			[
+				"calen",
+				"calendarsAddEvents\tany"
+			],
+			[
+				"calendar",
+				"calendarId\tstring"
+			],
+			[
+				"calenda",
+				"calendarsAvailable\tempty"
+			],
+			[
+				"eventT",
+				"eventTypeRequestedTimezone\tempty"
+			],
+			[
+				"event",
+				"eventTypeRequested"
+			],
+			[
+				"workingBlock",
+				"workingBlocksDate"
+			],
+			[
+				"hou",
+				"hours"
+			],
+			[
+				"seco",
+				"seconds"
+			],
+			[
+				"validato",
+				"validatorExpress\tany"
+			],
+			[
+				"username",
+				"usernameRequested\tany"
+			],
+			[
+				"name",
+				"nameOriginal"
+			],
+			[
+				"new",
+				"newValue"
+			],
+			[
+				"time",
+				"timezoneAlpha\tany"
+			],
+			[
+				"timezone",
+				"timezone"
+			],
+			[
+				"creden",
+				"credentialsUser\t{|access_token: string, expires_in: number, id_token: string, scope: string, token_type: string|}"
+			],
+			[
+				"credentialsU",
+				"credentialsUser"
+			],
+			[
+				"params",
+				"paramsDefault\t{|from: (void | any), locals: {||}, replyTo: (void | any), subject: void, to: void|}"
+			],
+			[
+				"calend",
+				"calendarId\tany"
+			],
+			[
+				"even",
+				"eventType\tany"
+			],
+			[
+				"reqT",
+				"reqTime\tnull | any"
+			],
+			[
+				"timezoneS",
+				"timezoneStored"
+			],
+			[
+				"timezoneLi",
+				"timezoneList"
+			],
+			[
+				"ouptu",
+				"output\t<output>"
+			],
+			[
+				"selec",
+				"selectedMoment"
+			],
+			[
+				"moment",
+				"momentEventTz\tany"
+			],
+			[
+				"over",
+				"overflow-x\tproperty"
+			],
+			[
+				"req",
+				"reqEventType\tnull | any"
+			],
+			[
+				"eve",
+				"event\tany"
+			],
+			[
+				"buff",
+				"bufferAfter\tnumber"
+			],
+			[
+				"cal",
+				"calendar\tstring"
+			],
+			[
+				"homebae",
+				"homebaseIndex\tempty"
+			],
+			[
+				"visot",
+				"visitor\tany"
+			],
+			[
+				"csv",
+				"csvRow"
+			],
+			[
+				"html",
+				"html5\tSimple HTML5 Boilerplate"
+			],
+			[
+				"text",
+				"textarea\t<textarea>"
+			],
+			[
+				"copy",
+				"copyTextareaToClipboard_ios\tany"
+			],
+			[
+				"textarea",
+				"textarea\tHTMLElement | null"
+			],
+			[
+				"change",
+				"changeStatus\tHTMLElement | null"
+			],
+			[
+				"get",
+				"getElementById\t(elementId: string) => (HTMLElement | null)"
+			],
+			[
+				"desc",
+				"description"
+			],
+			[
+				"line",
+				"linePreviousEmpty\tboolean"
+			],
+			[
+				"millise",
+				"milliseconds\tnumber"
+			],
+			[
+				"milli",
+				"millisecondsToAdd\tany | number"
+			],
+			[
+				"sort",
+				"sortValueNew\tany"
+			],
+			[
+				"filterVal",
+				"filterValueConcat"
+			],
+			[
+				"script",
+				"script\tTag"
+			],
+			[
+				"millisec",
+				"millisecond\tnumber"
+			],
+			[
+				"ty",
+				"type\tAttr"
+			],
+			[
+				"word",
+				"word-wrap\tproperty"
+			],
+			[
+				"re",
+				"replace\t(searchValue: (RegExp | string), replaceValue: (((substring: string, ...args: Array<any>) => string) | string)) => string"
+			],
+			[
+				"regex",
+				"regex\tregexp"
+			],
+			[
+				"grup",
+				"group1"
+			],
+			[
+				"rename",
+				"renameSync\t(oldPath: string, newPath: string) => void"
+			],
+			[
+				"content",
+				"contentsNew\tArray<string>"
+			],
+			[
+				"conten",
+				"contentsNew"
+			],
+			[
+				"contents",
+				"contentsNew\tany | string"
+			],
+			[
+				"incompe",
+				"incomplete"
+			],
+			[
+				"box-s",
+				"box-shadow"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"col",
+				"columns"
+			],
+			[
+				"secon",
+				"secondsToAdd\tnumber"
+			],
+			[
+				"timefor",
+				"timeFormatted1"
+			],
+			[
+				"in",
+				"inside"
+			],
+			[
+				"list-",
+				"list-style-position"
+			],
+			[
+				"requ",
+				"request"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 89.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"uniq",
+				"Permute Lines: Unique"
+			],
+			[
+				"upgrade",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"increm",
+				"Increment Selection"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"html pre",
+				"HTMLPrettify"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"dup",
+				"File: Duplicate"
+			],
+			[
+				"increme",
+				"Increment Selection"
+			],
+			[
+				"delete",
+				"File: Delete"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"format css",
+				"CodeFormatter: Format as CSS Syntax"
+			],
+			[
+				"format",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"script",
+				"JavaScript Enhancements Bookmarks: Next"
+			],
+			[
+				"incre",
+				"Increment Selection"
+			],
+			[
+				"ter",
+				"Terminal: Open in project folder"
+			],
+			[
+				"term",
+				"Terminal: Open"
+			],
+			[
+				"todore",
+				"TodoReview: Project Files"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"new file",
+				"ANF: New File"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"todoreve",
+				"TodoReview: Project and Open Files"
+			],
+			[
+				"todo",
+				"TodoReview: Project and Open Files"
+			],
+			[
+				"find mac",
+				"BracketHighlighter: Find Matching Offscreen Bracket"
+			],
+			[
+				"highligh",
+				"BracketHighlighter: Toggle High Visibility Mode"
+			],
+			[
+				"bail",
+				"BracketHighlighter: Toggle High Visibility Mode"
+			],
+			[
+				"finder",
+				"Finder: Open here"
+			],
+			[
+				"codeformat ",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"pertt",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"find",
+				"Finder: Open here"
+			],
+			[
+				"prettyf",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"pretty",
+				"Pretty JSON: JSON query with ./jq"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"path",
+				"File: Copy Path"
+			],
+			[
+				"renam",
+				"File: Rename"
+			],
+			[
+				"in",
+				"Increment Selection"
+			],
+			[
+				"html p",
+				"HTMLPrettify"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"terminal",
+				"Terminal: Open in project folder"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"ren",
+				"File: Rename"
+			],
+			[
+				"javascri",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"json",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"incremen",
+				"Increment Selection"
+			],
+			[
+				"increment",
+				"Increment Selection"
+			],
+			[
+				"minify",
+				"Minify Javascript/CSS to file"
+			],
+			[
+				"mini",
+				"Pretty JSON: Minify (compress) JSON"
+			],
+			[
+				"wa",
+				"Word Wrap: Toggle"
+			],
+			[
+				"warp",
+				"Word Wrap: Toggle"
+			],
+			[
+				"pug",
+				"Set Syntax: Pug (Python)"
+			],
+			[
+				"bash",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
+			[
+				"rsub",
+				"Preferences: RemoteSubl Settings"
+			],
+			[
+				"unique",
+				"Permute Lines: Unique"
+			],
+			[
+				"code",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"jade",
+				"Set Syntax: Jade"
+			],
+			[
+				"syn",
+				"Set Syntax: NAnt Build File"
+			],
+			[
+				"html pr",
+				"HTMLPrettify"
+			],
+			[
+				"set syntax xml",
+				"Set Syntax: XML"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"markdown",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"format html",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"cs",
+				"Set Syntax: CSS"
+			],
+			[
+				"dupli",
+				"File: Duplicate"
+			],
+			[
+				"intsall",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"smart ",
+				"Convert Case: Smart Title Case"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"uniqu",
+				"Permute Lines: Unique"
+			],
+			[
+				"codef",
+				"CodeFormatter: Format as CSS Syntax"
+			],
+			[
+				"minif",
+				"Minify::Default File Settings"
+			],
+			[
+				"compress",
+				"Pretty JSON: Minify (compress) JSON"
+			],
+			[
+				"code css",
+				"CodeFormatter: Format as CSS Syntax"
+			],
+			[
+				"code format",
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"codefo",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"codefor",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"uni",
+				"Permute Lines: Unique"
+			],
+			[
+				"title",
+				"Convert Case: Smart Title Case"
+			],
+			[
+				"copy",
+				"File: Copy Name"
+			],
+			[
+				"javascipt",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"html pret",
+				"HTMLPrettify"
+			],
+			[
+				"dupl",
+				"File: Duplicate"
+			],
+			[
+				"handle",
+				"Set Syntax: Handlebars"
+			],
+			[
+				"code format html",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"format java",
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"format scss",
+				"CodeFormatter: Format as SCSS Syntax"
+			],
+			[
+				"forma",
+				"CodeFormatter: Format as CSS Syntax"
+			],
+			[
+				"new ",
+				"File: New Folder Relative to Project Root"
+			],
+			[
+				"name",
+				"File: Copy Name"
+			],
+			[
+				"new folder",
+				"File: New Folder Relative to Project Root"
+			],
+			[
+				"folder",
+				"Project: Add Folder"
+			],
+			[
+				"new",
+				"ANF: New File"
+			],
+			[
+				"reverse",
+				"Permute Selections: Reverse"
+			],
+			[
+				"htmlp",
+				"HTMLPrettify"
+			],
+			[
+				"termina",
+				"Open in terminal"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"hmtl",
+				"HTMLPrettify"
+			],
+			[
+				"open",
+				"Finder: Open here"
+			],
+			[
+				"sass",
+				"SassBeautify"
+			],
+			[
+				"case",
+				"Convert Case: Title Case"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"del",
+				"File: Delete"
+			],
+			[
+				"ryb",
+				"Set Syntax: Ruby"
+			]
+		],
+		"width": 476.0
+	},
+	"console":
+	{
+		"height": 310.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/spieglio/Sites/chrisspiegl.com - 11ty"
+	],
+	"file_history":
+	[
+		"/Users/spieglio/Downloads/transcripts/readme.md",
+		"/Users/spieglio/.ssh/config",
+		"/private/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/9280eced-a94a-4d6a-91a1-e477f6dee95a/phpinfo-124143.php",
+		"/Users/spieglio/Desktop/headliners-video-template/audio-srt-files/headliner-41-suzi-fluid-perfection_mixdown 4 copy.srt",
+		"/Users/spieglio/Downloads/headliner-41-suzi-fluid-perfection_mixdown.srt",
+		"/Users/spieglio/Desktop/headliners-video-template/audio-srt-files/headliner-41-suzi-fluid-perfection_mixdown 4.srt",
+		"/etc/hosts",
+		"/etc/hosts.b",
+		"/Users/spieglio/Desktop/test-urls.txt",
+		"/Users/spieglio/Desktop/transcription-advice.txt",
+		"/Users/spieglio/Downloads/Facebook Insights Data Export - Candice Wu, Self Love + Healing - 2019-05-07.csv",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-xuedgw/sio-nomadtrips-location.php",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-fv96ep/_nav-primary.php",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-3d50qa/_navbar.php",
+		"/Users/spieglio/Desktop/markers-solo.txt",
+		"/Users/spieglio/Downloads/custom-sidebars.php",
+		"/Volumes/Vita/1Password 2019-03-26, 22_08 (9 items and 0 folders).1pif/data.1pif",
+		"/Users/spieglio/Downloads/vlogs/2019-04-13-shure-beta-57-a-vs-atr-2100/where-to-find.md",
+		"/Volumes/GoogleDrive/My Drive/@Inbox/time-add-intro.js",
+		"/Volumes/GoogleDrive/My Drive/@Inbox/notes-date-generator.js",
+		"/Users/spieglio/Desktop/8.md",
+		"/Users/spieglio/Desktop/10.md",
+		"/Users/spieglio/Desktop/feed.xml",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-uc93c3/config.production.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-tc9yta/dauntless.today.conf",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-byc2x4/dautnless.today.conf",
+		"/Users/spieglio/Desktop/markers.txt",
+		"/Users/spieglio/Desktop/Markers-Bani-detailed.txt",
+		"/Volumes/Vita/Archive/myJour-2019.txt",
+		"/Users/spieglio/Downloads/headliner-41-suzi-fluid-perfection_mixdown 4.srt",
+		"/Users/spieglio/Documents/Alfred-Course-Preferences/Alfred.alfredpreferences/workflows/user.workflow.F5A0BEC7-711D-451C-9050-0EA53CAE8790/scripts/new-lines-script.js",
+		"/private/etc/hosts",
+		"/private/etc/hosts.bak",
+		"/private/etc/hosts.equiv",
+		"/private/etc/hosts~orig",
+		"/Users/spieglio/Desktop/Markers-4-shownotes.txt",
+		"/Users/spieglio/Desktop/Markers-3-shownotes.txt",
+		"/Users/spieglio/Desktop/Markers-2-shownotes.txt",
+		"/Users/spieglio/Desktop/Markers-1-shownotes.txt",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-custom/default.hbs",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-custom/partials/site-nav.hbs",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-custom/page-archive.hbs",
+		"/Users/spieglio/Downloads/redirects.json",
+		"/Users/spieglio/Downloads/routes.yaml",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-custom/post.hbs",
+		"/Users/spieglio/Desktop/set.txt",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-eyynkk/dauntless.today.conf",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-custom/package.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-zx0edt/common.conf",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-06_tf7/dauntless.today.conf",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-1sxzum/dauntless.today.conf",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-8ji6mt/config.production.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-xrmqlt/package.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-4hfkz2/yarn.lock",
+		"/Users/spieglio/Sites/ghost/config.development.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-oxxubs/.ghost-cli",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-ps_5tp/config.development.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-p694ah/config.production.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-2e4q4a/dauntless.today.conf",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-lzzmg_/pushnotice.chat.conf",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-0nvjf4/common.conf",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-ttz1i_/00-chrisspiegl.com",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-a9q7oa/dauntless.today",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/gulpfile.js",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-uvzun2/config.production.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-rn76ox/bakingprocess.de",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-ojy64r/config.production.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-8q3cc4/config.development.json",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-exw6w8/dauntless.today",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-nntd67/00-chrisspiegl.com",
+		"/Users/spieglio/Desktop/markers-1.txt",
+		"/Users/spieglio/Desktop/markers-2.txt",
+		"/private/etc/host",
+		"/Users/spieglio/Documents/alfred-license.txt",
+		"/Users/spieglio/bookmark.db",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/assets/css/custom.css",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/index.hbs",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/blog.hbs",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/partials/site-nav.hbs",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/home.hbs",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/assets/css/screen.css",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/package.json",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/default.hbs",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/assets/css/global.css",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/remember-styling.css",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/post.hbs",
+		"/Users/spieglio/Sites/ghost/content/themes/casper-spieglio/node_modules/gulp/index.js",
+		"/Users/spieglio/Desktop/casper-miyl/partials/site-nav.hbs",
+		"/Users/spieglio/Desktop/casper-miyl/assets/css/custom.css",
+		"/Users/spieglio/Desktop/casper-miyl/partials/post-card.hbs",
+		"/Users/spieglio/Desktop/casper-miyl/post.hbs",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-szk9ge/00-chrisspiegl.com",
+		"/Users/spieglio/Desktop/casper-miyl/default.hbs",
+		"/Users/spieglio/Desktop/casper-miyl/index.hbs",
+		"/Users/spieglio/Downloads/Facebook Insights Data Export - Candice Wu, Self Love + Healing - 2019-03-07.csv",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-2hytgj/00-chrisspiegl.com",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-dp5hk9/home.hbs",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-kjvzbl/page.hbs",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-7vw27d/site-nav.hbs",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-q_tua4/global.css",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-smpy73/screen.css",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-f3m6yi/default.hbs",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-2cftb9/index.hbs",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-gyzb5f/newsletter-signup.hbs",
+		"/var/folders/yz/dgzcld0s4lz22xfd60w5wcg80000gn/T/SpieglCO-ubuntu-1gb-ams3-01-general-kzk0gq/floating-header.hbs",
+		"/etc/hosts.bak",
+		"/Users/spieglio/Sites/youtube-bulk-editor/server/router/routerDashboard.js",
+		"/Users/spieglio/Sites/youtube-bulk-editor/server/router/routerAuthentication.js",
+		"/Users/spieglio/Sites/youtube-bulk-editor/database/models/user.js",
+		"/Users/spieglio/Sites/youtube-bulk-editor/views/dashboard.pug",
+		"/Users/spieglio/Sites/youtube-bulk-editor/server/passport.js",
+		"/Users/spieglio/Sites/youtube-bulk-editor/views/dashboard/search.pug",
+		"/Users/spieglio/Sites/youtube-bulk-editor/frontend/style.scss",
+		"/Users/spieglio/Sites/youtube-bulk-editor/views/includes/searchForm.pug",
+		"/Users/spieglio/Sites/youtube-bulk-editor/views/layout.pug",
+		"/Users/spieglio/Sites/youtube-bulk-editor/server/router/routerDashboard-backup.js",
+		"/Users/spieglio/Sites/youtube-bulk-editor/views/home.pug",
+		"/Users/spieglio/Sites/youtube-bulk-editor/subl",
+		"/etc/hosts~orig",
+		"/Users/spieglio/Sites/youtube-bulk-editor/readme.md",
+		"/Users/spieglio/.zshrc",
+		"/Users/spieglio/.zsh",
+		"/Users/spieglio/Documents/obs-graphics/obs-counters/index.js",
+		"/Users/spieglio/Sites/youtube-bulk-editor/frontend/scss/_reset.scss",
+		"/Users/spieglio/Sites/youtube-bulk-editor-test/testgoogle.js",
+		"/Users/spieglio/Sites/youtube-bulk-editor/server/router/routerError.js",
+		"/Users/spieglio/Sites/youtube-bulk-editor/database/models/index.js",
+		"/Users/spieglio/Sites/youtube-bulk-editor/server/router/routerHome.js"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 132.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "cs-11ty-chrisspiegl.com.sublime-project",
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"index",
+				"index.hbs"
+			],
+			[
+				"blog",
+				"blog.hbs"
+			],
+			[
+				"custom",
+				"assets/css/custom.css"
+			],
+			[
+				"home",
+				"home.hbs"
+			],
+			[
+				"screen",
+				"assets/css/screen.css"
+			],
+			[
+				"nav",
+				"partials/site-nav.hbs"
+			],
+			[
+				"inde",
+				"index.hbs"
+			],
+			[
+				"defa",
+				"default.hbs"
+			],
+			[
+				"global",
+				"assets/css/global.css"
+			],
+			[
+				"site-na",
+				"partials/site-nav.hbs"
+			],
+			[
+				"gulp",
+				"gulpfile.js"
+			],
+			[
+				"site",
+				"partials/site-nav.hbs"
+			],
+			[
+				"defaul",
+				"default.hbs"
+			],
+			[
+				"user.js",
+				"database/models/user.js"
+			],
+			[
+				"auth",
+				"server/router/routerAuthentication.js"
+			],
+			[
+				"passport",
+				"server/passport.js"
+			],
+			[
+				"dash",
+				"views/dashboard.pug"
+			],
+			[
+				"user.",
+				"database/models/user.js"
+			],
+			[
+				"dashboard",
+				"views/dashboard.pug"
+			],
+			[
+				"search.p",
+				"views/dashboard/search.pug"
+			],
+			[
+				"search",
+				"views/dashboard/search.pug"
+			],
+			[
+				"style.",
+				"frontend/style.scss"
+			],
+			[
+				"layo",
+				"views/layout.pug"
+			],
+			[
+				"router",
+				"server/router/routerDashboard.js"
+			],
+			[
+				"read",
+				"readme.md"
+			],
+			[
+				"searc",
+				"views/dashboard/search.pug"
+			],
+			[
+				"style",
+				"frontend/style.scss"
+			],
+			[
+				"reset",
+				"frontend/scss/_reset.scss"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"profile",
+				"server/router/routerUserProfile.js"
+			],
+			[
+				"middle",
+				"server/middleware.js"
+			],
+			[
+				"select",
+				"views/dateTimeSelect.pug"
+			],
+			[
+				"script",
+				"frontend/script.js"
+			],
+			[
+				"script.js",
+				"frontend/script.js"
+			],
+			[
+				"userp",
+				"views/userProfile.pug"
+			],
+			[
+				"routerpro",
+				"server/router/routerUserProfile.js"
+			],
+			[
+				"router profile",
+				"server/router/routerUserProfile.js"
+			],
+			[
+				"calendar",
+				"database/models/calendar.js"
+			],
+			[
+				"routerp",
+				"server/router/routerUserProfile.js"
+			],
+			[
+				"cal",
+				"database/models/calendar.js"
+			],
+			[
+				"mid",
+				"server/middleware.js"
+			],
+			[
+				"router pro",
+				"server/router/routerUserProfile.js"
+			],
+			[
+				"/router/routerDashboard",
+				"server/router/routerDashboard.js"
+			],
+			[
+				"server",
+				"server/server.js"
+			],
+			[
+				"eventty",
+				"database/models/eventType.js"
+			],
+			[
+				"router user pro",
+				"server/router/routerUserProfile.js"
+			],
+			[
+				"user",
+				"database/models/user.js"
+			],
+			[
+				"erver.js",
+				"server/server.js"
+			],
+			[
+				"event",
+				"database/models/eventType.js"
+			],
+			[
+				"pro",
+				"views/userProfile.pug"
+			],
+			[
+				"eventtyp",
+				"database/models/eventType.js"
+			],
+			[
+				"index.js",
+				"database/models/index.js"
+			],
+			[
+				"ser",
+				"server/server.js"
+			],
+			[
+				"confirm",
+				"views/dateTimeConfirm.pug"
+			],
+			[
+				"scrpt",
+				"frontend/script.js"
+			],
+			[
+				"index ",
+				"database/models/index.js"
+			],
+			[
+				"database/in",
+				"database/models/index.js"
+			],
+			[
+				"eventtype",
+				"database/models/eventType.js"
+			],
+			[
+				"local",
+				"config/local.js"
+			],
+			[
+				"email",
+				"views/emails/newEventNotificationForOrganizer.pug"
+			],
+			[
+				"uerpro",
+				"server/router/routerUserProfile.js"
+			],
+			[
+				"dashbo",
+				"views/dashboard.pug"
+			],
+			[
+				"ev",
+				"database/models/eventType.js"
+			],
+			[
+				"eventTY",
+				"database/models/eventType.js"
+			],
+			[
+				"profile.p",
+				"views/userProfile.pug"
+			],
+			[
+				"usergoo",
+				"database/models/userGoogle.js"
+			],
+			[
+				"logre",
+				"database/models/logRequest.js"
+			],
+			[
+				"dasb",
+				"views/dashboard.pug"
+			],
+			[
+				"dashb",
+				"server/router/routerDashboard.js"
+			],
+			[
+				"google",
+				"database/models/userGoogle.js"
+			],
+			[
+				"loca",
+				"config/local.js"
+			],
+			[
+				"userprofil",
+				"views/userProfile.pug"
+			],
+			[
+				"mailer",
+				"server/mailer.js"
+			],
+			[
+				"reister",
+				"views/dateTimeRegister.pug"
+			],
+			[
+				"te",
+				"testing.js"
+			],
+			[
+				"regi",
+				"views/dateTimeRegister.pug"
+			],
+			[
+				"reg",
+				"views/dateTimeRegister.pug"
+			],
+			[
+				"sele",
+				"views/dateTimeSelect.pug"
+			],
+			[
+				"seelect",
+				"views/dateTimeSelect.pug"
+			],
+			[
+				"lo",
+				"config/local.js"
+			],
+			[
+				"middlewa",
+				"su-shedule-us-dev/server/middleware.js"
+			],
+			[
+				"home.",
+				"su-shedule-us-dev/views/home.pug"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				" middl",
+				"server/middleware.js"
+			],
+			[
+				"layout",
+				"views/layout.pug"
+			],
+			[
+				"rou",
+				"server/router/routerHome.js"
+			],
+			[
+				"sci",
+				"frontend/script.js"
+			],
+			[
+				"lcal",
+				"config/local.js"
+			],
+			[
+				"all.js",
+				"config/all.js"
+			],
+			[
+				"passp",
+				"server/passport.js"
+			],
+			[
+				"locals",
+				"server/locals.js"
+			],
+			[
+				"all.",
+				"config/all.js"
+			],
+			[
+				"googl",
+				"testGoogleAPI.js"
+			],
+			[
+				"googleapi",
+				"testGoogleAPI.js"
+			],
+			[
+				"all",
+				"config/all.js"
+			],
+			[
+				"ro",
+				"server/router/routerHome.js"
+			],
+			[
+				"api",
+				"server/router/routerApi.js"
+			],
+			[
+				"serv",
+				"server/server.js"
+			],
+			[
+				"in",
+				"index.js"
+			],
+			[
+				"succ",
+				"views/success.pug"
+			],
+			[
+				"success",
+				"pug/success.pug"
+			],
+			[
+				"redis",
+				"server/redis.js"
+			],
+			[
+				"error",
+				"server/router/routerError.js"
+			],
+			[
+				"pass",
+				"server/passport.js"
+			],
+			[
+				"open.js",
+				"server/router/routerOpen.js"
+			],
+			[
+				"api.js",
+				"server/router/routerApi.js"
+			],
+			[
+				"gropus",
+				"views/groups.pug"
+			],
+			[
+				"group",
+				"server/router/routerGroups.js"
+			],
+			[
+				"hometown",
+				"server/router/routerHometown.js"
+			],
+			[
+				"routerau",
+				"server/router/routerAuthentication.js"
+			],
+			[
+				"routerauth",
+				"server/router/routerAuthentication.js"
+			],
+			[
+				"account",
+				"views/account.pug"
+			],
+			[
+				"signup-",
+				"views/signup-2.pug"
+			],
+			[
+				"inde.",
+				"database/models/index.js"
+			],
+			[
+				"local.js",
+				"config/local.js"
+			],
+			[
+				"passpor",
+				"server/passport.js"
+			],
+			[
+				"gu",
+				"gulpfile.js"
+			],
+			[
+				"err",
+				"server/router/routerError.js"
+			],
+			[
+				"lise",
+				"server/botListener.js"
+			],
+			[
+				"worker",
+				"server/rsmqWorker.js"
+			],
+			[
+				"config",
+				"config/all.js"
+			],
+			[
+				"config.",
+				"database/config.js"
+			],
+			[
+				"listener",
+				"server/botListener.js"
+			],
+			[
+				"lay",
+				"views/layout.pug"
+			],
+			[
+				"api.",
+				"server/router/routerApi.js"
+			],
+			[
+				"error-",
+				"views/error-404.pug"
+			],
+			[
+				"limiter",
+				"server/limiter.js"
+			],
+			[
+				"error.",
+				"views/error.pug"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 210.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"rename",
+				"for(path.basename(module.filename))"
+			]
+		],
+		"width": 1369.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 193.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

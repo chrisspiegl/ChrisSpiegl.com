@@ -1,0 +1,12 @@
+extends layout
+block content
+
+  article.container
+    h1 What I’m doing NOW
+    p Last Updated: #[=global.dateReadable(page.date)]
+      br
+      | Currently in: #[a(href='/location')= nomadlist.now.string]
+      br
+      | Next Destination: #[a(href='/location')= nomadlist.next.string]
+
+    != content

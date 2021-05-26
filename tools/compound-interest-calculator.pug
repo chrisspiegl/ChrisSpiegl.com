@@ -1,0 +1,423 @@
+---
+title: Compound Interest Calculator
+---
+
+h1 Compound Interest Calculator
+
+p Calculating how much money you may have with compound interest is a very interesting tool to know how your savings rate will define your future life. Of course, all values on this page are for entertainment purposes only — know your own risk, and be realistic.
+
+style(type="text/css" media="screen").
+  #alert,
+  #withdrawlAlert {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      color: #D8000C;
+      background-color: #FFD2D2;
+      border-color: #D8000C;
+      text-align: center;
+  }
+
+  input.numberInput,
+  input.withdrawlNumberInput {
+      border: 1px solid black;
+      background-color: #BDE5F8;
+      color: #101318;
+      font-size: 1rem;
+      padding: .5rem .25rem;
+      width: 100%;
+      text-align: right;
+  }
+
+  input.numberInput:read-only,
+  input.withdrawlNumberInput:read-only {
+    background-color: #5f6874;
+  }
+
+  form div {
+    display: flex;
+    align-items: center;
+  }
+
+  form .inputRow label,
+  form .inputRow input {
+    width: 100%;
+    margin: .5rem;
+  }
+
+  form .inputRow label {
+    text-align: right;
+    width: 60%;
+  }
+
+  .rounding {
+      text-align: center;
+  }
+  .rounding .checkboxInput {
+      padding: 0;
+      margin: 0;
+      vertical-align: baseline;
+  }
+
+
+  @media all and (max-width: 500px) {
+    form div {
+      flex-flow: column;
+    }
+    form .inputRow label {
+      text-align: left;
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  #results strong {
+    font-weight: bold;
+  }
+
+.interestcalculator.paragraph
+  form
+    .inputRow
+      label.calcLabel Initial Investment:
+      input#investmentInitial.numberInput(type='number' placeholder='Initival Investment' value='1000')
+    .inputRow
+      label.calcLabel Monthly Contribution:
+      input#monthlyContribution.numberInput(type='number' placeholder='Initival Investment' value='100')
+    .inputRow
+      label.calcLabel Yearly Contribution:
+      input#yearlyContribution.numberInput(type='text' placeholder='Initival Investment' value='1200' readonly='')
+    .inputRow
+      label.calcLabel Years to Grow:
+      input#years.numberInput(type='number' max='1000' placeholder='Initival Investment' value='5')
+    .inputRow
+      label.calcLabel Estimated Yearly Interest Rate:
+      input#interestRate.numberInput(type='number' placeholder='Initival Investment' value='7')
+  #alert(style='display: none;') The values entered are not valid.
+  #results(style='display: none;')
+    p(style='text-align: center; font-size: 2rem') In
+      = ' '
+      strong#resultYears
+      = ' '
+      |  years, you will have
+      = ' '
+      strong#resultAccumulated
+      = ' '
+      | .
+    ul
+      li You will have invested a total of
+        = ' '
+        strong#resultInvestedTotal
+        = ' '
+        |  yourself and earned
+        = ' '
+        strong#resultInterestEarned
+        = ' '
+        |  through interest.
+      li Based on the 4% rule, you could then withdraw aprox.
+        = ' '
+        strong#resultWithdrawl
+        = ' '
+        |  per year (which equals about
+        = ' '
+        strong#resultWithdrawlMonthly
+        = ' '
+        | ) without running out of money.
+    #resultTable
+
+script(src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js")
+script(type="text/javascript").
+  if (typeof($) === 'undefined')  $ = jQuery
+  $(function() {
+      console.log('Compound Interest Calculator App');
+
+
+      const $alert = $('#alert')
+      $alert.hide(true)
+      const $results = $('#results')
+      $results.hide(true)
+      const $inputs = $('.numberInput')
+      const $investmentInitial = $('#investmentInitial')
+      const $monthlyContribution = $('#monthlyContribution')
+      const $yearlyContribution = $('#yearlyContribution')
+      const $years = $('#years')
+      const $interestRate = $('#interestRate')
+      // const $roundResult = $('#roundResult')
+
+      const $resultYears = $('#resultYears')
+      const $resultAccumulated = $('#resultAccumulated')
+      const $resultInvestedTotal = $('#resultInvestedTotal')
+      const $resultInterestEarned = $('#resultInterestEarned')
+      const $resultTable = $('#resultTable')
+      const $resultWithdrawl = $('#resultWithdrawl')
+      const $resultWithdrawlMonthly = $('#resultWithdrawlMonthly')
+
+
+      function calcStuff() {
+          let investmentInitial = parseFloat($investmentInitial.val())
+          let monthlyContribution = parseFloat($monthlyContribution.val())
+          let years = parseFloat($years.val())
+          let interestRate = parseFloat($interestRate.val())
+          // const roundResult = $roundResult.is(":checked")
+
+          $yearlyContribution.val((Math.round(monthlyContribution * 12 * 100) / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+
+          if ((parseFloat(investmentInitial) == 0 || parseFloat(investmentInitial) != 0) && (parseFloat(monthlyContribution) == 0 || parseFloat(monthlyContribution) != 0) && parseFloat(years) && parseFloat(interestRate)) {
+              $alert.hide()
+              $results.show()
+
+              const { accumulated, interestEarnedTotal, accumulatedYears } = compoundInterest(investmentInitial, interestRate, years, 12 * monthlyContribution)
+
+              $resultYears.text(years)
+              $resultAccumulated.text((Math.round(accumulated * 100) / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+
+              const investedTotal = investmentInitial + (years * (monthlyContribution * 12))
+              $resultInvestedTotal.text(investedTotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+              $resultInterestEarned.text((Math.round((interestEarnedTotal) * 100) / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+              $resultWithdrawl.text((Math.round((accumulated * 0.04) * 100) / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+              $resultWithdrawlMonthly.text((Math.round((accumulated * 0.04) / 12 * 100) / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+
+              let resultTable = `<div class="tbl-resp" role="table" aria-label="Destinations">
+                <div class="flex-table header" role="rowgroup">
+                    <div class="flex-row first" role="columnheader">Year</div>
+                    <div class="flex-row" role="columnheader">Before</div>
+                    <div class="flex-row" role="columnheader">Addition</div>
+                    <div class="flex-row" role="columnheader">Interest</div>
+                    <div class="flex-row" role="columnheader">Accumulated</div>
+                </div>`
+
+              for (obj of accumulatedYears) {
+                resultTable += `<div class="flex-table row" role="rowgroup">
+                    <div class="flex-row first" role="cell">${obj.year}</div>
+                    <div class="flex-row" role="cell">${obj.before.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                    <div class="flex-row" role="cell">${obj.addition.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                    <div class="flex-row" role="cell">${obj.interestEarned.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                    <div class="flex-row" role="cell">${obj.accumulated.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                </div>`
+              }
+
+              resultTable += "</div>"
+
+              $resultTable.html(resultTable);
+
+
+              // $megaPixelsMega.text(Math.round(oldWidth*oldHeight/10000)/100).toLocaleString()
+          } else {
+              $alert.show()
+              $results.hide()
+          }
+      }
+
+      $inputs.on('change paste keyup', calcStuff)
+      // $roundResult.on('change paste keyup', calcStuff)
+
+      calcStuff()
+
+
+
+      // Input it initial amount
+      // Interest as a number, e.g. 5% is 1.05 on a yearly basis
+      // Length as number of years
+      // Name of this calculation
+      // Addition determines whether the input variable is one time or a yearly contribution
+      function compoundInterest(input, interest, length, addition) {
+          interest = interest / 100
+          let accumulated = input
+          let accumulatedBefore = 0
+          let interestEarned = 0
+          let interestEarnedTotal = 0
+          const accumulatedYears = []
+          for (i = 0; i < length; i++) {
+              accumulatedBefore = accumulated
+              interestEarned = accumulated * interest
+              interestEarnedTotal += interestEarned
+              accumulated = (addition) ? accumulated + interestEarned + addition : accumulated + interestEarned
+              const obj = {
+                year: i + 1,
+                before: accumulatedBefore,
+                addition: addition,
+                interestEarned: interestEarned,
+                accumulated: accumulated,
+              }
+              accumulatedYears.push(obj)
+          }
+          return {accumulated, interestEarnedTotal, accumulatedYears}
+      }
+
+  });
+
+h1 Withdrawl Calculator
+
+p This calculator gives you an idea about how your withdrawal could look like.
+
+.withdrawlcalculator.paragraph
+  form
+    .inputRow
+      label.calcLabel Initial Investment:
+      input#withdrawlInvestmentInitial.withdrawlNumberInput(type='number' placeholder='' value='300000')
+    .inputRow
+      label.calcLabel Monthly Payout:
+      input#withdrawlMonthlyPayout.withdrawlNumberInput(type='number' placeholder='' value='1000')
+    .inputRow
+      label.calcLabel Yearly Payout:
+      input#withdrawlYearlyPayout.withdrawlNumberInput(type='text' placeholder='' value='12000' readonly='')
+    .inputRow
+      label.calcLabel Years to Payout:
+      input#withdrawlYears.withdrawlNumberInput(type='number' max='1000' placeholder='' value='5')
+    .inputRow
+      label.calcLabel Estimated Yearly Interest Rate:
+      input#withdrawlInterestRate.withdrawlNumberInput(type='number' placeholder='' value='7')
+  #withdrawlAlert(style='display: none;')
+    | The values entered are not valid.
+  #withdrawlResults(style='display: none;')
+    p(style='text-align: center; font-size: 2rem')
+      | After
+      = ' '
+      strong#withdrawlResultYears
+      = ' '
+      |  years, you will have
+      = ' '
+      strong#withdrawlResultAccumulated
+      = ' '
+      | .
+    ul
+      li
+        | You will have withdrawn
+        = ' '
+        strong#withdrawlResultWithdrawnTotal
+        = ' '
+        |  and earned a total of
+        = ' '
+        strong#withdrawlResultInterestEarned
+        = ' '
+        |  in interest.
+      li#withdrawlResultBad With the current values you are earning less interest per year than you are withdrawing. Your money will run out at some point!
+      li#withdrawlResultGood With the current values you are earning more interest per year than you are withdrawing. Your money will last you forever &mdash;&nbsp;stay the course, you are awesome.
+    #withdrawlResultTable
+
+
+  script(type="text/javascript").
+    if (typeof($) === 'undefined')  $ = jQuery
+    $(function() {
+        console.log('Withdrwal Calculator App');
+
+        const $alert = $('#withdrawlAlert')
+        $alert.hide(true)
+        const $results = $('#withdrawlResults')
+        $results.hide(true)
+        const $inputs = $('.withdrawlNumberInput')
+        const $investmentInitial = $('#withdrawlInvestmentInitial')
+        const $yearlyPayout = $('#withdrawlYearlyPayout')
+        const $monthlyPayout = $('#withdrawlMonthlyPayout')
+        const $years = $('#withdrawlYears')
+        const $interestRate = $('#withdrawlInterestRate')
+
+        const $resultYears = $('#withdrawlResultYears')
+        const $resultAccumulated = $('#withdrawlResultAccumulated')
+
+        const $resultWithdrawnTotal = $('#withdrawlResultWithdrawnTotal')
+        const $resultInterestEarned = $('#withdrawlResultInterestEarned')
+        const $resultTable = $('#withdrawlResultTable')
+        const $resultBad = $('#withdrawlResultBad')
+        const $resultGood = $('#withdrawlResultGood')
+
+
+        function calcStuff() {
+            let investmentInitial = parseFloat($investmentInitial.val())
+            let monthlyPayout = parseFloat($monthlyPayout.val())
+            let years = parseFloat($years.val())
+            let interestRate = parseFloat($interestRate.val())
+            // const roundResult = $roundResult.is(":checked")
+
+            $yearlyPayout.val((Math.round(monthlyPayout * 12 * 100) / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+
+            if ((parseFloat(investmentInitial) == 0 || parseFloat(investmentInitial) != 0) && (parseFloat(monthlyPayout) == 0 || parseFloat(monthlyPayout) != 0) && parseFloat(years) && parseFloat(interestRate)) {
+                $alert.hide()
+                $results.show()
+
+                const { accumulated, interestEarnedTotal, accumulatedYears } = compoundInterest(investmentInitial, interestRate, years, (-1 * 12 * monthlyPayout))
+
+                $resultYears.text(years)
+                $resultAccumulated.text((Math.round(accumulated * 100) / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+
+                const payoutTotal = (years * (monthlyPayout * 12))
+                $resultWithdrawnTotal.text(payoutTotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+                $resultInterestEarned.text((Math.round(interestEarnedTotal * 100) / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}))
+                if (interestEarnedTotal > payoutTotal) {
+                  $resultGood.show()
+                  $resultBad.hide()
+                } else {
+                  $resultBad.show()
+                  $resultGood.hide()
+                }
+
+                let resultTable = `<div class="tbl-resp" role="table" aria-label="Destinations">
+                  <div class="flex-table header" role="rowgroup">
+                    <div class="flex-row first" role="columnheader">Year</div>
+                    <div class="flex-row" role="columnheader">Before</div>
+                    <div class="flex-row" role="columnheader">Withdrawl</div>
+                    <div class="flex-row" role="columnheader">Interest</div>
+                    <div class="flex-row" role="columnheader">Accumulated</div>
+                  </div>`
+
+                for (obj of accumulatedYears) {
+                  resultTable += `<div class="flex-table row" role="rowgroup">
+                      <div class="flex-row first" role="cell">${obj.year}</div>
+                      <div class="flex-row" role="cell">${obj.before.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                      <div class="flex-row" role="cell">${obj.addition.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                      <div class="flex-row" role="cell">${obj.interestEarned.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                      <div class="flex-row" role="cell">${obj.accumulated.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                    </div>`
+                }
+
+                resultTable += "</div>"
+
+                $resultTable.html(resultTable);
+
+            } else {
+                $alert.show()
+                $results.hide()
+            }
+        }
+
+        $inputs.on('change paste keyup', calcStuff)
+        // $roundResult.on('change paste keyup', calcStuff)
+
+        calcStuff()
+
+
+
+        // Input it initial amount
+        // Interest as a number, e.g. 5% is 1.05 on a yearly basis
+        // Length as number of years
+        // Name of this calculation
+        // Addition determines whether the input variable is one time or a yearly contribution
+        function compoundInterest(input, interest, length, addition) {
+            interest = interest / 100
+            let accumulated = input
+            let accumulatedBefore = 0
+            let interestEarned = 0
+            let interestEarnedTotal = 0
+            const accumulatedYears = []
+            for (i = 0; i < length; i++) {
+                accumulatedBefore = accumulated
+                interestEarned = accumulated * interest
+                interestEarnedTotal += interestEarned
+                accumulated = (addition) ? accumulated + interestEarned + addition : accumulated + interestEarned
+                const obj = {
+                  year: i + 1,
+                  before: accumulatedBefore,
+                  addition: addition,
+                  interestEarned: interestEarned,
+                  accumulated: accumulated,
+                }
+                accumulatedYears.push(obj)
+            }
+            return {accumulated, interestEarnedTotal, accumulatedYears}
+        }
+
+    });
+
+div.content.feedback
+  p Any issues? Email me #[a(href='mailto:chris@chrisspiegl.com?subject=Compound Interest Calculator Problem') chris@chrisspiegl.com].
+  p Would like to support me in creating more tools and services like this?
+  p: a(href='/patron') Buy me a Tea&amp;Cookie
