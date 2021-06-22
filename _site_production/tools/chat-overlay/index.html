@@ -11,101 +11,101 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/textfit/2.4.0/textFit.min.js" integrity="sha512-vLs5rAqfvmv/IpN7JustROkGAvjK/L+vgVDFe7KpdtLztqF8mZDfleK2MZj/xuOrWjma0pW+lPCMcBbPKJVC7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <style>
 :root {
-    /* basic colors */
-    --keyer-bg-color: #000; /* change for a chroma key if you want, beware profile avatars may key out */
-    --comment-color: #fff;
-    --comment-bg-color: #222; /* needs to be slightly above black to not get keyed out */
-    --comment-border-radius: 0px;
-    --comment-font-size: 40px;
-    --author-color: #222;
-    --author-bg-color: #ffa500;
-    --author-avatar-border-color: #ffa500;
-    --author-border-radius: 0px;
-    --author-avatar-border-size: 3px;
-    --author-avatar-size: 128px;
-    --author-font-size: 30px;
+  /* basic colors */
+  --keyer-bg-color: #000; /* change for a chroma key if you want, beware profile avatars may key out */
+  --comment-color: #fff;
+  --comment-bg-color: #222; /* needs to be slightly above black to not get keyed out */
+  --comment-border-radius: 0px;
+  --comment-font-size: 40px;
+  --author-color: #222;
+  --author-bg-color: #ffa500;
+  --author-avatar-border-color: #ffa500;
+  --author-border-radius: 0px;
+  --author-avatar-border-size: 3px;
+  --author-avatar-size: 128px;
+  --author-font-size: 30px;
 
-    /* donation/superchat specific */
-    --donation-color: #5a4211;
-    --donation-bg-color: #fff;
-    --donation-gradient-stop0: #BF953F;
-    --donation-gradient-stop1: #ede599;
-    --donation-gradient-stop2: #B38728;
-    --donation-label-color: #fff;
-    --donation-label-text: 'SUPERCHAT';
-    --donation-shadow-color: #fff;
+  /* donation/superchat specific */
+  --donation-color: #5a4211;
+  --donation-bg-color: #fff;
+  --donation-gradient-stop0: #BF953F;
+  --donation-gradient-stop1: #ede599;
+  --donation-gradient-stop2: #B38728;
+  --donation-label-color: #fff;
+  --donation-label-text: 'SUPERCHAT';
+  --donation-shadow-color: #fff;
 
-    --shown-comment-bg-color: #555555;
-    --highlighted-comment-bg-color: #f0f07d;
+  --shown-comment-bg-color: #555555;
+  --highlighted-comment-bg-color: #f0f07d;
 
-    /*
-    LAYOUT
-    */
-    --comment-width: auto; /* go 100% for a full screen lower third style*/
-    --comment-padding: 20px 40px 20px 140px;
-    --comment-area-height: 30vh;
-    --comment-scale: 1;
-    --comment-area-size-offset: 0;
-    --comment-area-bottom: 10px;
-    /*
-    STYLE
-    */
-    --font-family: Avenir Next, Helvetica, Geneva, Verdana, Arial, sans-serif;
-    --highlight-chat-font-weight: 600;
-    --author-font-weight: 700;
-    --comment-font-weight: 600;
+  /*
+  LAYOUT
+  */
+  --comment-width: auto; /* go 100% for a full screen lower third style*/
+  --comment-padding: 20px 40px 20px 140px;
+  --comment-area-height: 30vh;
+  --comment-scale: 1;
+  --comment-area-size-offset: 0;
+  --comment-area-bottom: 10px;
+  /*
+  STYLE
+  */
+  --font-family: Avenir Next, Helvetica, Geneva, Verdana, Arial, sans-serif;
+  --highlight-chat-font-weight: 600;
+  --author-font-weight: 700;
+  --comment-font-weight: 600;
 }
 
 /****** SPIEGLIO OVERRIDES BEGIN */
 :root {
-    /* basic colors */
-    --keyer-bg-color: #000; /* change for a chroma key if you want, beware profile avatars may key out */
-    --comment-color: #fff;
-    --comment-bg-color: #222830; /* needs to be slightly above black to not get keyed out */
-    --comment-border-radius: 0px;
-    --comment-font-size: 40px;
-    --author-color: #ffffff;
-    --author-bg-color: #cc5630;
-    --author-avatar-border-color: #cc5630;
-    --author-border-radius: 0px;
-    --author-avatar-border-size: 3px;
-    --author-avatar-size: 128px;
-    --author-font-size: 30px;
+  /* basic colors */
+  --keyer-bg-color: #000; /* change for a chroma key if you want, beware profile avatars may key out */
+  --comment-color: #fff;
+  --comment-bg-color: #222830; /* needs to be slightly above black to not get keyed out */
+  --comment-border-radius: 0px;
+  --comment-font-size: 40px;
+  --author-color: #ffffff;
+  --author-bg-color: #cc5630;
+  --author-avatar-border-color: #cc5630;
+  --author-border-radius: 0px;
+  --author-avatar-border-size: 3px;
+  --author-avatar-size: 128px;
+  --author-font-size: 30px;
 
-    /* donation/superchat specific */
-    --donation-color: #5a4211;
-    --donation-bg-color: #fff;
-    --donation-gradient-stop0: #BF953F;
-    --donation-gradient-stop1: #ede599;
-    --donation-gradient-stop2: #B38728;
-    --donation-label-color: #fff;
-    --donation-label-text: 'SUPERCHAT';
-    --donation-shadow-color: #fff;
+  /* donation/superchat specific */
+  --donation-color: #5a4211;
+  --donation-bg-color: #fff;
+  --donation-gradient-stop0: #BF953F;
+  --donation-gradient-stop1: #ede599;
+  --donation-gradient-stop2: #B38728;
+  --donation-label-color: #fff;
+  --donation-label-text: 'SUPERCHAT';
+  --donation-shadow-color: #fff;
 
-    --shown-comment-bg-color: #555555;
-    --highlighted-comment-bg-color: #f0f07d;
+  --shown-comment-bg-color: #555555;
+  --highlighted-comment-bg-color: #f0f07d;
 
-    /* LAYOUT */
-    --comment-width: auto; /* go 100% for a full screen lower third style*/
-    --comment-text-max-height:  120px;
-    --comment-padding: 25px 20px 10px 130px;
-    --comment-area-height: 30vh;
-    --comment-scale: 1;
-    --comment-area-size-offset: 0;
-    --comment-area-bottom: 10px;
+  /* LAYOUT */
+  --comment-width: auto; /* go 100% for a full screen lower third style*/
+  --comment-text-max-height:  120px;
+  --comment-padding: 25px 20px 10px 130px;
+  --comment-area-height: 30vh;
+  --comment-scale: 1;
+  --comment-area-size-offset: 0;
+  --comment-area-bottom: 10px;
 
-    /* STYLE */
-    --font-family: Avenir Next, Helvetica, Geneva, Verdana, Arial, sans-serif;
-    --highlight-chat-font-weight: 600;
-    --author-font-weight: 700;
-    --comment-font-weight: 600;
+  /* STYLE */
+  --font-family: Avenir Next, Helvetica, Geneva, Verdana, Arial, sans-serif;
+  --highlight-chat-font-weight: 600;
+  --author-font-weight: 700;
+  --comment-font-weight: 600;
 }
 /****** SPIEGLIO OVERRIDES END */
 
 body {
-    background-color: #0000;
+  background-color: #0000;
   position: relative;
-    left: 0px;
+  left: 0px;
   background-color: rgba(0, 0, 0, 0);
   margin: 0px auto;
   overflow: hidden;
@@ -113,12 +113,44 @@ body {
 
 #output {
   transform: translateY(30px);
-    transition: .4s all cubic-bezier(0.250, 0.250, 0.105, 1.2);
+  transform: translatex(10px);
   margin: 0 0 0 8px;
+  transition: .5s all cubic-bezier(0.250, 0.250, 0.105, 1.2);
 }
+
 .fadeout {
+  animation: fadeout .5s;
+  opacity: 0 !important;
+}
+.fadein {
+  animation: fadein .5s;
+  opacity: 1 !important;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.slidedown {
   transform: translateY(340px) !important;
 }
+.slideup {
+  transform: translateY(0px) !important;
+}
+
+.slideoutleft {
+  transform: translatex(-100vw) !important;
+}
+.slideinleft {
+  transform: translatex(10px) !important;
+}
+
 yt-live-chat-app {
     margin-bottom: var(--comment-area-height);
     height: calc(100vh - var(--comment-area-height)) !important;
@@ -344,83 +376,107 @@ yt-live-chat-membership-item-renderer[is-deleted] {
 </head>
 <body>
 
-  <div id="output" class="output"></div>
-  <script>
+<div id="output" class="output"></div>
 
+<script>
   (function (w) {
     w.URLSearchParams = w.URLSearchParams || function (searchString) {
-      var self = this;
-      self.searchString = searchString;
+      const self = this
+      self.searchString = searchString
       self.get = function (name) {
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+        const results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString)
         if (results == null) {
-          return null;
+          return null
         }
         else {
-          return decodeURI(results[1]) || 0;
+          return decodeURI(results[1]) || 0
         }
-      };
-    };
-
-  })(window);
-  var urlParams = new URLSearchParams(window.location.search);
-
-
-  var nextComment = null;
-  var roomID = "test";
-
-  if (urlParams.has("session")){
-    roomID = urlParams.get("session");
-  } else if (urlParams.has("s")){
-    roomID = urlParams.get("s");
-  } else {
-    window.location.href = "https://github.com/steveseguin/live-chat-overlay#readme";
-  }
-
-
-  //var counter=0;
-  var idle = null;
-
-  var socket = new WebSocket("wss://api.action.wtf:666");
-
-  socket.onclose = function (){
-    setTimeout(function(){window.location.reload(true);},100);
-  };
-
-  socket.onopen = function (){
-    socket.send(JSON.stringify({"join":roomID}));
-  }
-
-  socket.addEventListener('message', function (event) {
-    if (event.data){
-      var data = JSON.parse(event.data);
-      if (data.contents){
-        data = data.contents;
-        document.getElementById("output").classList.add("fadeout");
-        clearInterval(nextComment);
-        nextComment = setTimeout(function(){
-          document.getElementById("output").innerHTML = '<div class="hl-c-cont highlight-chat">'
-             + '<div class="hl-name">' + data.chatname
-             + '<div class="hl-badges">' + data.chatbadges + '</div>'
-             + '</div>'
-             + '<div class="hl-message" style="'+ data.backgroundColor +' '+ data.textColor +'">' + data.chatmessage + '</div>'
-             + '<div class="hl-img"><img src="' + data.chatimg + '" onerror="this.style.display=\'none\'"></div>'
-             + data.hasDonation + data.hasMembership +'</div>';
-          document.getElementById("output").classList.remove("fadeout");
-                    textFit(document.getElementsByClassName('hl-name'), { multiLine: false })
-                    textFit(document.getElementsByClassName('hl-message'))
-        },500);
-      } else {
-        document.getElementById("output").classList.add("fadeout");
-        clearInterval(nextComment);
       }
     }
-  });
 
-  socket.onclose = function (){
-    setTimeout(function(){window.location.reload(true);},100);
-  };
+  })(window)
 
-  </script>
-  </body>
+  const urlParams = new URLSearchParams(window.location.search)
+
+  const transitionStyles = {
+    slideup: {
+      in: 'slideup',
+      out: 'slidedown',
+    },
+    slideleft: {
+      in: 'slideinleft',
+      out: 'slideoutleft',
+    },
+    fadein: {
+      in: 'fadein',
+      out: 'fadeout',
+    }
+  }
+
+  let transition = transitionStyles.fadein
+
+  if (urlParams.has("style")) {
+    transition = transitionStyles[urlParams.get("style")] || transition
+  }
+
+  console.log(`transition:`, transition)
+
+  let nextComment = null
+  let roomID = "test"
+
+  if (urlParams.has("session")) {
+    roomID = urlParams.get("session")
+  } else if (urlParams.has("s")) {
+    roomID = urlParams.get("s")
+  } else {
+    window.location.href = "https://github.com/steveseguin/live-chat-overlay#readme"
+  }
+
+  const socket = new WebSocket("wss://api.action.wtf:666")
+
+  socket.onclose = function () {
+    setTimeout(function() {
+      window.location.reload(true)
+    }, 100)
+  }
+
+  socket.onopen = function () {
+    socket.send(JSON.stringify({ "join": roomID }))
+  }
+
+  const outputElement = document.getElementById("output")
+  outputElement.classList.add(transition.out)
+
+  socket.addEventListener('message', function (event) {
+    if (!event.data) return
+    const eventData = JSON.parse(event.data)
+    if (!eventData.contents) {
+      // Fade out Clearing
+      console.log(`Clearing`)
+      outputElement.classList.add(transition.out)
+      outputElement.classList.remove(transition.in)
+      return clearInterval(nextComment)
+    }
+    const data = eventData.contents
+    outputElement.classList.add(transition.out)
+    outputElement.classList.remove(transition.in)
+    clearInterval(nextComment)
+    nextComment = setTimeout(function() {
+      outputElement.innerHTML = `<div class="hl-c-cont highlight-chat">
+        <div class="hl-name">${data.chatname}
+          <div class="hl-badges">${data.chatbadges}</div>
+        </div>
+        <div class="hl-message" style="${data.backgroundColor} ${data.textColor}">${data.chatmessage}</div>
+        <div class="hl-img"><img src="${data.chatimg}" onerror="this.style.display='none'"></div>
+        ${data.hasDonation}
+        ${data.hasMembership}
+      </div>`
+      textFit(document.getElementsByClassName('hl-name'), { multiLine: false })
+      textFit(document.getElementsByClassName('hl-message'))
+      outputElement.classList.remove(transition.out)
+      outputElement.classList.add(transition.in)
+    }, 700)
+  })
+</script>
+</body>
 </html>
