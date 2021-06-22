@@ -6,7 +6,9 @@
   "scripts": {
     "start": "run-s eleventy:dev",
     "dev": "run-s clean:dev eleventy:dev",
-    "build": "run-s clean:prod eleventy:prod",
+    "build": "run-s eleventy:prod",
+    "build:deploy": "run-s eleventy:prod deploy",
+    "build:clean": "run-s clean:prod eleventy:prod",
     "eleventy:dev": "cross-env NODE_ENV=development eleventy --serve",
     "eleventy:prod": "cross-env NODE_ENV=production eleventy",
     "clean:dev": "shx rm -rf _site_development",
