@@ -45,16 +45,8 @@
     "slug": "tools/podcast-show-notes-formatter"
   },
   {
-    "destination": "_TK_",
-    "slug": "aff/1password"
-  },
-  {
     "destination": "http://clkuk.tradedoubler.com/click?p=264311&a=3200145&g=22913592",
     "slug": "aff/adobe"
-  },
-  {
-    "destination": "_TK_",
-    "slug": "aff/nordvpn"
   },
   {
     "destination": "/infostack-podcast",
@@ -250,7 +242,7 @@
     "slug": "podcast/applepodcast"
   },
   {
-    "destination": "https://anchor.fm/s/2d9244d8/podcast/rss",
+    "destination": "https://feeds.redcircle.com/1f6d5b01-c6f5-49c5-b066-7fa573db9400",
     "slug": "podcast/feed"
   },
   {
@@ -262,8 +254,12 @@
     "slug": "podcast/google"
   },
   {
-    "destination": "https://anchor.fm/chrisspiegl",
+    "destination": "/podcast/redcircle",
     "slug": "podcast/anchor"
+  },
+  {
+    "destination": "https://redcircle.com/shows/chris-spiegl-thoughts-stories-and-ideas",
+    "slug": "podcast/redcircle"
   },
   {
     "destination": "https://pca.st/SDJG",

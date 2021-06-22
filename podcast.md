@@ -35,7 +35,7 @@ To listen to this experiment and exploration, you can choose one of the linked o
   <a class="btn btn-block" href="https://chrisspiegl.com/podcast/pocketcasts">Pocket Casts</a>
 </div>
 <div class="side-by-side">
-  <a class="btn btn-block" href="https://chrisspiegl.com/podcast/anchor">Anchor.fm</a>
+  <a class="btn btn-block" href="https://chrisspiegl.com/podcast/redcircle">RedCircle</a>
   <a class="btn btn-block" href="https://chrisspiegl.com/podcast/google">Google Podcasts</a>
 </div>
 <div class="side-by-side">
