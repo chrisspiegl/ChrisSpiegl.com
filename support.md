@@ -28,4 +28,3 @@ Or, if you are super techy, there is also crypto (click for QR Code):
 {{ qrcode['xlm'].rendered }}
 
 {{ qrcode['bat'].rendered }}
-

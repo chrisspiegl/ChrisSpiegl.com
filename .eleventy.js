@@ -1,11 +1,11 @@
-const { DateTime } = require("luxon");
+const { DateTime } = require("luxon")
 const readingTime = require('eleventy-plugin-reading-time')
 const embedEverything = require("eleventy-plugin-embed-everything")
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItFootnote = require("markdown-it-footnote");
+const pluginRss = require("@11ty/eleventy-plugin-rss")
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+const markdownIt = require("markdown-it")
+const markdownItAnchor = require("markdown-it-anchor")
+const markdownItFootnote = require("markdown-it-footnote")
 const markdownItContainer = require("markdown-it-container")
 const markdownItResponsive = require('@gerhobbelt/markdown-it-responsive')
 
@@ -13,23 +13,22 @@ const transforms = require('./utils/transforms.js')
 const filters = require('./utils/filters.js')
 
 const now = new Date()
-const envLong = process.env.NODE_ENV
 
 module.exports = (config) => {
-  config.addPlugin(pluginRss);
-  config.addPlugin(pluginSyntaxHighlight);
+  config.addPlugin(pluginRss)
+  config.addPlugin(pluginSyntaxHighlight)
   config.addPlugin(readingTime)
   config.addPlugin(embedEverything)
 
   // Transforms
   Object.keys(transforms).forEach((transformName) => {
-    config.addTransform(transformName, transforms[transformName]);
-  });
+    config.addTransform(transformName, transforms[transformName])
+  })
 
   // Filters
   Object.keys(filters).forEach((filterName) => {
-    config.addFilter(filterName, filters[filterName]);
-  });
+    config.addFilter(filterName, filters[filterName])
+  })
 
   const isDraftOrIndex = (post) => {
     if (post.data.draft) return false
@@ -51,19 +50,15 @@ module.exports = (config) => {
     return true
   }
 
-  config.addPassthroughCopy("assets/favicon");
-  config.addPassthroughCopy({ 'assets/chrisspiegl.asc': 'chrisspiegl.asc' });
+  config.addPassthroughCopy("assets/favicon")
+  config.addPassthroughCopy({ 'assets/chrisspiegl.asc': 'chrisspiegl.asc' })
 
   config.addCollection('posts', collection => {
     return collection.getFilteredByGlob('./post/**/*.md').filter(_ => livePosts(_)).reverse()
   })
 
   config.addCollection('drafts', collection => {
-    return collection.getFilteredByGlob('./post/**/*.md').filter(_ => !livePosts(_)).reverse();
-  })
-
-  config.addCollection('podcasts', collection => {
-    return collection.getFilteredByGlob('./podcast/**/*.md').filter(_ => livePosts(_)).reverse()
+    return collection.getFilteredByGlob('./post/**/*.md').filter(_ => !livePosts(_)).reverse()
   })
 
   config.addCollection('books', (collection) => {
@@ -91,10 +86,12 @@ module.exports = (config) => {
 
         for (const tag of tags)
           tag.startsWith('_') ||  uniqueTags.add(tag)
-    });
+    })
 
-    return [...uniqueTags];
+    return [...uniqueTags]
   })
+
+  // The ever-popular markdown filter.
 
   let md = markdownIt({
     html: true,
@@ -103,7 +100,6 @@ module.exports = (config) => {
     typographer: true,
   })
 
-  // The ever-popular markdown filter.
   config.addFilter("markdown", (content) => md.render(content))
 
   md.use(markdownItAnchor, {
@@ -111,8 +107,10 @@ module.exports = (config) => {
     permalinkClass: 'direct-link',
     permalinkSymbol: '',
   })
-    .use(markdownItFootnote)
-    .use(markdownItContainer, 'image-hero', { marker: '!' })
+
+  md.use(markdownItFootnote)
+
+  md.use(markdownItContainer, 'image-hero', { marker: '!' })
     .use(markdownItContainer, 'signature', { marker: '!' })
     .use(markdownItContainer, 'image-sbs', { marker: '!' })
     .use(markdownItContainer, 'text-center', { marker: '!' })
@@ -126,7 +124,7 @@ module.exports = (config) => {
         return true
       },
       render: function (tokens, idx) {
-        var m = tokens[idx].info.trim() // .match(/^well\s+(.*)$/);
+        var m = tokens[idx].info.trim() // .match(/^well\s+(.*)$/)
         if (tokens[idx].nesting === 1) {
           // opening tag
           let summary = m === '' ? '' : '<summary>' + md.renderInline(m) + '</summary>\n'
@@ -140,81 +138,76 @@ module.exports = (config) => {
 
   // Responsive Images inside Markdown
 
-    const imageResizer = (width, height, origin) => {
-      baseUrl = !origin.startsWith('https://') && !origin.startsWith('http://') ? `https://chrisspiegl.com${origin}` : origin
-      if (process.env.ELEVENTY_ENV == 'production') return `https://wrender.spiegl.co/resize/${width}/${height}/${baseUrl}`
-      else return `${origin}`
-    }
-    md.use(markdownItResponsive, {
-      responsive: {
-        srcset: {
-          "*.jpg": [
-            {
-              width: 320,
-              rename: { suffix: "-320w" },
-            },
-            {
-              width: 640,
-              rename: { suffix: "-640w" },
-            },
-            {
-              width: 1280,
-              rename: { suffix: "-1280w" },
-            },
-            {
-              width: 1920,
-              rename: { suffix: "-1920w" },
-            },
-            // {
-            //   width: 3840,
-            //   rename: { suffix: "-3840w" },
-            // },
-          ],
-          "*.png": [
-            {
-              width: 320,
-              rename: { suffix: "-320w" },
-            },
-            {
-              width: 640,
-              rename: { suffix: "-640w" },
-            },
-            {
-              width: 1280,
-              rename: { suffix: "-1280w" },
-            },
-            {
-              width: 1920,
-              rename: { suffix: "-1920w" },
-            },
-            // {
-            //   width: 3840,
-            //   rename: { suffix: "-3840w" },
-            // },
-          ],
-        },
-
-        sizes: {
-        //   "*": "(max-width: 320px), (max-width: 640px), (max-width: 1280px), 1920px",
-        },
+  md.use(markdownItResponsive, {
+    responsive: {
+      srcset: {
+        "*.jpg": [
+          {
+            width: 320,
+            rename: { suffix: "-320w" },
+          },
+          {
+            width: 640,
+            rename: { suffix: "-640w" },
+          },
+          {
+            width: 1280,
+            rename: { suffix: "-1280w" },
+          },
+          {
+            width: 1920,
+            rename: { suffix: "-1920w" },
+          },
+          // {
+          //   width: 3840,
+          //   rename: { suffix: "-3840w" },
+          // },
+        ],
+        "*.png": [
+          {
+            width: 320,
+            rename: { suffix: "-320w" },
+          },
+          {
+            width: 640,
+            rename: { suffix: "-640w" },
+          },
+          {
+            width: 1280,
+            rename: { suffix: "-1280w" },
+          },
+          {
+            width: 1920,
+            rename: { suffix: "-1920w" },
+          },
+          // {
+          //   width: 3840,
+          //   rename: { suffix: "-3840w" },
+          // },
+        ],
       },
-    });
+
+      sizes: {
+      //   "*": "(max-width: 320px), (max-width: 640px), (max-width: 1280px), 1920px",
+      },
+    },
+  })
 
   md.renderer.rules.footnote_caption = (tokens, idx) => {
-    let n = Number(tokens[idx].meta.id + 1).toString();
+    let n = Number(tokens[idx].meta.id + 1).toString()
 
     if (tokens[idx].meta.subId > 0) {
-      n += ":" + tokens[idx].meta.subId;
+      n += ":" + tokens[idx].meta.subId
     }
 
-    return n;
-  };
+    return n
+  }
 
-  config.setLibrary("md", md);
+  config.setLibrary("md", md)
 
   return {
     dir: {
-      output: `_site_${envLong}`,
+      output: `_site`,
     },
     // dir: {
     //   output: "dist",
@@ -230,6 +223,6 @@ module.exports = (config) => {
     // dataTemplateEngine: "njk",
     // htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
   }
 }

@@ -7,6 +7,7 @@ title: More
 ## Tools
 
 - [Aspect Ratio Calculator](/tools/aspect-ratio-calculator)
+- [Timecode Offset Calculator](/tools/timecode-offset-calculator)
 - [Compound Interest Calculator](/tools/compound-interest-calculator)
 - [Instaspaces](/tools/instaspaces) — Paragraphs that stay on Instagram
 - [Chaptered.App](https://Chaptered.app) — Podcast Show Notes Formatter for Adobe Audition, Premiere Pro, and DaVinci Resolve Markers to Show Notes and Chapter Timestamps for YouTube
@@ -24,8 +25,10 @@ title: More
 
 ### Discontinued
 
-- **Mirroring.Chat** — Platfrom to pull together allt he different chat messages from the live stream platforms like Twitch, Facebook Live, and  YouTube Live to display in one place so it's easier to view and manage for the person live streaming. The features included: marking messages as done, filtering messages, searching for specific messages, banning, kicking, and replying to messages, receiving messages via a Telegram Bot, being able to manage messages via the Telegram Bot, and also receiving messages while you are not live at that given moment.
-- **Mirroring.Stream** — Platform to restream your live streams to multiple destinations and also scale the output. The feature set was supposed to include more online video management like interruption protection, as well as editing and including text, images, and web widgets.
+!!! Click to see Discontinued Projects
+
+- **Mirroring(dot)Chat** — Platfrom to pull together allt he different chat messages from the live stream platforms like Twitch, Facebook Live, and  YouTube Live to display in one place so it's easier to view and manage for the person live streaming. The features included: marking messages as done, filtering messages, searching for specific messages, banning, kicking, and replying to messages, receiving messages via a Telegram Bot, being able to manage messages via the Telegram Bot, and also receiving messages while you are not live at that given moment.
+- **Mirroring(dot)Stream** — Platform to restream your live streams to multiple destinations and also scale the output. The feature set was supposed to include more online video management like interruption protection, as well as editing and including text, images, and web widgets.
 - **FirmwareNotificationsBot** — A telegram bot which would remind you about firmware updates for your devices (mainly focused on video- and photography gear). Discontinued because it is a lot to crawl all those websites all the time and keep the database up to date. I still believe it would be helpful just don't know if I am the right person for the job.
 - **DomainWatch(dot)Club** — A telegram bot which monitors your domains or domains you would like to purchase once they become available. The bot reminded you about the expiration of your domains. Discontinued because this is actually already supported by most hosting companies and if not, it's also not really something people pay for.
 - **GrundEinkommen(dot)Live** — Showcasing live stats about petitions to implement or at least research Universal Basic Income (UBI) in Germany.
@@ -35,6 +38,8 @@ title: More
 - **TraderDashboard(dot)co** — A dashboard collecting statistical data on the closing stock marked of the previous day, which then helps make decisions in the current trading day. Discontinued because the maintenance required to stay up to date with all the sources was to much.
 - **WriterSprints(dot)com** — Project to write together with friends. Everybody writes on their own but on the screen you see a leader board with others and their words per minute, as well as how many words they have written in the past 15/30 minutes. Speed write against each other.
 - **BakingProcess(dot)de** — A german baking show on YouTube which reached over 2.5k subscribers on YouTube.
+
+!!!
 
 ## Tech Stack
 

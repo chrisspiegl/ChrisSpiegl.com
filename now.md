@@ -12,9 +12,12 @@ Where am I most obsessively focused for the foreseeable future? In no particular
 
 - **[YouTube](/youtube)** — My list of ideas is massive. I am refocusing on the creation of regular content.
 - **[Macher.Cafe Podcast](https://Macher.Cafe)** — A German Podcast about, for, and with makers and creators.
+- **[ThatMaker.Life](https://ThatMaker.Life)** — The sibling show to the Macher.Cafe but in English. A Podcast about, for, and with makers and creators.
 - **Lifestyle Changes** — Creating a new daily routine which gives me more momentum and energy. I am exploring how I can improve my life and share the findings on my [YouTube Channel](/youtube).
-- **[Classes](/classes)** — Three classes are already published. Check them out. Now I work on adding more to the platform.
-- **Building** — [Foxi.Link](https://foxi.link), [Chaptered.App](https://Chaptered.app), and more to be announced.
+- **[Classes](https://crsp.li/Skillshare)** — Three classes are already published. Check them out. Now I work on adding more to the platform.
+- **Yoga Course Creation** — I am preparing a great Yoga Online Course (in German) with my partner [Nicole](https://NicoleReiher.com). This course will be produced in October'21 in Marbella, Spain. Right now I am getting to know the gear we will bring and we are planning the content of the course.
+
+<!-- - **Building** — [Foxi.Link](https://foxi.link), [Chaptered.App](https://Chaptered.app), and more to be announced. -->
 <!-- - **[Client Work](/consulting)** — Working with my clients on optimizing their website & online businesses. -->
 
 I’m happy to discuss opportunities around any and all these ideas.
