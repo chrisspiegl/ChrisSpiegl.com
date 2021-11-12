@@ -45,7 +45,7 @@
     "slug": "tools/podcast-show-notes-formatter"
   },
   {
-    "destination": "http://clkuk.tradedoubler.com/click?p=264311&a=3200145&g=22913592",
+    "destination": "https://crsp.li/creativecloud",
     "slug": "aff/adobe"
   },
   {
@@ -54,39 +54,39 @@
     "note": "redirected locally since the offer is no longer available. Previous links: https://chrisspiegl--infostack.thrivecart.com/podcast"
   },
   {
-    "destination": "https://www.amazon.de/?tag=cc06e-21",
+    "destination": "https://crsp.li/amazon",
     "slug": "aff/amazon"
   },
   {
-    "destination": "https://later.com/r/487cf6",
+    "destination": "https://crsp.li/later",
     "slug": "aff/later"
   },
   {
-    "destination": "https://artlist.io/Chris-15426",
+    "destination": "https://crsp.li/artlist",
     "slug": "aff/artlist"
   },
   {
-    "destination": "https://revolut.com/r/christc2r",
+    "destination": "https://crsp.li/revolut",
     "slug": "aff/revolut"
   },
   {
-    "destination": "https://themeforest.net/?ref=cspiegl",
+    "destination": "https://crsp.li/themeforest",
     "slug": "aff/themeforest"
   },
   {
-    "destination": "https://theme.co/2561-2-3-4.html",
+    "destination": "https://crsp.li/protheme",
     "slug": "aff/protheme"
   },
   {
-    "destination": "https://zencastr.com/",
+    "destination": "https://crsp.li/zencastr",
     "slug": "aff/zencastr"
   },
   {
-    "destination": "https://buffer.com/",
+    "destination": "https://crsp.li/buffer",
     "slug": "aff/buffer"
   },
   {
-    "destination": "https://www.scaleway.com/",
+    "destination": "https://crsp.li/scaleway",
     "slug": "aff/scaleway"
   },
   {
@@ -94,15 +94,15 @@
     "slug": "aff/sparkcamera"
   },
   {
-    "destination": "https://www.airbnb.com/c/chriss13401",
+    "destination": "https://crsp.li/airbnb",
     "slug": "aff/airbnb"
   },
   {
-    "destination": "https://n26.com/r/christos2850",
+    "destination": "https://crsp.li/n26",
     "slug": "aff/n26"
   },
   {
-    "destination": "https://transferwise.com/u/chriss202",
+    "destination": "https://crsp.li/transferwise",
     "slug": "aff/transferwise"
   },
   {
@@ -110,43 +110,43 @@
     "slug": "aff/waveapps"
   },
   {
-    "destination": "https://audiio.com/pricing?oid=1&affid=18&sourceId=ChrisSpiegl&sub1=Redirect",
+    "destination": "https://crsp.li/audiio",
     "slug": "aff/audiio"
   },
   {
-    "destination": "https://luma-touch.com/lumafusion-for-ios/",
+    "destination": "https://crsp.li/lumafusion",
     "slug": "aff/lumafusion"
   },
   {
-    "destination": "https://www.Tubebuddy.com/ChrisSpiegl",
+    "destination": "https://crsp.li/tubebuddy",
     "slug": "aff/tubebuddy"
   },
   {
-    "destination": "https://dynalist.io/invite/n8p6-w",
+    "destination": "https://crsp.li/dynalist",
     "slug": "aff/dynalist"
   },
   {
-    "destination": "https://m.do.co/c/9822b155cd67",
+    "destination": "https://crsp.li/digitalocean",
     "slug": "aff/digitalocean"
   },
   {
-    "destination": "http://clkuk.tradedoubler.com/click?p=264311&a=3200145&g=22913592",
+    "destination": "https://crsp.li/creativecloud",
     "slug": "aff/adobe-creative-cloud"
   },
   {
-    "destination": "https://namecheap.pxf.io/c/477251/386170/5618",
+    "destination": "https://crsp.li/namecheap",
     "slug": "aff/namecheap"
   },
   {
-    "destination": "https://lifespan-fitness.e9ppfh.net/c/477251/697496/10653",
+    "destination": "https://crsp.li/lifespan",
     "slug": "aff/lifespan"
   },
   {
-    "destination": "https://www.financeads.net/tc.php?t=35907C274449894T",
+    "destination": "https://crsp.li/traderepublic",
     "slug": "aff/trade-republic"
   },
   {
-    "destination": "https://skillshare.eqcm.net/c/477251/298081/4650",
+    "destination": "https://crsp.li/skillshare",
     "slug": "aff/skillshare"
   },
   {
@@ -154,7 +154,7 @@
     "slug": "BudgetSheet2020"
   },
   {
-    "destination": "https://www.skillshare.com/r/user/chrisspiegl",
+    "destination": "https://crsp.li/academy",
     "slug": "classes"
   },
   {
@@ -162,8 +162,12 @@
     "slug": "contact"
   },
   {
-    "destination": "https://www.skillshare.com/r/user/chrisspiegl",
+    "destination": "https://crsp.li/academy",
     "slug": "courses"
+  },
+  {
+    "destination": "https://crsp.li/academy",
+    "slug": "academy"
   },
   {
     "destination": "https://facebook.com/spieglio",
@@ -186,7 +190,7 @@
     "slug": "instagram"
   },
   {
-    "destination": "https://discord.gg/mr9DPdQz2Z",
+    "destination": "https://crsp.li/discord",
     "slug": "discord"
   },
   {
@@ -278,7 +282,7 @@
     "slug": "podcast/youtube"
   },
   {
-    "destination": "https://ChrisSpiegl.com/aff/protheme",
+    "destination": "https://crsp.li/protheme",
     "slug": "protheme"
   },
   {

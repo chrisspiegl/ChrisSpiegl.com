@@ -31,7 +31,7 @@ module.exports = async () => {
   }
 
   for (const coin of Object.keys(coins)) {
-    const exportPath = `_site_${process.env.NODE_ENV}`
+    const exportPath = `_site`
     const folderPath = `/assets/images/qrcodes`
     mkdirp.sync(exportPath + folderPath)
     coins[coin].filepath = `${folderPath}/${coin}-${coins[coin].addr}.svg`

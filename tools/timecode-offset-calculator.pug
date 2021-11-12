@@ -1,0 +1,177 @@
+---
+title: Timecode Offset Calculator
+---
+
+h1 Timecode Offset Calculator
+
+p When working with timecode for video and audio syncornizing, sometimes you don't have timcode available on all devices even when using multiple [Tentacle Sync E](https://crsp.li/TentacleSyncE) devices. Then you can still sync cameras by showing a timecode slate ([Tentacle Timecode App](https://crsp.li/TentacleApps) for iOS) to the camera when you start recording (or at the end) and then later adjust the frame offset.
+
+style(type='text/css' media='screen').
+  .timecode .calcWraper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .timecode .calcWraper.calcLabel {
+  margin: 0;
+  }
+  .timecode .calcWraper.calcOldInput,
+  .timecode .calcWraper.calcNewInput {
+  width: calc(100% / 2 - 20px );
+  }
+  .timecode .calcWraper input {
+  border: 1px solid black;
+  background-color: #BDE5F8;
+  color: #101318;
+  font-size: 1rem;
+  padding: .5rem;
+  width: 100%;
+  }
+  .timecode .rounding {
+  text-align: center;
+  }
+  .timecode .rounding .checkboxInput {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  }
+  .timecode input.calculated {
+  background-color: #DFF2BF;
+  border-color: #4F8A10;
+  }
+  .timecode #alert {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  border-color: #D8000C;
+  text-align: center;
+  }
+  .timecode #ratio {
+    text-align: center;
+  }
+  .timecode #resultOffset {
+    font-size: 2rem;
+  }
+
+  @media all and (min-width: 767px) {
+  .timecode .calcWraper .calcOldWidth,
+  .timecode .calcWraper .calcNewWidth,
+  .timecode .calcWraper .calcOldHeight,
+  .timecode .calcWraper .calcNewHeight {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  align-items: center;
+  justify-content: center;
+  }
+  .timecode .calcWraper .calcLabel {
+  width: calc(100%/3*1.2);
+  text-align: right;
+  padding-right: .5rem;
+  }
+  .timecode .calcWraper .calcInput {
+  width: calc(100%/3*1.8);
+  }
+  }
+
+.timecode.paragraph
+  .calcWraper
+    .calcOldInput
+      .calcOldWidth
+        label.calcLabel File Framerate:
+        .calcInput: input#fpsFile.numberInput(name='fpsFile' tabindex='1' type='number' placeholder='FPS File' value='24.0')
+      .calcOldWidth
+        label.calcLabel File Timecode:
+        .calcInput: input#tcFile.numberInput(name='tcFile' tabindex='1' type='text' placeholder='Timecode File' value='16:13:31:23')
+      .calcOldHeight
+        label.calcLabel Timecode Framerate:
+        .calcInput: input#fpsSlate.numberInput(name='fpsSlate' tabindex='2' type='number' placeholder='FPS Slate' value='24.0')
+      .calcOldHeight
+        label.calcLabel Slate Timecode:
+        .calcInput: input#tcSlate.numberInput(name='tcSlate' tabindex='2' type='text' placeholder='Timecode Slate' value='16:14:14:21')
+  #alert(style='display: none;') The values entered are not valid.
+  #ratio(style='display: none;')
+    | The offset is:
+    p#resultOffset
+
+script(src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js")
+script(type="text/javascript").
+  const $ = jQuery
+  $(function () {
+    console.log('Timecode Offset Calculator App');
+
+    const $alert = $('#alert')
+    $alert.hide(true)
+    const $ratio = $('#ratio')
+    $ratio.hide(true)
+    const $inputs = $('.numberInput')
+    const $fpsFile = $('#fpsFile')
+    const $tcFile = $('#tcFile')
+    const $fpsSlate =  $('#fpsSlate')
+    const $tcSlate =  $('#tcSlate')
+    const $resultOffset = $('#resultOffset')
+
+    const tcRegex = /(\d*):(\d{1,2}):(\d{1,2}):(\d{1,4})/
+
+    function calcStuff () {
+      let tcOffset = 0
+
+      let fpsFile = parseFloat($fpsFile.val())
+      let fpsSlate = parseFloat($fpsSlate.val())
+      let tcFile = $tcFile.val()
+      let tcSlate = $tcSlate.val()
+      let [ tcFileMatched, tcFileHour, tcFileMinute, tcFileSecond, tcFileFrame ] = tcFile.match(tcRegex)
+      let [ tcSlateMatched, tcSlateHour, tcSlateMinute, tcSlateSecond, tcSlateFrame ] = tcSlate.match(tcRegex)
+
+      if (fpsFile && fpsSlate && tcFileMatched && tcSlateMatched) {
+        $alert.hide()
+        $ratio.show()
+
+        tcFileFramesTotal = (parseInt(tcFileHour) * 3600 + parseInt(tcFileMinute) * 60 + parseInt(tcFileSecond)) * fpsFile + parseInt(tcFileFrame)
+        tcSlateFramesTotal = (parseInt(tcSlateHour) * 3600 + parseInt(tcSlateMinute) * 60 + parseInt(tcSlateSecond)) * fpsSlate + parseInt(tcSlateFrame)
+
+        console.log(`${tcFile} = ${tcFileFramesTotal}`)
+        console.log(`${tcSlate} = ${tcSlateFramesTotal}`)
+
+        tcOffset = tcSlateFramesTotal - tcFileFramesTotal
+
+        console.log(tcOffset)
+
+        $resultOffset.text(`${(tcOffset > 0) ? '+' : ''}${tcOffset}`)
+
+      } else {
+        $alert.show()
+        $ratio.hide()
+      }
+
+    }
+
+    $inputs.on('change paste keyup', calcStuff)
+
+    calcStuff()
+
+  });
+
+//- h2 Explanation / Instructions
+
+//- ol
+//-   li Enter your values into <code>Old Width</code> and <code>Old Height</code>respectively.
+//-   li Enter one of the values of <code>New Width</code> or <code>New Height</code>.
+//-   li The missing value will be calculated automatically.
+//-   li You can change all values at any time, the calculation updated automatically.
+
+//- h2 Formula
+
+//- p You have a photo or video that is 2400 x 3000 pixels in resolution, but you'd like to send a file that is only 400px in width to your client for review. To calculate the new height of your photo you can use the following formula (or the calculator above):
+//- pre: code (org. height / org. width) x new width = new height
+//- p With the example numbers above, this would be the calculation:
+//- pre: code (2400 / 3000) x 400 = 320
+
+div.content.feedback
+  p Any issues? Email me #[a(href='mailto:chris@chrisspiegl.com?subject=Timecode Offset Calculator Problem') chris@chrisspiegl.com].
+  p Would like to support me in creating more tools and services like this?
+  p: a(href='/patron') Buy me a Tea&amp;Cookie

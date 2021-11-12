@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /build.txt
-Sitemap: https://ChrisSpiegl.com/sitemap.xml
