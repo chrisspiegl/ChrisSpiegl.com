@@ -37,6 +37,8 @@ head
   link(rel="alternate", href="/feed.xml", type="application/atom+xml", title=`${meta.siteTitle} Atom Feed`)
 
 body
+  if meta.build.env === 'development'
+    header.development(style="padding: .2rem 0; margin: 0; background-color: rgba(255, 105, 97, 0.5); min-width: 100%; width: 100%; min-height: 0; height: auto; display: block; border-bottom: 2px solid rgb(255,105,97); text-align: center;")= `DEVELOPMENT | ${ global.dateHtml(meta.build.timestamp) }`
   header.container
     section
       - const avatarImage = '/assets/images/other/avatar-2015-05-17-at-18-31-56-square-mini.jpg'
@@ -58,7 +60,7 @@ body
           a(href="/now") Now
         li
           a(href="/consulting") Consulting
-        
+
         li
           a(href="/courses", title="Skillshare Profile — External Link", target="_blank") Courses
         li
@@ -76,7 +78,7 @@ body
           a(href="/twitter", title="Twitter Profile — External Link", target="_blank") Twitter
         li
           a(href="/newsletter") Newsletter
-        
+
         li
           a(href="/newsletter/archive", title="Creation Overview", target="_blank") Creations
         li
