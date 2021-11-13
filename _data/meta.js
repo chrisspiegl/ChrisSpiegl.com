@@ -13,7 +13,7 @@ module.exports = {
   },
   authorEmail: "chris@chrisspiegl.com",
   build: {
-    env: process.env.ELEVENTY_ENV,
+    env: process.env.ELEVENTY_ENV || process.env.NODE_ENV || 'development',
     timestamp: new Date(),
   },
 };

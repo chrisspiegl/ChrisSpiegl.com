@@ -1,4 +1,3 @@
-const { DateTime } = require("luxon")
 const readingTime = require('eleventy-plugin-reading-time')
 const embedEverything = require("eleventy-plugin-embed-everything")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
@@ -19,6 +18,8 @@ module.exports = (config) => {
   config.addPlugin(pluginSyntaxHighlight)
   config.addPlugin(readingTime)
   config.addPlugin(embedEverything)
+
+  config.addWatchTarget("./assets/scss/")
 
   // Transforms
   Object.keys(transforms).forEach((transformName) => {
@@ -103,9 +104,7 @@ module.exports = (config) => {
   config.addFilter("markdown", (content) => md.render(content))
 
   md.use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: 'direct-link',
-    permalinkSymbol: '',
+    permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true })
   })
 
   md.use(markdownItFootnote)
@@ -206,9 +205,6 @@ module.exports = (config) => {
   config.setLibrary("md", md)
 
   return {
-    dir: {
-      output: `_site`,
-    },
     // dir: {
     //   output: "dist",
     //   input:  "src",
