@@ -105,11 +105,16 @@ body
         li: a(href="/uncopyright") Uncopyrighted
         li: a(href="/privacy-policy") Privacy Policy
         li: a(href="/legal-disclosure") Legal Disclosure
-        //- li: a#sha(title=`Last changed ${global.dateReadable(git.commitdate)}` href=`https://github.com/chrisspiegl/${git.repo}/blob/master${page.inputPath.slice(1)}`)
-        //-   if (git.curbranch != 'HEAD')
-        //-     = git.curbranch
-        //-   = ' '
-        //-   = git.commitsha
+      ul
+        li Last updated:
+          = ' '
+          a#sha(title=`Last updated ${global.dateReadable(git.commitdate)}` href=`${git.origin.replace('git@github.com:', 'https://github.com/').replace('.git', '')}/blob/${git.curbranch}${page.inputPath.slice(1)}`)
+            = global.dateReadableShort(git.commitdate)
+            = ' '
+            if (git.curbranch != 'HEAD')
+              = git.curbranch
+            = ' '
+            = git.commitsha
       ul
         li(style='text-align: center')
           a(href="/chrisspiegl.asc") PGP Public Key
