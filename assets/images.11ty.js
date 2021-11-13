@@ -91,16 +91,16 @@ module.exports = class {
         const newPath = path.join(dir, base + size.rename.suffix + ext)
         const newPathOutput = path.join(outputPath, newPath)
         if (imgsRendered.includes(newPath)) {
-          // console.log(`FOUND RESIZED IMAGE FOR ${newPath}`);
-          return;
+          // console.log(`FOUND RESIZED IMAGE FOR ${newPath}`)
+          return
         }
-        // console.log(`RENDERING NEW RESIZED IMAGE FOR ${newPath}`);
+        // console.log(`RENDERING NEW RESIZED IMAGE FOR ${newPath}`)
         const resized = image.resize({
           width: size.width,
           withoutEnlargement: true,
           kernel: "lanczos2",
         })
-        resized.toFile(newPathOutput);
+        resized.toFile(newPathOutput)
       })
 
       processedImages.push(img)
