@@ -1,1 +1,1 @@
-module.exports = "page.pug"
+module.exports = 'page.pug';
