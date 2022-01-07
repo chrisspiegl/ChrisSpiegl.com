@@ -45,13 +45,13 @@
     "slug": "tools/podcast-show-notes-formatter"
   },
   {
-    "destination": "https://crsp.li/:splat",
-    "slug": "aff/*"
-  },
-  {
     "destination": "/infostack-podcast",
     "slug": "aff/infostack-podcast",
     "note": "redirected locally since the offer is no longer available. Previous links: https://chrisspiegl--infostack.thrivecart.com/podcast"
+  },
+  {
+    "destination": "https://crsp.li/:splat",
+    "slug": "aff/*"
   },
   {
     "destination": "https://crsp.li/BudgetSheet2020",
