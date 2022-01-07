@@ -1,0 +1,8 @@
+---
+layout: blank
+permalink: /_redirects
+eleventyExcludeFromCollections: true
+---
+{%- for redirect in redirects %}
+/{{ redirect.slug | safe }} {{ redirect.destination | safe }} 302
+{%- endfor %}
