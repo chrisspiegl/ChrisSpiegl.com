@@ -6,6 +6,8 @@ eleventyExcludeFromCollections: true
 
 Building a new personal website.
 
+This site is deployed via [Cloudflare Pages](https://pages.cloudflare.com/) which makes the whole hosting free and with much less server stuff to worry about. The only thing I have not yet figured out properly is how I could host images somewhere reliable and structured.
+
 ## TODO
 
 - Go through all pages one more time
