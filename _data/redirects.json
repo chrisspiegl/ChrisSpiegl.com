@@ -142,10 +142,6 @@
     "slug": "patreon"
   },
   {
-    "destination": "/podcast",
-    "slug": "podcast/*"
-  },
-  {
     "destination": "https://crsp.li/protheme",
     "slug": "protheme"
   },
