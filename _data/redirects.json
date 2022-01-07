@@ -16,37 +16,37 @@
     "slug": "movie"
   },
   {
-    "destination": "https://ChrisSpiegl.com/#about",
+    "destination": "/#about",
     "slug": "about"
   },
   {
-    "destination": "https://calendly.com/chrisspiegl/meet",
+    "destination": "https://crsp.li/meet",
     "slug": "meet"
   },
 
   {
-    "destination": "https://calendly.com/chrisspiegl/meet",
+    "destination": "https://crsp.li/meet",
     "slug": "calendly"
   },
   {
-    "destination": "https://calendly.com/chrisspiegl/meet",
+    "destination": "https://crsp.li/meet",
     "slug": "schedule"
   },
   {
-    "destination": "https://500px.com/spieglio",
+    "destination": "https://crsp.li/500px",
     "slug": "500px"
   },
   {
-    "destination": "https://redcircle.com/shows/machmermal",
+    "destination": "https://crsp.li/machmermal",
     "slug": "machmermal"
   },
   {
-    "destination": "https://Chaptered.app",
+    "destination": "https://crsp.li/chaptered",
     "slug": "tools/podcast-show-notes-formatter"
   },
   {
-    "destination": "https://crsp.li/creativecloud",
-    "slug": "aff/adobe"
+    "destination": "https://crsp.li/:splat",
+    "slug": "aff/*"
   },
   {
     "destination": "/infostack-podcast",
@@ -54,103 +54,7 @@
     "note": "redirected locally since the offer is no longer available. Previous links: https://chrisspiegl--infostack.thrivecart.com/podcast"
   },
   {
-    "destination": "https://crsp.li/amazon",
-    "slug": "aff/amazon"
-  },
-  {
-    "destination": "https://crsp.li/later",
-    "slug": "aff/later"
-  },
-  {
-    "destination": "https://crsp.li/artlist",
-    "slug": "aff/artlist"
-  },
-  {
-    "destination": "https://crsp.li/revolut",
-    "slug": "aff/revolut"
-  },
-  {
-    "destination": "https://crsp.li/themeforest",
-    "slug": "aff/themeforest"
-  },
-  {
-    "destination": "https://crsp.li/protheme",
-    "slug": "aff/protheme"
-  },
-  {
-    "destination": "https://crsp.li/zencastr",
-    "slug": "aff/zencastr"
-  },
-  {
-    "destination": "https://crsp.li/buffer",
-    "slug": "aff/buffer"
-  },
-  {
-    "destination": "https://crsp.li/scaleway",
-    "slug": "aff/scaleway"
-  },
-  {
-    "destination": "https://www.sparkcamera.com/",
-    "slug": "aff/sparkcamera"
-  },
-  {
-    "destination": "https://crsp.li/airbnb",
-    "slug": "aff/airbnb"
-  },
-  {
-    "destination": "https://crsp.li/n26",
-    "slug": "aff/n26"
-  },
-  {
-    "destination": "https://crsp.li/transferwise",
-    "slug": "aff/transferwise"
-  },
-  {
-    "destination": "https://www.waveapps.com/",
-    "slug": "aff/waveapps"
-  },
-  {
-    "destination": "https://crsp.li/audiio",
-    "slug": "aff/audiio"
-  },
-  {
-    "destination": "https://crsp.li/lumafusion",
-    "slug": "aff/lumafusion"
-  },
-  {
-    "destination": "https://crsp.li/tubebuddy",
-    "slug": "aff/tubebuddy"
-  },
-  {
-    "destination": "https://crsp.li/dynalist",
-    "slug": "aff/dynalist"
-  },
-  {
-    "destination": "https://crsp.li/digitalocean",
-    "slug": "aff/digitalocean"
-  },
-  {
-    "destination": "https://crsp.li/creativecloud",
-    "slug": "aff/adobe-creative-cloud"
-  },
-  {
-    "destination": "https://crsp.li/namecheap",
-    "slug": "aff/namecheap"
-  },
-  {
-    "destination": "https://crsp.li/lifespan",
-    "slug": "aff/lifespan"
-  },
-  {
-    "destination": "https://crsp.li/traderepublic",
-    "slug": "aff/trade-republic"
-  },
-  {
-    "destination": "https://crsp.li/skillshare",
-    "slug": "aff/skillshare"
-  },
-  {
-    "destination": "https://docs.google.com/spreadsheets/d/1SyeVAGwltuu6wpyUgNT-z5GYm__y2OJCEM5Cs3iFhwY/edit?usp=sharing",
+    "destination": "https://crsp.li/BudgetSheet2020",
     "slug": "BudgetSheet2020"
   },
   {
@@ -158,7 +62,7 @@
     "slug": "classes"
   },
   {
-    "destination": "https://ChrisSpiegl.com/#contact",
+    "destination": "/#contact",
     "slug": "contact"
   },
   {
@@ -170,23 +74,23 @@
     "slug": "academy"
   },
   {
-    "destination": "https://facebook.com/spieglio",
+    "destination": "https://crsp.li/FacebookProfile",
     "slug": "fb"
   },
   {
-    "destination": "https://www.flickr.com/photos/cspiegl/",
+    "destination": "https://crsp.li/flickr",
     "slug": "flickr"
   },
   {
-    "destination": "https://plus.google.com/104111025133854439780",
+    "destination": "https://crsp.li/GooglePlus",
     "slug": "g+"
   },
   {
-    "destination": "https://instagram.com/chrisspiegl",
+    "destination": "https://crsp.li/instagram",
     "slug": "ig"
   },
   {
-    "destination": "https://instagram.com/ChrisSpiegl",
+    "destination": "https://crsp.li/instagram",
     "slug": "instagram"
   },
   {
@@ -194,163 +98,123 @@
     "slug": "discord"
   },
   {
-    "destination": "https://github.com/chrisspiegl",
+    "destination": "https://crsp.li/github",
     "slug": "github"
   },
   {
-    "destination": "https://linkedin.com/in/chrisspiegl",
+    "destination": "https://crsp.li/linkedin",
     "slug": "in"
   },
   {
-    "destination": "https://linkedin.com/in/chrisspiegl",
+    "destination": "https://crsp.li/linkedin",
     "slug": "linkedin"
   },
   {
-    "destination": "https://ChrisSpiegl.com/instaspaces/",
+    "destination": "/instaspaces/",
     "slug": "instaspace"
   },
   {
-    "destination": "https://chrisspiegl.com/gear/",
+    "destination": "/gear/",
     "slug": "kit"
   },
   {
-    "destination": "https://www.tubebuddy.com/quicknav/latest/UCrfYnHuKRC-Worm7OmMMcLQ",
+    "destination": "https://crsp.li/latest",
     "slug": "latest"
   },
   {
-    "destination": "https://youtube.com/ChrisSpiegl/live",
+    "destination": "https://crsp.li/live",
     "slug": "live"
   },
   {
-    "destination": "https://youtube.com/ChrisSpiegl/join",
+    "destination": "https://crsp.li/member",
     "slug": "member"
   },
   {
-    "destination": "https://nomadlist.com/@chrisspiegl",
+    "destination": "https://crsp.li/location",
     "slug": "location"
   },
   {
-    "destination": "https://medium.com/ChrisSpiegl",
+    "destination": "https://crsp.li/medium",
     "slug": "medium"
   },
   {
-    "destination": "https://ChrisSpiegl.com/patron",
+    "destination": "https://crsp.li/donate",
     "slug": "patreon"
   },
   {
-    "destination": "https://subscribeonandroid.com/ChrisSpiegl.com/podcast/feed/",
-    "slug": "podcast/android"
-  },
-  {
-    "destination": "https://podcasts.apple.com/podcast/id1529122067",
-    "slug": "podcast/applepodcast"
-  },
-  {
-    "destination": "https://feeds.redcircle.com/1f6d5b01-c6f5-49c5-b066-7fa573db9400",
-    "slug": "podcast/feed"
-  },
-  {
-    "destination": "https://overcast.fm/itunes1529122067",
-    "slug": "podcast/overcast"
-  },
-  {
-    "destination": "https://podcasts.google.com/feed/aHR0cHM6Ly9jaHJpc3NwaWVnbC5jb20vcG9kY2FzdC9mZWVk",
-    "slug": "podcast/google"
-  },
-  {
-    "destination": "/podcast/redcircle",
-    "slug": "podcast/anchor"
-  },
-  {
-    "destination": "https://redcircle.com/shows/chris-spiegl-thoughts-stories-and-ideas",
-    "slug": "podcast/redcircle"
-  },
-  {
-    "destination": "https://pca.st/SDJG",
-    "slug": "podcast/pocketcasts"
-  },
-  {
-    "destination": "https://open.spotify.com/show/4X0cH1hseI5cmuMlXwbMc9",
-    "slug": "podcast/spotify"
-  },
-  {
-    "destination": "https://www.stitcher.com/podcast/chris-spiegl/makeityourlife",
-    "slug": "podcast/stitcher"
-  },
-  {
-    "destination": "https://www.youtube.com/playlist?list=PLNyHCSSqqwXrhi3dxhaLc_jzmKhJWKZzu",
-    "slug": "podcast/youtube"
+    "destination": "/podcast",
+    "slug": "podcast/*"
   },
   {
     "destination": "https://crsp.li/protheme",
     "slug": "protheme"
   },
   {
-    "destination": "https://ChrisSpiegl.com/support",
+    "destination": "https://crsp.li/donate",
     "slug": "patron"
   },
   {
-    "destination": "https://ChrisSpiegl.com/support",
+    "destination": "https://crsp.li/donate",
     "slug": "donate"
   },
   {
-    "destination": "https://buymeacoff.ee/chrisspiegl",
+    "destination": "https://crsp.li/tea",
     "slug": "tea"
   },
   {
-    "destination": "https://liberapay.com/ChrisSpiegl/donate",
+    "destination": "https://crsp.li/liberapay",
     "slug": "liberapay"
   },
   {
-    "destination": "https://ChrisSpiegl.com/protheme",
+    "destination": "https://crsp.li/protheme",
     "slug": "themeco"
   },
   {
-    "destination": "https://www.tiktok.com/@chrisspiegl",
+    "destination": "https://crsp.li/tiktok",
     "slug": "tiktok"
   },
   {
-    "destination": "https://clubber.one/@chrisspiegl",
+    "destination": "https://crsp.li/clubhouse",
     "slug": "clubhouse"
   },
   {
-    "destination": "https://clubber.one/@chrisspiegl",
+    "destination": "https://crsp.li/clubhouse",
     "slug": "ch"
   },
   {
-    "destination": "https://twitter.com/chrisspiegl",
+    "destination": "https://crsp.li/twitter",
     "slug": "tw"
   },
   {
-    "destination": "https://twitter.com/chrisspiegl",
+    "destination": "https://crsp.li/twitter",
     "slug": "twitter"
   },
   {
-    "destination": "https://t.me/ChrisSpiegl",
+    "destination": "https://crsp.li/telegram",
     "slug": "tg"
   },
   {
-    "destination": "https://t.me/ChrisSpiegl",
+    "destination": "https://crsp.li/telegram",
     "slug": "telegram"
   },
   {
-    "destination": "https://ChrisSpiegl.com/",
+    "destination": "/",
     "slug": "waymarkers"
   },
   {
-    "destination": "https://youtube.com/ChrisSpiegl",
+    "destination": "https://crsp.li/youtube",
     "slug": "youtube"
   },
   {
-    "destination": "https://youtube.com/ChrisSpiegl",
+    "destination": "https://crsp.li/youtube",
     "slug": "yt"
   },
   {
-    "destination": "http://twitch.com/spieglio",
+    "destination": "https://crsp.li/twitch",
     "slug": "twitch"
   },
   {
-    "destination": "https://sendfox.com/chrisspiegl/feed",
+    "destination": "https://crsp.li/archive",
     "slug": "newsletter/archive"
   },
   {
