@@ -4,7 +4,7 @@ title: Uncopyright
 
 # Uncopyright
 
-This entire site, my [newsletter](https://chrisspiegl.com/newsletter), my [writings](https://medium.com/chrisspiegl), and most of my photographs on [Instagram](https://instagram.com/chrisspiegl) and [Unsplash](https://unsplash.com/@chrisspiegl) are uncopyrighted (since January 2018).
+This entire site, my [newsletter](/newsletter), my [writings](/blog), and most of my photographs on [Instagram](/instagram) and [Unsplash](https://unsplash.com/@chrisspiegl) are uncopyrighted (since January 2018).
 
 That means I’ve put them in the public domain and released my copyright on all these works.
 
@@ -12,7 +12,7 @@ There is no need to email me for permission — use my content however you want!
 
 Attribution is appreciated but not required.
 
-I’d prefer people to support me and my work, but if they want to share with friends, they have every right to do so. If you’d like to [support me](https://chrisspiegl.com/patron) or tell me where you shared my work, please [contact me here](https://chrisspiegl.com/contact).
+I’d prefer people to support me and my work, but if they want to share with friends, they have every right to do so. If you’d like to [support me](/support) or tell me where you shared my work, please [contact me here](/).
 
 ## Tip: How to Give Credit
 

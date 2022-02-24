@@ -11,20 +11,16 @@ Where am I most obsessively focused for the foreseeable future? In no particular
 ## Doing
 
 - **[YouTube](/youtube)** — My list of ideas is massive. I am refocusing on the creation of regular content.
-- **[Macher.Cafe Podcast](https://Macher.Cafe)** — A German Podcast about, for, and with makers and creators.
-- **[ThatMaker.Life](https://ThatMaker.Life)** — The sibling show to the Macher.Cafe but in English. A Podcast about, for, and with makers and creators.
+- **[ThatMaker.Life](https://ThatMaker.Life) & [Macher.Cafe](https://Macher.Cafe)** — A Podcast about, for, and with makers and creators (ThatMaker.Life is English, Macher.Cafe is German).
 - **Lifestyle Changes** — Creating a new daily routine which gives me more momentum and energy. I am exploring how I can improve my life and share the findings on my [YouTube Channel](/youtube).
-- **[Classes](https://crsp.li/Skillshare)** — Three classes are already published. Check them out. Now I work on adding more to the platform.
-- **Yoga Course Creation** — I am preparing a great Yoga Online Course (in German) with my partner [Nicole](https://NicoleReiher.com). This course will be produced in October'21 in Marbella, Spain. Right now I am getting to know the gear we will bring and we are planning the content of the course.
-
-<!-- - **Building** — [Foxi.Link](https://foxi.link), [Chaptered.App](https://Chaptered.app), and more to be announced. -->
-<!-- - **[Client Work](/consulting)** — Working with my clients on optimizing their website & online businesses. -->
+- **Becoming a Digital Nomad (again)** — I am preparing my life to go nomadic with my partner [Nicole](https://NicoleReiher.com). That means we are developing our location independent income sources and start planning where we would like to go and what we need to get there.
+- **Building Businesses** — I have always built businesses in some form or another. Now the entrepreneur in me is more serious than ever before as I am preparing multiple projects for launch next to my main business — which is my YouTube Channel. Currently I am working on the [Niyama.Academy](https://Niyama.Academy/), [Foxi.Link](https://foxi.link), and a few more.
 
 I’m happy to discuss opportunities around any and all these ideas.
 
 <div class="side-by-side">
     <a class="btn btn-block" href="mailto:chris@chrisspiegl.com" title= "Email me about anything!">chris@chrisspiegl.com</a>
-    <a class="btn btn-block" href="/discord" title="Discord">My Discord Server</a>
+    <a class="btn btn-block" href="https://crsp.li/tgc" title="Telegram Channel">My Telegram Channel</a>
 </div>
 
 ## Learning
