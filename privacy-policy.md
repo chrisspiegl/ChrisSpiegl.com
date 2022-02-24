@@ -24,7 +24,7 @@ Sometimes there is embedded content which might have tracking based on the servi
 
 I am running a server in the Netherlands and their logs which may include your IP address but this information is not further processed in any way.
 
-The hosting company used for this website is [Scaleway](https://www.scaleway.com/) and for faster loading and site security I also use [CloudFlare](https://www.cloudflare.com/). Both of these service providers are GDPR compliant and may have access to your IP address and other data.
+The hosting company used for this website is [CloudFlare](https://www.cloudflare.com/). This service provider is GDPR compliant and may have access to your IP address and other data.
 
 The website runs on [11ty](https://https://www.11ty.dev), a static site generator.
 

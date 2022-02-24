@@ -11,22 +11,22 @@ title: Creator
 
 # Creator
 
-I am a traveling content creator and consultant. I have been working online for the past 15 years did so from over 30 countries by now. So one could say, I love location independent business ideas.
+I am a traveling [content creator](/youtube). I have been working online for the past 15 years and have done so from over 30 countries. So one could say, I love the location independent lifestyle.
 
 > “My goal is to work with motivated and inspiring people.”
 
 My goal is to work with motivated people to build highly successful businesses and brands. To improve your own life and to have a positive effect on the people around you and me.
 
-I’m focused on building businesses that support life – instead of creating businesses that consume all your time and suck life out of you like a vampire. Remodeling workflows and improving efficiency, optimizing conversion rates and outsourcing parts of your business are things I love to look at.
-
-> “A business should be built for the purpose of providing the owner with pure personal freedom — whatever that means to them”
+> “A business should be built for the purpose of providing the owner with pure personal freedom — whatever that means to them.”
 > <cite>Timothy Marc</cite>
 
-I’m sure this will improve your quality of life, free up time and give you the opportunity to spend more time with your friends and family – or travel the world – whatever you are interested in.
+I’m focused on building businesses that support life – instead of creating businesses that consume all your time and suck life out of you. Remodeling workflows and improving efficiency, optimizing and outsourcing parts of your business are things I enjoy.
 
-If you are interested in [working with me](/consulting "Let's work on your process for a better business and more customers"), feel free to [send me an email](mailto:chris@chrisspiegl.com "Work with Chris") and we’ll schedule a video call to discuss your ideas, needs and options.
+I do this by having conversations with people from around the world in my [Podcasts](/podcast) and by sharing my findings, process, and ideas on my [YouTube Channel](/youtube).
 
-Now, have an amazing day. Focus on what’s important and get stuff done!
+If you want tok now what I am currently focusing on, please read my [NOW Page](/now) and if you'd like to discuss an idea or share some feedback, please contact me via email which you can find below.
+
+Now, have an amazing day. Focus on what’s important and let's get it done!
 
 !!! signature
 ![Chris Spiegl](/assets/images/other/signature-public-white-small.png)
@@ -34,7 +34,7 @@ Now, have an amazing day. Focus on what’s important and get stuff done!
 
 <div class="side-by-side">
     <a class="btn btn-block" href="mailto:chris@chrisspiegl.com" title= "Email me about anything!">chris@chrisspiegl.com</a>
-    <a class="btn btn-block" href="/discord" title="Discord">My Discord Server</a>
+    <a class="btn btn-block" href="https://crsp.li/tgc" title="Telegram Channel">My Telegram Channel</a>
 </div>
 
 !!! quote-hero

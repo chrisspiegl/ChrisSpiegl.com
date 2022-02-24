@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "serve": "run-s eleventy:dev",
     "start": "run-s eleventy:dev",
     "dev": "run-s clean eleventy:dev",
     "build": "run-s eleventy:prod",
