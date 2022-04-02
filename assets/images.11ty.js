@@ -1,5 +1,5 @@
 const path = require('path')
-const util = require('node:util')
+const util = require('util')
 const glob = require('glob')
 const sharp = require('sharp')
 const mkdirp = require('mkdirp')
