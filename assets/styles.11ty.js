@@ -1,64 +1,64 @@
 // Shamelessly modified from Eleventastic:
 // https://github.com/maxboeck/eleventastic
 
-const process = require('process');
-const path = require('path');
-const sass = require('sass');
-const CleanCSS = require('clean-css');
-const cssesc = require('cssesc');
+const process = require('process')
+const path = require('path')
+const sass = require('sass')
+const CleanCSS = require('clean-css')
+const cssesc = require('cssesc')
 
-const isProd = process.env.ELEVENTY_ENV === 'production';
+const isProd = process.env.ELEVENTY_ENV === 'production'
 
 // Main entry point name
-const fileName = 'style.scss';
+const fileName = 'style.scss'
 
 module.exports = class {
-	async data() {
-		const filePath = path.join(__dirname, `/scss/${fileName}`);
-		return {
-			permalink: '/assets/style.css',
-			eleventyExcludeFromCollections: true,
-			layout: 'blank',
-			filePath,
-		};
-	}
+  async data() {
+    const filePath = path.join(__dirname, `/scss/${fileName}`)
+    return {
+      permalink: '/assets/style.css',
+      eleventyExcludeFromCollections: true,
+      layout: 'blank',
+      filePath,
+    }
+  }
 
-	// Compile Sass to CSS,
-	// Embed Source Map in Development
-	async compile(config) {
-		return new Promise((resolve, reject) => {
-			if (!isProd) {
-				config.sourceMap = true;
-				config.sourceMapEmbed = true;
-				config.outputStyle = 'expanded';
-			}
+  // Compile Sass to CSS,
+  // Embed Source Map in Development
+  async compile(config) {
+    return new Promise((resolve, reject) => {
+      if (!isProd) {
+        config.sourceMap = true
+        config.sourceMapEmbed = true
+        config.outputStyle = 'expanded'
+      }
 
-			const result = sass.renderSync(config);
-			return resolve(result.css.toString());
-		});
-	}
+      const result = sass.renderSync(config)
+      return resolve(result.css.toString())
+    })
+  }
 
-	// Minify & Optimize with CleanCSS in Production
-	async minify(css) {
-		return new Promise((resolve, reject) => {
-			if (!isProd) {
-				resolve(css);
-			}
+  // Minify & Optimize with CleanCSS in Production
+  async minify(css) {
+    return new Promise((resolve, reject) => {
+      if (!isProd) {
+        resolve(css)
+      }
 
-			const minified = new CleanCSS().minify(css);
-			if (!minified.styles) {
-				return reject(minified.error);
-			}
+      const minified = new CleanCSS().minify(css)
+      if (!minified.styles) {
+        return reject(minified.error)
+      }
 
-			resolve(minified.styles);
-		});
-	}
+      resolve(minified.styles)
+    })
+  }
 
-	// Display an error overlay when CSS build fails.
-	// this brilliant idea is taken from Mike Riethmuller / Supermaya
-	// @see https://github.com/MadeByMike/supermaya/blob/master/site/utils/compile-scss.js
-	renderError(error) {
-		return `
+  // Display an error overlay when CSS build fails.
+  // this brilliant idea is taken from Mike Riethmuller / Supermaya
+  // @see https://github.com/MadeByMike/supermaya/blob/master/site/utils/compile-scss.js
+  renderError(error) {
+    return `
         /* Error compiling stylesheet */
         *,
         *::before,
@@ -96,26 +96,26 @@ module.exports = class {
             background: #f8d7da;
             border: solid 2px red;
             position: fixed;
-        }`;
-	}
+        }`
+  }
 
-	// Render the CSS file
-	async render({filePath}) {
-		try {
-			const css = await this.compile({file: filePath});
-			const result = await this.minify(css);
-			return result;
-		} catch (error) {
-			// If things go wrong
-			if (isProd) {
-				// Throw and abort in production
-				throw new Error(error);
-			} else {
-				// Otherwise display the error overly
-				console.error(error);
-				const message = error.formatted || error.message;
-				return this.renderError(message);
-			}
-		}
-	}
-};
+  // Render the CSS file
+  async render({ filePath }) {
+    try {
+      const css = await this.compile({ file: filePath })
+      const result = await this.minify(css)
+      return result
+    } catch (error) {
+      // If things go wrong
+      if (isProd) {
+        // Throw and abort in production
+        throw new Error(error)
+      } else {
+        // Otherwise display the error overly
+        console.error(error)
+        const message = error.formatted || error.message
+        return this.renderError(message)
+      }
+    }
+  }
+}
