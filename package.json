@@ -19,6 +19,9 @@
     "format": "xo --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines" : { 
+    "node" : ">=18.0.0"
+  },
   "keywords": [],
   "author": {
     "name": "Chris Spiegl",
