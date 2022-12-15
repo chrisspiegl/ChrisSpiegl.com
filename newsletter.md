@@ -22,10 +22,10 @@ You can unsubscribe at any moment (at the bottom of each email).
 <script src="https://sendfox.com/js/form.js"></script>
 </div>
 
-<!-- You can also access the archive of newsletters I have [sent in the past](/newsletter/archive). ## THIS ARCHIVE IS REDIRECTING - MAY IMPLEMENT LOCAL ARCHIVE BASED ON CATEGORY ##-->
+<!-- You can also access the archive of newsletters I have [sent in the past](/newsletter/archive). ## THIS ARCHIVE IS REDIRECTING - MAY IMPLEMENT LOCAL ARCHIVE BASED ON CATEGORY ## -->
 
-You can also access the archive of newsletters I have and more updates from me which includes an overview of my social media activity over at:
+<!-- You can also access the archive of newsletters I have and more updates from me which includes an overview of my social media activity over at:
 
 <div class="text-center padding-bottom">
     <a class="btn btn-block" href="https://sendfox.com/chrisspiegl/feed">My Content & Updates on<br>SendFox.com/ChrisSpiegl</a>
-</div>
+</div> -->
