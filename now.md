@@ -10,11 +10,10 @@ Where am I most obsessively focused for the foreseeable future? In no particular
 
 ## Doing
 
-- **[YouTube](/youtube)** — My list of ideas is massive. I am refocusing on the creation of regular content.
-- **[ThatMaker.Life](https://ThatMaker.Life) & [Macher.Cafe](https://Macher.Cafe)** — A Podcast about, for, and with makers and creators (ThatMaker.Life is English, Macher.Cafe is German).
+- **[YouTube](/youtube)** — I am refocusing on the creation of content. Currently, I am in the process on figuring out where I want to go with it all since my life changed a lot and I want my content to grow with my journey.
 - **Lifestyle Changes** — Creating a new daily routine which gives me more momentum and energy. I am exploring how I can improve my life and share the findings on my [YouTube Channel](/youtube).
-- **Becoming a Digital Nomad (again)** — I am preparing my life to go nomadic with my partner [Nicole](https://NicoleReiher.com). That means we are developing our location independent income sources and start planning where we would like to go and what we need to get there.
-- **Building Businesses** — I have always built businesses in some form or another. Now the entrepreneur in me is more serious than ever before as I am preparing multiple projects for launch next to my main business — which is my YouTube Channel. Currently I am working on the [Niyama.Academy](https://Niyama.Academy/), [Foxi.Link](https://foxi.link), and a few more.
+- **Being a Digital Nomad (again)** — I am nomadic with my partner [Nicole](https://NicoleReiher.com). We are switching countries every 2 - 4 months. This is something I always built toward. I took a pause and had a homebase for 3 years in Germany but now it's time to travel again.
+- **[Niyama.Academy](https://Niyama.Academy/)** — Building an online Yoga Studio with Live Classes and On-Demand Video Courses. Right now it's all in German.
 
 I’m happy to discuss opportunities around any and all these ideas.
 
