@@ -18,6 +18,6 @@ I’d prefer people to support me and my work, but if they want to share with fr
 
 Even though credit isn’t required, I appreciate a credit as it provides exposure to my work and encourages me to continue sharing. A credit can be as simple as adding this line below with a link to my site/profile or the original content:
 
-Photo/Article by [Chris Spiegl](https://chrisspiegl.com/) on [ChrisSpiegl.com](https://chrisspiegl.com/)
+Photo/Article by [Chris Spiegl](https://ChrisSpiegl.com/) on [ChrisSpiegl.com](https://ChrisSpiegl.com/)
 
 *Inspired by [Zen Habits](https://zenhabits.net/uncopyright/) author [Leo Babauta](http://leobabauta.com/) and the [Unsplash License](https://unsplash.com/license).*

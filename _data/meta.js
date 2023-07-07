@@ -12,7 +12,7 @@ module.exports = {
     const imagePath = path.join(dir, `${base}-${width}w${ext}`)
     return imagePath
   },
-  authorEmail: 'chris@chrisspiegl.com',
+  authorEmail: 'team@ChrisSpiegl.com',
   build: {
     env: process.env.ELEVENTY_ENV || process.env.NODE_ENV || 'development',
     timestamp: new Date(),

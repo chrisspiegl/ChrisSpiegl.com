@@ -17,7 +17,7 @@ Nun schlagen wir hierfür zwei Termine vor. Jeweils von 19 Uhr bis ca. 21 Uhr (o
 
 Wir würden uns freuen dich wieder zu sehen und natürlich sind wir auch gespannt auf neue Gesichter. Ich habe gehört es gibt ein paar die gerne mit dabei sein wollen, also bitte diese Nachricht gerne weiter senden.
 
-Weiterhin denken wir wäre es gut die Gruppe auf Influencer, Instagrammer, YouTuber, Blogger — im allgemeinen Content Creator — fokussiert halten. 
+Weiterhin denken wir wäre es gut die Gruppe auf Influencer, Instagrammer, YouTuber, Blogger — im allgemeinen Content Creator — fokussiert halten.
 
 Bitte auf folgendem Link eintragen wann ihr könnt und wir werden dann am Mittwoch oder Donnerstag das Finale Datum für diesen nächsten Termin herumschicken — inklusive Zoom Link und so weiter. Dazu bitte auch noch mir (Chris) schreiben damit ich weis an wen die Einladung dann verschickt werden soll, Kontaktdaten sind am Ende.
 
@@ -32,6 +32,6 @@ Lieben Gruß,
 Chris & Nicole
 
 Kontakt für Anmeldung:
-Email: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com)
-Telegram/WhatsApp/Threema/Signal: +49 151 18451963
+Email: [team@ChrisSpiegl.com](mailto:team@ChrisSpiegl.com)
+Telegram/WhatsApp/Threema/Signal: +49 156 789 343 63
 Instagram: [@ChrisSpiegl](https://instagram.com/ChrisSpiegl)
