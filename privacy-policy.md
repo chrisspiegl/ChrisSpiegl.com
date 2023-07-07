@@ -16,13 +16,17 @@ Your personal data (e.g. title, name, house address, e-mail address, phone numbe
 
 ## Tracking
 
-This entire website does NOT use Facebook Social Plugins, Pixels, or Twitter Share buttons.
+We utilize various tracking technologies on our website to gather valuable insights that help us enhance the user experience and improve our services. The following tracking tools are in use:
 
-The only tracking tool that is being used is the locally installed Matomo Analytics tool which in addition, any IP address or personal identifier is made anonymous, and is also setup not not to use any cookies. You can learn more about what Matomo can track [here](https://matomo.org/faq/general/faq_18254/).
+MailerLite: We utilize MailerLite to manage our email marketing campaigns and gather information about the effectiveness of our email communications. This helps us tailor our content to better suit your interests and preferences. MailerLite may collect personal data such as your email address, IP address, and interaction data. For more information, please refer to MailerLite's Privacy Policy.
 
-Sometimes there is embedded content which might have tracking based on the service used (YouTube or Instagram most notably).
+Facebook Pixel: We have implemented Facebook Pixel, which allows us to measure and optimize the performance of our Facebook advertising campaigns. It helps us tailor our ads to your interests and ensure the right content reaches the right audience. Facebook Pixel may collect information such as your device's unique identifier, IP address, and browsing activity. For further details, please consult Facebook's Data Policy.
 
-I am running a server in the Netherlands and their logs which may include your IP address but this information is not further processed in any way.
+Google Analytics: We use Google Analytics to analyze website traffic, understand user behavior, and gather demographic information to improve our website's performance. Google Analytics may collect data such as your IP address, device information, and browsing behavior. To learn more about the information collected and how Google uses it, please review Google's Privacy Policy.
+
+Embedded Content: Sometimes there is embedded content which might have tracking based on the service used (YouTube, Twitter, or Instagram most notably).
+
+By using our website, you consent to the tracking technologies mentioned above and agree to the respective privacy policies outlined by MailerLite, Facebook, and Google. You have the option to disable or limit these tracking technologies by adjusting your browser settings or utilizing third-party browser extensions. Please note that disabling tracking technologies may impact certain functionalities of our website.
 
 The hosting company used for this website is [CloudFlare](https://www.cloudflare.com/). This service provider is GDPR compliant and may have access to your IP address and other data.
 
@@ -30,13 +34,13 @@ The website runs on [11ty](https://https://www.11ty.dev), a static site generato
 
 ## Your Rights
 
-You have the right to be informed of Personal Data processed by ChrisSpiegl.com, a right to rectification/correction, erasure and restriction of processing. You also have the right to ask from us a structured, common and machine-readable format of Personal Data you provided to us.We can only identify you via your email address and we can only adhere to your request and provide information if we have Personal Data about you through you having made contact with us directly and/or you using our site and/or service. We cannot provide, rectify or delete any data that we store on behalf of our users or customers. To exercise any of the rights mentioned in this Privacy Policy and/or in the event of questions or comments relating to the use of Personal Data you may contact me: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com)
+You have the right to be informed of Personal Data processed by ChrisSpiegl.com, a right to rectification/correction, erasure and restriction of processing. You also have the right to ask from us a structured, common and machine-readable format of Personal Data you provided to us. We can only identify you via your email address and we can only adhere to your request and provide information if we have Personal Data about you through you having made contact with us directly and/or you using our site and/or service. We cannot provide, rectify or delete any data that we store on behalf of our users or customers. To exercise any of the rights mentioned in this Privacy Policy and/or in the event of questions or comments relating to the use of Personal Data you may contact: [team@ChrisSpiegl.com](mailto:team@ChrisSpiegl.com)
 
 In addition, you have the right to lodge a complaint with the data protection authority in your jurisdiction.
 
 ## Disclosure
 
-According to the Federal Data Protection Act, you have a right to free-of-charge information about your stored data, and possibly entitlement to correction, blocking or deletion of such data. Inquiries can be directed to the following e-mail addresses: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com)
+According to the Federal Data Protection Act, you have a right to free-of-charge information about your stored data, and possibly entitlement to correction, blocking or deletion of such data. Inquiries can be directed to the following e-mail addresses: [team@ChrisSpiegl.com](mailto:team@ChrisSpiegl.com)
 
 ## Privacy Policy Changes
 
