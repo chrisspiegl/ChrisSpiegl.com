@@ -56,6 +56,8 @@ body
         i(class="fa-brands fa-youtube")
       a(href="/instagram" title="Instagram Profile — External Link" target="_blank")
         i(class="fa-brands fa-instagram")
+      a(href="/linkedin" title="LinkedIn Profile — External Link" target="_blank")
+        i(class="fa-brands fa-linkedin")
       a(href="/twitter" title="Twitter Profile — External Link" target="_blank")
         i(class="fa-brands fa-twitter")
 
@@ -66,14 +68,13 @@ body
         li
           a(href="/now") Now
         li
-          a(href="/support") Support
-        li
-          a(href="/gear") Gear
+          a(href="/consulting") Consulting
         li
           a(href="/newsletter") Newsletter
-
         //- li
-        //-   a(href="/consulting") Consulting
+        //-   a(href="/support") Support
+        //- li
+        //-   a(href="/gear") Gear
         //- li
         //-   a(href="/courses" title="Skillshare Profile — External Link" target="_blank") Courses
         //- li
@@ -86,9 +87,8 @@ body
         //-   a(href="/newsletter/archive" title="Creation Overview" target="_blank") Creations
         //- li
         //-   a(href="/podcast") Podcast
-
-        li
-          a(href="/more") More
+        //- li
+        //-   a(href="/more") More
 
   section#content
     block content
@@ -98,13 +98,13 @@ body
     section#search()
       form(action="https://duckduckgo.com/" method="get")
         input(type="hidden" name="ia" value="web")
-        input(type="hidden" name="sites" value="chrisspiegl.com")
+        input(type="hidden" name="sites" value="ChrisSpiegl.com")
         input.text-center(type="text" name="q" value="" placeholder="Search for anything on ChrisSpiegl.com" required)
         input.btn.btn-block(type="submit" value="Search")
 
     nav.navFooter
       ul
-        li: a(href="/uncopyright") Uncopyrighted
+        //- li: a(href="/uncopyright") Uncopyrighted
         li: a(href="/privacy-policy") Privacy Policy
         li: a(href="/legal-disclosure") Legal Disclosure
       ul
@@ -129,13 +129,29 @@ body
 
   //- Analytics
   if meta.build.env === 'production'
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-1173222-28")
-    script().
+    <!-- Google tag (gtag.js) -->
+    script(async src="https://www.googletagmanager.com/gtag/js?id=G-BFZSC5QQYT")
+    script(type="application/javascript").
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UA-1173222-28');
+      gtag('config', 'G-BFZSC5QQYT');
+
+    <!-- Meta Pixel Code -->
+    script(type="application/javascript").
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '907086356044933');
+      fbq('track', 'PageView');
+    noscript.
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=907086356044933&ev=PageView&noscript=1" />
+
   <!-- MailerLite Universal -->
   script(type="application/javascript").
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
