@@ -25,7 +25,7 @@ But of course, it can also be about anything else you may have questions about.
 Please forward your **InfoStack receipt** and I will send you a link for easy scheduling.
 
 <div class="text-center padding-bottom">
-    <a class="btn btn-block" href="mailto:chris@chrisspiegl.com?subject=InfoStack+Bonus">Email<br>chris@chrisspiegl.com</a>
+    <a class="btn btn-block" href="mailto:team@ChrisSpiegl.com?subject=InfoStack+Bonus">Email<br>team@ChrisSpiegl.com</a>
 </div>
 
 I am looking forward to hearing from you soon.

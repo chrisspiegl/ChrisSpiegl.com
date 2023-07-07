@@ -14,9 +14,9 @@ Münsterstraße 1
 
 ## Contact
 
-Telephone: +49 151 184 51 963
-E-Mail: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com)
-Internetaddress: [chrisspiegl.com](https://chrisspiegl.com/)
+Telephone: +49 156 789 343 63
+E-Mail: [team@ChrisSpiegl.com](mailto:team@ChrisSpiegl.com)
+Internetaddress: [ChrisSpiegl.com](https://ChrisSpiegl.com/)
 
 ## Disclaimer
 
@@ -28,4 +28,4 @@ The contents of our pages have been created with the utmost care. However, we ca
 
 Responsibility for the content of external links (to web pages of third parties) lies solely with the operators of the linked pages. No violations were evident to us at the time of linking. Should any legal infringement become known to us, we will remove the respective link immediately.
 
-*Quelle:* [twigg.de](http://www.twigg.de/haftungsausschlussimpressumenglisch.htm)
+*Source:* [twigg.de](http://www.twigg.de/haftungsausschlussimpressumenglisch.htm)
