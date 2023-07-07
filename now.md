@@ -4,31 +4,29 @@ layout: now
 date: Last Modified
 ---
 
-To stay up to date, you can sign up to my (irregular) [newsletter](/newsletter).
+The Cornerstones of my present existence. To stay up to date, sign up to my [newsletter](/newsletter).
 
-Where am I most obsessively focused for the foreseeable future? In no particular order:
+<!-- ## Doing -->
 
-## Doing
+- **[YouTube](/youtube)** — Empowering business owners, entrepreneurs, and aspiring visionaries through captivating videos that illuminate the path to success. Explore the indispensable keys to unlock the coveted pillars of freedom: time, location, and financial independence. Immerse yourself in a world of valuable insights and unleash your true potential.
+- **[Consulting](/consulting)** — With my expertise in social media marketing, content creation, website optimization, and online strategies, I'll guide you towards remarkable results. Together, we'll optimize your business structure, analyze distribution channels, and drive more traffic while boosting conversion rates. Unlock your business's potential, maximize revenue, and invest your valuable time strategically.
+- **[Niyama.Academy](https://Niyama.Academy/?utm_source=ChrisSpiegl.com)** — Crafting an immersive online Yoga Studio that transcends boundaries, offering live classes and a library of on-demand video courses. Currently available in German, we are dedicated to guiding you on a transformative journey towards holistic well-being. Join our community and experience the power of Yoga firsthand.
+- **Location Independence** — Our lifestyle revolves around embracing new cultures and exploring the world, with a switch of countries every 2-4 months. This desire to constantly explore and experience different places is something I have always nurtured and worked towards.
 
-- **[YouTube](/youtube)** — I am refocusing on the creation of content. Currently, I am in the process on figuring out where I want to go with it all since my life changed a lot and I want my content to grow with my journey.
-- **Lifestyle Changes** — Creating a new daily routine which gives me more momentum and energy. I am exploring how I can improve my life and share the findings on my [YouTube Channel](/youtube).
-- **Being a Digital Nomad (again)** — I am nomadic with my partner [Nicole](https://NicoleReiher.com). We are switching countries every 2 - 4 months. This is something I always built toward. I took a pause and had a homebase for 3 years in Germany but now it's time to travel again.
-- **[Niyama.Academy](https://Niyama.Academy/)** — Building an online Yoga Studio with Live Classes and On-Demand Video Courses. Right now it's all in German.
-
-I’m happy to discuss opportunities around any and all these ideas.
+I’m happy to discuss opportunities around any and all these ideas. Please send an email.
 
 <div class="side-by-side">
-    <a class="btn btn-block" href="mailto:chris@chrisspiegl.com" title= "Email me about anything!">chris@chrisspiegl.com</a>
-    <a class="btn btn-block" href="https://crsp.li/tgc" title="Telegram Channel">My Telegram Channel</a>
+    <a class="btn btn-block" href="mailto:team@ChrisSpiegl.com" title= "Email me about anything!">team@ChrisSpiegl.com</a>
+    <a class="btn btn-block" href="https://crsp.li/tgg" title="Telegram Group">My Telegram Group</a>
 </div>
 
-## Learning
+<!-- ## Learning
 
-- **Letting Go of Expectations** — For the longest time I procrastinated way too much because I thought what I am making is not good enough. I am now learning to let that go and just create what I can create in this moment. It's not going to be perfect and that's ok.
+- **Letting Go of Expectations** — For the longest time I procrastinated way too much because I thought what I am making is not good enough. I am now learning to let that go and just create what I can create in this moment. It's not going to be perfect and that's ok. -->
 
-## Reading
+<!-- ## Reading
 
-I am currently not actively reading. Sometimes I pick up a book but not in any kind of routine. This type of break feels needed to get more work done.
+I am currently not actively reading. Sometimes I pick up a book but not in any kind of routine. This type of break feels needed to get more work done. -->
 
 <!-- Reading books to better think, work, and live life.
 
@@ -56,7 +54,7 @@ I am currently not actively reading. Sometimes I pick up a book but not in any k
 
 !!! -->
 
-## Principles I try to Live By
+<!-- ## Principles I try to Live By
 
 - **ONE** – One thing at a time. If situation requires, apply Pareto’s Principle. If situation does not require, do what you want first.
 - **Externalize distractions** – When working, distractions will surface. If need be, write it down, then return to your Thing. After your session, examine the list. Delete the nonsense, knock off the quick tasks, and delegate the trivial. And then, return to the Thing.
@@ -68,7 +66,7 @@ I am currently not actively reading. Sometimes I pick up a book but not in any k
   > Group of kids are sitting on a porch. Stoic walks by.
   > Kid – “Hey man, yur a fuckin faggot an you suck cock!”
   > Stoic – “Good for you.”
-  > Keeps going.
+  > Keeps going. -->
 
 !!! text-center
 This page is inspired by [Derek Siver](https://sivers.org/now)’s now page suggestion.
