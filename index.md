@@ -9,32 +9,32 @@ title: Creator
 ![Chris Spiegl](/assets/images/other/2017-08-19-at-12-38-54-dangle-your-feet.jpg)
 !!!
 
-# Creator
+# Hi, I'm Chris. [YouTuber](/youtube), [Entrepreneur](!https://Niyama.Academy?utm_source=ChrisSpiegl.com), and [Consultant](/consulting).
 
-I am a traveling [content creator](/youtube). I have been working online for the past 15 years and have done so from over 30 countries. So one could say, I love the location independent lifestyle.
+Are you ready to break free from the constraints of traditional work? As a seasoned content creator who's been in the online realm for over 20 years and traversing more than 30 countries, I wholeheartedly embrace the location independent lifestyle.
 
 > “My goal is to work with motivated and inspiring people.”
 
-My goal is to work with motivated people to build highly successful businesses and brands. To improve your own life and to have a positive effect on the people around you and me.
+My mission? To collaborate with motivated and passionate individuals like you, to craft highly successful businesses and brands. Together, we can revolutionize your life and leave a positive impact on those around us.
+
+Imagine a business that empowers you with unadulterated personal freedom, tailored to your unique aspirations. I'm here to liberate you from the tyranny of time-consuming ventures that drain your energy. Through workflow remodeling, efficiency optimization, and strategic outsourcing, we'll give life-enhancing support to your business.
 
 > “A business should be built for the purpose of providing the owner with pure personal freedom — whatever that means to them.”
 > <cite>Timothy Marc</cite>
 
-I’m focused on building businesses that support life – instead of creating businesses that consume all your time and suck life out of you. Remodeling workflows and improving efficiency, optimizing and outsourcing parts of your business are things I enjoy.
+Drawing insights from my extensive research, including the study of numerous highly successful entrepreneurs and modern success stories, I aim to provide you with invaluable insights, practical processes, and visionary ideas through my [YouTube channel](/youtube), [Newsletter](/newsletter), and [Consulting Sessions](/consulting). Together, let's ignite the spark that propels your business towards unprecedented growth and achievement.
 
-I do this by having conversations with people from around the world in my [Podcasts](/podcast) and by sharing my findings, process, and ideas on my [YouTube Channel](/youtube).
+Curious about my current focus? Explore my [NOW Page](/now) for a glimpse into my ongoing endeavors. If you have a groundbreaking concept to discuss or would like to share feedback, I invite you to connect with me in my [Telegram Group](!https://crsp.li/tgg) or via email.
 
-If you want tok now what I am currently focusing on, please read my [NOW Page](/now) and if you'd like to discuss an idea or share some feedback, please contact me via email which you can find below.
-
-Now, have an amazing day. Focus on what’s important and let's get it done!
+Unleash your potential, seize the opportunities that matter most, and let's conquer new heights together. Your journey to location, time, and financial freedom starts today.
 
 !!! signature
 ![Chris Spiegl](/assets/images/other/signature-public-white-small.png)
 !!!
 
 <div class="side-by-side">
-    <a class="btn btn-block" href="mailto:chris@chrisspiegl.com" title= "Email me about anything!">chris@chrisspiegl.com</a>
-    <a class="btn btn-block" href="https://crsp.li/tgc" title="Telegram Channel">My Telegram Channel</a>
+    <a class="btn btn-block" href="mailto:team@ChrisSpiegl.com" title= "Email me about anything!">team@ChrisSpiegl.com</a>
+    <a class="btn btn-block" href="https://crsp.li/tgg" title="Telegram Group">My Telegram Group</a>
 </div>
 
 !!! quote-hero
