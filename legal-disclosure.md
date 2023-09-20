@@ -4,17 +4,24 @@ title: Legal Disclosure
 
 # Legal Disclosure
 
-**Impressum / Legal Disclosure:**
+CSX.Ventures OÜ
+Sepapaja tn 6, 15551 Tallinn, Harju Maakond, Estonia
 
-**Inhaltlich Verantwortlich / Responsible for the Content**
+Comm. Reg. Number: 16821265
+VAT: EE102658062
 
-Christoph Spiegl
-Münsterstraße 1
-95028 Hof
+## CSX.Ventures OÜ is operating as the following:
+
+- ChrisSpiegl.com
+- Foxi.Link
+- PushNotice.Chat
+- YouTube Channel: [@ChrisSpiegl](https://youtube.com/chrisspiegl)
+- Instagram Account: [@ChrisSpiegl](https://instagram.com/chrisspiegl)
+- Instagram Account: [@CSXVentures](https://instagram.com/csxventures)
 
 ## Contact
 
-Telephone: +49 156 789 343 63
+Telephone: +49 1567 8934363 (WhatsApp & Call)
 E-Mail: [team@ChrisSpiegl.com](mailto:team@ChrisSpiegl.com)
 Internetaddress: [ChrisSpiegl.com](https://ChrisSpiegl.com/)
 
