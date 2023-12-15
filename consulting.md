@@ -55,15 +55,12 @@ Services include:
 
 <div id="booking"></div>
 
-## Book Your Call
+## Book Your Call or Async Consulting Session
 
-<!-- Cal inline embed code begins -->
-<div class="cal-scheduling text-center paragraph">
-<div style="width:100%; height:100%; overflow:scroll;" id="my-cal-inline"></div>
-<script type="application/javascript">(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init"); Cal("init", {origin:"https://app.cal.com"});Cal("inline", {elementOrSelector: "#my-cal-inline", calLink: "chrisspiegl/call", layout: "week_view"}); Cal("ui", {styles: { branding: { brandColor: "#cc5630" } }, hideEventTypeDetails: false, layout: "week_view" });</script>
-</div>
-<!-- Cal inline embed code ends -->
+For professional inquiries, including remote consultations, on-site engagements, or asynchronous advice through text or video messages, I invite you to connect with me directly.
 
-Any open questions? Please email my team:
+Should you wish to discuss potential collaborations or seek clarification on my consultancy process, please do not hesitate to reach out at the address provided below.
 
 <a class="btn btn-block" href="mailto:team@ChrisSpiegl.com?subject=Consulting Inquiry">team@ChrisSpiegl.com</a>
+
+I look forward to the opportunity to work with you and contribute to the success of your endeavors.
