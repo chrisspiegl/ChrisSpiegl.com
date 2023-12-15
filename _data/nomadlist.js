@@ -5,8 +5,8 @@ module.exports = async function () {
   try {
     const { data } = await axios.get(`${url}?format=json`)
 
-    data.location.now.string = data.location.now.city === null ? 'Unknown' : `${data.location.now.city}, ${data.location.now.country}`
-    data.location.next.string = data.location.next.city === null ? 'Unknown' : `${data.location.next.city}, ${data.location.next.country}`
+    data.location.now.string = !data.location.now.city ? 'Unknown' : `${data.location.now.city}, ${data.location.now.country}`
+    data.location.next.string = !data.location.next.city ? 'Unknown' : `${data.location.next.city}, ${data.location.next.country}`
 
     const returnValue = {
       data,
