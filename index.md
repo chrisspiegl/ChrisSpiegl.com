@@ -9,7 +9,7 @@ title: Creator
 ![Chris Spiegl](/assets/images/other/2017-08-19-at-12-38-54-dangle-your-feet.jpg)
 !!!
 
-# Hi, I'm Chris. [YouTuber](/youtube), [Entrepreneur](!https://Niyama.Academy?utm_source=ChrisSpiegl.com), and [Consultant](/consulting).
+# Hi, I'm Chris. [YouTuber](/youtube), [Entrepreneur](https://Niyama.Academy?utm_source=ChrisSpiegl.com), and [Consultant](/consulting).
 
 Are you ready to break free from the constraints of traditional work? As a seasoned content creator who's been in the online realm for over 20 years and traversing more than 30 countries, I wholeheartedly embrace the location independent lifestyle.
 
@@ -24,7 +24,7 @@ Imagine a business that empowers you with unadulterated personal freedom, tailor
 
 Drawing insights from my extensive research, including the study of numerous highly successful entrepreneurs and modern success stories, I aim to provide you with invaluable insights, practical processes, and visionary ideas through my [YouTube channel](/youtube), [Newsletter](/newsletter), and [Consulting Sessions](/consulting). Together, let's ignite the spark that propels your business towards unprecedented growth and achievement.
 
-Curious about my current focus? Explore my [NOW Page](/now) for a glimpse into my ongoing endeavors. If you have a groundbreaking concept to discuss or would like to share feedback, I invite you to connect with me in my [Telegram Group](!https://crsp.li/tgg) or via email.
+Curious about my current focus? Explore my [NOW Page](/now) for a glimpse into my ongoing endeavors. If you have a groundbreaking concept to discuss or would like to share feedback, I invite you to connect with me in my [Telegram Group](https://crsp.li/tgg) or via email.
 
 Unleash your potential, seize the opportunities that matter most, and let's conquer new heights together. Your journey to location, time, and financial freedom starts today.
 
