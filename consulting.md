@@ -1,66 +1,82 @@
 ---
-title: Consulting
+title: Consulting — Take Your Content and Productivity to the Next Level
 ---
 
-# Elevating Your Business
+# Let's Take Your Content and Productivity to the Next Level
 
-With my expertise in social media marketing, content creation, website optimization, and online strategies, I’ll guide you towards remarkable results. Together, we’ll optimize your business structure, analyze distribution channels, and drive more traffic while boosting conversion rates. Unlock your business’s potential, maximize revenue, and invest your valuable time strategically.
+Are you struggling to deliver high-quality videos, podcasts, or live streams? Do you find your productivity lacking when managing your Apple-based workflow? Imagine having a seasoned expert guiding you through these challenges, helping you unlock your full potential.
 
-<a class="btn btn-block" href="#booking">Let’s get to Work – Book Your Consulting Call</a>
+I understand your pain. You want to deliver top-notch content but are bogged down by technical details. You aim to be more productive but are overwhelmed by the myriad of apps and services out there. That's where I come in.
 
-## Working Smarter, Achieving More
-
-With over a decade of acquiring extensive expertise in social media marketing, website optimization, and online strategies, I am ready to channel this knowledge to benefit your business. Together, we will unleash the power of small yet impactful changes that will enhance your revenue potential. Let's work smarter and harder simultaneously.
-
-> "Work smarter and harder at the same time."
-
-## A Holistic Evaluation of Your Business
-
-Let's dive into your business structure and define your goals. Through a targeted analysis of your distribution channels including your website, blog, and social media profiles, we will identify areas for improvement and optimization. Whether we revamp certain aspects of your site, refine your design, or establish a fresh brand identity, count on my support throughout the process.
-
-## Boost Traffic, Minimize Effort
-
-Once the initial enhancements are in place, we turn our attention to driving more traffic to your site. By exploring innovative marketing tactics, orchestrating captivating campaigns, and leveraging social media engagement, we can propel your business towards recognition and success. Let's ensure your business thrives without exhausting your valuable time and energy.
-
-> “We work on the business and that’s only possible if the business does not consume all your time!”
-
-## Unleashing Your Potential
-
-Our ultimate objective is to elevate your business to new heights. We will enhance the user experience, increase conversion rates, and ultimately drive higher revenue. With a laser focus on optimizing your business systems, we will streamline operations, allowing you to work on your business rather than being consumed by it.
-
-I am excited to embark on this transformative journey with you!
-
-!!! signature
-![Chris Spiegl](/assets/images/other/signature-public-white-small.png)
+!!! text-center
+<a class="btn" href="https://crsp.li/contact">Let’s Get Started</a>
 !!!
 
-<a class="btn btn-block" href="#booking">Let’s get to Work – Book Your Call</a>
+## Tailored Solutions to Transform Your Business
 
-## Unleash the Potential of Your Knowledge & Skills
+I offer tailored consulting sessions to help you achieve remarkable results in content production, productivity, and business building. Whether through a call or asynchronous sessions via email and video, here’s how we can work together:
 
-Are you struggling to start, monetize, or enhance your content platform, such as a blog, podcast, or YouTube channel? Let me support you in growing your business by offering ideas and strategies to improve it. We'll begin by taking stock of your current position and then collaboratively develop next steps.
+### Master Your Video, Podcast, or Live Production
 
-Taking a holistic view of your business, both in the big picture and the finer details, is key to fostering growth and expansion. Together, we'll create a vision and a plan.
+Do you stress over selecting the right equipment or setting up an efficient workflow? I provide you with:
 
-If you have any questions before scheduling, please feel free to reach out to my team via the email address below. We're here to assist you.
+- **Your Content at the Highest Level:** Video Production, Podcasting, Live Streaming, Remote Live Events and Calls, YouTube Studio Building, Content Creation.
+- **Bespoke Equipment Recommendations:** Personalized advice on the best gear to elevate your production quality.
+  - Cameras, Lights, Microphones, Lenses, Live Streaming Switcher, and more.
+- **Detailed Setup Guides:** Step-by-step guidance to ensure you hit the ground running.
+- **Optimized Workflows:** Proven tools and techniques to streamline your recording and production processes, whether remote or in-studio.
+  - Video & Audio Editing Programs, Automation Tools, Premiere Pro, DaVinci Resolve, OBS Studio, CapCut, Captions, Teleprompter, Loopback, AudioHijack, etc.
+- **Content Quality:** Strategies to improve and elevate your content to stand out in the feeds.
 
-Services include:
 
-- Assessing your current social media and web presence
-- Building concepts for your website, social media channels, and other strategies
-- Developing products and generating ideas (ebooks, downloadable products, courses, etc.)
-- Enhancing productivity and workflow efficiency (tools of the trade)
-- Introducing newsletter integration, user engagement, and autoresponder sequences
-- Streamlining content production and publishing processes
+### Supercharge Your Productivity within the Apple Ecosystem
 
-<div id="booking"></div>
+Feeling overwhelmed by the sheer number of productivity apps and services? I offer:
 
-## Book Your Call or Async Consulting Session
+- **Tailored App and Service Recommendations:** Handpicked tools that align perfectly with your needs.
+  - Utility Applications like MacWhisper, Alfred, Rectangle, and Arc Browser.
+  - Second Brain Systems with Obsidian, Notion, AirTable, Notes, Reminders, Fantastical Calendar.
+  - Data Security & Management with 1Password, Hardware Keys by YubiKey, and Cryptomator.
+  - Google Workspace for professional Email, Documents, and File Management.
+  - Upgrade your Brand Website, Uniform Style, and Professional Email Address.
+- **Efficiency Upgrades:** Free and premium workflow enhancements to keep you in the zone.
+- **Comprehensive Business Management:** Strategies to manage every aspect of your online business effortlessly.
 
-For professional inquiries, including remote consultations, on-site engagements, or asynchronous advice through text or video messages, I invite you to connect with me directly.
+!!! text-center
+<a class="btn" href="https://crsp.li/contact">Apply Now</a>
+!!!
 
-Should you wish to discuss potential collaborations or seek clarification on my consultancy process, please do not hesitate to reach out at the address provided below.
+## Why Choose My Services?
 
-<a class="btn btn-block" href="mailto:team@ChrisSpiegl.com?subject=Consulting Inquiry">team@ChrisSpiegl.com</a>
+Your time is precious, and your goals are ambitious. Here’s how I help you achieve more:
 
-I look forward to the opportunity to work with you and contribute to the success of your endeavors.
+- **Expert Insight:** Two decades of experience, as a tech enthusiast, content creator, and entrepreneur.
+- **Personalized Approach:** Customized plans to address your unique challenges.
+- **Actionable Solutions:** Practical advice that brings immediate improvements.
+- **Live Call or Async:** We can have a live conversation, or I create instructive videos for you to implement in your time and speed.
+
+Imagine the freedom of creating stellar content without the technical hiccups, and running a seamless business with optimized productivity. That's what we can achieve together.
+
+!!! text-center
+<a class="btn" href="https://crsp.li/contact">Contact Me Today</a>
+!!!
+
+## Let's Transform Your Vision into Reality
+
+Ready to break free from the constraints holding you back? Submit your inquiry form at [crsp.li/contact](https://crsp.li/contact) and let’s embark on this journey together.
+
+I’m excited to help you enhance your productivity, boost your content quality, and truly enjoy the process.
+
+!!! signature
+[![Chris Spiegl](/assets/images/other/signature-public-small.png)](https://crsp.li/contact)
+!!!
+
+For any questions, reach out. My team and I are here to ensure your experience is seamless.
+
+Ready to achieve your highest potential? Start your transformation now!
+
+!!! text-center
+<a class="btn" href="https://crsp.li/contact">Apply Now</a>
+!!!
+
+I look forward to contributing to your success and seeing your vision come to life.

@@ -15,7 +15,7 @@ title: Styleguide
 !!!
 
 !!! signature
-![Chris Spiegl](/assets/images/other/signature-public-white-small.png)
+![Chris Spiegl](/assets/images/other/signature-public-small.png)
 !!!
 
 # {{title}}

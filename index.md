@@ -29,7 +29,7 @@ Curious about my current focus? Explore my [NOW Page](/now) for a glimpse into m
 Unleash your potential, seize the opportunities that matter most, and let's conquer new heights together. Your journey to location, time, and financial freedom starts today.
 
 !!! signature
-![Chris Spiegl](/assets/images/other/signature-public-white-small.png)
+![Chris Spiegl](/assets/images/other/signature-public-small.png)
 !!!
 
 <div class="side-by-side">

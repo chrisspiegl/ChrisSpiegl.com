@@ -8,7 +8,17 @@ footer {
 
   #search {
     margin: 4rem auto;
-    width: 50%;
+    width: 100%;
+    form {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 3fr 1fr;
+      padding-bottom: 2rem;
+
+      @media screen and (max-width: $break-mobile) {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 
   ul {

@@ -2,53 +2,79 @@ body>header {
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  >section {
+  section.top {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding-bottom: 2rem;
 
-    #avatar {
-      // position: absolute;
-      border-radius: 50%;
-      width: 5rem;
-      height: 5rem;
-      margin-right: 1rem;
+    @media screen and (max-width: calc($break-mobile + 200px)) {
+      flex-direction: column;
+      gap: 2rem;
     }
 
-    .text {
-      text-align: left;
-      margin-top: 1.2rem;
+    section.header {
+      display: flex;
+      justify-content: start;
+      align-items: center;
 
-      h1 {
-        // text-align: center;
-        margin-bottom: 0;
-        padding: 0;
-        line-height: 2rem;
+      #avatar {
+        // position: absolute;
+        border-radius: 50%;
+        width: 5rem;
+        height: 5rem;
+        margin-right: 1rem;
       }
 
-      a {
-        text-decoration: none;
-        color: var(--color-body);
-        font-weight: normal;
+      .text {
+        text-align: left;
+        // margin-top: 1rem;
+        font-family: var(--font-serif);
 
-        &:hover {
+        h1 {
+          font-family: var(--font-serif);
+          // text-transform: uppercase;
+          // text-align: center;
+          margin-bottom: 0;
+          padding: 0;
+          line-height: 2rem;
+        }
+
+        a {
+          font-family: var(--font-serif);
           text-decoration: none;
+          color: var(--color-body);
+          font-weight: bold;
+
+          &:hover {
+            text-decoration: none;
+          }
+
+        }
+
+        em, em a {
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        p {
+          text-align: center;
+          padding: 0;
+          margin: 0;
         }
       }
-
-      p {
-        text-align: center;
-        padding: 0;
-        margin: 0;
-      }
     }
 
-    &.social {
+    .social {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: center;
+
       a {
         display: block;
-        padding: 0 3rem;
-        color: #ffffff;
+        padding: 0 1rem;
+        color: var(--color-foreground);
         font-size: 1.5rem;
 
         &:hover,

@@ -37,5 +37,5 @@ Thank you again. I know you are one step further with your podcast now, just by 
 Cheers,
 
 !!! signature
-![Chris Spiegl](/assets/images/other/signature-public-white-small.png)
+![Chris Spiegl](/assets/images/other/signature-public-small.png)
 !!!
