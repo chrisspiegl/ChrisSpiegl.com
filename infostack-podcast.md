@@ -21,5 +21,5 @@ I'm looking forward to hearing from you and seeing you in the comment section or
 Cheers and have a nice day,
 
 !!! signature
-![Chris Spiegl](/assets/images/other/signature-public-white-small.png)
+![Chris Spiegl](/assets/images/other/signature-public-small.png)
 !!!

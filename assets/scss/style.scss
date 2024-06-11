@@ -1,6 +1,8 @@
-$content-width: 640px;
-$break-mobile: $content-width+100px;
-@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i&display=swap');
+// $content-width: 640px;
+$content-width: 980px;
+$break-mobile: $content-width / 2;
+// @import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
   /*  GRAYS   */
@@ -51,18 +53,22 @@ $break-mobile: $content-width+100px;
 
   --color-white: #fff;
 
-  --color-foreground: var(--color-white);
-  --color-background: var(--color-dark);
+  --color-foreground: #86868b;
+  --color-background: #f5f5f7;
   --color-bg-contrast: var(--color-gray-95);
+  // --color-foreground: var(--color-white);
+  // --color-background: var(--color-dark);
+  // --color-bg-contrast: var(--color-gray-95);
   /* table even row */
 
   --color-body: var(--color-foreground);
-  --color-nav-text: var(--color-white);
+  --color-nav-text: #86868b;
+  // --color-nav-text: var(--color-white);
   --color-nav-hover: var(--color-orange);
   --color-heading: var(--color-gray-20);
   --color-figure-caption: var(--color-gray-40);
   --color-link: var(--color-orange);
-  --color-footer: var(--color-light);
+  --color-footer: var(--color-lighter);
   --color-code: var(--color-lighter);
   /* naked code */
   --color-code-bg: var(--color-dark);
@@ -93,10 +99,15 @@ $break-mobile: $content-width+100px;
 
 
 
-  --font-system: 'Vollkorn', -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-serif: Georgia, serif;
-  --font-sans-serif: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-  --font-mono: Consolas, Menlo, Monaco, "Courier New", Courier, monospace;
+  // --font-system: 'Vollkorn', -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-system: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  // font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+  // --font-sans-serif: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  --font-sans-serif: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // --font-mono: Consolas, Menlo, Monaco, "Courier New", Courier, monospace;
+  --font-mono: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+
 
   --font-body: var(--font-system);
   --font-caption: var(--font-system);
@@ -114,16 +125,27 @@ $break-mobile: $content-width+100px;
     https://www.modularscale.com/?1&em&1.25
   */
 
-  --font-size-plus-3: 2em;
-  --font-size-plus-2: 1.953em;
-  --font-size-plus-1: 1.563em;
-  --font-size-plus-0: 1.125em;
-  --font-size-base: 1.125em;
-  --font-size-minus-0: 1.125em;
-  --font-size-minus-1: 1em;
-  --font-size-minus-2: 0.9em;
-  --font-size-minus-3: 0.7em;
-  --font-size-minus-4: 0.5em;
+  --font-size-plus-3: 2.93rem;
+  --font-size-plus-2: 2.344rem;
+  --font-size-plus-1: 1.875rem;
+  --font-size-plus-0: 1.5rem;
+  --font-size-base: 1.5rem;
+  --font-size-minus-0: 1.5rem;
+  --font-size-minus-1: 1.2rem;
+  --font-size-minus-2: 0.96rem;
+  --font-size-minus-3: 0.768rem;
+  --font-size-minus-4: 0.614rem;
+
+  // --font-size-plus-3: 2em;
+  // --font-size-plus-2: 1.953em;
+  // --font-size-plus-1: 1.563em;
+  // --font-size-plus-0: 1.125em;
+  // --font-size-base: 1.125em;
+  // --font-size-minus-0: 1.125em;
+  // --font-size-minus-1: 1em;
+  // --font-size-minus-2: 0.9em;
+  // --font-size-minus-3: 0.7em;
+  // --font-size-minus-4: 0.5em;
 }
 
 *,
@@ -137,20 +159,21 @@ p,
 a,
 blockquote {
   font-family: var(--font-body);
-  font-weight: normal;
+  // font-weight: normal;
 }
 
 h1 {
-  font-size: var(--font-size-plus-2);
-  letter-spacing: .25rem;
+  font-size: var(--font-size-plus-1);
+  // letter-spacing: .25rem;
+  // letter-spacing: -0.015rem;
 }
 
 h2 {
-  font-size: var(--font-size-plus-1);
+  font-size: var(--font-size-plus-0);
 }
 
 h3 {
-  font-size: var(--font-size-plus-1);
+  font-size: var(--font-size-plus-0);
   color: var(--color-lighter);
 }
 
@@ -196,6 +219,10 @@ details {
   padding-bottom: 2rem;
 }
 
+ul ul {
+    padding-bottom: unset;
+}
+
 em,
 hr,
 span,
@@ -206,7 +233,7 @@ em {
 
 strong {
   font-weight: bold;
-  letter-spacing: .05rem;
+  // letter-spacing: .05rem;
 }
 
 details {
@@ -230,7 +257,7 @@ body {
   margin: auto;
   font-family: var(--font-body);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.4;
   font-size: var(--font-size-base);
   color: var(--color-body);
   background-color: var(--color-background);
@@ -368,6 +395,7 @@ img[src*="#signature"],
 
 h2 {
   margin-bottom: 0;
+  padding-top: 8rem;
 
   a {
     color: var(--color-body);
@@ -382,7 +410,7 @@ h2 {
 
 pre,
 code {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-family: var(--font-code);
   line-height: 1.5;
 }
 
@@ -550,6 +578,10 @@ p code {
 .btn-block {
   width: 100% !important;
   display: block !important;
+}
+
+.btn-center {
+  margin: auto;
 }
 
 #newsletter-embed {

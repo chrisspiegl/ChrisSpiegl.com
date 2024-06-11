@@ -41,25 +41,26 @@ body
   if meta.build.env === 'development'
     header.development(style="padding: .2rem 0; margin: 0; background-color: rgba(255, 105, 97, 0.5); min-width: 100%; width: 100%; min-height: 0; height: auto; display: block; border-bottom: 2px solid rgb(255,105,97); text-align: center;")= `DEVELOPMENT | ${ global.dateHtml(meta.build.timestamp) }`
   header.container
-    section
-      - const avatarImage = '/assets/images/other/avatar-spiegl-chris-leica-2022-08-20-L1010008.jpg'
-      img#avatar(srcset=`${meta.imageResizer(320, 0, avatarImage)} 640w, ${meta.imageResizer(640, 0, avatarImage)} 1280w, ${meta.imageResizer(1280, 0, avatarImage)} 1920w` src=avatarImage, alt="")
-      div.text
-        h1
-          a(href="/") Chris Spiegl
-        if (nomadlist.now.string !== 'Unknown')
-          p
-            small: em Currently in #[a(href='/location')= nomadlist.now.string]
+    section.top
+      section.header
+        - const avatarImage = '/assets/images/other/avatar-spiegl-chris-leica-2022-08-20-L1010008.jpg'
+        img#avatar(srcset=`${meta.imageResizer(320, 0, avatarImage)} 640w, ${meta.imageResizer(640, 0, avatarImage)} 1280w, ${meta.imageResizer(1280, 0, avatarImage)} 1920w` src=avatarImage, alt="")
+        div.text
+          h1
+            a(href="/") Chris Spiegl
+          if (nomadlist.now.string !== 'Unknown')
+            p
+              small: em Currently in #[a(href='/location')= nomadlist.now.string]
 
-    section.social
-      a(href="/youtube" title="YouTube Profile — External Link" target="_blank")
-        i(class="fa-brands fa-youtube")
-      a(href="/instagram" title="Instagram Profile — External Link" target="_blank")
-        i(class="fa-brands fa-instagram")
-      a(href="/linkedin" title="LinkedIn Profile — External Link" target="_blank")
-        i(class="fa-brands fa-linkedin")
-      a(href="/twitter" title="Twitter Profile — External Link" target="_blank")
-        i(class="fa-brands fa-twitter")
+      section.social
+        a(href="/youtube" title="YouTube Profile — External Link" target="_blank")
+          i(class="fa-brands fa-youtube")
+        a(href="/instagram" title="Instagram Profile — External Link" target="_blank")
+          i(class="fa-brands fa-instagram")
+        a(href="/linkedin" title="LinkedIn Profile — External Link" target="_blank")
+          i(class="fa-brands fa-linkedin")
+        a(href="/twitter" title="Twitter Profile — External Link" target="_blank")
+          i(class="fa-brands fa-twitter")
 
     nav.navMain
       ul
