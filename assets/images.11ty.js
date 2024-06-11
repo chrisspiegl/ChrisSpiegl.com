@@ -1,6 +1,5 @@
-const path = require('path')
-const util = require('util')
-const glob = require('glob')
+const path = require('node:path')
+const {glob} = require('glob')
 const sharp = require('sharp')
 const mkdirp = require('mkdirp')
 
@@ -60,12 +59,10 @@ module.exports = class {
 
   async loadImages(imgFolder) {
     const cwd = path.resolve(imgFolder.file)
-    const getImages = util.promisify(glob)
+    const getImages = glob
     const processedImages = []
-
     const imgs = await getImages('**/*(*.jpg|*.png|*.gif)', { cwd })
     const imgsRendered = await getImages('**/*(*.jpg|*.png|*.gif)', { cwd: outputPath })
-
     for (const img of imgs) {
       const ext = path.extname(img)
       const base = path.basename(img, ext)
