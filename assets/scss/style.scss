@@ -100,11 +100,11 @@ $break-mobile: calc($content-width / 2);
 
 
   // --font-system: 'Vollkorn', -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-system: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-serif: "Playfair Display", Georgia, serif;
+  --font-system: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Playfair Display", -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   // font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   // --font-sans-serif: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-  --font-sans-serif: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans-serif: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   // --font-mono: Consolas, Menlo, Monaco, "Courier New", Courier, monospace;
   --font-mono: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
 
