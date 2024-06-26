@@ -24,7 +24,7 @@ Facebook Pixel: We have implemented Facebook Pixel, which allows us to measure a
 
 Google Analytics: We use Google Analytics to analyze website traffic, understand user behavior, and gather demographic information to improve our website's performance. Google Analytics may collect data such as your IP address, device information, and browsing behavior. To learn more about the information collected and how Google uses it, please review Google's Privacy Policy.
 
-Embedded Content: Sometimes there is embedded content which might have tracking based on the service used (YouTube, Twitter, or Instagram most notably).
+Embedded Content: Sometimes there is embedded content which might have tracking based on the service used (YouTube, 𝕏 / Twitter, or Instagram most notably).
 
 By using our website, you consent to the tracking technologies mentioned above and agree to the respective privacy policies outlined by MailerLite, Facebook, and Google. You have the option to disable or limit these tracking technologies by adjusting your browser settings or utilizing third-party browser extensions. Please note that disabling tracking technologies may impact certain functionalities of our website.
 

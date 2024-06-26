@@ -18,10 +18,12 @@ VAT: EE102658062
 - YouTube Channel: [@ChrisSpiegl](https://youtube.com/chrisspiegl)
 - Instagram Account: [@ChrisSpiegl](https://instagram.com/chrisspiegl)
 - Instagram Account: [@CSXVentures](https://instagram.com/csxventures)
+- LinkedIn Account: [@ChrisSpiegl](https://linkedin.com/in/chrisspiegl)
+- 𝕏 / Twitter Account: [@ChrisSpiegl](https://x.com/ChrisSpiegl)
 
 ## Contact
 
-Telephone: +49 1567 8934363 (WhatsApp & Call)
+Telephone: +49 1567 8934363 (Telegram, WhatsApp, Signal, Threema)
 E-Mail: [team@ChrisSpiegl.com](mailto:team@ChrisSpiegl.com)
 Internetaddress: [ChrisSpiegl.com](https://ChrisSpiegl.com/)
 
