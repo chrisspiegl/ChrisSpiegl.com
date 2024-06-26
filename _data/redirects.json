@@ -178,11 +178,15 @@
     "slug": "ch"
   },
   {
-    "destination": "https://crsp.li/twitter",
+    "destination": "https://crsp.li/x",
+    "slug": "x"
+  },
+  {
+    "destination": "https://crsp.li/x",
     "slug": "tw"
   },
   {
-    "destination": "https://crsp.li/twitter",
+    "destination": "https://crsp.li/x",
     "slug": "twitter"
   },
   {
