@@ -557,18 +557,21 @@ p code {
 }
 
 #newsletter-embed #mlb2-6177287.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button,
+.formkit-form button,
 .btn {
   text-align: center !important;
   color: var(--color-body) !important;
   text-decoration: none !important;
   border: 2px solid var(--color-link) !important;
   background-color: transparent !important;
-  padding: 1rem !important;
+  padding: 0.5rem 1rem !important;
   // margin: 1rem !important;
   letter-spacing: .1rem !important;
+  font-weight: bold !important;
 }
 
 #newsletter-embed #mlb2-6177287.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover,
+.formkit-form button:hover,
 .btn:hover {
   color: var(--color-white) !important;
   background-color: var(--color-light) !important;
@@ -615,6 +618,7 @@ input[type=submit] {
 }
 
 #newsletter-embed #mlb2-6177287.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button,
+.formkit-form button,
 input[type=submit],
 .btn,
 .btn-block {
@@ -623,7 +627,52 @@ input[type=submit],
   font-size: var(--font-size-minus-1) !important;
 }
 
+.formkit-form [data-style="clean"],
 #mlb2-6177287.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
 #mlb2-6177287.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
   padding: 0 !important;
+}
+
+.formkit-form {
+  max-width: 100% !important;
+}
+
+.formkit-form .formkit-fields {
+  display: grid;
+  grid-gap: 1rem !important;
+  // grid-template-columns: 1fr;
+}
+
+.formkit-form .formkit-field,
+.formkit-form input,
+.formkit-form button {
+  margin: 0 !important;
+}
+
+.formkit-form button {
+  // margin: 0.5rem 0 !important;
+  // padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.formkit-form button span,
+.formkit-form button span:hover {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.formkit-form .formkit-alert {
+  margin-bottom: 0 !important;
+}
+
+.formkit-form div[data-style="clean"] {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.formkit-powered-by-convertkit-container {
+  display: none !important;
 }
