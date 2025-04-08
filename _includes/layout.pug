@@ -146,24 +146,32 @@ body
     ml('account', '190754');
 
   //- Littlefoot - Footnotes
-  script(src="https://cdn.jsdelivr.net/npm/littlefoot@3.3/dist/littlefoot.min.js")
-  script(type="application/javascript").
-    littlefoot.default({
-      buttonTemplate: `<sup
-        aria-expanded="false"
-        aria-label="Footnote <% number %>"
-        class="footnote-ref">
-        <a
-        href="#<% reference %>"
-        class="footnote-ref"
-        id="<% reference %>"
-        data-footnote-identifier="<% reference %>"
-        data-footnote-style="default"
-        alt="See Footnote <% number %>"
-        rel="footnote"
-        data-footnote-content="<% content %>">
-          <% number %>
-        </a></sup>`
-    })
-    Array.prototype.forEach.call(document.querySelectorAll('.footnotes.footnote-print-only, .footnotes .footnote-print-only'), e => e.classList.remove('footnote-print-only'))
-    Array.prototype.forEach.call(document.querySelectorAll('.footnote-backref'), (el) => { el.href = el.href.replace('#', '#lf-') })
+  //- script(src="https://cdn.jsdelivr.net/npm/littlefoot@4.1/dist/littlefoot.min.js")
+  //- script(type="application/javascript").
+  //-   littlefoot.littlefoot({
+  //-     buttonTemplate: `button
+  //-         aria-label="Footnote <% number %>"
+  //-         class="littlefoot__button"
+  //-         id="<% reference %>"
+  //-         title="See Footnote <% number %>"
+  //-       />
+  //-         <% number %>
+  //-       </button>`
+  //-     //- buttonTemplate: `<sup
+  //-     //-   aria-expanded="false"
+  //-     //-   aria-label="Footnote <% number %>"
+  //-     //-   class="footnote-ref">
+  //-     //-   <a
+  //-     //-   href="#<% reference %>"
+  //-     //-   class="footnote-ref"
+  //-     //-   id="<% reference %>"
+  //-     //-   data-footnote-identifier="<% reference %>"
+  //-     //-   data-footnote-style="default"
+  //-     //-   alt="See Footnote <% number %>"
+  //-     //-   rel="footnote"
+  //-     //-   data-footnote-content="<% content %>">
+  //-     //-     <% number %>
+  //-     //-   </a></sup>`
+  //-   })
+  //-   Array.prototype.forEach.call(document.querySelectorAll('.footnotes.footnote-print-only, .footnotes .footnote-print-only'), e => e.classList.remove('footnote-print-only'))
+  //-   Array.prototype.forEach.call(document.querySelectorAll('.footnote-backref'), (el) => { el.href = el.href.replace('#', '#lf-') })
