@@ -3,6 +3,12 @@ title: Unlimited 1-on-1 Consulting — Take Your Business, Content and Productiv
 ---
 
 <!--
+Testimonials:
+
+Shawn on Telegram…
+
+
+
 Lifetime Consulting Inspired by (Status 2025-03-31):
 
 Daniel Vassallo:
@@ -12,6 +18,20 @@ https://dvassallo.gumroad.com/l/consultations
 Florin Pop:
 https://x.com/florinpop1705/status/1906400602818580702
 https://www.florin-pop.com/consulting/
+
+Found in research (coach 15 min sessions):
+https://www.growwithlaura.com/unlimited-coaching-and-consulting.html
+
+
+Consulting - Unlimited
+
+https://buy.stripe.com/14k15geHSedQdP2bIJ
+
+Consulting - 1-Hour
+
+https://buy.stripe.com/4gw4hs8ju4DgcKYcMO
+
+?prefilled_email=chris%40chrisspiegl.com
  -->
 
 !!! text-center
@@ -47,18 +67,32 @@ That's where I come in. With 20+ years of experience (yes, really, I sold my fir
 
 ### Elevate Your Content Production
 
-Transform your content from amateur to professional with expert guidance on:
+Transform your content from amateur to professional. I've built multiple YouTube channels (biggest ones have 40k subscribers[^1] & 16k subscribers[^2]) and podcasts (two of which hit the top 2% world wide). I have created reviews for and partnered with dozens of brands like Røde, Atomos, Amazon, Adobe, Riverside, Acer, Walkolution, DPA, espresso Display, BOLSTair, Ultrahuman, and many more.
 
-- **Professional Video Production**
-  - Studio setup and equipment optimization, lighting and audio perfection, camera techniques and composition, live streaming mastery, and post-production workflow.
-- **Podcast Excellence**
-  - Professional recording setup, audio quality optimization, editing and production workflow, and distribution and promotion strategies.
-- **Content Creation Mastery**
-  - YouTube channel optimization, content strategy development, audience engagement techniques, and brand consistency and growth.
+- **Professional Video Production:** Studio setup and equipment optimization, lighting and audio perfection, camera techniques and composition, live streaming mastery, and post-production workflow.
+- **Podcast Excellence:** Professional recording setup, audio quality optimization, editing and production workflow, and distribution and promotion strategies.
+- **Content Creation Mastery:** YouTube channel optimization, content strategy development, audience engagement techniques, and brand consistency and growth.
 
 ### Online Business Strategy and Optimization
 
 I've built and run multiple online businesses (I am currently part of 3) and I can help you with: Business model optimization, audience growth, monetization strategies, and scaling your business.
+
+### Digital Nomadism & Remote Work
+
+Navigate the challenges of location-independent living:
+
+- **International Relocation:** Leaving your home country (I left Germany), adapting to new cultures, and establishing a home base abroad.
+- **Remote Work Optimization:** Setting up productive workspaces anywhere, managing time zones, and maintaining work-life balance.
+- **Global Living Experience:** Having lived in 8+ countries for 6-12+ months each, I can share practical insights on international living.
+
+### Starting Your Online Business
+
+Launch and grow your online business:
+
+- **Company Structure & Registration:** Setting up an Estonian company and understanding different international business structures.
+- **Financial Independence:** Transitioning from steady income to entrepreneurial ventures, managing irregular income, and building financial security.
+- **Autonomous Business Operations:** Working without a traditional boss, creating systems for accountability, and maintaining productivity as your own manager.
+
 
 ### Master the Apple Ecosystem
 
@@ -127,3 +161,5 @@ My goal is to empower you with knowledge until you're self-sufficient and don't 
 
 Let's discuss your needs in a free 30-minute consultation. [Email me (chris@chrisspiegl.com)](mailto:chris@chrisspiegl.com) to schedule a call.
 
+[^1]: [Yoga mit Nicole](https://youtube.com/NicoleReiher) 4,000,000+ views
+[^2]: [Chris Spiegl](https://youtube.com/ChrisSpiegl) 4,600,000+ views
