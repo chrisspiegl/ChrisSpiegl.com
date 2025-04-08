@@ -139,6 +139,13 @@ Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chris
 >
 > <small style="color: var(--color-light)">— Candice Wu, SEP, MA, CYT500 • [<i title="Website" class="fa-solid fa-link"></i>](https://CandiceWu.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/candice-wu)<br>Healing, Embodiment, & Alignment Facilitator • Voice Over Artist and Actress</small>
 
+> My content setup was basic before working with Chris. He transformed it into a professional-grade production by guiding me through OBS plugins, camera gear, and audio equipment selection, then implementing custom overlays and transitions. The result? A polished, distinctive streaming experience that sets me apart from others in my niche.
+>
+> The impact has been clear - my audience retention and engagement have improved significantly. Chris's technical expertise and attention to detail made all the difference. I highly recommend his consulting services to anyone serious about elevating their content quality.
+>
+> <small style="color: var(--color-light)">— Rashaan Arrington • [<i title="Website" class="fa-brands fa-youtube"></i>](https://youtube.com/@KhunShawn)<br>Content Creator & Live Streamer</small>
+
+
 ## 🤔 Frequently Asked Questions
 
 ### How does the unlimited consulting work?
