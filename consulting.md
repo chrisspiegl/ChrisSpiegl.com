@@ -129,6 +129,16 @@ Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chris
 <small style="display: inline-block; padding-top: 1rem;">Want to try first? [Book a single session for 140€](https://crsp.li/consulting-1-hour).</small>
 !!!
 
+## Testimonials
+
+> "I'll send it to my guy—he'll know what to do with it"… often comes out of my mouth when it comes to a new idea or problem I have. Because… Chris just knows what to do in all sorts of situations and problems, and I cannot narrow his work into one label!
+>
+> Before my work with Chris, I felt I didn't know what to do or how to start in terms of taking my business to the next level. *He opened my mind about the options for how to scale up and go bigger, podcasting, and creative offerings that I could create while living internationally.* Whenever fear and doubt in me may have caused me to stall or not take the next steps, Chris encouraged me by pointing out my strengths and the value in what I had to offer. He got to know my business AND who I am in relation to it inside out, so he could support me forward. Furthermore, *he has the technological skill to implement any idea I have and always has a few alternatives up his sleeve.*
+>
+> If you want an incredible sounding board person with technological wizardry who will support you as you grow your business, Chris might be *your guy*!
+>
+> <small style="color: var(--color-light)">— Candice Wu, SEP, MA, CYT500 • [<i title="Website" class="fa-solid fa-link"></i>](https://CandiceWu.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/candice-wu)<br>Healing, Embodiment, & Alignment Facilitator • Voice Over Artist and Actress</small>
+
 ## 🤔 Frequently Asked Questions
 
 ### How does the unlimited consulting work?
