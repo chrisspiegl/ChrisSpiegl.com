@@ -135,7 +135,7 @@ Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chris
 >
 > Chris brings not only deep technical expertise to the table but also a strong entrepreneurial mindset. His input has been invaluable in helping us think strategically while staying efficient and focused. Having him as part of our journey has been a true game-changer.
 >
-> <small style="color: var(--color-light)">— Tobi Deckert • [<i title="Website" class="fa-brands fa-youtube"></i>](https://tobideckert.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://www.linkedin.com/in/tobideckert/)<br>CEO & Founder • Inventor, Stuntman, and Entrepreneur</small>
+> <small style="color: var(--color-light)">— Tobi Deckert • [<i title="Website" class="fa-solid fa-link"></i>](https://tobideckert.de) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/tobideckert)<br>CEO & Founder • Inventor, Stuntman, and Entrepreneur</small>
 
 > "I'll send it to my guy—he'll know what to do with it"… often comes out of my mouth when it comes to a new idea or problem I have. Because… Chris just knows what to do in all sorts of situations and problems, and I cannot narrow his work into one label!
 >
