@@ -36,9 +36,9 @@ https://buy.stripe.com/4gw4hs8ju4DgcKYcMO
 
 !!! text-center
 # Unlimited 1-on-1 Consulting
-
-**Limited Time Offer: 12 Months of Unlimited Support for 1.000€**
-<small>Only 3 spots remaining. Secure your place today.</small>
+**For Entrepreneurs within the Content Space**
+**Limited Time Offer: 12 Months of Unlimited Spport for 1.000€**
+<small>Only 3 out of 10 spots remaining. Secure your place today.</small>
 !!!
 
 Anytime you need help, just book a video call with me, and I'll do my best to assist you. There are *no limits* on how often or how many times we can chat. I want you to feel like *you have me on speed-dial* for any problem I can help with.
