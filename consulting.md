@@ -131,6 +131,18 @@ Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chris
 
 ## Testimonials
 
+> Working with Chris sits right at the intersection of clarity, accountability, confidence, and competence. You will get all of this from him.
+>
+> Whether it's business strategy, content, or anything technical—he's the man.
+>
+> Our strategic sessions around business models, positioning, and the value proposition for the platform I'm building for coaches have been invaluable. Chris truly understands what it takes to build something from the ground up.
+>
+> Beyond that, our conversations sparked fresh perspectives that elevated my execution. Thanks to his guidance, my content workflows—including branding and platform structure, camera gear, lighting, editing tools, and more—have already saved me a ton of time and money.
+>
+> The momentum is definitely on, and a big part of that is thanks to his support.
+>
+> <small style="color: var(--color-light)">— Adam Haluska • [<i title="Website" class="fa-solid fa-link"></i>](https://adamhaluska.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/adamhaluska)<br>Founder, Connector, Podcast Host and Community Builder<br>High Achiever’s Guide to Alignment, Vitality, and Longevity 🌱</small>
+
 > I'm incredibly grateful for Chris's support in elevating both my personal brand, Tobi Deckert, and our project BOLSTair. We've worked closely together and made significant progress in several key areas—from building social trust to streamlining our workflows with powerful tools and systems.
 >
 > Chris brings not only deep technical expertise to the table but also a strong entrepreneurial mindset. His input has been invaluable in helping us think strategically while staying efficient and focused. Having him as part of our journey has been a true game-changer.
