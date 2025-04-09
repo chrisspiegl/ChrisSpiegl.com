@@ -198,3 +198,12 @@ Let's discuss your needs in a free 30-minute consultation. [Email me (chris@chri
 
 [^1]: [Yoga mit Nicole](https://youtube.com/NicoleReiher) 4,000,000+ views
 [^2]: [Chris Spiegl](https://youtube.com/ChrisSpiegl) 4,600,000+ views
+
+<style>
+  blockquote:not(:last-of-type) {
+    margin-bottom: 5rem;
+  }
+  blockquote:first-of-type {
+    margin-top: 2rem;
+  }
+</style>
