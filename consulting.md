@@ -131,6 +131,12 @@ Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chris
 
 ## Testimonials
 
+> I'm incredibly grateful for Chris's support in elevating both my personal brand, Tobi Deckert, and our project BOLSTair. We've worked closely together and made significant progress in several key areas—from building social trust to streamlining our workflows with powerful tools and systems.
+>
+> Chris brings not only deep technical expertise to the table but also a strong entrepreneurial mindset. His input has been invaluable in helping us think strategically while staying efficient and focused. Having him as part of our journey has been a true game-changer.
+>
+> <small style="color: var(--color-light)">— Tobi Deckert • [<i title="Website" class="fa-brands fa-youtube"></i>](https://tobideckert.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://www.linkedin.com/in/tobideckert/)<br>CEO & Founder • Inventor, Stuntman, and Entrepreneur</small>
+
 > "I'll send it to my guy—he'll know what to do with it"… often comes out of my mouth when it comes to a new idea or problem I have. Because… Chris just knows what to do in all sorts of situations and problems, and I cannot narrow his work into one label!
 >
 > Before my work with Chris, I felt I didn't know what to do or how to start in terms of taking my business to the next level. *He opened my mind about the options for how to scale up and go bigger, podcasting, and creative offerings that I could create while living internationally.* Whenever fear and doubt in me may have caused me to stall or not take the next steps, Chris encouraged me by pointing out my strengths and the value in what I had to offer. He got to know my business AND who I am in relation to it inside out, so he could support me forward. Furthermore, *he has the technological skill to implement any idea I have and always has a few alternatives up his sleeve.*
