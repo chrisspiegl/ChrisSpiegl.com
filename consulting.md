@@ -141,7 +141,7 @@ Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chris
 >
 > The momentum is definitely on, and a big part of that is thanks to his support.
 >
-> <small style="color: var(--color-light)">— Adam Haluska • [<i title="Website" class="fa-solid fa-link"></i>](https://adamhaluska.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/adamhaluska)<br>Founder of Limitless, Connector, Podcast Host and Community Builder<br>High Achiever's Guide to Alignment, Vitality, and Longevity 🌱</small>
+> <small style="color: var(--color-light)">— Adam Haluska • [<i title="Website" class="fa-solid fa-link"></i>](https://adamhaluska.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/adamhaluska)<br>Founder at Limitless, and Podcaster</small>
 
 > I'm incredibly grateful for Chris's support in elevating both my personal brand, Tobi Deckert, and our project BOLSTair. We've worked closely together and made significant progress in several key areas—from building social trust to streamlining our workflows with powerful tools and systems.
 >
