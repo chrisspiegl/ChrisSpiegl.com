@@ -27,31 +27,35 @@ module.exports = class {
   // Embed Source Map in Development
   async compile(config) {
     return new Promise((resolve, reject) => {
-      if (!isProd) {
-        config.sourceMap = true
-        config.sourceMapEmbed = true
-        config.outputStyle = 'expanded'
+      const sassOptions = {
+        loadPaths: [path.join(__dirname, 'scss')],
+        style: isProd ? 'compressed' : 'expanded',
+        sourceMap: !isProd,
+        sourceMapIncludeSources: !isProd,
+        quietDeps: true
       }
 
-      const result = sass.renderSync(config)
-      return resolve(result.css.toString())
+      try {
+        const result = sass.compile(config.filePath, sassOptions)
+        return resolve(result.css.toString())
+      } catch (error) {
+        return reject(error)
+      }
     })
   }
 
-  // Minify & Optimize with CleanCSS in Production
-  async minify(css) {
-    return new Promise((resolve, reject) => {
-      if (!isProd) {
-        resolve(css)
+  // Process the file
+  async render({ filePath }) {
+    try {
+      const css = await this.compile({ filePath })
+      if (isProd) {
+        const minified = new CleanCSS({}).minify(css).styles
+        return minified
       }
-
-      const minified = new CleanCSS().minify(css)
-      if (!minified.styles) {
-        return reject(minified.error)
-      }
-
-      resolve(minified.styles)
-    })
+      return css
+    } catch (error) {
+      return this.renderError(error)
+    }
   }
 
   // Display an error overlay when CSS build fails.
@@ -85,7 +89,7 @@ module.exports = class {
             position: fixed;
         }
         body::after {
-            content: '${cssesc(error)}';
+            content: '${cssesc(error.toString())}';
             white-space: pre;
             display: block;
             top: 0;
@@ -97,25 +101,5 @@ module.exports = class {
             border: solid 2px red;
             position: fixed;
         }`
-  }
-
-  // Render the CSS file
-  async render({ filePath }) {
-    try {
-      const css = await this.compile({ file: filePath })
-      const result = await this.minify(css)
-      return result
-    } catch (error) {
-      // If things go wrong
-      if (isProd) {
-        // Throw and abort in production
-        throw new Error(error)
-      } else {
-        // Otherwise display the error overly
-        console.error(error)
-        const message = error.formatted || error.message
-        return this.renderError(message)
-      }
-    }
   }
 }

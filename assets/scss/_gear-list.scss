@@ -1,3 +1,5 @@
+@use "variables" as vars;
+
 .gear-list {
   max-width: calc(3*var(--content-width));
   width: 100%;
@@ -9,7 +11,7 @@
   justify-items: center;
   padding: 2rem 1rem;
   margin: auto;
-  @media screen and (max-width: $break-mobile) {
+  @media screen and (max-width: vars.$break-mobile) {
     display: block;
     width: 100%;
   }
@@ -25,7 +27,7 @@
   position: relative;
   padding: .5rem;
   text-align: justify;
-  @media screen and (max-width: $break-mobile) {
+  @media screen and (max-width: vars.$break-mobile) {
     display: block;
     width: 100%;
   }

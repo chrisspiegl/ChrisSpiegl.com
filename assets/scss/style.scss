@@ -1,14 +1,26 @@
-// $content-width: 640px;
-$content-width: 980px;
-$break-mobile: calc($content-width / 2);
+@use "sass:meta";
+@use "variables" as vars;
+
+@use "tables";
+@use "lists";
+@use "footnotes";
+@use "figures";
+@use "code";
+@use "blockquote";
+@use "header";
+@use "navigation";
+@use "footer";
+@use "dracula-prism";
+@use "gear-list";
+@use "books";
+@use "movies";
+
 // @import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-  /*  GRAYS   */
-
-  --break-mobile: #{$break-mobile};
-  --content-width: #{$content-width};
+  --break-mobile: #{vars.$break-mobile};
+  --content-width: #{vars.$content-width};
 
   /*
 ### Grays
@@ -269,19 +281,19 @@ body {
 
 
 // @import "https://cdn.jsdelivr.net/npm/littlefoot@4.1/dist/littlefoot.css";
-@import "_tables.scss";
-@import "_lists.scss";
-@import "_footnotes.scss";
-@import "_figures.scss";
-@import "_code.scss";
-@import "_blockquote.scss";
-@import "_header.scss";
-@import "_navigation.scss";
-@import "_footer.scss";
-@import "_dracula-prism.scss";
-@import "_gear-list.scss";
-@import "_books.scss";
-@import "_movies.scss";
+@include meta.load-css("_tables.scss");
+@include meta.load-css("_lists.scss");
+@include meta.load-css("_footnotes.scss");
+@include meta.load-css("_figures.scss");
+@include meta.load-css("_code.scss");
+@include meta.load-css("_blockquote.scss");
+@include meta.load-css("_header.scss");
+@include meta.load-css("_navigation.scss");
+@include meta.load-css("_footer.scss");
+@include meta.load-css("_dracula-prism.scss");
+@include meta.load-css("_gear-list.scss");
+@include meta.load-css("_books.scss");
+@include meta.load-css("_movies.scss");
 
 
 a {
@@ -515,7 +527,7 @@ p code {
   grid-template-columns: 1fr 1fr;
   padding-bottom: 2rem;
 
-  @media screen and (max-width: $break-mobile) {
+  @media screen and (max-width: vars.$break-mobile) {
     grid-template-columns: 1fr;
   }
 }
