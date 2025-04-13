@@ -131,35 +131,41 @@ Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chris
 
 ## Testimonials
 
-> Working with Chris sits right at the intersection of clarity, accountability, confidence, and competence. You will get all of this from him.
+> Working with Chris sits right at the intersection of clarity, accountability, confidence, and competence. *You will get all of this from him.*
 >
-> Whether it's business strategy, content, or anything technical—he's the man.
+> Whether it's business strategy, content, or anything technical—*he's the man.*
 >
-> Our strategic sessions around business models, positioning, and the value proposition for the platform I'm building for coaches have been invaluable. Chris truly understands what it takes to build something from the ground up.
+> Our strategic sessions around business models, positioning, and the value proposition for the platform I'm building for coaches have been invaluable. *Chris truly understands what it takes to build something from the ground up.*
 >
-> Beyond that, our conversations sparked fresh perspectives that elevated my execution. Thanks to his guidance, my content workflows—including branding and platform structure, camera gear, lighting, editing tools, and more—have already saved me a ton of time and money.
+> Beyond that, our conversations sparked fresh perspectives that elevated my execution. Thanks to his guidance, my content workflows—including branding and platform structure, camera gear, lighting, editing tools, and more—*have already saved me a ton of time and money.*
 >
-> The momentum is definitely on, and a big part of that is thanks to his support.
+> The momentum is definitely on, and *a big part of that is thanks to his support.*
 >
 > <small style="color: var(--color-light)">— Adam Haluska • [<i title="Website" class="fa-solid fa-link"></i>](https://adamhaluska.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/adamhaluska)<br>Founder at Limitless, and Podcaster</small>
 
-> I'm incredibly grateful for Chris's support in elevating both my personal brand, Tobi Deckert, and our project BOLSTair. We've worked closely together and made significant progress in several key areas—from building social trust to streamlining our workflows with powerful tools and systems.
+> As a creative entrepreneur running a social media agency, I thrive on ideas and content creation, but technical details and equipment setup aren't my forte. *This is where Chris's expertise has been invaluable.* He's become my go-to expert for everything from content production workflows to digital tools and technical solutions.
 >
-> Chris brings not only deep technical expertise to the table but also a strong entrepreneurial mindset. His input has been invaluable in helping us think strategically while staying efficient and focused. Having him as part of our journey has been a true game-changer.
+> His ability to understand my creative vision while handling the technical implementation has been transformative. Whether it's optimizing my content creation setup, streamlining my business operations, or finding the perfect technical solution, *Chris consistently delivers actionable insights that drive real results.* His expertise in content excellence and productivity optimization has become an essential part of my business growth.
+>
+> <small style="color: var(--color-light)">— Christian Hempfling • [<i title="Website" class="fa-solid fa-link"></i>](https://christianhempfling.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://www.linkedin.com/in/christianhempfling/)<br>Founder at Christian.Hempfling.Media • Creator & Host at MachBar — Podcast</small>
+
+> I'm incredibly grateful for Chris's support in elevating both my personal brand, Tobi Deckert, and our project BOLSTair. *We've worked closely together and made significant progress in several key areas*—from building social trust to streamlining our workflows with powerful tools and systems.
+>
+> Chris brings not only deep technical expertise to the table but also *a strong entrepreneurial mindset.* His input has been invaluable in helping us think strategically while staying efficient and focused. *Having him as part of our journey has been a true game-changer.*
 >
 > <small style="color: var(--color-light)">— Tobi Deckert • [<i title="Website" class="fa-solid fa-link"></i>](https://tobideckert.de) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/tobideckert)<br>CEO & Founder • Inventor, Stuntman, and Entrepreneur</small>
 
-> "I'll send it to my guy—he'll know what to do with it"… often comes out of my mouth when it comes to a new idea or problem I have. Because… Chris just knows what to do in all sorts of situations and problems, and I cannot narrow his work into one label!
+> "I'll send it to my guy—he'll know what to do with it"… *often comes out of my mouth when it comes to a new idea or problem I have.* Because… Chris just knows what to do in all sorts of situations and problems, and I cannot narrow his work into one label!
 >
 > Before my work with Chris, I felt I didn't know what to do or how to start in terms of taking my business to the next level. *He opened my mind about the options for how to scale up and go bigger, podcasting, and creative offerings that I could create while living internationally.* Whenever fear and doubt in me may have caused me to stall or not take the next steps, Chris encouraged me by pointing out my strengths and the value in what I had to offer. He got to know my business AND who I am in relation to it inside out, so he could support me forward. Furthermore, *he has the technological skill to implement any idea I have and always has a few alternatives up his sleeve.*
 >
-> If you want an incredible sounding board person with technological wizardry who will support you as you grow your business, Chris might be *your guy*!
+> If you want an incredible sounding board person with technological wizardry who will support you as you grow your business, *Chris might be your guy!*
 >
 > <small style="color: var(--color-light)">— Candice Wu, SEP, MA, CYT500 • [<i title="Website" class="fa-solid fa-link"></i>](https://CandiceWu.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/candice-wu)<br>Healing, Embodiment, & Alignment Facilitator • Voice Over Artist and Actress</small>
 
-> My content setup was basic before working with Chris. He transformed it into a professional-grade production by guiding me through OBS plugins, camera gear, and audio equipment selection, then implementing custom overlays and transitions. The result? A polished, distinctive streaming experience that sets me apart from others in my niche.
+> My content setup was basic before working with Chris. *He transformed it into a professional-grade production* by guiding me through OBS plugins, camera gear, and audio equipment selection, then implementing custom overlays and transitions. The result? *A polished, distinctive streaming experience that sets me apart from others in my niche.*
 >
-> The impact has been clear - my audience retention and engagement have improved significantly. Chris's technical expertise and attention to detail made all the difference. I highly recommend his consulting services to anyone serious about elevating their content quality.
+> The impact has been clear - *my audience retention and engagement have improved significantly.* Chris's technical expertise and attention to detail made all the difference. I highly recommend his consulting services to anyone serious about elevating their content quality.
 >
 > <small style="color: var(--color-light)">— Rashaan Arrington • [<i title="Website" class="fa-brands fa-youtube"></i>](https://youtube.com/@KhunShawn)<br>Content Creator & Live Streamer</small>
 
