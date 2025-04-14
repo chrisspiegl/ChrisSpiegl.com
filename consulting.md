@@ -163,6 +163,14 @@ Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chris
 >
 > <small style="color: var(--color-light)">— Candice Wu, SEP, MA, CYT500 • [<i title="Website" class="fa-solid fa-link"></i>](https://CandiceWu.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/candice-wu)<br>Healing, Embodiment, & Alignment Facilitator • Voice Over Artist and Actress</small>
 
+> Working with Chris was super helpful during a time when I was figuring out how to take my business and life more international and location-independent. He gave me clear, practical advice, which made the whole idea feel a lot more doable.
+>
+> He also helped me understand the ins and outs of setting up a fully digital EU company and walked me through the different international business structures in a way that actually made sense.
+>
+> Thanks to Chris, I now have actionable steps towards being able to set up a location-independent business and build a lifestyle that gives me a lot more freedom and flexibility.
+>
+> <small style="color: var(--color-light)">— Eduard Unruh • [<i title="Website" class="fa-solid fa-link"></i>](https://eduardunruh-films.de) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/eduardunruh)<br>Creative Director & Adventure Filmmaker</small>
+
 > My content setup was basic before working with Chris. *He transformed it into a professional-grade production* by guiding me through OBS plugins, camera gear, and audio equipment selection, then implementing custom overlays and transitions. The result? *A polished, distinctive streaming experience that sets me apart from others in my niche.*
 >
 > The impact has been clear - *my audience retention and engagement have improved significantly.* Chris's technical expertise and attention to detail made all the difference. I highly recommend his consulting services to anyone serious about elevating their content quality.
