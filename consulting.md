@@ -163,6 +163,10 @@ Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chris
 >
 > <small style="color: var(--color-light)">— Candice Wu, SEP, MA, CYT500 • [<i title="Website" class="fa-solid fa-link"></i>](https://CandiceWu.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/candice-wu)<br>Healing, Embodiment, & Alignment Facilitator • Voice Over Artist and Actress</small>
 
+> I've been working with Chris for over a year and I couldn't be happier with the results. His expertise spans from content production and business optimization to digital nomadism and software development. Chris is focused on details, but he also ensures that the process is smooth and adjustable in any case. I love his quick check-ins as an accountability buddy and the frequent brainstorm sessions. His guidance on content strategy, equipment optimization, and business scaling has been invaluable. I am looking forward to more work with him.
+>
+> <small style="color: var(--color-light)">— Lexie Janson • [<i title="Website" class="fa-solid fa-link"></i>](https://lexiejanson.com) • [<i title="LinkedIn" class="fa-brands fa-linkedin"></i>](https://linkedin.com/in/lexie-janson-346bb8123) • [<i title="LinkedIn" class="fa-brands fa-youtube"></i>](https://www.youtube.com/@Lexie.Janson)<br>Author • Entrepreneur • FPV Drone & eVTOL Pilot</small>
+
 > Working with Chris was super helpful during a time when I was figuring out how to take my business and life more international and location-independent. He gave me clear, practical advice, which made the whole idea feel a lot more doable.
 >
 > He also helped me understand the ins and outs of setting up a fully digital EU company and walked me through the different international business structures in a way that actually made sense.
