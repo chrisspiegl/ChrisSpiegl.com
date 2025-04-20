@@ -37,7 +37,7 @@ https://buy.stripe.com/4gw4hs8ju4DgcKYcMO
 !!! text-center
 # Unlimited 1-on-1 Consulting
 **For Entrepreneurs within the Content Space**
-**Limited Time Offer: 12 Months of Unlimited Spport for 1.000€**
+**Limited Time Offer: 12 Months of Unlimited Spport for 1.000€[^3]**
 <small>Only 3 out of 10 spots remaining. Secure your place today.</small>
 !!!
 
@@ -67,7 +67,7 @@ That's where I come in. With 20+ years of experience (yes, really, I sold my fir
 
 ### Elevate Your Content Production
 
-Transform your content from amateur to professional. I've built multiple YouTube channels (biggest ones have 40k subscribers[^1] & 16k subscribers[^2]) and podcasts (two of which hit the top 2% world wide). I have created reviews for and partnered with dozens of brands like Røde, Atomos, Amazon, Adobe, Riverside, Acer, Walkolution, DPA, espresso Display, BOLSTair, Ultrahuman, and many more.
+Transform your content from amateur to professional. I've built multiple YouTube channels (biggest ones have 45k subscribers[^1] & 16k subscribers[^2]) and podcasts (two of which hit the top 2% world wide). I have created reviews for and partnered with dozens of brands like Røde, Atomos, Amazon, Adobe, Riverside, Acer, Walkolution, DPA, espresso Display, BOLSTair, Ultrahuman, and many more.
 
 - **Professional Video Production:** Studio setup and equipment optimization, lighting and audio perfection, camera techniques and composition, live streaming mastery, and post-production workflow.
 - **Podcast Excellence:** Professional recording setup, audio quality optimization, editing and production workflow, and distribution and promotion strategies.
@@ -216,6 +216,7 @@ Let's discuss your needs in a free 30-minute consultation. [Email me (chris@chri
 
 [^1]: [Yoga mit Nicole](https://youtube.com/NicoleReiher) 4,000,000+ views
 [^2]: [Chris Spiegl](https://youtube.com/ChrisSpiegl) 4,600,000+ views
+[^3]: <small>The price is excluding VAT. I reserve the right to decline any consultation request. I reserve the right to end the consulting contract at any time (you'll receive a full refund within the first 100 days and 50% if I end it after that).</small>
 
 <style>
   blockquote:not(:last-of-type) {
