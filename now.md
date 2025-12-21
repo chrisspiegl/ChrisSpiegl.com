@@ -8,7 +8,7 @@ The cornerstones of my present existence. To stay up to date, sign up to my [new
 
 <!-- ## Doing -->
 
-- Preparing for Birth of our first Son — Probably one of the craziest experiences in my life to date (even though he's not even here yet). This experience will likely shake things up massively in the coming weeks & months & years. And I am here for it.
+- **Preparing for Birth of our first Son** — Probably one of the craziest experiences in my life to date (even though he's not even here yet). This experience will likely shake things up massively in the coming weeks & months & years. And I am here for it.
 - Everything else is optional for the next few weeks…
 - Social Media Presence on **[YouTube](/youtube) • [LinkedIn](/linkedin) • [Instagram](/instagram) • [𝕏 / Twitter](/twitter)** — Empowering business owners, entrepreneurs, and aspiring visionaries through captivating videos that illuminate the path to success. Explore the indispensable keys to unlock the pillars of freedom: time, location, and financial independence. Immerse yourself in a world of valuable insights and unleash your true potential.
 - **[Consulting](/consulting)** — With my expertise in social media marketing, content creation (high quality Videos, Podcasts, Short Form, etc.), website optimization, and online strategies, I'll guide you towards remarkable results. Together, we'll optimize your business structure, setup a high quality content production pipeline, analyze distribution channels, and drive more traffic while boosting conversion rates. Unlock your business's potential, maximize revenue, and invest your valuable time strategically.
