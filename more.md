@@ -50,5 +50,5 @@ title: More
 - [Pug](https://pugjs.org) and [Markdown](https://en.wikipedia.org/wiki/Markdown)
 
 !!! text-center
-Any open questions? Contact me via [Telegram Group](/tgg) or [Email](mailto:team@ChrisSpiegl.com).
+Any open questions? Contact me via [Email](mailto:team@ChrisSpiegl.com).
 !!!
