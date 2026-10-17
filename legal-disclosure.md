@@ -15,10 +15,12 @@ VAT: EE102658062
 - ChrisSpiegl.com
 - Foxi.Link
 - PushNotice.Chat
+- Chaptered.app
 - YouTube Channel: [@ChrisSpiegl](https://youtube.com/chrisspiegl)
 - Instagram Account: [@ChrisSpiegl](https://instagram.com/chrisspiegl)
 - Instagram Account: [@CSXVentures](https://instagram.com/csxventures)
 - LinkedIn Account: [@ChrisSpiegl](https://linkedin.com/in/chrisspiegl)
+- Substack Account: [@ChrisSpiegl](https://chrisspiegl.substack.com)
 - 𝕏 / Twitter Account: [@ChrisSpiegl](https://x.com/ChrisSpiegl)
 
 ## Contact
