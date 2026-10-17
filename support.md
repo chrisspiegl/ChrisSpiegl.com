@@ -2,27 +2,25 @@
 title: Support
 ---
 
-# Support My Creations
+# Support
 
-I am an independent content creator. If you got value from my videos, podcasts, or classes on Skillshare and you’d like to support me in creating more of those resources, please consider becoming a one-time or monthly contributor. Thank you for your consideration.
+If you've enjoyed a letter, a photo, a video, or anything else I've put out into the world, thank you. That alone means more than you'd think.
 
-<!-- <div class="side-by-side">
-  <a class="btn btn-block" href="https://crsp.li/tea">Buy Me A Coffee</a>
-  <a class="btn btn-block" href="https://crsp.li/liberapay">Donate through Librepay</a>
-</div> -->
+Some of what I make is free, and some of it isn't. Either way, if you'd like to support the work and help me keep making it, here's how. It's completely optional, and it's always appreciated.
 
-You can become a YouTube Member, support the Channel and Videos I create there, while also enjoying special badges and chat features.
+<div class="side-by-side">
+  <a class="btn btn-block" href="https://crsp.li/member">Join on YouTube</a>
+  <a class="btn btn-block" href="https://chrisspiegl.substack.com/subscribe?utm_source=ChrisSpiegl.com">Subscribe on Substack</a>
+</div>
 
-<a class="btn btn-block" href="https://crsp.li/member">Become a YouTube Member</a>
+Or simply read, watch, reply, or pass something along to a friend. That counts too.
 
-Or, if you are super techy, there is also crypto (click for QR Code):
+<!-- {{ qrcode['btc'].rendered }} -->
 
-{{ qrcode['btc'].rendered }}
+<!-- {{ qrcode['doge'].rendered }} -->
 
-{{ qrcode['doge'].rendered }}
+<!-- {{ qrcode['ltc'].rendered }} -->
 
-{{ qrcode['ltc'].rendered }}
+<!-- {{ qrcode['xlm'].rendered }} -->
 
-{{ qrcode['xlm'].rendered }}
-
-{{ qrcode['bat'].rendered }}
+<!-- {{ qrcode['bat'].rendered }} -->
