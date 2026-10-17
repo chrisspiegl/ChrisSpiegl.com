@@ -71,7 +71,7 @@ I’m excited to help you enhance your productivity, boost your content quality,
 [![Chris Spiegl](/assets/images/other/signature-public-small.png)](https://crsp.li/contact)
 !!!
 
-For any questions, reach out. My team and I are here to ensure your experience is seamless.
+For any questions, reach out. I'm here to ensure your experience is seamless.
 
 Ready to achieve your highest potential? Start your transformation now!
 

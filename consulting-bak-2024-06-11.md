@@ -42,7 +42,7 @@ Are you struggling to start, monetize, or enhance your content platform, such as
 
 Taking a holistic view of your business, both in the big picture and the finer details, is key to fostering growth and expansion. Together, we'll create a vision and a plan.
 
-If you have any questions before scheduling, please feel free to reach out to my team via the email address below. We're here to assist you.
+If you have any questions before scheduling, please feel free to reach out via the email address below. We're here to assist you.
 
 Services include:
 

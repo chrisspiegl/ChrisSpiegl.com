@@ -34,7 +34,7 @@ Unleash your potential, seize the opportunities that matter most, and let's conq
 
 <!-- <div class="side-by-side"> -->
 !!! text-center
-<a class="btn" href="mailto:team@ChrisSpiegl.com" title= "Email me about anything!">team@ChrisSpiegl.com</a>
+<a class="btn" href="mailto:chris@chrisspiegl.com" title= "Email me about anything!">chris@chrisspiegl.com</a>
 !!!
 
 !!! quote-hero
