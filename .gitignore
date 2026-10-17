@@ -90,3 +90,4 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+assets/images/FridayWallpaper/*.jpg
