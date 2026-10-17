@@ -16,6 +16,10 @@
     "slug": "movie"
   },
   {
+    "destination": "/more/",
+    "slug": "podcast"
+  },
+  {
     "destination": "/#about",
     "slug": "about"
   },
