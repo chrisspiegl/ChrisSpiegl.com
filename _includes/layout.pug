@@ -48,17 +48,18 @@ body
         div.text
           h1
             a(href="/") Chris Spiegl
-          p: em Father, Traveler, Photographer, Thinker
-          p: em
+          p: em Father, Traveler, Photographer, Thinker.
+          p.location-line: em
             | Currently in#{' '}
-            a.location-until(href='/location')
-              if nomadlist.headerIncludesUntil && nomadlist.now.until && nomadlist.now.until.includes(', ')
-                - const locationParts = nomadlist.now.until.split(', ')
-                span.location-place= `${locationParts[0]},`
-                = ' '
-                span.location-rest= locationParts.slice(1).join(', ')
+            a(href='/location')
+              - const locationLabel = nomadlist.headerIncludesUntil ? nomadlist.now.until : nomadlist.now.string
+              if locationLabel && locationLabel.includes(', ')
+                - const locationParts = locationLabel.split(', ')
+                = `${locationParts[0]}, `
+                wbr
+                = locationParts.slice(1).join(', ').replaceAll(' ', '\u00A0')
               else
-                = nomadlist.headerIncludesUntil ? nomadlist.now.until : nomadlist.now.string
+                = locationLabel
 
       section.social
         a(href="/youtube" title="YouTube Profile — External Link" target="_blank")

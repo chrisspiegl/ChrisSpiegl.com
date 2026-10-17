@@ -37,6 +37,7 @@ blockquote p cite
   right: 50%;
   margin: 4rem -50vw 6rem;
   blockquote {
+    text-wrap: pretty;
     text-align: center;
     width: calc(var(--content-width) * 2);
     max-width: 90%;
