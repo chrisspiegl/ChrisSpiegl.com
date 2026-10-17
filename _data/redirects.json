@@ -8,6 +8,10 @@
     "slug": "tag"
   },
   {
+    "destination": "/blog/",
+    "slug": "posts"
+  },
+  {
     "destination": "/posts/",
     "slug": "post"
   },
