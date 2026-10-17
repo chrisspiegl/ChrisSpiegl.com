@@ -5,8 +5,8 @@ block content
     h1 What I’m doing NOW
     p Last Updated: #[=global.dateReadable(page.date)]
       br
-      | Currently in: #[a(href='/location')= nomadlist.now.string]
+      | Currently in: #[a(href='/location')= nomadlist.now.string || 'Unknown']
       br
-      | Next Destination: #[a(href='/location')= nomadlist.next.string]
+      | Next Destination: #[a(href='/location')= nomadlist.next.string || 'Unknown']
 
     != content
