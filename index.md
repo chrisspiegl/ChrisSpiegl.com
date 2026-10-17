@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creator
+title: Father, Traveler, Photographer, Thinker
 ---
 
 !!! header-image-three
@@ -9,32 +9,35 @@ title: Creator
 ![Chris Spiegl](/assets/images/other/2017-08-19-at-12-38-54-dangle-your-feet.jpg)
 !!!
 
-# Hi, I'm Chris. [YouTuber](/youtube), [Entrepreneur](https://Niyama.Academy?utm_source=ChrisSpiegl.com), and [Consultant](/consulting).
+## My name is Chris Spiegl, I’m a Father, Traveler, Photographer, Thinker.
 
-Are you ready to break free from the constraints of traditional work? As a seasoned content creator who's been in the online realm for over 20 years and traversing more than 30 countries, I wholeheartedly embrace the location independent lifestyle.
+Twelve years ago I set my life up so the work comes with me. Right now that’s Chiang Mai, Thailand. Ask me again in spring.
 
-> “My goal is to work with motivated and inspiring people.”
+I almost always have a camera within reach. Lately it’s a Leica Q3. I wanted one for years, and I’m still a little surprised it’s mine.
 
-My mission? To collaborate with motivated and passionate individuals like you, to craft highly successful businesses and brands. Together, we can revolutionize your life and leave a positive impact on those around us.
+My goal? A life where the hotel worth the detour, the quiet back road, and the café nobody puts on a list are the rule, not the exception.
 
-Imagine a business that empowers you with unadulterated personal freedom, tailored to your unique aspirations. I'm here to liberate you from the tyranny of time-consuming ventures that drain your energy. Through workflow remodeling, efficiency optimization, and strategic outsourcing, we'll give life-enhancing support to your business.
+[Nicole](https://NicoleReiher.com) and our son William are usually just outside the frame, waiting for me to finish ‘one more photo.’ It’s rarely one.
 
-> “A business should be built for the purpose of providing the owner with pure personal freedom — whatever that means to them.”
-> <cite>Timothy Marc</cite>
+## Where to find me
 
-Drawing insights from my extensive research, including the study of numerous highly successful entrepreneurs and modern success stories, I aim to provide you with invaluable insights, practical processes, and visionary ideas through my [YouTube channel](/youtube), [Newsletter](/newsletter), and [Consulting Sessions](/consulting). Together, let's ignite the spark that propels your business towards unprecedented growth and achievement.
+- **[Field Notes](https://chrisspiegl.substack.com?utm_source=ChrisSpiegl.com)** — my writing on Substack. Photographs, fatherhood, building businesses, slow travel, and thoughts I haven't quite finished. Start here.
+- **[Instagram](https://instagram.com/chrisspiegl)** — photos & short videos in-between.
+- **[YouTube](/youtube)** — for longer stories and the occasional deep dive.
 
-Curious about my current focus? Explore my [NOW Page](/now) for a glimpse into my ongoing endeavors.
+## What I'm building
 
-Unleash your potential, seize the opportunities that matter most, and let's conquer new heights together. Your journey to location, time, and financial freedom starts today.
+- **[Niyama.Academy](https://Niyama.Academy?utm_source=ChrisSpiegl.com)** — your online yoga Studio for all levels together with Nicole.
+- **[BOLSTair](https://bolstair.com?utm_source=ChrisSpiegl.com)** — a travel-friendly inflatable yoga & fitness bolster.
+
+Curious what I'm up to this month? My [Now page](/now) has the latest.
 
 !!! signature
 ![Chris Spiegl](/assets/images/other/signature-public-small.png)
 !!!
 
-<!-- <div class="side-by-side"> -->
 !!! text-center
-<a class="btn" href="mailto:chris@chrisspiegl.com" title= "Email me about anything!">chris@chrisspiegl.com</a>
+<a class="btn" href="mailto:chris@chrisspiegl.com" title="Say hello">chris@chrisspiegl.com</a>
 !!!
 
 !!! quote-hero
