@@ -13,6 +13,8 @@
     "eleventy:dev": "cross-env NODE_ENV=development eleventy --serve",
     "eleventy:prod": "cross-env NODE_ENV=production eleventy",
     "clean": "shx rm -rf _site",
+    "cleanup": "shx rm -rf _site .cache",
+    "nuke": "pnpm cleanup && pnpm purge --lockfile && pnpm i",
     "check": "linkinator -r -c 10 ./_site; true",
     "cu": "ncu -i --format group",
     "format": "xo --fix",
