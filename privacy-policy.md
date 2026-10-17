@@ -18,15 +18,13 @@ Your personal data (e.g. title, name, house address, e-mail address, phone numbe
 
 We utilize various tracking technologies on our website to gather valuable insights that help us enhance the user experience and improve our services. The following tracking tools are in use:
 
-MailerLite: We utilize MailerLite to manage our email marketing campaigns and gather information about the effectiveness of our email communications. This helps us tailor our content to better suit your interests and preferences. MailerLite may collect personal data such as your email address, IP address, and interaction data. For more information, please refer to MailerLite's Privacy Policy.
-
 Facebook Pixel: We have implemented Facebook Pixel, which allows us to measure and optimize the performance of our Facebook advertising campaigns. It helps us tailor our ads to your interests and ensure the right content reaches the right audience. Facebook Pixel may collect information such as your device's unique identifier, IP address, and browsing activity. For further details, please consult Facebook's Data Policy.
 
 Google Analytics: We use Google Analytics to analyze website traffic, understand user behavior, and gather demographic information to improve our website's performance. Google Analytics may collect data such as your IP address, device information, and browsing behavior. To learn more about the information collected and how Google uses it, please review Google's Privacy Policy.
 
 Embedded Content: Sometimes there is embedded content which might have tracking based on the service used (YouTube, 𝕏 / Twitter, or Instagram most notably).
 
-By using our website, you consent to the tracking technologies mentioned above and agree to the respective privacy policies outlined by MailerLite, Facebook, and Google. You have the option to disable or limit these tracking technologies by adjusting your browser settings or utilizing third-party browser extensions. Please note that disabling tracking technologies may impact certain functionalities of our website.
+By using our website, you consent to the tracking technologies mentioned above and agree to the respective privacy policies outlined by Facebook and Google. You have the option to disable or limit these tracking technologies by adjusting your browser settings or utilizing third-party browser extensions. Please note that disabling tracking technologies may impact certain functionalities of our website.
 
 The hosting company used for this website is [CloudFlare](https://www.cloudflare.com/). This service provider is GDPR compliant and may have access to your IP address and other data.
 

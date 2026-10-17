@@ -243,6 +243,26 @@
     "slug": "newsletter/archive"
   },
   {
+    "destination": "https://crsp.li/newsletter",
+    "slug": "newsletter"
+  },
+  {
+    "destination": "https://crsp.li/newsletter",
+    "slug": "newsletter/almost"
+  },
+  {
+    "destination": "https://crsp.li/newsletter",
+    "slug": "newsletter/welcome"
+  },
+  {
+    "destination": "https://crsp.li/newsletter",
+    "slug": "newsletter/*"
+  },
+  {
+    "destination": "https://crsp.li/substack",
+    "slug": "substack"
+  },
+  {
     "destination": "/tools/instaspaces/",
     "slug": "instaspaces"
   },
