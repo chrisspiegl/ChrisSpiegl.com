@@ -39,5 +39,3 @@ The contents of our pages have been created with the utmost care. However, we ca
 ### Accountability for links
 
 Responsibility for the content of external links (to web pages of third parties) lies solely with the operators of the linked pages. No violations were evident to us at the time of linking. Should any legal infringement become known to us, we will remove the respective link immediately.
-
-*Source:* [twigg.de](http://www.twigg.de/haftungsausschlussimpressumenglisch.htm)
