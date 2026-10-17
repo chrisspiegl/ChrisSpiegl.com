@@ -122,7 +122,7 @@ Ready to transform your content and productivity? Let's create something extraor
 [![Chris Spiegl](/assets/images/other/signature-public-small.png)](https://crsp.li/contact)
 !!!
 
-Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chrisspiegl.com).
+Have questions? Reach out via [email (chris@chrisspiegl.com)](mailto:chris@chrisspiegl.com?subject=Consulting).
 
 !!! text-center
 <a class="btn" href="https://crsp.li/consulting-unlimited">Secure Your Spot Now</a>
@@ -212,7 +212,7 @@ My goal is to empower you with knowledge until you're self-sufficient and don't 
 
 ### Still have questions?
 
-Let's discuss your needs in a free 30-minute consultation. [Email me (chris@chrisspiegl.com)](mailto:chris@chrisspiegl.com) to schedule a call.
+Let's discuss your needs in a free 30-minute consultation. [Email me (chris@chrisspiegl.com)](mailto:chris@chrisspiegl.com?subject=Consulting) to schedule a call.
 
 [^1]: [Yoga mit Nicole](https://youtube.com/NicoleReiher) 4,000,000+ views
 [^2]: [Chris Spiegl](https://youtube.com/ChrisSpiegl) 4,600,000+ views

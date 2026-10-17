@@ -32,13 +32,13 @@ The website runs on [11ty](https://https://www.11ty.dev), a static site generato
 
 ## Your Rights
 
-You have the right to be informed of Personal Data processed by ChrisSpiegl.com, a right to rectification/correction, erasure and restriction of processing. You also have the right to ask from us a structured, common and machine-readable format of Personal Data you provided to us. We can only identify you via your email address and we can only adhere to your request and provide information if we have Personal Data about you through you having made contact with us directly and/or you using our site and/or service. We cannot provide, rectify or delete any data that we store on behalf of our users or customers. To exercise any of the rights mentioned in this Privacy Policy and/or in the event of questions or comments relating to the use of Personal Data you may contact: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com)
+You have the right to be informed of Personal Data processed by ChrisSpiegl.com, a right to rectification/correction, erasure and restriction of processing. You also have the right to ask from us a structured, common and machine-readable format of Personal Data you provided to us. We can only identify you via your email address and we can only adhere to your request and provide information if we have Personal Data about you through you having made contact with us directly and/or you using our site and/or service. We cannot provide, rectify or delete any data that we store on behalf of our users or customers. To exercise any of the rights mentioned in this Privacy Policy and/or in the event of questions or comments relating to the use of Personal Data you may contact: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com?subject=Privacy%20and%20Data%20Request)
 
 In addition, you have the right to lodge a complaint with the data protection authority in your jurisdiction.
 
 ## Disclosure
 
-According to the Federal Data Protection Act, you have a right to free-of-charge information about your stored data, and possibly entitlement to correction, blocking or deletion of such data. Inquiries can be directed to the following e-mail addresses: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com)
+According to the Federal Data Protection Act, you have a right to free-of-charge information about your stored data, and possibly entitlement to correction, blocking or deletion of such data. Inquiries can be directed to the following e-mail addresses: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com?subject=Privacy%20and%20Data%20Request)
 
 ## Privacy Policy Changes
 
