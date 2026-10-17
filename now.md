@@ -4,73 +4,40 @@ layout: now
 date: Last Modified
 ---
 
-The cornerstones of my present existence. To stay up to date, sign up to my [newsletter](/newsletter).
+To stay up to date, sign up to my [Substack/Newsletter](/substack).
 
-<!-- ## Doing -->
+## If we haven't talked in a while, here's the big picture
 
-- **Preparing for Birth of our first Son** — Probably one of the craziest experiences in my life to date (even though he's not even here yet). This experience will likely shake things up massively in the coming weeks & months & years. And I am here for it.
-- Everything else is optional for the next few weeks…
-- Social Media Presence on **[YouTube](/youtube) • [LinkedIn](/linkedin) • [Instagram](/instagram) • [𝕏 / Twitter](/twitter)** — Empowering business owners, entrepreneurs, and aspiring visionaries through captivating videos that illuminate the path to success. Explore the indispensable keys to unlock the pillars of freedom: time, location, and financial independence. Immerse yourself in a world of valuable insights and unleash your true potential.
-- **[Consulting](/consulting)** — With my expertise in social media marketing, content creation (high quality Videos, Podcasts, Short Form, etc.), website optimization, and online strategies, I'll guide you towards remarkable results. Together, we'll optimize your business structure, setup a high quality content production pipeline, analyze distribution channels, and drive more traffic while boosting conversion rates. Unlock your business's potential, maximize revenue, and invest your valuable time strategically.
-- **[Niyama.Academy](https://Niyama.Academy/?utm_source=ChrisSpiegl.com)** — Crafting an immersive online Yoga Studio that transcends boundaries, offering live-classes and a library of on-demand video courses. Currently available in German, we are dedicated to guiding you on a transformative journey towards holistic well-being. Join our community and experience the power of Yoga firsthand.
-- **Location Independence** — We still have a clear focus on this. But we are stationary for the next half year to make sure we have enough time to aclimate to being parents.
+I'm a new dad, living slowly in Chiang Mai, writing again, and building a business that leaves room for all of it.
 
-<!-- Our lifestyle revolves around embracing new cultures and exploring the world, with a switch of countries every 2-4 months. This desire to constantly explore and experience different places is something I have always nurtured and worked towards. -->
+## Learning to be a father
 
-I’m happy to discuss opportunities around any and all these ideas. Please send an email.
+William arrived this year. He's rearranged everything, mostly for the better and occasionally at 3am. Most days the real work is being present for him and for Nicole, and everything else fits around that. It's the best job I've had, and the one I'm least qualified for.
 
-!!! text-center
-<a class="btn" href="mailto:chris@chrisspiegl.com" title= "Email me about anything!">chris@chrisspiegl.com</a>
-!!!
+## A few months in Nimman, Chiang Mai, Thailand
 
-<!-- ## Learning
+We're living in Chiang Mai for a few months. It immediately felt like home. Now, we are continuing to find our cafés, walking the same streets until they feel like ours. I love Chiang Mai.
 
-- **Letting Go of Expectations** — For the longest time I procrastinated way too much because I thought what I am making is not good enough. I am now learning to let that go and just create what I can create in this moment. It's not going to be perfect and that's ok. -->
+## Writing again
 
-<!-- ## Reading
+I've restarted my letter, [Field Notes](https://chrisspiegl.substack.com?utm_source=ChrisSpiegl.com), on Substack. It has photographs, notes on fatherhood and building a business, slow travel, and thoughts I haven't quite finished. If you only follow me in one place, make it that one.
 
-I am currently not actively reading. Sometimes I pick up a book but not in any kind of routine. This type of break feels needed to get more work done. -->
+## One name, fewer accounts
 
-<!-- Reading books to better think, work, and live life.
+I'm closing my second Instagram account and putting everything under @ChrisSpiegl, on [Instagram](/instagram), [YouTube](/youtube) and [Substack](/substack). Less juggling, more care.
 
-- Limit by Frank Schätzing
-- Stillness Is the Key by Ryan Holiday
-- Einführung ins Familienaufstellen by Bert Hellinger
-- Own the Day, Own Your Life: Optimised Practices for Waking, Working, Learning, Eating, Training, Playing, Sleeping and Sex by Aubrey Marcus
+## Photography: Seeing with one lens
 
-!!! Absorbed in the past months (in order)
+After years of wanting one, I finally have a Leica Q3 28mm. I'm relearning how to see with a single fixed lens and walking a lot slower because of it. I'm writing a short series about it.
 
-1. Deep Work: Rules for Focused Success in a Distracted World Hardcover by Cal Newport
-2. Projekt Saturn: Perry Rhodan 2500 by Frank Borsch
-3. Man's Search For Meaning: The classic tribute to hope from the Holocaust by Viktor E Frankl
-4. The BFG by Roald Dahl
-5. Women Who Run with the Wolves by Clarissa Pinkola Estés
-6. Unfiltered: No Shame, No Regrets, Just Me by Lily Collins
-7. Way of the Warrior Kid by Jocko Willink
-8. Liebe dich selbst und es ist egal, wen du heiratest by Eva-Maria Zurhorst
-9. The BFG by Roald Dahl
-10. How to Love a Woman: On Intimacy and the Erotic Life of Women by Clarissa Pinkola Estes
-11. Embodiment - Der Körper in der Psychotherapie by Claas Lahmann
-12. happy money by ken honda ([Video Thoughts](https://youtu.be/-TE6oL4KV7E))
-13. Wie sich starke Männer und starke Frauen lieben können by Maja & Johannes Storch
-14. 12 Rules for Life: An Antidote to Chaos by Jordan B. Peterson
+## Building, quietly
 
-!!! -->
+[Nicole](https://NicoleReiher.com?utm_source=ChrisSpiegl.com) and I are growing [Niyama.Academy](https://Niyama.Academy/?utm_source=ChrisSpiegl.com), and we're building [BOLSTair](https://bolstair.com?utm_source=ChrisSpiegl.com), an inflatable yoga & fitness bolster you can travel with. It hasn't made us rich. The goal is a business that pays for a good life and leaves room to actually live it.
 
-<!-- ## Principles I try to Live By
+## A thought I can't shake
 
-- **ONE** – One thing at a time. If situation requires, apply Pareto’s Principle. If situation does not require, do what you want first.
-- **Externalize distractions** – When working, distractions will surface. If need be, write it down, then return to your Thing. After your session, examine the list. Delete the nonsense, knock off the quick tasks, and delegate the trivial. And then, return to the Thing.
-- **Celebrate everyday successes** – Practice gratitude, spread love. Life’s too important to be taken seriously.
-- **Competition** – The only competition you have is yourself.
-- **Changing people** – You can’t change other people. You can only change yourself..
-- **Dauntless** – Fear is a disempowering emotion to live with. Your real self is not filled with fear. Discard it, and you will be set free.
-- **STOIC** – Someone who does not give a shit about the stupid things in this world that most people care so much about. Stoics do have emotions, but only for the things in this world that really matter. They are the most real people alive.
-  > Group of kids are sitting on a porch. Stoic walks by.
-  > Kid – “Hey man, yur a fuckin faggot an you suck cock!”
-  > Stoic – “Good for you.”
-  > Keeps going. -->
+When a famous person travels under a different name to be a nobody for a while, we find it romantic. But most of us are that nobody every day, and we don't notice what a gift it is. I'm turning it into an essay.
 
-!!! text-center
-This page is inspired by [Derek Siver](https://sivers.org/now)’s now page suggestion.
-!!!
+## Not right now
+
+I'm not taking on consulting or client work at the moment. If you want to talk about any of the above, [send an email](mailto:chris@chrisspiegl.com?subject=Now%20Page). I read everything.
