@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: redirects
+  data: redirectPages
   size: 1
   alias: redirect
   addAllPagesToCollections: true
