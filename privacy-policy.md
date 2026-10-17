@@ -26,9 +26,9 @@ Embedded Content: Sometimes there is embedded content which might have tracking 
 
 By using our website, you consent to the tracking technologies mentioned above and agree to the respective privacy policies outlined by Facebook and Google. You have the option to disable or limit these tracking technologies by adjusting your browser settings or utilizing third-party browser extensions. Please note that disabling tracking technologies may impact certain functionalities of our website.
 
-The hosting company used for this website is [CloudFlare](https://www.cloudflare.com/). This service provider is GDPR compliant and may have access to your IP address and other data.
+The hosting company used for this website is [CloudFlare](https://cloudflare.com/). This service provider is GDPR compliant and may have access to your IP address and other data.
 
-The website runs on [11ty](https://https://www.11ty.dev), a static site generator.
+The website runs on [11ty](https://11ty.dev), a static site generator.
 
 ## Your Rights
 
