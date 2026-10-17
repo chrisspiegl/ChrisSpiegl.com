@@ -24,7 +24,7 @@ Imagine a business that empowers you with unadulterated personal freedom, tailor
 
 Drawing insights from my extensive research, including the study of numerous highly successful entrepreneurs and modern success stories, I aim to provide you with invaluable insights, practical processes, and visionary ideas through my [YouTube channel](/youtube), [Newsletter](/newsletter), and [Consulting Sessions](/consulting). Together, let's ignite the spark that propels your business towards unprecedented growth and achievement.
 
-Curious about my current focus? Explore my [NOW Page](/now) for a glimpse into my ongoing endeavors. If you have a groundbreaking concept to discuss or would like to share feedback, I invite you to connect with me in my [Telegram Group](https://crsp.li/tgg) or via email.
+Curious about my current focus? Explore my [NOW Page](/now) for a glimpse into my ongoing endeavors.
 
 Unleash your potential, seize the opportunities that matter most, and let's conquer new heights together. Your journey to location, time, and financial freedom starts today.
 
@@ -32,10 +32,10 @@ Unleash your potential, seize the opportunities that matter most, and let's conq
 ![Chris Spiegl](/assets/images/other/signature-public-small.png)
 !!!
 
-<div class="side-by-side">
-    <a class="btn btn-block" href="mailto:team@ChrisSpiegl.com" title= "Email me about anything!">team@ChrisSpiegl.com</a>
-    <a class="btn btn-block" href="https://crsp.li/tgg" title="Telegram Group">My Telegram Group</a>
-</div>
+<!-- <div class="side-by-side"> -->
+!!! text-center
+<a class="btn" href="mailto:team@ChrisSpiegl.com" title= "Email me about anything!">team@ChrisSpiegl.com</a>
+!!!
 
 !!! quote-hero
 > “If we did all of the things that we are capable of doing, we would literally astound ourselves.”
