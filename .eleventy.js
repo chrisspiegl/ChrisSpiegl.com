@@ -53,7 +53,6 @@ module.exports = (config) => {
 
   config.addPassthroughCopy("assets/favicon")
   config.addPassthroughCopy({ 'assets/chrisspiegl.asc': 'chrisspiegl.asc' })
-
   config.addCollection('posts', collection => {
     return collection.getFilteredByGlob('./post/**/*.md').filter(_ => livePosts(_)).reverse()
   })
