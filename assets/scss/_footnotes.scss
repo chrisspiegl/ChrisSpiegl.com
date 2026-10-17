@@ -7,13 +7,19 @@
   }
 }
 
+// Baseline-aligned and lifted with relative positioning so references never grow the line box.
 .footnote-ref {
-  display: inline-block;
   margin: 0;
+  font-size: inherit;
+  line-height: 0;
+  vertical-align: baseline;
 }
 
-.footnote-ref a, .littlefoot-footnote__button {
+.footnote-ref a {
   display: inline-block;
+  position: relative;
+  top: -0.5em;
+  line-height: 1.2;
   font-size: var(--font-size-minus-2);
   margin-left: 0.2rem;
   border-radius: .2rem;
@@ -46,15 +52,149 @@
   }
 }
 
-.littlefoot-footnote__content {
-  margin: 0;
-  padding: 1rem 1.1rem;
+// Footnote popovers, created by _includes/scripts/footnotes.js
+$footnote-button-height: 1.25rem;
+$footnote-transition-duration: 0.15s;
+$footnote-mobile-breakpoint: 767.98px;
+
+.footnote-button {
+  display: inline-block;
+  min-width: $footnote-button-height;
+  height: $footnote-button-height;
+  margin: 0 0.1rem 0 0.15rem;
+  padding: 0 0.4rem;
+  border: 0;
+  border-radius: $footnote-button-height;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: $footnote-button-height;
+  text-align: center;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.35em;
+  color: var(--color-white);
+  background-color: var(--color-lighter);
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color $footnote-transition-duration ease;
+
+  &:hover,
+  &:focus-visible,
+  &.is-active {
+    background-color: var(--color-orange);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 2px;
+  }
 }
 
-// .footnotes.footnote-print-only,
-// .footnotes-list.footnote-print-only {
-//   display: block !important;
-// }
-// .footnote-item.footnote-print-only {
-//   display: list-item !important;
-// }
+.footnote-popover {
+  box-sizing: border-box;
+  width: min(24em, calc(100vw - 2rem));
+  max-height: 18em;
+  overflow: auto;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--color-gray-88);
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: var(--font-size-minus-1);
+  line-height: 1.4;
+  text-align: left;
+  color: var(--color-heading);
+  background-color: #faf7f2;
+  box-shadow: 0 0.25rem 1.25rem rgba(34, 40, 48, 0.15);
+
+  opacity: 0;
+  transform: translateY(-0.25rem);
+  transition:
+    opacity $footnote-transition-duration ease,
+    transform $footnote-transition-duration ease,
+    overlay $footnote-transition-duration allow-discrete,
+    display $footnote-transition-duration allow-discrete;
+
+  &:popover-open {
+    opacity: 1;
+    transform: none;
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(-0.25rem);
+    }
+  }
+
+  p,
+  ul,
+  ol,
+  pre {
+    padding-bottom: 0.75rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  a {
+    color: var(--color-link);
+  }
+}
+
+// Without anchor positioning the popover stays centered (browser default).
+@supports (anchor-name: --footnote) {
+  .footnote-popover {
+    inset: auto;
+    margin: 0.5rem 0;
+    position-area: bottom span-right;
+    position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+  }
+}
+
+@media (max-width: $footnote-mobile-breakpoint) {
+  .footnote-popover {
+    position: fixed;
+    inset: auto 0 0 0;
+    width: 100%;
+    max-width: none;
+    max-height: 50vh;
+    margin: 0;
+    border-width: 1px 0 0;
+    border-radius: 0.75rem 0.75rem 0 0;
+    position-area: none;
+    position-try-fallbacks: none;
+    transform: translateY(100%);
+
+    &:popover-open {
+      transform: none;
+
+      @starting-style {
+        transform: translateY(100%);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footnote-popover {
+    transition: none;
+  }
+}
+
+@media print {
+  .footnote-ref a,
+  .footnote-button {
+    min-width: 0;
+    height: auto;
+    margin-left: 0.1em;
+    padding: 0;
+    font-size: 0.7em;
+    line-height: 1;
+    vertical-align: baseline;
+    top: -0.6em;
+    color: inherit;
+    background-color: transparent;
+    opacity: 1;
+  }
+}

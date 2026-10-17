@@ -45,7 +45,6 @@
     "eleventy-plugin-reading-time": "0.0.1",
     "glob": "^13.0.6",
     "html-minifier": "^4.0.0",
-    "littlefoot": "^3.4.1",
     "linkinator": "^8.1.0",
     "luxon": "^3.7.2",
     "markdown-it": "^14.3.2",
