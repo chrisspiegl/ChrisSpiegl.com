@@ -20,7 +20,7 @@ The cornerstones of my present existence. To stay up to date, sign up to my [new
 I’m happy to discuss opportunities around any and all these ideas. Please send an email.
 
 !!! text-center
-<a class="btn" href="mailto:team@ChrisSpiegl.com" title= "Email me about anything!">team@ChrisSpiegl.com</a>
+<a class="btn" href="mailto:chris@chrisspiegl.com" title= "Email me about anything!">chris@chrisspiegl.com</a>
 !!!
 
 <!-- ## Learning

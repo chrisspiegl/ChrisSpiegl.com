@@ -24,7 +24,7 @@ VAT: EE102658062
 ## Contact
 
 Telephone: +49 1567 8934363 (Telegram, WhatsApp, Signal, Threema)
-E-Mail: [team@ChrisSpiegl.com](mailto:team@ChrisSpiegl.com)
+E-Mail: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com)
 Internetaddress: [ChrisSpiegl.com](https://ChrisSpiegl.com/)
 
 ## Disclaimer
