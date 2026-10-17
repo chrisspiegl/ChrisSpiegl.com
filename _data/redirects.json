@@ -260,7 +260,15 @@
   },
   {
     "destination": "https://crsp.li/substack",
+    "slug": "blog"
+  },
+  {
+    "destination": "https://crsp.li/substack",
     "slug": "substack"
+  },
+  {
+    "destination": "https://crsp.li/linktree",
+    "slug": "consulting"
   },
   {
     "destination": "/tools/instaspaces/",
