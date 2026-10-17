@@ -45,9 +45,20 @@
     "slug": "tools/podcast-show-notes-formatter"
   },
   {
-    "destination": "/infostack-podcast",
+    "destination": "https://crsp.li/linktree",
     "slug": "aff/infostack-podcast",
-    "note": "redirected locally since the offer is no longer available. Previous links: https://chrisspiegl--infostack.thrivecart.com/podcast"
+    "note": "Redirect Infostack Podcast Bundle Offer to Linktree"
+  },
+  {
+    "destination": "https://crsp.li/linktree",
+    "slug": "infostack-podcast",
+    "note": "Redirect Infostack Podcast Bundle Offer to Linktree"
+  },
+  {
+    "destination": "https://crsp.li/linktree",
+    "slug": "infostack-podcast-bonus",
+    "note": "Redirect Infostack Podcast Bundle Offer to Linktree"
+  },
   },
   {
     "destination": "https://crsp.li/:splat",
