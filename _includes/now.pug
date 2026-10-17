@@ -3,10 +3,34 @@ block content
 
   article.container
     h1 What I’m doing NOW
-    p Last Updated: #[=global.dateReadable(page.date)]
-      br
-      | Currently in: #[a(href='/location')= nomadlist.now.string || 'Unknown']
-      br
-      | Next Destination: #[a(href='/location')= nomadlist.next.string || 'Unknown']
+
+    p: small: em (This is a <a href="https://nownownow.com/about">now page</a> inspired by <a href="https://sive.rs/now">Derek Sivers</a>. If you have your own site, you should make one, too.)
+
+    - const updated = global.dateReadable(git.nowPageDate || page.date)
+    - const nowPlace = nomadlist.now && nomadlist.now.string
+    - const nextPlace = nomadlist.next && nomadlist.next.string
+    - const nowRange = nomadlist.now && nomadlist.now.range
+    - const nextRange = nomadlist.next && nomadlist.next.range
+    - const nextDuration = nomadlist.next && nomadlist.next.duration
+    - const nowEnd = nomadlist.now && nomadlist.now.end
+    p
+      | Updated #{updated}
+      if nowPlace && nowPlace !== 'Unknown'
+        | , from#{' '}
+        if nowRange
+          abbr(title=nowRange) #{nowPlace}
+        else
+          | #{nowPlace}
+        if nowEnd
+          |  where I will be until #{nowEnd}
+      if nextPlace && nextPlace !== 'Unknown'
+        | . After that, I'll most likely be in#{' '}
+        if nextRange
+          abbr(title=nextRange) #{nextPlace}
+        else
+          | #{nextPlace}
+        if nextDuration
+          |  for about #{nextDuration}
+      | .
 
     != content
