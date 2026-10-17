@@ -12,10 +12,11 @@ VAT: EE102658062
 
 ## CSX.Ventures OÜ is operating as the following:
 
-- ChrisSpiegl.com
-- Foxi.Link
-- PushNotice.Chat
-- Chaptered.app
+- [ChrisSpiegl.com](https://ChrisSpiegl.com)
+- [CSX.Ventures](https://CSX.Ventures)
+- [Foxi.Link](https://Foxi.Link)
+- [PushNotice.Chat](https://PushNotice.Chat)
+- [Chaptered.app](https://Chaptered.app)
 - YouTube Channel: [@ChrisSpiegl](https://youtube.com/chrisspiegl)
 - Instagram Account: [@ChrisSpiegl](https://instagram.com/chrisspiegl)
 - Instagram Account: [@CSXVentures](https://instagram.com/csxventures)
