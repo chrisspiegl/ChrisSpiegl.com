@@ -48,9 +48,17 @@ body
         div.text
           h1
             a(href="/") Chris Spiegl
-          if (nomadlist.now.string !== 'Unknown')
-            p
-              small: em Currently in #[a(href='/location')= nomadlist.now.string]
+          p: em Father, Traveler, Photographer, Thinker
+          p: em
+            | Currently in#{' '}
+            a.location-until(href='/location')
+              if nomadlist.headerIncludesUntil && nomadlist.now.until && nomadlist.now.until.includes(', ')
+                - const locationParts = nomadlist.now.until.split(', ')
+                span.location-place= `${locationParts[0]},`
+                = ' '
+                span.location-rest= locationParts.slice(1).join(', ')
+              else
+                = nomadlist.headerIncludesUntil ? nomadlist.now.until : nomadlist.now.string
 
       section.social
         a(href="/youtube" title="YouTube Profile — External Link" target="_blank")

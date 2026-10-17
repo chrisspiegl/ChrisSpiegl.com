@@ -1,28 +1,82 @@
-const axios = require('axios')
+const EleventyFetch = require('@11ty/eleventy-fetch')
+const moment = require('moment')
 
-module.exports = async function () {
-  const url = 'https://nomadlist.com/@ChrisSpiegl'
-  try {
-    const { data } = await axios.get(`${url}?format=json`)
+const headerIncludesUntil = true
+const profileUrl = 'https://nomads.com/@ChrisSpiegl'
+const unknownPlace = 'Unknown'
+const fetchTimeoutMs = 5000
 
-    data.location.now.string = !data.location.now.city ? 'Unknown' : `${data.location.now.city}, ${data.location.now.country}`
-    data.location.next.string = !data.location.next.city ? 'Unknown' : `${data.location.next.city}, ${data.location.next.country}`
-
-    const returnValue = {
-      data,
-      url,
-      now: data.location.now,
-      next: data.location.next,
-    }
-    return returnValue
-  } catch (error) {
-    console.log(error)
+function placeString (place) {
+  if (!place || !place.city) {
+    return unknownPlace
   }
 
+  if (!place.country) {
+    return place.city
+  }
+
+  return `${place.city}, ${place.country}`
+}
+
+function untilString (place) {
+  const label = placeString(place)
+  if (label === unknownPlace || !place || !place.date_end) {
+    return label
+  }
+
+  const endMonth = moment(place.date_end)
+  if (!endMonth.isValid()) {
+    return label
+  }
+
+  return `${label} until ${endMonth.format('MMM YYYY')}`
+}
+
+function locationResult (location) {
+  const now = location && location.now
+  const next = location && location.next
+
   return {
-    data: {},
-    url,
-    now: 'Unknown',
-    next: 'Unknown',
+    url: profileUrl,
+    headerIncludesUntil,
+    now: {
+      string: placeString(now),
+      until: untilString(now),
+    },
+    next: {
+      string: placeString(next),
+    },
+  }
+}
+
+function unknownResult () {
+  return {
+    url: profileUrl,
+    headerIncludesUntil,
+    now: {
+      string: unknownPlace,
+      until: unknownPlace,
+    },
+    next: {
+      string: unknownPlace,
+    },
+  }
+}
+
+module.exports = async function () {
+  try {
+    const data = await EleventyFetch(`${profileUrl}?format=json`, {
+      duration: '6h',
+      type: 'json',
+      directory: '.cache',
+      fetchOptions: {
+        signal: AbortSignal.timeout(fetchTimeoutMs),
+      },
+    })
+
+    return locationResult(data.location)
+  } catch (error) {
+    console.warn(`Nomad List lookup failed: ${error.message}`)
+    return unknownResult()
   }
 }

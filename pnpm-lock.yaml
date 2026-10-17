@@ -11,6 +11,9 @@ importers:
       '@11ty/eleventy':
         specifier: ^1.0.2
         version: 1.0.2(supports-color@8.1.1)
+      '@11ty/eleventy-fetch':
+        specifier: ^5.1.3
+        version: 5.1.3(supports-color@8.1.1)
       '@11ty/eleventy-plugin-rss':
         specifier: ^1.2.0
         version: 1.2.0(supports-color@8.1.1)
@@ -23,9 +26,6 @@ importers:
       async-git:
         specifier: ^1.13.3
         version: 1.13.3
-      axios:
-        specifier: ^0.26.0
-        version: 0.26.1(debug@4.3.2(supports-color@8.1.1))
       clean-css:
         specifier: ^5.3.3
         version: 5.3.3
@@ -902,9 +902,6 @@ packages:
 
   axios@0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
-
-  axios@0.26.1:
-    resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
 
   babel-walk@3.0.0-canary-5:
     resolution: {integrity: sha512-GAwkz0AihzY5bkwIY5QDR+LvsRQgB/B+1foMPvi0FZPMl5fjD7ICiznUiBdLYMH1QYe6vqu4gWYytZOccLouFw==}
@@ -5511,12 +5508,6 @@ snapshots:
       possible-typed-array-names: 1.1.0
 
   axios@0.21.4(debug@4.3.2(supports-color@8.1.1)):
-    dependencies:
-      follow-redirects: 1.16.1(debug@4.3.2(supports-color@8.1.1))
-    transitivePeerDependencies:
-      - debug
-
-  axios@0.26.1(debug@4.3.2(supports-color@8.1.1)):
     dependencies:
       follow-redirects: 1.16.1(debug@4.3.2(supports-color@8.1.1))
     transitivePeerDependencies:
