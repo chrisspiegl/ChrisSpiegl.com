@@ -305,7 +305,7 @@ per tristique nec dictum.
 | :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `inputPath`       | Path to this file including the `input` directory.<hr><code class="phony">./src/articles/finding-oz.md</code>                                                               |
 | `outputPath`      | Path to the rendered file.<hr><code class="phony">articles/finding-oz/index.html</code>                                                                                     |
-| `fileSlug`        | Short name from the file name. [There are rules](https://www.11ty.io/docs/data/#fileslug). <hr><code class="phony">./src/articles/finding-oz.md</code>                      |
+| `fileSlug`        | Short name from the file name. [There are rules](https://11ty.io/docs/data/#fileslug). <hr><code class="phony">./src/articles/finding-oz.md</code>                      |
 [table caption][slug]
 
 

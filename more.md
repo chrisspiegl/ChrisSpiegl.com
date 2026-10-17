@@ -37,8 +37,8 @@ title: More
 
 ## Tech Stack: This Website
 
-- [11ty](https://www.11ty.dev) — Static Site Generator
-- [CloudFlare](https://www.cloudflare.com/) — Static Page Hosting via CloudFlare Pages
+- [11ty](https://11ty.dev) — Static Site Generator
+- [CloudFlare](https://cloudflare.com/) — Static Page Hosting via CloudFlare Pages
 - [GitHub](https://github.com) — Code Repository
 - [NPM](https://npmjs.com) — Package Manager
 - [Pug](https://pugjs.org), [Markdown](https://en.wikipedia.org/wiki/Markdown), [Nunjucks](https://mozilla.github.io/nunjucks/)
@@ -46,7 +46,7 @@ title: More
 ## Tech Stack: Most of my Projects
 
 - [Firebase](https://firebase.google.com/) — Static Page Hosting, Serverless Functions, and Firestore for Database storage
-- [CloudFlare](https://www.cloudflare.com/) — CloudFlare Pages for Static Pages and Content Delivery Network (CDN)
+- [CloudFlare](https://cloudflare.com/) — CloudFlare Pages for Static Pages and Content Delivery Network (CDN)
 - [GitHub](https://github.com) — Code Repository
 - [Node.JS](https://nodejs.org/) — Server Side Environment
 - [NPM](https://npmjs.com) — Package Manager
