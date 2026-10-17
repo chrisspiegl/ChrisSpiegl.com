@@ -59,6 +59,20 @@
     "slug": "infostack-podcast-bonus",
     "note": "Redirect Infostack Podcast Bundle Offer to Linktree"
   },
+  {
+    "destination": "https://crsp.li/linktree",
+    "slug": "hofluencer",
+    "note": "Redirect Hofluencer pages to Linktree"
+  },
+  {
+    "destination": "https://crsp.li/linktree",
+    "slug": "hofluencer/2021-frst-meetup",
+    "note": "Redirect Hofluencer pages to Linktree"
+  },
+  {
+    "destination": "https://crsp.li/linktree",
+    "slug": "hofluencer/*",
+    "note": "Redirect Hofluencer pages to Linktree"
   },
   {
     "destination": "https://crsp.li/:splat",
