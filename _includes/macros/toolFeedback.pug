@@ -1,0 +1,6 @@
+mixin toolFeedback(toolName)
+  - const feedbackSubject = encodeURIComponent(`${toolName} Feedback`)
+  div.content.feedback
+    p Any issues? Email me #[a(href=`mailto:chris@chrisspiegl.com?subject=${feedbackSubject}`) chris@chrisspiegl.com].
+    p Would you like to support me in creating more tools like this?
+    p: a(href='/support') Support my work
