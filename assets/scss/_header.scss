@@ -1,22 +1,20 @@
+@use "variables" as vars;
+
 body>header {
   padding-top: 2rem;
   padding-bottom: 2rem;
 
   section.top {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
     padding-bottom: 2rem;
 
     section.header {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
-      width: 100%;
-      max-width: 100%;
+      flex: 1;
       min-width: 0;
 
       #avatar {
@@ -24,13 +22,13 @@ body>header {
         border-radius: 50%;
         width: 6rem;
         height: 6rem;
-        margin: 0 0 1rem;
+        margin-right: 1rem;
+        flex-shrink: 0;
       }
 
       .text {
-        text-align: center;
-        width: 100%;
-        max-width: 100%;
+        text-align: left;
+        min-width: 0;
         // margin-top: 1rem;
         font-family: var(--font-serif);
         line-height: 1.6rem;
@@ -38,7 +36,7 @@ body>header {
         h1 {
           font-family: var(--font-serif);
           // text-transform: uppercase;
-          text-align: center;
+          // text-align: center;
           margin-bottom: .2rem;
           padding: 0;
           line-height: 2rem;
@@ -62,17 +60,14 @@ body>header {
         }
 
         p {
-          text-align: center;
+          text-align: left;
           padding: 0;
           margin: 0;
           font-size: 1rem;
         }
 
-        a.location-until {
-          .location-place,
-          .location-rest {
-            white-space: nowrap;
-          }
+        p.location-line {
+          text-wrap: pretty;
         }
       }
     }
@@ -80,8 +75,9 @@ body>header {
     .social {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: end;
       align-items: center;
+      flex-shrink: 0;
 
       a {
         display: block;
@@ -96,6 +92,39 @@ body>header {
           text-decoration: none;
           background: transparent;
         }
+      }
+    }
+
+    @media screen and (max-width: (vars.$ipad-11-portrait - 1px)) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+
+      section.header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+
+        #avatar {
+          margin: 0 0 1rem;
+        }
+
+        .text {
+          text-align: center;
+          width: 100%;
+
+          h1,
+          p {
+            text-align: center;
+          }
+        }
+      }
+
+      .social {
+        justify-content: center;
       }
     }
   }

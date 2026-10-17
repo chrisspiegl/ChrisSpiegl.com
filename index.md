@@ -41,6 +41,6 @@ Curious what I'm up to this month? My [Now page](/now) has the latest.
 !!!
 
 !!! quote-hero
-> “If we did all of the things that we are capable of doing, we would literally astound ourselves.”
+> “If we did all of the things <wbr>that we are capable of doing, <wbr>we would literally <wbr>astound&nbsp;ourselves.”
 > <cite>Thomas Edison</cite>
 !!!
