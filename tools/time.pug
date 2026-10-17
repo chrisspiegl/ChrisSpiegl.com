@@ -2,147 +2,54 @@
 title: Time in Milliseconds
 ---
 
+include /macros/toolFeedback.pug
+
 h1 Time in Milliseconds
 
 p Just a simple millisecond timer for tests and stuff.
 
 style(media="screen" type="text/css").
-  #timedate, #timedate span, #timedate div {
-    font-family: monospace !important;
-  }
-
-  #timecomb, #datecomb {
-    width: 100%;
-  }
-
   #timedate {
-    font-size: 4rem;
-    text-align: center;
+    container-type: inline-size;
     width: 100%;
     margin: 4rem auto 8rem;
-    color:#fff;
     padding: 2rem;
+    text-align: center;
+    color: var(--color-heading);
+  }
+
+  #timedate, #timedate div {
+    font-family: var(--font-mono) !important;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  #datecomb, #timecomb {
+    font-size: 4rem;
+    font-size: 9cqi;
   }
 
 div#timedate
-  div#datecomb JavaScript
-  div#timecomb Is Needed
+  div#datecomb(aria-live='off')
+  div#timecomb(aria-live='off')
+  noscript JavaScript is needed to display the clock.
 
-script(type="text/javascript").
-  console.log('Loading Time Display');
-  /*!
-  * FitText.js 1.0 jQuery free version
-  *
-  * Copyright 2011, Dave Rupert http://daverupert.com
-  * Released under the WTFPL license
-  * http://sam.zoy.org/wtfpl/
-  * Modified by Slawomir Kolodziej http://slawekk.info
-  *
-  * Date: Tue Aug 09 2011 10:45:54 GMT+0200 (CEST)
-  */
-  (function(){
+script.
+  (() => {
+    const dateElement = document.getElementById('datecomb')
+    const timeElement = document.getElementById('timecomb')
+    const dateFormat = { month: 'long', day: 'numeric', year: 'numeric' }
 
-    var addEvent = function (el, type, fn) {
-      if (el.addEventListener)
-        el.addEventListener(type, fn, false);
-      else
-        el.attachEvent('on'+type, fn);
-    };
+    const pad = (value, length) => String(value).padStart(length, '0')
 
-    var extend = function(obj,ext){
-      for(var key in ext)
-        if(ext.hasOwnProperty(key))
-          obj[key] = ext[key];
-      return obj;
-    };
-
-    window.fitText = function (el, kompressor, options) {
-
-      var settings = extend({
-        'minFontSize' : -1/0,
-        'maxFontSize' : 1/0
-      },options);
-
-      var fit = function (el) {
-        var compressor = kompressor || 1;
-
-        var resizer = function () {
-          el.style.fontSize = Math.max(Math.min(el.clientWidth / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + 'px';
-        };
-
-        // Call once to set.
-        resizer();
-
-        // Bind events
-        // If you have any js library which support Events, replace this part
-        // and remove addEvent function (or use original jQuery version)
-        addEvent(window, 'resize', resizer);
-        addEvent(window, 'orientationchange', resizer);
-      };
-
-      if (el.length)
-        for(var i=0; i<el.length; i++)
-          fit(el[i]);
-      else
-        fit(el);
-
-      // return set of elements
-      return el;
-    };
-  })();
-
-  function docReady(fn) {
-    // see if DOM is already available
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
+    const updateClock = () => {
+      const now = new Date()
+      dateElement.textContent = now.toLocaleDateString('en-US', dateFormat)
+      timeElement.textContent = `${pad(now.getHours(), 2)} : ${pad(now.getMinutes(), 2)} : ${pad(now.getSeconds(), 2)} . ${pad(now.getMilliseconds(), 3)}`
+      window.requestAnimationFrame(updateClock)
     }
-  }
 
-  // START CLOCK SCRIPT
+    window.requestAnimationFrame(updateClock)
+  })()
 
-  Number.prototype.pad = function(n) {
-    let r;
-    for (r = this.toString(); r.length < n; r = 0 + r);
-    return r;
-  };
-
-  window.fitText(document.getElementById('datecomb'), 1)
-  window.fitText(document.getElementById('timecomb'), 1.1)
-
-  function updateClock() {
-    const now = new Date()
-    const milli = now.getMilliseconds(),
-      sec = now.getSeconds(),
-      min = now.getMinutes(),
-      hou = now.getHours(),
-      mo = now.getMonth(),
-      dy = now.getDate(),
-      yr = now.getFullYear();
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    // const tags = ["month", "day", "year", "hour", "minute", "second", "millisecond"]
-    // const corr = [months[mo], dy, yr, hou.pad(2), min.pad(2), sec.pad(2), milli.pad(3)]
-    // for (let i = 0; i < tags.length; i++) {
-    //   document.getElementById(tags[i]).firstChild.nodeValue = corr[i]
-    // }
-    const datestr = `${months[mo]} ${dy}, ${yr}`
-    const timestr = `${hou.pad(2)} : ${min.pad(2)} : ${sec.pad(2)} . ${milli.pad(3)}`
-    document.getElementById('datecomb').firstChild.nodeValue = datestr
-    document.getElementById('timecomb').firstChild.nodeValue = timestr
-  }
-
-  docReady(function() {
-    // DOM is loaded and ready for manipulation here
-    updateClock();
-    window.setInterval("updateClock()", 1);
-  });
-
-  // END CLOCK SCRIPT
-
-
-div.content.feedback
-  p Any issues? Email me #[a(href='mailto:chris@chrisspiegl.com?subject=Instaspaces Problem') chris@chrisspiegl.com].
-  p Would like to support me in creating more tools and services like this?
-  p: a(href='/patron') Buy me a Tea&amp;Cookie
++toolFeedback('Time in Milliseconds')
