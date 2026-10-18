@@ -66,8 +66,9 @@ body
 
       section.social
         each profile in meta.profiles
-          a(href=profile.url rel="me noopener" title=`${profile.name} Profile` target="_blank")
-            i(class=profile.icon)
+          if profile.showIcon !== false && profile.icon
+            a(href=profile.url rel="me noopener" title=`${profile.name} Profile` target="_blank")
+              i(class=profile.icon)
 
     nav.navMain
       ul
