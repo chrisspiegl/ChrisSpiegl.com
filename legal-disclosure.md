@@ -13,16 +13,16 @@ VAT: EE102658062
 ## CSX.Ventures OÜ is operating as the following:
 
 - [ChrisSpiegl.com](https://ChrisSpiegl.com)
-- [CSX.Ventures](https://CSX.Ventures)
-- [Foxi.Link](https://Foxi.Link)
-- [PushNotice.Chat](https://PushNotice.Chat)
-- [Chaptered.app](https://Chaptered.app)
-- YouTube Channel: [@ChrisSpiegl](https://youtube.com/chrisspiegl)
-- Instagram Account: [@ChrisSpiegl](https://instagram.com/chrisspiegl)
-- Instagram Account: [@CSXVentures](https://instagram.com/csxventures)
-- LinkedIn Account: [@ChrisSpiegl](https://linkedin.com/in/chrisspiegl)
-- Substack Account: [@ChrisSpiegl](https://chrisspiegl.substack.com)
-- 𝕏 / Twitter Account: [@ChrisSpiegl](https://x.com/ChrisSpiegl)
+- [CSX.Ventures](https://CSX.Ventures?utm_source=ChrisSpiegl.com)
+- [Foxi.Link](https://Foxi.Link?utm_source=ChrisSpiegl.com)
+- [PushNotice.Chat](https://PushNotice.Chat?utm_source=ChrisSpiegl.com)
+- [Chaptered.app](https://Chaptered.app?utm_source=ChrisSpiegl.com)
+- YouTube Channel: [@ChrisSpiegl](https://youtube.com/chrisspiegl?utm_source=ChrisSpiegl.com)
+- Instagram Account: [@ChrisSpiegl](https://instagram.com/chrisspiegl?utm_source=ChrisSpiegl.com)
+- Instagram Account: [@CSXVentures](https://instagram.com/csxventures?utm_source=ChrisSpiegl.com)
+- LinkedIn Account: [@ChrisSpiegl](https://linkedin.com/in/chrisspiegl?utm_source=ChrisSpiegl.com)
+- Substack Account: [@ChrisSpiegl](https://chrisspiegl.substack.com?utm_source=ChrisSpiegl.com)
+- 𝕏 / Twitter Account: [@ChrisSpiegl](https://x.com/ChrisSpiegl?utm_source=ChrisSpiegl.com)
 
 ## Contact
 

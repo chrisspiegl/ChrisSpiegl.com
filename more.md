@@ -10,15 +10,15 @@ title: More
 - [Timecode Offset Calculator](/tools/timecode-offset-calculator)
 - [Compound Interest Calculator](/tools/compound-interest-calculator)
 - [Instaspaces](/tools/instaspaces) — Paragraphs that stay on Instagram
-- [Chaptered.App](https://Chaptered.app) — Podcast Show Notes Formatter for Adobe Audition, Premiere Pro, and DaVinci Resolve Markers to Show Notes and Chapter Timestamps for YouTube.
+- [Chaptered.App](https://Chaptered.app?utm_source=ChrisSpiegl.com) — Podcast Show Notes Formatter for Adobe Audition, Premiere Pro, and DaVinci Resolve Markers to Show Notes and Chapter Timestamps for YouTube.
 - [Alfred Workflows](https://crsp.li/alfredworkflows) — Workflows for different every day tasks like YouTube Link Shortening, File Renaming, and Folder Flattening.
-- [Foxi.Link](https://foxi.link) — Monetize Short Links with Ease.
-- [PushNotice.chat](https://pushnotice.chat) — Push Notifications to Telegram from Anywhere.
-- [Get Some — Chrome New Tab Extension](https://crsp.li/GetSomeExtension) — Customizable Minimalist New Tab.
+- [Foxi.Link](https://foxi.link?utm_source=ChrisSpiegl.com) — Monetize Short Links with Ease.
+- [PushNotice.chat](https://pushnotice.chat?utm_source=ChrisSpiegl.com) — Push Notifications to Telegram from Anywhere.
 - [Open Source Code & Libraries](/github) — Alfred Workflows and some of my projects.
-- [Foxi.Network](https://foxi.network) — Personal Project for myself to keep track of personal connections, the last time I talked to someone, and what was talked about. Kind of like a CRM but for friends.
 - !!! Click to see Discontinued Projects
 
+  - [Get Some — Chrome New Tab Extension](https://crsp.li/GetSomeExtension) — Customizable Minimalist New Tab.
+  - [Foxi.Network](https://foxi.network?utm_source=ChrisSpiegl.com) — Personal Project for myself to keep track of personal connections, the last time I talked to someone, and what was talked about. Kind of like a CRM but for friends.
   - **Macher(dot)Cafe (podcast, until 2021)** — German speaking interview podcast with, about, and for makers and creators.
   - **ThatMaker(dot)Life (podcast, until 2021)** — English speaking interview podcast with, about, and for makers and creators.
   - **Thoughts, Stories, and Ideas in Voice (podcast, until 2021)** — English podcast exploring life, productivity, random thoughts, and business ideas. Discontinued at the end of 2021 in favor of creating more [YouTube videos](https://crsp.li/youtube). Episodes with videos are in the [YouTube Playlist](https://crsp.li/PlaylistPodcastThoughtsStorie).
