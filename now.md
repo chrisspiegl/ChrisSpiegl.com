@@ -20,7 +20,7 @@ We're living in Chiang Mai for a few months. It immediately felt like home. Now,
 
 ## Writing again
 
-I've restarted my letter, [Field Notes](https://chrisspiegl.substack.com?utm_source=ChrisSpiegl.com), on Substack. It has photographs, notes on fatherhood and building a business, slow travel, and thoughts I haven't quite finished. If you only follow me in one place, make it that one.
+I've restarted my letter, [Field Notes](https://chrisspiegl.substack.com), on Substack. It has photographs, notes on fatherhood and building a business, slow travel, and thoughts I haven't quite finished. If you only follow me in one place, make it that one.
 
 ## One name, fewer accounts
 
@@ -32,7 +32,7 @@ After years of wanting one, I finally have a Leica Q3 28mm. I'm relearning how t
 
 ## Building, quietly
 
-[Nicole](https://NicoleReiher.com?utm_source=ChrisSpiegl.com) and I are growing [Niyama.Academy](https://Niyama.Academy/?utm_source=ChrisSpiegl.com), and we're building [BOLSTair](https://bolstair.com?utm_source=ChrisSpiegl.com), an inflatable yoga & fitness bolster you can travel with. It hasn't made us rich. The goal is a business that pays for a good life and leaves room to actually live it.
+[Nicole](https://NicoleReiher.com) and I are growing [Niyama.Academy](https://Niyama.Academy/), and we're building [BOLSTair](https://bolstair.com), an inflatable yoga & fitness bolster you can travel with. It hasn't made us rich. The goal is a business that pays for a good life and leaves room to actually live it.
 
 ## A thought I can't shake
 

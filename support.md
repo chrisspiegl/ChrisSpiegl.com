@@ -10,7 +10,7 @@ Some of what I make is free, and some of it isn't. Either way, if you'd like to 
 
 <div class="side-by-side">
   <a class="btn btn-block" href="https://crsp.li/member">Join on YouTube</a>
-  <a class="btn btn-block" href="https://chrisspiegl.substack.com/subscribe?utm_source=ChrisSpiegl.com">Subscribe on Substack</a>
+  <a class="btn btn-block" href="https://chrisspiegl.substack.com/subscribe">Subscribe on Substack</a>
 </div>
 
 Or simply read, watch, reply, or pass something along to a friend. That counts too.
