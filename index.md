@@ -23,7 +23,7 @@ My goal? A life where the hotel worth the detour, the quiet back road, and the c
 
 - **[Field Notes](https://chrisspiegl.substack.com)** — my writing on Substack. Photographs, fatherhood, building businesses, slow travel, and thoughts I haven't quite finished. Start here.
 - **[Instagram](https://instagram.com/chrisspiegl)** — photos & short videos in-between.
-- **[YouTube](/youtube)** — for longer stories and the occasional deep dive.
+- **[YouTube](https://youtube.com/ChrisSpiegl)** — for longer stories and the occasional deep dive.
 
 ## What I'm building
 

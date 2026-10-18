@@ -4,7 +4,7 @@ title: Uncopyright
 
 # Uncopyright
 
-This entire site, my [newsletter](/newsletter), my [writings](/blog), and most of my photographs on [Instagram](/instagram) and [Unsplash](https://unsplash.com/@chrisspiegl) are uncopyrighted (since January 2018).
+This entire site, my [newsletter](/newsletter), my [writings](/blog), and most of my photographs on [Instagram](https://instagram.com/ChrisSpiegl) and [Unsplash](https://unsplash.com/@chrisspiegl) are uncopyrighted (since January 2018).
 
 That means I’ve put them in the public domain and released my copyright on all these works.
 

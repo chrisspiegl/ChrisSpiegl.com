@@ -4,7 +4,7 @@ layout: now
 date: Last Modified
 ---
 
-To stay up to date, sign up to my [Substack/Newsletter](/substack).
+To stay up to date, sign up to my [Substack/Newsletter](https://chrisspiegl.substack.com).
 
 ## If we haven't talked in a while, here's the big picture
 
@@ -24,7 +24,7 @@ I've restarted my letter, [Field Notes](https://chrisspiegl.substack.com), on Su
 
 ## One name, fewer accounts
 
-I'm closing my second Instagram account and putting everything under @ChrisSpiegl, on [Instagram](/instagram), [YouTube](/youtube) and [Substack](/substack). Less juggling, more care.
+I'm closing my second Instagram account and putting everything under @ChrisSpiegl, on [Instagram](https://instagram.com/ChrisSpiegl), [YouTube](https://youtube.com/ChrisSpiegl) and [Substack](https://chrisspiegl.substack.com). Less juggling, more care.
 
 ## Photography: Seeing with one lens
 
