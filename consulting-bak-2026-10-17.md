@@ -214,8 +214,8 @@ My goal is to empower you with knowledge until you're self-sufficient and don't 
 
 Let's discuss your needs in a free 30-minute consultation. {% email "Email me", "Consulting" %} to schedule a call.
 
-[^1]: [Yoga mit Nicole](https://youtube.com/NicoleReiher?utm_source=ChrisSpiegl.com) 4,000,000+ views
-[^2]: [Chris Spiegl](https://youtube.com/ChrisSpiegl?utm_source=ChrisSpiegl.com) 4,600,000+ views
+[^1]: [Yoga mit Nicole](https://youtube.com/NicoleReiher) 4,000,000+ views
+[^2]: [Chris Spiegl](https://youtube.com/ChrisSpiegl) 4,600,000+ views
 [^3]: <small>The price is excluding VAT. I reserve the right to decline any consultation request. I reserve the right to end the consulting contract at any time (you'll receive a full refund within the first 100 days and 50% if I end it after that).</small>
 
 <style>
