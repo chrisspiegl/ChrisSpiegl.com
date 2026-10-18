@@ -448,11 +448,11 @@ pre {
   background-color: #f6f6f6;
 }
 
-p code {
-  background: var(--color-code-bg) !important;
-  border-radius: 0.2em;
-  padding: 0.1rem .3rem .3rem;
-  color: var(--color-code);
+:not(pre) > code {
+  background: none !important;
+  color: var(--color-heading);
+  padding: 0;
+  border-radius: 0;
 }
 
 .highlight-line {

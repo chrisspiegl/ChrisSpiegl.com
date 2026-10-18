@@ -17,7 +17,8 @@ code {
 code:not([class]) {
   font-family: var(--font-code);
   font-size: var(--font-code-size);
-  color: var(--color-code);
+  color: var(--color-heading);
+  background: none;
 }
 
 /* for naked <code> */
