@@ -8,11 +8,43 @@ const markdownItFootnote = require("markdown-it-footnote")
 const markdownItContainer = require("markdown-it-container")
 const markdownItResponsive = require('@gerhobbelt/markdown-it-responsive')
 
+const { DateTime } = require('luxon')
+
 const transforms = require('./utils/transforms.js')
 const filters = require('./utils/filters.js')
 const emailLink = require('./utils/emailLink')
+const canonicalLink = require('./utils/canonicalLink')
 
 const now = new Date()
+
+const sitemapExcludedPrefixes = ['/tag/', '/tags/']
+const sitemapExcludedPaths = new Set(['/styleguide/', '/errors/'])
+
+function includeInSitemap (item) {
+  const url = item.url
+  const inputPath = item.inputPath || ''
+  if (!url || !url.endsWith('/')) return false
+  if (item.data && (item.data.layout === 'redirect' || item.data.redirect)) return false
+  if (sitemapExcludedPrefixes.some((prefix) => url.startsWith(prefix))) return false
+  if (sitemapExcludedPaths.has(url)) return false
+  if (url.includes('consulting-bak')) return false
+  if (inputPath.includes('/draft') || inputPath.includes('draft.md') || inputPath.includes('draft-')) return false
+  return true
+}
+
+function sitemapLastMod (item) {
+  const updated = item.data && item.data.pageUpdated
+  if (updated) {
+    const parsed = DateTime.fromISO(String(updated), { setZone: true })
+    if (parsed.isValid) return parsed.toUTC().toISO({ suppressMilliseconds: true })
+  }
+
+  if (item.date instanceof Date && !Number.isNaN(item.date.getTime())) {
+    return DateTime.fromJSDate(item.date, { zone: 'utc' }).toISODate()
+  }
+
+  return null
+}
 
 module.exports = (config) => {
   config.addPlugin(pluginRss)
@@ -74,6 +106,16 @@ module.exports = (config) => {
     return collection.getFilteredByGlob('./gear/**/*.md').filter(_ => liveElements(_)).reverse()
   })
 
+  config.addCollection('sitemap', (collection) => {
+    return collection.getAll()
+      .filter((item) => includeInSitemap(item))
+      .map((item) => {
+        item.data.sitemapLastmod = sitemapLastMod(item)
+        return item
+      })
+      .sort((a, b) => a.url.localeCompare(b.url))
+  })
+
   config.addCollection("tagList", collection => {
     let uniqueTags = new Set()
 
@@ -103,6 +145,9 @@ module.exports = (config) => {
 
   config.addFilter("markdown", (content) => md.render(content))
   config.addShortcode("email", emailLink)
+  config.addShortcode("canonical", function () {
+    return canonicalLink(this.page && this.page.url)
+  })
 
   md.use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true })
