@@ -40,4 +40,4 @@ When a famous person travels under a different name to be a nobody for a while, 
 
 ## Not right now
 
-I'm not taking on consulting or client work at the moment. If you want to talk about any of the above, [send an email](mailto:chris@chrisspiegl.com?subject=Now%20Page). I read everything.
+I'm not taking on consulting or client work at the moment. If you want to talk about any of the above, {% email "send an email", "Now Page" %}. I read everything.

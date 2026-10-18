@@ -53,5 +53,5 @@ title: More
 - [Pug](https://pugjs.org) and [Markdown](https://en.wikipedia.org/wiki/Markdown)
 
 !!! text-center
-Any open questions? Contact me via [Email](mailto:chris@chrisspiegl.com?subject=Question).
+Any open questions? Contact me via {% email "Email", "Question" %}.
 !!!

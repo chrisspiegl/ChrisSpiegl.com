@@ -10,6 +10,7 @@ const markdownItResponsive = require('@gerhobbelt/markdown-it-responsive')
 
 const transforms = require('./utils/transforms.js')
 const filters = require('./utils/filters.js')
+const emailLink = require('./utils/emailLink')
 
 const now = new Date()
 
@@ -101,6 +102,7 @@ module.exports = (config) => {
   })
 
   config.addFilter("markdown", (content) => md.render(content))
+  config.addShortcode("email", emailLink)
 
   md.use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true })

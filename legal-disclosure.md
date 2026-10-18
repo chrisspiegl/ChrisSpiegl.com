@@ -26,7 +26,7 @@ VAT: EE102658062
 
 ## Contact
 
-E-Mail: [chris@chrisspiegl.com](mailto:chris@chrisspiegl.com?subject=Legal%20Disclosure)
+E-Mail: {% email "", "Legal Disclosure" %}
 Telephone: [+49 156 7893 4363](tel:+4915678934363) (only Telegram & WhatsApp! SMS or unknown calls)
 Internetaddress: [ChrisSpiegl.com](https://ChrisSpiegl.com/)
 
