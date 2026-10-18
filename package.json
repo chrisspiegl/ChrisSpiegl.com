@@ -11,7 +11,7 @@
     "build": "run-s eleventy:prod",
     "build:clean": "run-s clean eleventy:prod",
     "eleventy:dev": "cross-env NODE_ENV=development eleventy --serve",
-    "eleventy:prod": "cross-env NODE_ENV=production eleventy",
+    "eleventy:prod": "node utils/unshallow.js && cross-env NODE_ENV=production eleventy",
     "clean": "shx rm -rf _site",
     "cleanup": "shx rm -rf _site .cache",
     "nuke": "pnpm cleanup && pnpm purge --lockfile && pnpm i",
