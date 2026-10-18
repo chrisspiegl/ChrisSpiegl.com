@@ -12,6 +12,8 @@ head
   else
     title #[= meta.siteTitle ]
 
+  meta(name="description" content=meta.description)
+
   link(rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/favicon/apple-touch-icon-57x57.png")
   link(rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/favicon/apple-touch-icon-114x114.png")
   link(rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/favicon/apple-touch-icon-72x72.png")
@@ -47,8 +49,8 @@ body
         img#avatar(srcset=`${meta.imageResizer(320, 0, avatarImage)} 640w, ${meta.imageResizer(640, 0, avatarImage)} 1280w, ${meta.imageResizer(1280, 0, avatarImage)} 1920w` src=avatarImage, alt="")
         div.text
           h1
-            a(href="/") Chris Spiegl
-          p: em Father, Traveler, Photographer, Thinker.
+            a(href="/")= meta.authorName
+          p: em= meta.tagline
           p.location-line: em
             | Currently in#{' '}
             a(href='/location')

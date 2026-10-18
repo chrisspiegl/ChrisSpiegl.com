@@ -1,8 +1,16 @@
 const process = require('process')
 const path = require('path')
 
+const authorName = 'Chris Spiegl'
+const tagline = 'Father. Traveler. Photographer. Thinker.'
+const taglineDetail = 'Chasing the good life around the world.'
+
 module.exports = {
-  siteTitle: 'Chris Spiegl — Content Creator, World Traveler, and Consultant',
+  authorName,
+  siteTitle: authorName,
+  tagline,
+  taglineDetail,
+  description: `${tagline} ${taglineDetail}`,
   siteName: 'ChrisSpiegl.com',
   url: 'https://ChrisSpiegl.com',
   imageResizer(width, height, origin) {
