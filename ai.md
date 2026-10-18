@@ -6,11 +6,11 @@ date: Last Modified
 
 # How I use AI
 
+<p><small><em>(This is an <a href="https://slashai.page/"><code>/ai</code> page</a> inspired by <a href="https://sive.rs/ai">Derek Sivers</a>. It goes back to the manifesto by <a href="https://www.bydamo.la/p/ai-manifesto">Damola</a>. If you have your own site, you should make one, too.)</em></small></p>
+
 As of {{ global.dateReadable(pageUpdated) }}, this is how I use generative AI/LLM tools in my work.
 
 In short: I make everything here myself, with AI as my assistant. I start it, and I finish it.
-
-*(This is an AI page inspired by [Derek Sivers](https://sive.rs/ai). It goes back to the manifesto by [Damola](https://www.bydamo.la/p/ai-manifesto). If you have your own site, you should make one, too.)*
 
 ## Writing
 
