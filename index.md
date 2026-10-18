@@ -37,7 +37,7 @@ Curious what I'm up to this month? My [Now page](/now) has the latest.
 !!!
 
 !!! text-center
-<a class="btn" href="mailto:chris@chrisspiegl.com?subject=Hello" title="Say hello">chris@chrisspiegl.com</a>
+{{ emailLink({ subject: "Hello", className: "btn", title: "Say hello" }) | safe }}
 !!!
 
 !!! quote-hero
