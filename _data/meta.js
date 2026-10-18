@@ -9,7 +9,7 @@ const description = `${tagline} ${taglineDetail}`
 const profiles = [
   { name: 'YouTube', url: 'https://youtube.com/chrisspiegl', icon: 'fa-brands fa-youtube' },
   { name: 'Instagram', url: 'https://instagram.com/chrisspiegl', icon: 'fa-brands fa-instagram' },
-  { name: 'TikTok', url: 'https://tiktok.com/@chrisspiegl', icon: 'fa-brands fa-tiktok' },
+  { name: 'TikTok', url: 'https://tiktok.com/@chrisspiegl', icon: 'fa-brands fa-tiktok', showIcon: false },
   { name: 'Substack', url: 'https://chrisspiegl.substack.com', icon: 'fa-brands fa-substack' },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/chrisspiegl', icon: 'fa-brands fa-linkedin' },
   { name: 'X', url: 'https://x.com/ChrisSpiegl', icon: 'fa-brands fa-x-twitter' },
