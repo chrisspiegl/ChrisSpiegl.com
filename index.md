@@ -17,7 +17,7 @@ I almost always have a camera within reach. Lately it’s a Leica Q3. I wanted o
 
 My goal? A life where the hotel worth the detour, the quiet back road, and the café nobody puts on a list are the rule, not the exception.
 
-[Nicole](https://NicoleReiher.com) and our son William are usually just outside the frame, waiting for me to finish ‘one more photo.’ It’s rarely one.
+[Nicole](https://NicoleReiher.com?utm_source=ChrisSpiegl.com) and our son William are usually just outside the frame, waiting for me to finish ‘one more photo.’ It’s rarely one.
 
 ## Where to find me
 
