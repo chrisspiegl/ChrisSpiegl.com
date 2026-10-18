@@ -1,6 +1,7 @@
 const process = require('process')
 const htmlmin = require('html-minifier')
 const critical = require('critical')
+const { addUtmToExitLinks } = require('./externalLinks')
 
 const buildDir = '_site'
 
@@ -10,6 +11,11 @@ const isHomePage = (outputPath) => outputPath === `${buildDir}/index.html`
 
 process.setMaxListeners(Number.POSITIVE_INFINITY)
 module.exports = {
+  utmSource(content, outputPath) {
+    if (!outputPath || !outputPath.endsWith('.html')) return content
+    return addUtmToExitLinks(content)
+  },
+
   htmlmin(content, outputPath) {
     // Minify all html when in production mode
     if (shouldTransformHTML(outputPath)) {
