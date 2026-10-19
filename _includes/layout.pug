@@ -76,10 +76,14 @@ body
           a(href="/") About
         li
           a(href="/now") Now
-        //- li
-        //-   a(href="/consulting") Consulting
+        li
+          a(href="/ai") AI
+        li
+          a(href="/uses") Uses
         li
           a(href="https://chrisspiegl.substack.com") Field Notes on Substack
+        //- li
+        //-   a(href="/consulting") Consulting
         //- li
         //-   a(href="/support") Support
         //- li
@@ -117,9 +121,9 @@ body
         li: a(href="/privacy-policy") Privacy Policy
         li: a(href="/legal-disclosure") Legal Disclosure
       ul
-        li Last updated:
+        li SITE LAST UPDATED:
           = ' '
-          a#sha(title=`Last updated ${global.dateReadable(git.commitdate)}` href=`${git.origin.replace('git@github.com:', 'https://github.com/').replace('.git', '')}/blob/${git.curbranch}${page.inputPath.slice(1)}`)
+          a#sha(title=`Site last updated ${global.dateReadable(git.commitdate)}` href=`${git.origin.replace('git@github.com:', 'https://github.com/').replace('.git', '')}/blob/${git.curbranch}${page.inputPath.slice(1)}`)
             = global.dateReadableShort(git.commitdate)
             = ' '
             if (git.curbranch != 'HEAD')
@@ -130,9 +134,7 @@ body
         li(style='text-align: center')
           a(href="/chrisspiegl.asc") PGP Public Key
           = ' '
-          | fingerprint:
-          br
-          | 6646 6F22 1B88 A080 7748 E6F9 318B A27E 4ACD 1AC9
+          | FINGERPRINT: 6646 6F22 1B88 A080 7748 E6F9 318B A27E 4ACD 1AC9
 
   //- Footer Blocks and Javascript
 
