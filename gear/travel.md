@@ -4,7 +4,7 @@ data: gear
 categoryFilter:
   - Current
   - Other
-permalink: /gear/travel/
+permalink: /gear/view/travel/
 ---
 
 # Important Carry

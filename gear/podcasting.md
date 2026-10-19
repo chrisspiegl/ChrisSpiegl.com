@@ -4,7 +4,7 @@ data: gear
 categoryFilter:
   - Current
   - Podcast
-permalink: /gear/podcasting/
+permalink: /gear/view/podcasting/
 ---
 
 # Podcasting Kit

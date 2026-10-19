@@ -3,7 +3,7 @@ layout: gears
 data: gear
 categoryFilter:
   - Sold
-permalink: /gear/previous/
+permalink: /gear/view/previous/
 ---
 
 # Previously Owned

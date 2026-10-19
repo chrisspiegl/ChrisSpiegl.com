@@ -4,7 +4,7 @@ data: gear
 categoryFilter:
   - Current
   - Desk
-permalink: /gear/desk/
+permalink: /gear/view/desk/
 ---
 
 # Desk

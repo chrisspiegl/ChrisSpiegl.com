@@ -18,7 +18,7 @@ const canonicalLink = require('./utils/canonicalLink')
 
 const now = new Date()
 
-const sitemapExcludedPrefixes = ['/tag/', '/tags/']
+const sitemapExcludedPrefixes = ['/tag/', '/tags/', '/gear/view/']
 const sitemapExcludedPaths = new Set(['/styleguide/', '/errors/'])
 
 function includeInSitemap (item) {

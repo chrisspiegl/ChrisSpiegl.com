@@ -1,0 +1,39 @@
+extends layout
+block content
+
+  article.container
+    != content
+
+  -
+    const matchesUsesSection = (item, filters) => {
+      const categories = String(item.Categories || '').toLowerCase()
+      return filters.every((filter) => categories.includes(filter.toLowerCase()))
+    }
+    const usesSections = [
+      { id: 'photography', title: 'Photography', items: gear.filter((item) => matchesUsesSection(item, ['Current', 'Photography'])) },
+      { id: 'hardware', title: 'Hardware', items: gear.filter((item) => matchesUsesSection(item, ['Current', 'Hardware'])) },
+      { id: 'software', title: 'Software', items: gear.filter((item) => matchesUsesSection(item, ['Current', 'Software'])) },
+      { id: 'services', title: 'Services', items: gear.filter((item) => matchesUsesSection(item, ['Current', 'Services'])) },
+    ]
+
+  each usesGroup in usesSections
+    .uses-section
+      .container
+        h2(id=usesGroup.id)= usesGroup.title
+      article.gear-list
+        each g in usesGroup.items
+          -
+            const isAmazon = (g.Link.includes('amazon'))
+            const linkAmazon = (isAmazon) ? `https://assoc-redirect.amazon.com/g/r/${g.Link}?tag=cstrax-20` : g.Link
+          .gear-item
+            - const imageGearItem = `/assets/images/gear/${g.Slug}.png`
+            img(src=meta.imageResizer(640, 0, imageGearItem) alt=g.Title title=g.Title onerror="this.src='https://via.placeholder.com/640x427/FFFFFF/?text=Image+not+found'")
+            h3: a(href=linkAmazon title=g.Title target='_blank')= g.Title
+            p= g.Description
+            a.gear-link(href=linkAmazon title=g.Title target='_blank') &nbsp;
+
+  .container
+    h2 A note on the links
+    p Most links here are affiliate links. If you buy something through one, I get a small commission. You don't pay anything extra.
+    p I list them because I use them. Don't buy any of it unless you actually want or need it.
+    p I am a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.

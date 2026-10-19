@@ -147,8 +147,36 @@
     "slug": "instaspace"
   },
   {
-    "destination": "/gear/",
+    "destination": "/uses/",
     "slug": "kit"
+  },
+  {
+    "destination": "/uses/",
+    "slug": "gear"
+  },
+  {
+    "destination": "/uses/",
+    "slug": "gear/podcasting"
+  },
+  {
+    "destination": "/uses/",
+    "slug": "gear/travel"
+  },
+  {
+    "destination": "/uses/",
+    "slug": "gear/desk"
+  },
+  {
+    "destination": "/uses/",
+    "slug": "gear/software"
+  },
+  {
+    "destination": "/uses/",
+    "slug": "gear/dream"
+  },
+  {
+    "destination": "/uses/",
+    "slug": "gear/previous"
   },
   {
     "destination": "https://crsp.li/latest",

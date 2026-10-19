@@ -1,68 +1,94 @@
 @use "variables" as vars;
 
+$gear-column-min: 20rem;
+
 .gear-list {
-  max-width: calc(3*var(--content-width));
-  width: 100%;
+  width: min(100%, calc(3 * var(--content-width)));
   display: grid;
-  grid-template-columns: repeat(auto-fit, 20rem);
-  grid-template-rows: auto;
-  grid-gap: 2rem;
-  justify-content: center;
-  justify-items: center;
-  padding: 2rem 1rem;
-  margin: auto;
-  @media screen and (max-width: vars.$break-mobile) {
-    display: block;
-    width: 100%;
-  }
-}
-
-
-.gear-list * {
-  font-size: var(--font-size-minus-2);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, #{$gear-column-min}), 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+  padding-block: 1.5rem 3rem;
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+  margin-inline: auto;
 }
 
 .gear-item {
   width: 100%;
+  min-width: 0;
   position: relative;
-  padding: .5rem;
-  text-align: justify;
-  @media screen and (max-width: vars.$break-mobile) {
-    display: block;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0.75rem 1rem;
+  text-align: left;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-88);
+  border-radius: 4px;
+
+  &:hover,
+  &:focus-within {
+    border-color: var(--color-orange);
   }
 }
 
 .gear-item img {
+  display: block;
   width: 100%;
-  background: #ffffff;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background: var(--color-white);
 }
 
 .gear-item h3 {
   position: relative;
-  z-index: 100;
+  z-index: 2;
   letter-spacing: 0;
   margin: 0;
+  padding: 0.85rem 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-heading);
 }
 
 .gear-item h3 a {
   display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   width: 100%;
   max-width: 100%;
-  font-size: 18px;
-  padding: .6rem 0 .2rem;
+  overflow-wrap: anywhere;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-decoration: none;
+  padding: 0;
+}
+
+.gear-item p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--color-gray-30);
+  overflow-wrap: anywhere;
 }
 
 .gear-item .gear-link {
   display: block;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
+  inset: 0;
+  z-index: 1;
   color: transparent;
+}
+
+.gear-item .gear-link:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+.uses-section {
+  scroll-margin-top: 1.5rem;
 }

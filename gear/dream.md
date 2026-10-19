@@ -3,7 +3,7 @@ layout: gears
 data: gear
 categoryFilter:
   - DreamActive
-permalink: /gear/dream/
+permalink: /gear/view/dream/
 ---
 
 # Dream Gear
