@@ -9,7 +9,17 @@ layout: page
 
 As of {{ global.dateReadable(pageUpdated) }}, this is how I use generative AI/LLM tools in my work.
 
-In short: I make everything here myself, with AI as my assistant. I start it, and I finish it.
+In short: I generally make things myself, with AI as my assistant. I start it, and I finish it.
+
+## Where I stand
+
+I like being early to new tools. I played with Photoshop in the early 2000s, and I shoot digital, not film.
+
+I'm also conflicted about the ethics, about what counts as human work, and about what we lose when it gets too easy. So I use AI deliberately, in some places and not in others. My rule is simple: I hold the pen.
+
+This will probably change. When it does, I'll update this page at this permanent URL: {% canonical %}
+
+If you see it differently, {% email "email me", "AI Statement" %}. I'd like to hear it.
 
 ## Writing
 
@@ -40,14 +50,4 @@ I have humans in front of the camera (including myself). I enjoy cameras far too
 ## Translation & Voice
 
 This is the one I'm unsure about. AI dubbing could bring our work to people in languages we can't yet afford human translators for. That's a real chance to help more people. It's also a real question. I haven't decided yet.
-
-## Where I stand
-
-I like being early to new tools. I played with Photoshop in the early 2000s, and I shoot digital, not film.
-
-I'm also conflicted about the ethics, about what counts as human work, and about what we lose when it gets too easy. So I use AI deliberately, in some places and not in others. My rule is simple: I hold the pen.
-
-This will probably change. When it does, I'll update this page at this permanent URL: {% canonical %}
-
-If you see it differently, {% email "email me", "AI Statement" %}. I'd like to hear it.
 
