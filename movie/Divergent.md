@@ -1,6 +1,5 @@
 ---
 title: "The Divergent Series: Allegiant"
-date: Last Modified
 rating: 6
 yearReleased: 2016
 # dateWatched: 2020-07-05

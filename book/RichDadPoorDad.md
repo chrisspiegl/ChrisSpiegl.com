@@ -1,7 +1,6 @@
 ---
 title: "Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not!"
 author: Robert T. Kiyosaki
-date: Last Modified
 rating: 8
 dateReleased: 2017-04-11
 # dateRead: 2020-07-15

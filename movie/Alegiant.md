@@ -1,6 +1,5 @@
 ---
 title: Before Sunrise
-date: Last Modified
 rating: 9
 yearReleased: 1995
 dateWatched: 2020-07-05

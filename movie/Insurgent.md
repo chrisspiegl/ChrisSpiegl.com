@@ -1,6 +1,5 @@
 ---
 title: "The Divergent Series: Insurgent"
-date: Last Modified
 rating: 9
 yearReleased: 2015
 # dateWatched: 2020-07-05

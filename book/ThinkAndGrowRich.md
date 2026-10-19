@@ -1,7 +1,6 @@
 ---
 title: "Think and Grow Rich: The Landmark Bestseller Now Revised and Updated for the 21st Century"
 author: Napoleon Hill
-date: Last Modified
 rating: 5
 dateReleased: 2005-08-19
 # dateRead: 2020-07-15

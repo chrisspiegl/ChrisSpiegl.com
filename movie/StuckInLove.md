@@ -1,6 +1,5 @@
 ---
 title: Stuck in Love.
-date: Last Modified
 rating: 9
 yearReleased: 2012
 # dateWatched: 2020-07-05
