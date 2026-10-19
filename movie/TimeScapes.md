@@ -1,6 +1,5 @@
 ---
 title: TimeScapes
-date: Last Modified
 rating: 10
 yearReleased: 2012
 # dateWatched: 2020-07-05

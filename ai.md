@@ -1,7 +1,6 @@
 ---
 title: How I use AI
 layout: page
-date: Last Modified
 ---
 
 # How I use AI

@@ -1,7 +1,6 @@
 ---
 title: "The 4-Hour Work Week: Escape the 9-5, Live Anywhere and Join the New Rich"
 author: Timothy Ferriss
-date: Last Modified
 rating: 10
 dateReleased: 2011-08-31
 # dateRead:

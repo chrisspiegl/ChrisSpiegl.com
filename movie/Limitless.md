@@ -1,6 +1,5 @@
 ---
 title: Limitless
-date: Last Modified
 rating: 9
 yearReleased: 2011
 # dateWatched: 2020-07-05

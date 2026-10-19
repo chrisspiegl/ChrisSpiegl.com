@@ -1,6 +1,5 @@
 ---
 title: The F**k-It List
-date: Last Modified
 rating: 8
 yearReleased: 2020
 dateWatched: 2020-07-06

@@ -1,6 +1,5 @@
 ---
 title: We Are Your Friends
-date: Last Modified
 rating: 10
 yearReleased: 2015
 # dateWatched: 2020-07-05

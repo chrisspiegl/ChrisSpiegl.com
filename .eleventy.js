@@ -12,6 +12,7 @@ const { DateTime } = require('luxon')
 
 const transforms = require('./utils/transforms.js')
 const filters = require('./utils/filters.js')
+const { lastCommitDate } = require('./utils/gitFileDates')
 const emailLink = require('./utils/emailLink')
 const canonicalLink = require('./utils/canonicalLink')
 
@@ -94,12 +95,18 @@ module.exports = (config) => {
     return collection.getFilteredByGlob('./post/**/*.md').filter(_ => !livePosts(_)).reverse()
   })
 
+  const byGitLastChange = (a, b) => {
+    const aTime = Date.parse(lastCommitDate(a.inputPath) || '') || (a.date instanceof Date ? a.date.getTime() : 0)
+    const bTime = Date.parse(lastCommitDate(b.inputPath) || '') || (b.date instanceof Date ? b.date.getTime() : 0)
+    return bTime - aTime
+  }
+
   config.addCollection('books', (collection) => {
-    return collection.getFilteredByGlob('./book/**/*.md').filter(_ => liveElements(_)).reverse()
+    return collection.getFilteredByGlob('./book/**/*.md').filter(_ => liveElements(_)).sort(byGitLastChange)
   })
 
   config.addCollection('movies', (collection) => {
-    return collection.getFilteredByGlob('./movie/**/*.md').filter(_ => liveElements(_)).reverse()
+    return collection.getFilteredByGlob('./movie/**/*.md').filter(_ => liveElements(_)).sort(byGitLastChange)
   })
 
   config.addCollection('gear', (collection) => {

@@ -1,6 +1,5 @@
 ---
 title: Into the Wild
-date: Last Modified
 rating: 10
 yearReleased: 2007
 # dateWatched: 2020-07-05

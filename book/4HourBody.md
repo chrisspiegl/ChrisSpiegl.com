@@ -1,7 +1,6 @@
 ---
 title: "The 4 Hour Body: An Uncommon Guide to Rapid Fat Loss, Incredible Sex and Becoming Superhuman"
 author: Timothy Ferriss
-date: Last Modified
 rating: 8
 dateReleased: 2010-12-14
 # dateRead:

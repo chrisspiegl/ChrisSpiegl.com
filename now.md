@@ -1,7 +1,6 @@
 ---
 title: Now
 layout: now
-date: Last Modified
 ---
 
 To stay up to date, sign up to my [Substack/Newsletter](https://chrisspiegl.substack.com).

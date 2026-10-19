@@ -13,7 +13,7 @@ block content
           a(href=((data && post.data.externalLink) ? data.externalLink : page.url), title=(data && post.data.externalLink) ? "External Link" : "Permalink")!= titleCombined
         p Last Updated:
           = ' '
-          time(datetime=global.dateHtml(page.date), pubdate="pubdate")= global.dateReadable(page.date)
+          time(datetime=global.dateHtml(pageUpdated), pubdate="pubdate")= global.dateReadable(pageUpdated)
           = ' '
           a(class="permalink", title="Permalink" href=page.url) ∞
 

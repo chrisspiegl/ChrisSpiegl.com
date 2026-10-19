@@ -1,7 +1,6 @@
 ---
 title:  What I use
 layout: page
-date: Last Modified
 ---
 
 # What I use
