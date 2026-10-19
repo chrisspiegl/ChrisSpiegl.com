@@ -17,7 +17,7 @@ I think out loud. I dictate stream-of-consciousness notes, often on a walk, ofte
 
 I also use it like a smart friend at the next table: to research a topic, summarize something long, or find the thread in my thinking.
 
-What I never do: “Write an article about X.”
+What I never do: "Write an article about X."
 
 ## Programming
 
@@ -27,11 +27,11 @@ For writing, the words are the work. For software, the work is a thing that runs
 
 ## Photography
 
-My Leica or Canon cameras go almost everywhere with me. I document; I don’t generate.
+My Leica or Canon cameras go almost everywhere with me. I document; I don't generate.
 
-**My photographs.** I keep my work as true to the moment as I can. I use masks, small cleanups, and the same spot fixes I’ve always made with the brush, clone, and heal tools in Lightroom and Photoshop. Some of those tools use AI now, and occasionally I use content-aware fill the same way. I don’t remove whole buildings, recreate a scene, or replace a sky or background with AI. If I call it my photograph, it’s what was in front of my lens.
+**My photographs.** I keep my work as true to the moment as I can. I use masks, small cleanups, and the same spot fixes I've always made with the brush, clone, and heal tools in Lightroom and Photoshop. Some of those tools use AI now, and occasionally I use content-aware fill the same way. I don't remove whole buildings, recreate a scene, or replace a sky or background with AI. If I call it my photograph, it's what was in front of my lens.
 
-**Images that just need to fit.** Things like a website header or a banner are a different job. Occasionally I extend a landscape to fit the layout or tidy a corner so the text can sit on top. That’s functional design. I’d never enter these in a competition or hang them on a wall.
+**Images that just need to fit.** Things like a website header or a banner are a different job. Occasionally I extend a landscape to fit the layout or tidy a corner so the text can sit on top. That's functional design. I'd never enter these in a competition or hang them on a wall.
 
 ## Videography
 
@@ -39,15 +39,15 @@ I have humans in front of the camera (including myself). I enjoy cameras far too
 
 ## Translation & Voice
 
-This is the one I’m unsure about. AI dubbing could bring our work to people in languages we can’t yet afford human translators for. That’s a real chance to help more people. It’s also a real question. I haven’t decided yet.
+This is the one I'm unsure about. AI dubbing could bring our work to people in languages we can't yet afford human translators for. That's a real chance to help more people. It's also a real question. I haven't decided yet.
 
 ## Where I stand
 
 I like being early to new tools. I played with Photoshop in the early 2000s, and I shoot digital, not film.
 
-I’m also conflicted about the ethics, about what counts as human work, and about what we lose when it gets too easy. So I use AI deliberately, in some places and not in others. My rule is simple: I hold the pen.
+I'm also conflicted about the ethics, about what counts as human work, and about what we lose when it gets too easy. So I use AI deliberately, in some places and not in others. My rule is simple: I hold the pen.
 
-This will probably change. When it does, I’ll update this page at this permanent URL: {% canonical %}
+This will probably change. When it does, I'll update this page at this permanent URL: {% canonical %}
 
-If you see it differently, {% email "email me", "AI Statement" %}. I’d like to hear it.
+If you see it differently, {% email "email me", "AI Statement" %}. I'd like to hear it.
 

@@ -9,15 +9,15 @@ title: Father, Traveler, Photographer, Thinker
 ![Chris Spiegl](/assets/images/other/2017-08-19-at-12-38-54-dangle-your-feet.jpg)
 !!!
 
-## My name is Chris Spiegl, I’m a Father, Traveler, Photographer, Thinker.
+## My name is Chris Spiegl, I'm a Father, Traveler, Photographer, Thinker.
 
-Twelve years ago I set my life up so the work comes with me. Right now that’s Chiang Mai, Thailand. Ask me again in spring.
+Twelve years ago I set my life up so the work comes with me. Right now that's Chiang Mai, Thailand. Ask me again in spring.
 
-I almost always have a camera within reach. Lately it’s a Leica Q3. I wanted one for years, and I’m still a little surprised it’s mine.
+I almost always have a camera within reach. Lately it's a Leica Q3. I wanted one for years, and I'm still a little surprised it's mine.
 
 My goal? A life where the hotel worth the detour, the quiet back road, and the café nobody puts on a list are the rule, not the exception.
 
-[Nicole](https://NicoleReiher.com) and our son William are usually just outside the frame, waiting for me to finish ‘one more photo.’ It’s rarely one.
+[Nicole](https://NicoleReiher.com) and our son William are usually just outside the frame, waiting for me to finish ‘one more photo.' It's rarely one.
 
 ## Where to find me
 
@@ -41,6 +41,6 @@ Curious what I'm up to this month? My [Now page](/now) has the latest.
 !!!
 
 !!! quote-hero
-> “If we did all of the things <wbr>that we are capable of doing, <wbr>we would literally <wbr>astound&nbsp;ourselves.”
+> "If we did all of the things <wbr>that we are capable of doing, <wbr>we would literally <wbr>astound&nbsp;ourselves."
 > <cite>Thomas Edison</cite>
 !!!

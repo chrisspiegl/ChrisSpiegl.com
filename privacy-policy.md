@@ -42,4 +42,4 @@ According to the Federal Data Protection Act, you have a right to free-of-charge
 
 ## Privacy Policy Changes
 
-We may update this Policy from time to time. If we do, we’ll let you know about any material changes, either by notifying you on the website or by sending you an email.
+We may update this Policy from time to time. If we do, we'll let you know about any material changes, either by notifying you on the website or by sending you an email.

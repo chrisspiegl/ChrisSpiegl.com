@@ -38,7 +38,7 @@ As of {{ global.dateReadable(pageUpdated) }}, this is what I use.
 - [NPM](https://npmjs.com) — Package Manager
 - [Pug](https://pugjs.org), [Markdown](https://en.wikipedia.org/wiki/Markdown), [Nunjucks](https://mozilla.github.io/nunjucks/)
 
-This will probably change. When it does, I’ll update this page at this permanent URL: {% canonical %}
+This will probably change. When it does, I'll update this page at this permanent URL: {% canonical %}
 
-If you see it differently, {% email "email me", "Uses Statement" %}. I’d like to hear it.
+If you see it differently, {% email "email me", "Uses Statement" %}. I'd like to hear it.
 

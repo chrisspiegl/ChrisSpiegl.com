@@ -9,12 +9,12 @@ Are you struggling to deliver high-quality videos, podcasts, or live streams? Do
 I understand your pain. You want to deliver top-notch content but are bogged down by technical details. You aim to be more productive but are overwhelmed by the myriad of apps and services out there. That's where I come in.
 
 !!! text-center
-<a class="btn" href="https://crsp.li/contact">Let’s Get Started</a>
+<a class="btn" href="https://crsp.li/contact">Let's Get Started</a>
 !!!
 
 ## Tailored Solutions to Transform Your Business
 
-I offer tailored consulting sessions to help you achieve remarkable results in content production, productivity, and business building. Whether through a call or asynchronous sessions via email and video, here’s how we can work together:
+I offer tailored consulting sessions to help you achieve remarkable results in content production, productivity, and business building. Whether through a call or asynchronous sessions via email and video, here's how we can work together:
 
 ### Master Your Video, Podcast, or Live Production
 
@@ -48,7 +48,7 @@ Feeling overwhelmed by the sheer number of productivity apps and services? I off
 
 ## Why Choose My Services?
 
-Your time is precious, and your goals are ambitious. Here’s how I help you achieve more:
+Your time is precious, and your goals are ambitious. Here's how I help you achieve more:
 
 - **Expert Insight:** Two decades of experience, as a tech enthusiast, content creator, and entrepreneur.
 - **Personalized Approach:** Customized plans to address your unique challenges.
@@ -63,9 +63,9 @@ Imagine the freedom of creating stellar content without the technical hiccups, a
 
 ## Let's Transform Your Vision into Reality
 
-Ready to break free from the constraints holding you back? Submit your inquiry form at [crsp.li/contact](https://crsp.li/contact) and let’s embark on this journey together.
+Ready to break free from the constraints holding you back? Submit your inquiry form at [crsp.li/contact](https://crsp.li/contact) and let's embark on this journey together.
 
-I’m excited to help you enhance your productivity, boost your content quality, and truly enjoy the process.
+I'm excited to help you enhance your productivity, boost your content quality, and truly enjoy the process.
 
 !!! signature
 [![Chris Spiegl](/assets/images/other/signature-public-small.png)](https://crsp.li/contact)
