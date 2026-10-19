@@ -15,7 +15,7 @@ In short: I generally make things myself, with AI as my assistant. I start it, a
 
 I like being early to new tools. I played with Photoshop in the early 2000s, and I shoot digital, not film.
 
-I'm also conflicted about the ethics, about what counts as human work, and about what we lose when it gets too easy. So I use AI deliberately, in some places and not in others. My rule is simple: I hold the pen.
+I'm conflicted about the ethics, about [what counts as human work](https://chrisspiegl.substack.com/p/made-by-a-human), and about what we lose when it gets too easy. So I use AI deliberately, in some places and not in others. My rule is simple: I hold the pen.
 
 This will probably change. When it does, I'll update this page at this permanent URL: {% canonical %}
 
