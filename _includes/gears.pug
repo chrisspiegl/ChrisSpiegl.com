@@ -2,28 +2,26 @@ extends layout
 block content
 
   .container
-    nav.navMain.gear(style="padding: 1rem 0 2rem;"): ul
-      li: a(href="/gear/") Camera Kit
-      li: a(href="/gear/podcasting") Podcasting Kit
-      li: a(href="/gear/travel") Travel Gear
-      li: a(href="/gear/desk") Desk Setup
-      li: a(href="/gear/software") Apps & Services
-      li: a(href="/gear/dream") Dream Gear
-      li: a(href="/gear/previous") Previously Owned
+    -
+      const gearHere = page.url.endsWith('/') ? page.url : `${page.url}/`
+    nav.navMain.gear: ul
+      li: a(href="/gear/view/camera/" class=(gearHere === '/gear/view/camera/' ? 'is-active' : null)) Camera Kit
+      li: a(href="/gear/view/podcasting/" class=(gearHere === '/gear/view/podcasting/' ? 'is-active' : null)) Podcasting Kit
+      li: a(href="/gear/view/travel/" class=(gearHere === '/gear/view/travel/' ? 'is-active' : null)) Travel Gear
+      li: a(href="/gear/view/desk/" class=(gearHere === '/gear/view/desk/' ? 'is-active' : null)) Desk Setup
+      li: a(href="/gear/view/software/" class=(gearHere === '/gear/view/software/' ? 'is-active' : null)) Apps & Services
+      li: a(href="/gear/view/dream/" class=(gearHere === '/gear/view/dream/' ? 'is-active' : null)) Dream Gear
+      li: a(href="/gear/view/previous/" class=(gearHere === '/gear/view/previous/' ? 'is-active' : null)) Previously Owned
 
   article.container
     != content
 
   article.gear-list
     -
-      categoryFilter = (typeof categoryFilter === 'string') ? categoryFilter.split(',').trim() : categoryFilter
-      const gearFiltered = gear.filter((g) => {
-        g.Categories = g.Categories.toLowerCase()
-        for (const f of categoryFilter) {
-          if (g.Categories.includes(f.toLowerCase())) continue;
-          else return false;
-        }
-        return true;
+      const categoryFilters = (typeof categoryFilter === 'string') ? categoryFilter.split(',').map((entry) => entry.trim()) : categoryFilter
+      const gearFiltered = gear.filter((item) => {
+        const categories = String(item.Categories || '').toLowerCase()
+        return categoryFilters.every((filter) => categories.includes(String(filter).toLowerCase()))
       })
     each g in gearFiltered
       -
@@ -40,10 +38,10 @@ block content
 
 
   .container
-    h2 Important Disclosure
-    p Most links on this page are affiliate links, which means that if you choose to make a purchase, I will earn a commission. This commission comes at no additional cost to you. Please understand that I have experience with all of these companies or products, and I recommend them because they are helpful and useful, not because of the small commissions I make if you decide to buy something.
-    p Please do not spend any money on these products unless you feel you need them or that they will help you achieve your goals.
-    p I am a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com and affiliated sites.
+    h2 A note on the links
+    p Most links here are affiliate links. If you buy something through one, I get a small commission. You don't pay anything extra.
+    p I list them because I use them. Don't buy any of it unless you actually want or need it.
+    p I am a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
 
 
 //- Update Images (by downloading them from the server because there are more images than in Google Drive)

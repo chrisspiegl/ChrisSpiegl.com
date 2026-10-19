@@ -1,44 +1,17 @@
 ---
-title:  What I use
-layout: page
+title: What I use
+layout: uses
+permalink: /uses/
 ---
 
 # What I use
 
-<p><small><em>(This is an <code>/uses</code> page inspired by <a href="https://sive.rs/uses">Derek Sivers</a>. If you have your own site, you should make one, too.)</em></small></p>
+*WIP — This page is a work in progress. It is not complete.*
 
-As of {{ global.dateReadable(pageUpdated) }}, this is what I use.
+I keep this list to what I actually use. A camera that comes with me, hardware that earns a place in the bag or on the desk, and software I open every week. If it stops earning that place, it goes.
 
-## Hardware
-
-- Apple MacBook Pro 16-inch, 2023
-- Apple iPhone 17 Pro
-- Apple iPad Pro M2 11-inch, 2022
-- Apple Watch Series 7 Edition
-- Apple TV 4K
-- Apple AirPods Max
-- Apple Pencil 3
-- Apple Trackpad
-- Apple Magic Keyboard
-- Apple Magic Trackpad
-- Apple Magic Mouse
-
-## Software
-
-- [11ty](https://11ty.dev) — Static Site Generator
-- [CloudFlare](https://cloudflare.com/) — Static Page Hosting via CloudFlare Pages
-- [GitHub](https://github.com) — Code Repository
-- [NPM](https://npmjs.com) — Package Manager
-- [Pug](https://pugjs.org), [Markdown](https://en.wikipedia.org/wiki/Markdown), [Nunjucks](https://mozilla.github.io/nunjucks/)
-
-## Services
-
-- [CloudFlare](https://cloudflare.com/) — Static Page Hosting via CloudFlare Pages
-- [GitHub](https://github.com) — Code Repository
-- [NPM](https://npmjs.com) — Package Manager
-- [Pug](https://pugjs.org), [Markdown](https://en.wikipedia.org/wiki/Markdown), [Nunjucks](https://mozilla.github.io/nunjucks/)
+If you have a suggestion, {% email "email me", "What I use" %}. I'd like to hear it.
 
 This will probably change. When it does, I'll update this page at this permanent URL: {% canonical %}
 
-If you see it differently, {% email "email me", "Uses Statement" %}. I'd like to hear it.
-
+As of {{ global.dateReadable(pageUpdated) }}, this is the current set. Categories include [Photography](#photography), [Hardware](#hardware), [Software](#software), and [Services](#services).

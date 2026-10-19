@@ -4,7 +4,7 @@ data: gear
 categoryFilter:
   - Current
   - Camera
-permalink: /gear/
+permalink: /gear/view/camera/
 ---
 
 # Camera Kit

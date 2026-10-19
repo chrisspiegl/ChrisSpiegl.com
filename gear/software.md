@@ -4,7 +4,7 @@ data: gear
 categoryFilter:
   - Current
   - Software
-permalink: /gear/software/
+permalink: /gear/view/software/
 ---
 
 # Apps & Services
