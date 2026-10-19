@@ -5,5 +5,5 @@ rating: 8
 dateReleased: 2012-11-20
 # dateRead:
 isbn: 1328519163
-excerpt: "The 4-Hour Chef isn’t just a cookbook. It’s a choose-your-own-adventure guide to the world of rapid learning."
+excerpt: "The 4-Hour Chef isn't just a cookbook. It's a choose-your-own-adventure guide to the world of rapid learning."
 ---

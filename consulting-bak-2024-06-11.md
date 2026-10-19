@@ -4,9 +4,9 @@ title: Consulting
 
 # Elevating Your Business
 
-With my expertise in social media marketing, content creation, website optimization, and online strategies, I’ll guide you towards remarkable results. Together, we’ll optimize your business structure, analyze distribution channels, and drive more traffic while boosting conversion rates. Unlock your business’s potential, maximize revenue, and invest your valuable time strategically.
+With my expertise in social media marketing, content creation, website optimization, and online strategies, I'll guide you towards remarkable results. Together, we'll optimize your business structure, analyze distribution channels, and drive more traffic while boosting conversion rates. Unlock your business's potential, maximize revenue, and invest your valuable time strategically.
 
-<a class="btn btn-block" href="https://crsp.li/contact">Let’s get to Work</a>
+<a class="btn btn-block" href="https://crsp.li/contact">Let's get to Work</a>
 
 ## Working Smarter, Achieving More
 
@@ -22,7 +22,7 @@ Let's dive into your business structure and define your goals. Through a targete
 
 Once the initial enhancements are in place, we turn our attention to driving more traffic to your site. By exploring innovative marketing tactics, orchestrating captivating campaigns, and leveraging social media engagement, we can propel your business towards recognition and success. Let's ensure your business thrives without exhausting your valuable time and energy.
 
-> “We work on the business and that’s only possible if the business does not consume all your time!”
+> "We work on the business and that's only possible if the business does not consume all your time!"
 
 ## Unleashing Your Potential
 
