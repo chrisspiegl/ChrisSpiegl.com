@@ -1,7 +1,7 @@
-const moment = require('moment')
+const { dateHtml, dateReadable, dateReadableShort } = require('../utils/dates')
 
 module.exports = {
-  dateReadable: (date) => moment(date).format('MMMM Do, YYYY'),
-  dateReadableShort: (date) => moment(date).format('Do MMM YYYY'),
-  dateHtml: (date) => moment(date).toISOString(),
+  dateReadable,
+  dateReadableShort,
+  dateHtml,
 }

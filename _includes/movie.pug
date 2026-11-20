@@ -5,7 +5,7 @@ block content
     .movie-list
       div.cover-photo
         if cover
-          a(href=imdb): img(src=meta.imageResizer(640, 0, `/assets/images/book/${cover}.png`) title=titleCombined onerror="this.src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found'")
+          a(href=imdb): img(src=helpers.imageUrl(`/assets/images/book/${cover}.png`, 640) title=titleCombined onerror="this.src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found'")
         else
           a(href=imdb): img(src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found' title=titleCombined)
       div.details

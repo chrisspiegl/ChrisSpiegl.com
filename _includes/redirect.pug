@@ -19,12 +19,3 @@ html(style="height: 100%;")
         br
         | please use #[a(href=redirect.destination) the link directly].
       p ☺️ Enjoy ☺️
-    //- Analytics
-    if meta.build.env === 'production'
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      script(async src="https://www.googletagmanager.com/gtag/js?id=UA-1173222-28")
-      script().
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-1173222-28');

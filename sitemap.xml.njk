@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for item in collections.sitemap %}
   <url>
-    <loc>{{ item.url | url | absoluteUrl(meta.url) }}</loc>
+    <loc>{{ item.url | absoluteUrl(meta.url) }}</loc>
     {%- if item.data.sitemapLastmod %}
     <lastmod>{{ item.data.sitemapLastmod }}</lastmod>
     {%- endif %}

@@ -11,7 +11,7 @@ function decodeHref(value) {
   return value
     .replaceAll('&amp;', '&')
     .replaceAll('&quot;', '"')
-    .replaceAll('&#39;', "'")
+    .replaceAll('&#39;', '\'')
 }
 
 function encodeHref(value) {
@@ -22,27 +22,34 @@ function withUtm(href) {
   let url
   try {
     url = new URL(decodeHref(href))
-  } catch {
+  }
+  catch {
     return href
   }
 
-  if (url.protocol !== 'http:' && url.protocol !== 'https:') return href
-  if (isOwnHost(url.hostname)) return href
+  if (url.protocol !== 'http:' && url.protocol !== 'https:')
+    return href
+  if (isOwnHost(url.hostname))
+    return href
 
-  const hasSource = [...url.searchParams.keys()].some((key) => key.toLowerCase() === 'utm_source')
-  if (hasSource) return href
+  const hasSource = [
+    ...url.searchParams.keys(),
+  ].some(key => key.toLowerCase() === 'utm_source')
+  if (hasSource)
+    return href
 
   const join = url.search ? '&' : '?'
   const next = `${url.origin}${url.pathname}${url.search}${join}utm_source=${encodeURIComponent(siteName)}${url.hash}`
   return encodeHref(next)
 }
 
-const anchorHref = /<a\b[^>]*?\bhref\s*=\s*(["'])(https?:\/\/[^"']+)\1/gi
+const anchorHref = /<a\s(?:[^>]*?\s)?href\s*=\s*(["'])(https?:\/\/[^"']+)\1/gi
 
 function addUtmToExitLinks(html) {
   return html.replace(anchorHref, (match, quote, href) => {
     const next = withUtm(href)
-    if (next === href) return match
+    if (next === href)
+      return match
     return match.replace(`${quote}${href}${quote}`, `${quote}${next}${quote}`)
   })
 }

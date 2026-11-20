@@ -1,59 +1,75 @@
-const readingTime = require('eleventy-plugin-reading-time')
-const embedEverything = require("eleventy-plugin-embed-everything")
-const pluginRss = require("@11ty/eleventy-plugin-rss")
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
-const markdownIt = require("markdown-it")
-const markdownItAnchor = require("markdown-it-anchor")
-const markdownItFootnote = require("markdown-it-footnote")
-const markdownItContainer = require("markdown-it-container")
-const markdownItResponsive = require('@gerhobbelt/markdown-it-responsive')
+const pluginPug = require('@11ty/eleventy-plugin-pug').default
+const pluginRss = require('@11ty/eleventy-plugin-rss').default
+const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const embedEverything = require('eleventy-plugin-embed-everything')
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const markdownItContainer = require('markdown-it-container')
+const markdownItFootnote = require('markdown-it-footnote')
 
-const { DateTime } = require('luxon')
-
-const transforms = require('./utils/transforms.js')
+const canonicalLink = require('./utils/canonicalLink')
+const { toDate, isValidDate } = require('./utils/dates')
+const emailLink = require('./utils/emailLink')
 const filters = require('./utils/filters.js')
 const { lastCommitDate } = require('./utils/gitFileDates')
-const emailLink = require('./utils/emailLink')
-const canonicalLink = require('./utils/canonicalLink')
+const { icon } = require('./utils/icons')
+const { imageHtml } = require('./utils/images')
+const transforms = require('./utils/transforms.js')
 
 const now = new Date()
 
 const sitemapExcludedPrefixes = ['/tag/', '/tags/', '/gear/view/']
-const sitemapExcludedPaths = new Set(['/styleguide/', '/errors/'])
+const sitemapExcludedPaths = new Set(['/styleguide/', '/404.html'])
 
-function includeInSitemap (item) {
+function includeInSitemap(item) {
   const url = item.url
   const inputPath = item.inputPath || ''
-  if (!url || !url.endsWith('/')) return false
-  if (item.data && (item.data.layout === 'redirect' || item.data.redirect)) return false
-  if (sitemapExcludedPrefixes.some((prefix) => url.startsWith(prefix))) return false
-  if (sitemapExcludedPaths.has(url)) return false
-  if (url.includes('consulting-bak')) return false
-  if (inputPath.includes('/draft') || inputPath.includes('draft.md') || inputPath.includes('draft-')) return false
+  if (!url || !url.endsWith('/'))
+    return false
+  if (item.data && (item.data.layout === 'redirect' || item.data.redirect))
+    return false
+  if (sitemapExcludedPrefixes.some(prefix => url.startsWith(prefix)))
+    return false
+  if (sitemapExcludedPaths.has(url))
+    return false
+  if (inputPath.includes('/draft') || inputPath.includes('draft.md') || inputPath.includes('draft-'))
+    return false
   return true
 }
 
-function sitemapLastMod (item) {
+function sitemapLastMod(item) {
   const updated = item.data && item.data.pageUpdated
-  if (updated) {
-    const parsed = DateTime.fromISO(String(updated), { setZone: true })
-    if (parsed.isValid) return parsed.toUTC().toISO({ suppressMilliseconds: true })
+  if (updated && isValidDate(updated)) {
+    return toDate(updated).toISOString().replace(/\.\d{3}Z$/, 'Z')
   }
 
   if (item.date instanceof Date && !Number.isNaN(item.date.getTime())) {
-    return DateTime.fromJSDate(item.date, { zone: 'utc' }).toISODate()
+    return item.date.toISOString().slice(0, 10)
   }
 
   return null
 }
 
+// `sizes` for Markdown images, set by the !!! container they sit in.
+const containerImageSizes = {
+  'image-hero': 'full',
+  'header-image-three': 'third',
+  'image-sbs': 'half',
+  'side-by-side': 'half',
+}
+
 module.exports = (config) => {
+  config.addPlugin(pluginPug)
   config.addPlugin(pluginRss)
   config.addPlugin(pluginSyntaxHighlight)
-  config.addPlugin(readingTime)
   config.addPlugin(embedEverything)
 
-  config.addWatchTarget("./assets/scss/")
+  // Keep repo docs and server-config notes out of the public build.
+  config.ignores.add('README.md')
+  config.ignores.add('_mta-sts/**')
+  config.ignores.add('mta-sts/**')
+
+  config.addWatchTarget('./assets/scss/')
 
   // Transforms
   Object.keys(transforms).forEach((transformName) => {
@@ -66,38 +82,51 @@ module.exports = (config) => {
   })
 
   const isDraftOrIndex = (post) => {
-    if (post.data.draft) return false
-    if (post.inputPath.includes('/draft')) return true
-    if (post.inputPath.includes('draft.md')) return true
-    if (post.inputPath.includes('index.md')) return true
+    if (post.data.draft)
+      return false
+    if (post.inputPath.includes('/draft'))
+      return true
+    if (post.inputPath.includes('draft.md'))
+      return true
+    if (post.inputPath.includes('index.md'))
+      return true
     return false
   }
 
   // Custom collections
-  const livePosts = post => {
-    if (isDraftOrIndex(post)) return false
-    if (post.date <= now) return true
+  const livePosts = (post) => {
+    if (isDraftOrIndex(post))
+      return false
+    if (post.date <= now)
+      return true
     return false
   }
 
-  const liveElements = post => {
-    if (isDraftOrIndex(post)) return false
+  const liveElements = (post) => {
+    if (isDraftOrIndex(post))
+      return false
     return true
   }
 
-  config.addPassthroughCopy("assets/favicon")
+  config.addPassthroughCopy('assets/favicon')
+  // Originals only: Cloudflare Images resizes and converts them on request.
+  config.addPassthroughCopy('assets/images')
   config.addPassthroughCopy({ 'assets/chrisspiegl.asc': 'chrisspiegl.asc' })
-  config.addCollection('posts', collection => {
+  config.addCollection('posts', (collection) => {
     return collection.getFilteredByGlob('./post/**/*.md').filter(_ => livePosts(_)).reverse()
   })
 
-  config.addCollection('drafts', collection => {
+  config.addCollection('drafts', (collection) => {
     return collection.getFilteredByGlob('./post/**/*.md').filter(_ => !livePosts(_)).reverse()
   })
 
   const byGitLastChange = (a, b) => {
-    const aTime = Date.parse(lastCommitDate(a.inputPath) || '') || (a.date instanceof Date ? a.date.getTime() : 0)
-    const bTime = Date.parse(lastCommitDate(b.inputPath) || '') || (b.date instanceof Date ? b.date.getTime() : 0)
+    const aTime = Date.parse(lastCommitDate(a.inputPath) || '') || (a.date instanceof Date
+      ? a.date.getTime()
+      : 0)
+    const bTime = Date.parse(lastCommitDate(b.inputPath) || '') || (b.date instanceof Date
+      ? b.date.getTime()
+      : 0)
     return bTime - aTime
   }
 
@@ -115,7 +144,7 @@ module.exports = (config) => {
 
   config.addCollection('sitemap', (collection) => {
     return collection.getAll()
-      .filter((item) => includeInSitemap(item))
+      .filter(item => includeInSitemap(item))
       .map((item) => {
         item.data.sitemapLastmod = sitemapLastMod(item)
         return item
@@ -123,19 +152,20 @@ module.exports = (config) => {
       .sort((a, b) => a.url.localeCompare(b.url))
   })
 
-  config.addCollection("tagList", collection => {
-    let uniqueTags = new Set()
+  config.addCollection('tagList', (collection) => {
+    const uniqueTags = new Set()
 
-    collection.getAllSorted().forEach(function(item) {
+    collection.getAllSorted().forEach((item) => {
       // TODO: Currently this taglist thing shows all posts no matter that tag.
-      if (! ('tags' in item.data)) return
+      if (!('tags' in item.data))
+        return
 
-      let tags = (typeof item.data.tags === 'string')
-             ? [item.data.tags]
-             : item.data.tags
+      const tags = (typeof item.data.tags === 'string')
+        ? [item.data.tags]
+        : item.data.tags
 
-        for (const tag of tags)
-          tag.startsWith('_') ||  uniqueTags.add(tag)
+      for (const tag of tags)
+        tag.startsWith('_') || uniqueTags.add(tag)
     })
 
     return [...uniqueTags]
@@ -143,119 +173,98 @@ module.exports = (config) => {
 
   // The ever-popular markdown filter.
 
-  let md = markdownIt({
+  const md = markdownIt({
     html: true,
     breaks: true,
     linkify: true,
     typographer: true,
   })
 
-  config.addFilter("markdown", (content) => md.render(content))
-  config.addShortcode("email", emailLink)
-  config.addShortcode("canonical", function () {
+  config.addFilter('markdown', content => md.render(content))
+  config.addShortcode('email', emailLink)
+  config.addShortcode('canonical', function () {
     return canonicalLink(this.page && this.page.url)
   })
+  // {% icon "fa7-brands:youtube" %} → inline SVG, bundled at build time.
+  config.addShortcode('icon', (name, label) => icon(name, { label }))
+  // {% image "/assets/images/x.jpg", "Alt text", "content" %} → responsive <img>.
+  config.addShortcode('image', (src, alt, sizes) => imageHtml(src, { alt, sizes }))
 
   md.use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true })
+    permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true }),
   })
 
   md.use(markdownItFootnote)
 
-  md.use(markdownItContainer, 'image-hero', { marker: '!' })
+  const sizedContainer = name => ({
+    marker: '!',
+    render(tokens, idx, _options, env) {
+      if (tokens[idx].nesting === 1) {
+        env.imageSizes = containerImageSizes[name]
+        return `<div class="${name}">\n`
+      }
+      env.imageSizes = undefined
+      return '</div>\n'
+    },
+  })
+
+  md.use(markdownItContainer, 'image-hero', sizedContainer('image-hero'))
     .use(markdownItContainer, 'signature', { marker: '!' })
-    .use(markdownItContainer, 'image-sbs', { marker: '!' })
+    .use(markdownItContainer, 'image-sbs', sizedContainer('image-sbs'))
     .use(markdownItContainer, 'text-center', { marker: '!' })
-    .use(markdownItContainer, 'side-by-side', { marker: '!' })
-    .use(markdownItContainer, 'header-image-three', { marker: '!' })
+    .use(markdownItContainer, 'side-by-side', sizedContainer('side-by-side'))
+    .use(markdownItContainer, 'header-image-three', sizedContainer('header-image-three'))
     .use(markdownItContainer, 'quote-hero', { marker: '!' })
     .use(markdownItContainer, 'button', { marker: '!' })
     .use(markdownItContainer, 'container', {
       marker: '!',
-      validate: function (params) {
+      validate() {
         return true
       },
-      render: function (tokens, idx) {
-        var m = tokens[idx].info.trim() // .match(/^well\s+(.*)$/)
+      render(tokens, idx) {
+        const m = tokens[idx].info.trim() // .match(/^well\s+(.*)$/)
         if (tokens[idx].nesting === 1) {
           // opening tag
-          let summary = m === '' ? '' : '<summary>' + md.renderInline(m) + '</summary>\n'
-          return '<details>' + summary + '<aside>'
-        } else {
+          const summary = m === ''
+            ? ''
+            : `<summary>${md.renderInline(m)}</summary>\n`
+          return `<details>${summary}<aside>`
+        }
+        else {
           // closing tag
           return '</aside>\n</details>\n'
         }
       },
     })
 
-  // Responsive Images inside Markdown
-
-  md.use(markdownItResponsive, {
-    responsive: {
-      srcset: {
-        "*.jpg": [
-          {
-            width: 320,
-            rename: { suffix: "-320w" },
-          },
-          {
-            width: 640,
-            rename: { suffix: "-640w" },
-          },
-          {
-            width: 1280,
-            rename: { suffix: "-1280w" },
-          },
-          {
-            width: 1920,
-            rename: { suffix: "-1920w" },
-          },
-          // {
-          //   width: 3840,
-          //   rename: { suffix: "-3840w" },
-          // },
-        ],
-        "*.png": [
-          {
-            width: 320,
-            rename: { suffix: "-320w" },
-          },
-          {
-            width: 640,
-            rename: { suffix: "-640w" },
-          },
-          {
-            width: 1280,
-            rename: { suffix: "-1280w" },
-          },
-          {
-            width: 1920,
-            rename: { suffix: "-1920w" },
-          },
-          // {
-          //   width: 3840,
-          //   rename: { suffix: "-3840w" },
-          // },
-        ],
-      },
-
-      sizes: {
-      //   "*": "(max-width: 320px), (max-width: 640px), (max-width: 1280px), 1920px",
-      },
-    },
-  })
+  // Responsive images inside Markdown, delivered through Cloudflare Images (utils/images.js).
+  md.renderer.rules.image = (tokens, idx, options, env, self) => {
+    const token = tokens[idx]
+    const src = token.attrGet('src')
+    if (!src || !src.startsWith('/assets/'))
+      return self.renderToken(tokens, idx, options)
+    return imageHtml(src, {
+      alt: self.renderInlineAsText(token.children, options, env),
+      title: token.attrGet('title') || undefined,
+      sizes: (env && env.imageSizes) || 'content',
+      // Header and hero photos are above the fold: load them right away.
+      loading: env && ['full', 'third'].includes(env.imageSizes)
+        ? 'eager'
+        : 'lazy',
+    })
+  }
 
   md.renderer.rules.footnote_caption = (tokens, idx) => {
     let n = Number(tokens[idx].meta.id + 1).toString()
 
     if (tokens[idx].meta.subId > 0) {
-      n += ":" + tokens[idx].meta.subId
+      n += `:${tokens[idx].meta.subId}`
     }
 
     return n
   }
 
-  config.setLibrary("md", md)
+  config.setLibrary('md', md)
 
   return {
     // dir: {
@@ -271,7 +280,6 @@ module.exports = (config) => {
     // ],
     // dataTemplateEngine: "njk",
     // htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-    passthroughFileCopy: true,
+    markdownTemplateEngine: 'njk',
   }
 }

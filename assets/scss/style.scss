@@ -17,7 +17,7 @@
 @use "tools";
 
 // @import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+// Playfair Display is linked in _includes/layout.pug so Cloudflare Fonts can serve it from this domain.
 
 :root {
   --break-mobile: #{vars.$break-mobile};
@@ -635,3 +635,30 @@ input[type=submit],
   font-size: var(--font-size-minus-1) !important;
 }
 
+
+// Visible to screen readers only.
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Inline SVG icons (utils/icons.js)
+svg.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+// Images carry width/height attributes to avoid layout shift; keep them fluid.
+img[width][height] {
+  height: auto;
+}
