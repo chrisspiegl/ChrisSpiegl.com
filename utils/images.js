@@ -132,9 +132,14 @@ function imageAttributes(src, { alt = '', sizes = 'content', loading = 'lazy', t
   if (className)
     attrs.class = className
   // Blurred ThumbHash preview behind the image until it has loaded (no JS needed).
+  // aspect-ratio keeps the box (and the preview) at the image's shape even
+  // while the image is missing; class-level width/height still win.
   const preview = placeholder(src)
-  if (preview)
+  if (preview) {
     attrs.style = `background:url(${preview}) center/cover no-repeat`
+    if (size)
+      attrs.style += `;aspect-ratio:${size.width}/${size.height}`
+  }
   return attrs
 }
 

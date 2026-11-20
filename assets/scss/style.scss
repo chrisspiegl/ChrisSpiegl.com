@@ -998,3 +998,11 @@ nav,
 .linktree-total {
   hyphens: manual;
 }
+
+// Images with a ThumbHash preview: an image that hasn't loaded (or failed) is
+// rendered as an inline box that ignores width/height, which collapses the
+// preview. inline-block keeps its size. :where() keeps specificity at zero,
+// so any layout rule (display: block etc.) still wins.
+:where(img[style*="background:url"]) {
+  display: inline-block;
+}
