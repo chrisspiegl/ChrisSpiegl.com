@@ -1,41 +1,36 @@
 ---
+description: "Legal information for ChrisSpiegl.com, operated by CSX.Ventures OÜ, Tallinn, Estonia."
 title: Legal Disclosure
 ---
 
 # Legal Disclosure
 
-CSX.Ventures OÜ
-Sepapaja tn 6, 15551 Tallinn, Harju Maakond, Estonia
+ChrisSpiegl.com is operated by:
 
-Comm. Reg. Number: 16821265
-VAT: EE102658062
+**CSX.Ventures OÜ**
+Sepapaja tn 6, 15551 Tallinn, Harju maakond, Estonia
 
-## CSX.Ventures OÜ is operating as the following:
+Registry code: 16821265 ([Estonian e-Business Register](https://ariregister.rik.ee/eng/company/16821265))
+VAT number: EE102658062
+Management board: Chris Spiegl
+
+## Contact
+
+Email: {% email "", "Legal Disclosure" %}
+
+## Websites and profiles operated by CSX.Ventures OÜ
 
 - [ChrisSpiegl.com](https://ChrisSpiegl.com)
 - [CSX.Ventures](https://CSX.Ventures)
 - [Foxi.Link](https://Foxi.Link)
 - [PushNotice.Chat](https://PushNotice.Chat)
 - [Chaptered.app](https://Chaptered.app)
-- YouTube Channel: [@ChrisSpiegl](https://youtube.com/chrisspiegl)
-- Instagram Account: [@ChrisSpiegl](https://instagram.com/chrisspiegl)
-- Instagram Account: [@CSXVentures](https://instagram.com/csxventures)
-- LinkedIn Account: [@ChrisSpiegl](https://linkedin.com/in/chrisspiegl)
-- Substack Account: [@ChrisSpiegl](https://chrisspiegl.substack.com)
-- 𝕏 / Twitter Account: [@ChrisSpiegl](https://x.com/ChrisSpiegl)
+- YouTube: [@ChrisSpiegl](https://youtube.com/chrisspiegl)
+- Instagram: [@ChrisSpiegl](https://instagram.com/chrisspiegl) and [@CSXVentures](https://instagram.com/csxventures)
+- LinkedIn: [Chris Spiegl](https://linkedin.com/in/chrisspiegl)
+- Substack: [Field Notes](https://chrisspiegl.substack.com)
+- X: [@ChrisSpiegl](https://x.com/ChrisSpiegl)
 
-## Contact
+## Content and links
 
-E-Mail: {% email "", "Legal Disclosure" %}
-Telephone: [+49 156 7893 4363](tel:+4915678934363) (only Telegram & WhatsApp! SMS or unknown calls)
-Internetaddress: [ChrisSpiegl.com](https://ChrisSpiegl.com/)
-
-## Disclaimer
-
-### Accountability for content
-
-The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents' accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for our own content on these web pages. In this context, please note that we are accordingly not obliged to monitor merely the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity. Our obligations to remove or block the use of information under generally applicable laws remain unaffected by this as per §§ 8 to 10 of the Telemedia Act (TMG).
-
-### Accountability for links
-
-Responsibility for the content of external links (to web pages of third parties) lies solely with the operators of the linked pages. No violations were evident to us at the time of linking. Should any legal infringement become known to us, we will remove the respective link immediately.
+I write everything here with care, but I can't guarantee it is complete or current. Links to other websites are the responsibility of their operators; if a linked page breaks the law and I learn about it, I'll remove the link.

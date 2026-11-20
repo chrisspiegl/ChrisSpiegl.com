@@ -6,7 +6,8 @@ function isShallowRepository() {
       encoding: 'utf8',
     })
     return output.trim() === 'true'
-  } catch (error) {
+  }
+  catch (error) {
     console.warn(`Could not check git clone depth: ${error.message}`)
     return false
   }

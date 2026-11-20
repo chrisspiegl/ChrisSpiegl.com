@@ -1,4 +1,5 @@
 ---
+description: "The cameras, hardware, software, and services I use to work and travel, kept up to date."
 title: What I use
 layout: uses
 permalink: /uses/

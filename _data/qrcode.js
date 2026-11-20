@@ -1,5 +1,5 @@
+const fs = require('node:fs')
 const QRCode = require('qrcode')
-const mkdirp = require('mkdirp')
 
 module.exports = async () => {
   const coins = {
@@ -33,7 +33,7 @@ module.exports = async () => {
   for (const coin of Object.keys(coins)) {
     const exportPath = '_site'
     const folderPath = '/assets/images/qrcodes'
-    mkdirp.sync(exportPath + folderPath)
+    fs.mkdirSync(exportPath + folderPath, { recursive: true })
     coins[coin].filepath = `${folderPath}/${coin}-${coins[coin].addr}.svg`
     await QRCode.toFile(`${exportPath}${coins[coin].filepath}`, coins[coin].link)
     coins[coin].rendered = `!!! ${coins[coin].name} — $${coin.toUpperCase()}: \`${coins[coin].addr}\`

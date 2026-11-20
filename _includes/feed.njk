@@ -4,18 +4,18 @@
   <subtitle>{{ meta.description }}</subtitle>
   <link href="{{ meta.url }}/feed.xml" rel="self"/>
   <link href="{{ meta.url }}"/>
-  <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
+  <updated>{% if collections.posts.length %}{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}{% else %}{{ meta.build.timestamp | dateToRfc3339 }}{% endif %}</updated>
   <id>{{ meta.url }}</id>
   <author>
     <name>{{ meta.authorName }}</name>
     <email>{{ meta.authorEmail }}</email>
   </author>
   {%- for post in collections.posts %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(meta.url) }}{% endset %}
+  {% set absolutePostUrl %}{{ post.url | absoluteUrl(meta.url) }}{% endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | rssDate }}</updated>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>

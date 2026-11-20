@@ -9,7 +9,9 @@ function escapeHtml(value) {
 }
 
 function canonicalLink(pageUrl) {
-  const path = pageUrl && pageUrl !== '/' ? String(pageUrl) : '/'
+  const path = pageUrl && pageUrl !== '/'
+    ? String(pageUrl)
+    : '/'
   const href = new URL(path, siteUrl).href
   const pathname = new URL(href).pathname.replace(/\/$/, '')
   const label = `${siteName}${pathname}`

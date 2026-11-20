@@ -6,7 +6,7 @@ block content
     .book-list
       div.cover-photo
         if cover
-          img(src=meta.imageResizer(640, 0, `/assets/images/book/${cover}.png`) title=titleCombined onerror="this.src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found'")
+          img(src=helpers.imageUrl(`/assets/images/book/${cover}.png`, 640) title=titleCombined onerror="this.src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found'")
         else
           img(src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found' title=titleCombined)
       div.details

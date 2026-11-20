@@ -1,12 +1,13 @@
 ---
+description: "Father, traveler, photographer, thinker. Twelve years of living and working on the road, a camera always within reach, and Field Notes on Substack."
 layout: page
 title: Father, Traveler, Photographer, Thinker
 ---
 
 !!! header-image-three
-![Chris Spiegl](/assets/images/other/2017-07-17-at-10-33-24-mountain-hike.jpg)
-![Chris Spiegl](/assets/images/other/2017-07-02-at-11-24-39-thoughtful-berlin.jpg)
-![Chris Spiegl](/assets/images/other/2017-08-19-at-12-38-54-dangle-your-feet.jpg)
+![Chris walking along a rocky ridge above a turquoise alpine lake, snow-covered mountains behind him](/assets/images/other/2017-07-17-at-10-33-24-mountain-hike.jpg)
+![Chris on a dirt path through a green forest in Berlin, tipping his cap with a camera in hand](/assets/images/other/2017-07-02-at-11-24-39-thoughtful-berlin.jpg)
+![Looking down past jeans and hiking boots dangling over a high ledge, a path and trees far below](/assets/images/other/2017-08-19-at-12-38-54-dangle-your-feet.jpg)
 !!!
 
 ## My name is Chris Spiegl, I'm a Father, Traveler, Photographer, Thinker.
