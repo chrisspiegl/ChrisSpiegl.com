@@ -66,23 +66,36 @@
 
   --color-white: #fff;
 
-  --color-foreground: #86868b;
+  /*
+### Field Notes (Substack) theme
+Values taken from chrisspiegl.substack.com so the site and the newsletter feel like one place.
+*/
+  --color-ink: #4e4a45;          /* body text (Substack print_on_web_bg) */
+  --color-ink-strong: #363737;   /* headings (Substack cover_print_primary) */
+  --color-ink-muted: #807e7b;    /* secondary text */
+  --color-paper: #eee8e0;        /* page background */
+  --color-paper-raised: #e0dad3; /* cards, table rows */
+  --color-rule: #d6d1ca;         /* borders, dividers */
+  --color-accent: #cc5630;       /* links, buttons */
+  --color-accent-dark: #b74d2b;  /* hover */
+
+  --color-foreground: var(--color-ink);
   // --color-background: #f5f5f7; // pre 2026-10-17
-  --color-background: #eee8e0;
-  --color-bg-contrast: var(--color-gray-95);
+  --color-background: var(--color-paper);
+  --color-bg-contrast: var(--color-paper-raised);
   // --color-foreground: var(--color-white);
   // --color-background: var(--color-dark);
   // --color-bg-contrast: var(--color-gray-95);
   /* table even row */
 
   --color-body: var(--color-foreground);
-  --color-nav-text: #86868b;
+  --color-nav-text: var(--color-ink-muted);
   // --color-nav-text: var(--color-white);
   --color-nav-hover: var(--color-orange);
-  --color-heading: var(--color-gray-20);
-  --color-figure-caption: var(--color-gray-40);
-  --color-link: var(--color-orange);
-  --color-footer: var(--color-lighter);
+  --color-heading: var(--color-ink-strong);
+  --color-figure-caption: var(--color-ink-muted);
+  --color-link: var(--color-accent);
+  --color-footer: var(--color-ink-muted);
   --color-code: var(--color-lighter);
   /* naked code */
   --color-code-bg: var(--color-dark);
@@ -116,6 +129,7 @@
   // --font-system: 'Vollkorn', -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-system: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-serif: "Playfair Display", -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+  --font-text: "Spectral", -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   // font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   // --font-sans-serif: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
   --font-sans-serif: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -123,11 +137,11 @@
   --font-mono: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
 
 
-  --font-body: var(--font-system);
-  --font-caption: var(--font-system);
-  --font-footer: var(--font-system);
-  --font-heading: var(--font-system);
-  --font-list: var(--font-system);
+  --font-body: var(--font-text);
+  --font-caption: var(--font-text);
+  --font-footer: var(--font-text);
+  --font-heading: var(--font-serif);
+  --font-list: var(--font-text);
   --font-code: var(--font-mono);
   --font-code-size: 1em;
 
@@ -139,13 +153,13 @@
     https://modularscale.com/?1&em&1.25
   */
 
-  --font-size-plus-3: 2.93rem;
-  --font-size-plus-2: 2.344rem;
-  --font-size-plus-1: 1.875rem;
+  --font-size-plus-3: 2.75rem;
+  --font-size-plus-2: 2.2rem;
+  --font-size-plus-1: 2rem;
   --font-size-plus-0: 1.5rem;
-  --font-size-base: 1.5rem;
-  --font-size-minus-0: 1.5rem;
-  --font-size-minus-1: 1.2rem;
+  --font-size-base: 1.25rem;
+  --font-size-minus-0: 1.25rem;
+  --font-size-minus-1: 1.1rem;
   --font-size-minus-2: 0.96rem;
   --font-size-minus-3: 0.768rem;
   --font-size-minus-4: 0.614rem;
@@ -176,6 +190,18 @@ blockquote {
   // font-weight: normal;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-heading);
+  line-height: 1.25;
+}
+
 h1 {
   font-size: var(--font-size-plus-1);
   // letter-spacing: .25rem;
@@ -187,8 +213,8 @@ h2 {
 }
 
 h3 {
-  font-size: var(--font-size-plus-0);
-  color: var(--color-lighter);
+  font-size: var(--font-size-minus-1);
+  color: var(--color-ink-muted);
 }
 
 h1,
@@ -271,7 +297,7 @@ body {
   margin: auto;
   font-family: var(--font-body);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.6;
   font-size: var(--font-size-base);
   color: var(--color-body);
   background-color: var(--color-background);
@@ -577,19 +603,19 @@ pre {
 
 .btn {
   text-align: center !important;
-  color: var(--color-body) !important;
+  color: var(--color-white) !important;
   text-decoration: none !important;
-  border: 2px solid var(--color-link) !important;
-  background-color: transparent !important;
-  padding: 0.5rem 1rem !important;
-  // margin: 1rem !important;
-  letter-spacing: .1rem !important;
-  font-weight: bold !important;
+  border: 2px solid var(--color-accent) !important;
+  border-radius: 8px !important;
+  background-color: var(--color-accent) !important;
+  padding: 0.6rem 1.2rem !important;
+  font-weight: 600 !important;
 }
 
 .btn:hover {
   color: var(--color-white) !important;
-  background-color: var(--color-light) !important;
+  background-color: var(--color-accent-dark) !important;
+  border-color: var(--color-accent-dark) !important;
   text-decoration: none !important;
 }
 
@@ -661,4 +687,123 @@ svg.icon {
 // Images carry width/height attributes to avoid layout shift; keep them fluid.
 img[width][height] {
   height: auto;
+}
+
+// /linktree: a single column of links, styled like Field Notes on Substack.
+#content.bare {
+  min-height: 85vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.linktree {
+  width: 90%;
+  max-width: 36rem;
+  margin: 0 auto;
+  text-align: center;
+
+  h1 {
+    padding: 0.5rem 0 0.25rem;
+  }
+
+  p {
+    padding-bottom: 1rem;
+  }
+}
+
+.linktree-avatar {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.linktree-tagline {
+  color: var(--color-ink-muted);
+  font-size: var(--font-size-minus-1);
+}
+
+.linktree-total {
+  font-size: var(--font-size-minus-1);
+
+  strong {
+    color: var(--color-accent);
+  }
+}
+
+.linktree-links {
+  list-style: none;
+  padding: 0.5rem 0 1.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  #content & li,
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.25rem;
+    border: 1px solid var(--color-rule);
+    border-radius: 8px;
+    background: var(--color-paper-raised);
+    color: var(--color-ink-strong);
+    text-align: left;
+    text-decoration: none;
+    transition: background-color 0.15s, border-color 0.15s;
+
+    &:hover {
+      border-color: var(--color-accent);
+      background: var(--color-paper);
+      text-decoration: none;
+    }
+
+    &.is-primary {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-white);
+
+      .linktree-sub {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      &:hover {
+        background: var(--color-accent-dark);
+      }
+    }
+
+    svg.icon {
+      flex-shrink: 0;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.linktree-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.linktree-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--font-size-minus-1);
+  line-height: 1.3;
+}
+
+.linktree-sub {
+  font-size: var(--font-size-minus-2);
+  color: var(--color-ink-muted);
+}
+
+.linktree-more {
+  font-size: var(--font-size-minus-2);
 }

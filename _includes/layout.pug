@@ -59,87 +59,89 @@ html(lang="en")
 
     //- Served from this domain by Cloudflare Fonts (Speed > Settings > Content Optimization).
     //- It only rewrites <link> tags, never CSS @import, so the font must be linked here.
-    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400&display=swap")
     link(rel="stylesheet" href="/assets/style.css")
     link(rel="alternate" href="/feed.xml" type="application/atom+xml", title=`${meta.siteTitle} Atom Feed`)
 
   body
     if meta.build.env === 'development'
       header.development(style="padding: .2rem 0; margin: 0; background-color: rgba(255, 105, 97, 0.5); min-width: 100%; width: 100%; min-height: 0; height: auto; display: block; border-bottom: 2px solid rgb(255,105,97); text-align: center;")= `DEVELOPMENT | ${ global.dateHtml(meta.build.timestamp) }`
-    header.container
-      section.top
-        section.header
-          img#avatar&attributes(helpers.imageAttrs(meta.avatarImage, { sizes: 'avatar', loading: false, defaultWidth: 320 }))
-          div.text
-            //- The site name is a heading only on the home page; every other page owns its <h1>.
-            if page.url === '/'
-              h1: a(href="/")= meta.authorName
-            else
-              p.site-name: a(href="/")= meta.authorName
-            p: em= meta.tagline
-            p.location-line: em
-              | Currently in#{' '}
-              a(href='/location')
-                - const locationLabel = nomadlist.headerIncludesUntil ? nomadlist.now.until : nomadlist.now.string
-                if locationLabel && locationLabel.includes(', ')
-                  - const locationParts = locationLabel.split(', ')
-                  = `${locationParts[0]}, `
-                  wbr
-                  = locationParts.slice(1).join(', ').replaceAll(' ', '\u00A0')
-                else
-                  = locationLabel
+    unless bare
+      header.container
+        section.top
+          section.header
+            img#avatar&attributes(helpers.imageAttrs(meta.avatarImage, { sizes: 'avatar', loading: false, defaultWidth: 320 }))
+            div.text
+              //- The site name is a heading only on the home page; every other page owns its <h1>.
+              if page.url === '/'
+                h1: a(href="/")= meta.authorName
+              else
+                p.site-name: a(href="/")= meta.authorName
+              p: em= meta.tagline
+              p.location-line: em
+                | Currently in#{' '}
+                a(href='/location')
+                  - const locationLabel = nomadlist.headerIncludesUntil ? nomadlist.now.until : nomadlist.now.string
+                  if locationLabel && locationLabel.includes(', ')
+                    - const locationParts = locationLabel.split(', ')
+                    = `${locationParts[0]}, `
+                    wbr
+                    = locationParts.slice(1).join(', ').replaceAll(' ', '\u00A0')
+                  else
+                    = locationLabel
 
-        section.social
-          each profile in meta.profiles
-            if profile.showIcon !== false && profile.icon
-              a(href=profile.url rel="me noopener" title=`${profile.name} Profile` aria-label=`${profile.name} profile` target="_blank")
-                != helpers.icon(profile.icon)
+          section.social
+            each profile in meta.profiles
+              if profile.showIcon !== false && profile.icon
+                a(href=profile.url rel="me noopener" title=`${profile.name} Profile` aria-label=`${profile.name} profile` target="_blank")
+                  != helpers.icon(profile.icon)
 
-      nav.navMain
-        ul
-          li
-            a(href="/") About
-          li
-            a(href="/now") Now
-          li
-            a(href="/ai") AI
-          li
-            a(href="/uses") Uses
-          li
-            a(href="https://chrisspiegl.substack.com") Field Notes on Substack
-          //- li
-          //-   a(href="/consulting") Consulting
-          //- li
-          //-   a(href="/support") Support
-          //- li
-          //-   a(href="/gear") Gear
-          //- li
-          //-   a(href="/courses" title="Skillshare Profile — External Link" target="_blank") Courses
-          //- li
-          //-   a(href="/blog") Blog
-          //- li
-          //-   a(href="/books") Books
-          //- li
-          //-   a(href="/movies") Movies
-          //- li
-          //-   a(href="/newsletter/archive" title="Creation Overview" target="_blank") Creations
-          //- li
-          //-   a(href="/podcast") Podcast
-          //- li
-          //-   a(href="/more") More
+        nav.navMain
+          ul
+            li
+              a(href="/") About
+            li
+              a(href="/now") Now
+            li
+              a(href="/ai") AI
+            li
+              a(href="/uses") Uses
+            li
+              a(href="https://chrisspiegl.substack.com") Field Notes on Substack
+            //- li
+            //-   a(href="/consulting") Consulting
+            //- li
+            //-   a(href="/support") Support
+            //- li
+            //-   a(href="/gear") Gear
+            //- li
+            //-   a(href="/courses" title="Skillshare Profile — External Link" target="_blank") Courses
+            //- li
+            //-   a(href="/blog") Blog
+            //- li
+            //-   a(href="/books") Books
+            //- li
+            //-   a(href="/movies") Movies
+            //- li
+            //-   a(href="/newsletter/archive" title="Creation Overview" target="_blank") Creations
+            //- li
+            //-   a(href="/podcast") Podcast
+            //- li
+            //-   a(href="/more") More
 
-    section#content
+    section#content(class=bare ? 'bare' : null)
       block content
 
     footer.container
 
-      section#search()
-        form(action="https://duckduckgo.com/" method="get")
-          input(type="hidden" name="ia" value="web")
-          input(type="hidden" name="sites" value="ChrisSpiegl.com")
-          label.visually-hidden(for="site-search") Search ChrisSpiegl.com
-          input#site-search.text-center(type="search" name="q" value="" placeholder="Search for anything on ChrisSpiegl.com" required)
-          input.btn.btn-block(type="submit" value="Search")
+      unless bare
+        section#search()
+          form(action="https://duckduckgo.com/" method="get")
+            input(type="hidden" name="ia" value="web")
+            input(type="hidden" name="sites" value="ChrisSpiegl.com")
+            label.visually-hidden(for="site-search") Search ChrisSpiegl.com
+            input#site-search.text-center(type="search" name="q" value="" placeholder="Search for anything on ChrisSpiegl.com" required)
+            input.btn.btn-block(type="submit" value="Search")
 
       nav.navFooter
         ul

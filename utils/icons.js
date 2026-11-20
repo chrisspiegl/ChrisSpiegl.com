@@ -4,6 +4,7 @@ const { getIconData, iconToHTML, iconToSVG, replaceIDs } = require('@iconify/uti
 
 const sets = {
   'fa7-brands': require('@iconify-json/fa7-brands/icons.json'),
+  'fa7-solid': require('@iconify-json/fa7-solid/icons.json'),
 }
 
 function icon(name, { label, className = 'icon' } = {}) {

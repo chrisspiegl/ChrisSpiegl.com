@@ -1,0 +1,40 @@
+---
+title: Links
+description: "Field Notes, YouTube, Instagram, and recommendations: everything I make, in one place."
+permalink: /linktree/
+layout: page.pug
+bare: true
+---
+//- Replaces linktr.ee/ChrisSpiegl. Follower counts come from _data/followers.js at build time.
+-
+  const f = followers.platforms
+  const links = [
+    { title: 'Field Notes', sub: `Weekly letters on Substack · ${f.substack.label} subscribers`, url: 'https://chrisspiegl.substack.com', icon: 'fa7-brands:substack', primary: true },
+    { title: 'Thoughts, Tutorials, & Learnings', sub: `YouTube · ${f.youtube.label} subscribers`, url: 'https://www.youtube.com/@ChrisSpiegl', icon: 'fa7-brands:youtube' },
+    { title: 'Photography & Explorations', sub: `Instagram · ${f.instagram.label} followers`, url: 'https://www.instagram.com/chrisspiegl', icon: 'fa7-brands:instagram' },
+    { title: 'Recommendations', sub: 'The gear I use, on Amazon', url: 'https://www.amazon.com/shop/chrisspiegl', icon: 'fa7-brands:amazon' },
+    { title: 'Let\'s Work Together', sub: 'Send me an email', url: `mailto:${meta.authorEmail}`, icon: 'fa7-solid:envelope' },
+  ]
+
+section.linktree
+  img.linktree-avatar&attributes(helpers.imageAttrs(meta.avatarImage, { sizes: '112px', loading: false, defaultWidth: 320, alt: meta.authorName }))
+  h1= meta.authorName
+  p.linktree-tagline
+    = meta.tagline
+    br
+    = meta.taglineDetail
+  p.linktree-total
+    strong= followers.totalLabel
+    |  people follow along on YouTube, Instagram, and Substack
+
+  ul.linktree-links
+    each link in links
+      li
+        a(href=link.url class=link.primary ? 'is-primary' : null)
+          != helpers.icon(link.icon)
+          span.linktree-text
+            span.linktree-title= link.title
+            span.linktree-sub= link.sub
+
+  p.linktree-more
+    a(href="/") More about me on ChrisSpiegl.com →
