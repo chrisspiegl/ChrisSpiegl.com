@@ -879,17 +879,8 @@ img[width][height] {
   min-width: 0;
 }
 
-.linktree-platform {
-  font-size: 0.7rem;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-
-  .is-primary & {
-    color: rgba(255, 255, 255, 0.9);
-  }
+.linktree-on {
+  font-weight: 400;
 }
 
 .linktree-title {
@@ -920,4 +911,21 @@ img[width][height] {
 .linktree-links *,
 .linktree-total * {
   font-family: var(--font-ui);
+}
+
+@media (max-width: 480px) {
+  .linktree-links a {
+    gap: 0.75rem;
+    padding: 0.75rem 1rem 0.75rem 0.75rem;
+  }
+
+  .linktree-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1.1rem;
+  }
+
+  .linktree-title {
+    font-size: 1rem;
+  }
 }

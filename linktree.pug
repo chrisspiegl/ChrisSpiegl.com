@@ -15,7 +15,7 @@ bare: true
   ]
   const links = [
     { title: 'Field Notes', sub: 'Essays on traveling slowly', url: 'https://chrisspiegl.substack.com', icon: 'fa7-brands:substack', platform: 'Substack', primary: true },
-    { title: 'Stories on Camera', sub: 'Thoughts and tutorials', url: 'https://www.youtube.com/@ChrisSpiegl', icon: 'fa7-brands:youtube', platform: 'YouTube' },
+    { title: 'Tech, Cameras, & Travel', sub: 'Thoughts and tutorials', url: 'https://www.youtube.com/@ChrisSpiegl', icon: 'fa7-brands:youtube', platform: 'YouTube' },
     { title: 'Through the Viewfinder', sub: 'Photos from the road', url: 'https://www.instagram.com/chrisspiegl', icon: 'fa7-brands:instagram', platform: 'Instagram' },
     { title: 'What\'s in My Bag', sub: 'The gear I actually use', url: 'https://www.amazon.com/shop/chrisspiegl', icon: 'fa7-brands:amazon', platform: 'Amazon' },
     { title: 'Pull Up a Chair', sub: 'Let\'s work together', url: `mailto:${meta.authorEmail}`, icon: 'fa7-solid:envelope', platform: 'Email' },
@@ -45,8 +45,10 @@ section.linktree
         a(href=link.url class=link.primary ? 'is-primary' : null aria-label=`${link.title}: ${link.sub} (${link.platform})`)
           span.linktree-icon!= helpers.icon(link.icon)
           span.linktree-text
-            span.linktree-platform= link.platform
-            span.linktree-title= link.title
+            span.linktree-title
+              = link.title
+              if link.platform !== 'Email'
+                span.linktree-on= ` on ${link.platform}`
             span.linktree-sub= link.sub
           span.linktree-arrow(aria-hidden="true") →
 
