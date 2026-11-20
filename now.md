@@ -1,4 +1,5 @@
 ---
+description: "What I'm focused on right now: family, writing, photography, and building a business that leaves room for all of it."
 title: Now
 layout: now
 ---

@@ -1,4 +1,5 @@
 ---
+description: "How I use generative AI and LLM tools in my work, and where I don't. I make things myself, with AI as my assistant."
 title: How I use AI
 layout: page
 ---

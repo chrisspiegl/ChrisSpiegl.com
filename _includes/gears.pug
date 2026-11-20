@@ -30,8 +30,8 @@ block content
 
       .gear-item
         - const imageGearItem = `/assets/images/gear/${g.Slug}.png`
-        img(src=meta.imageResizer(640, 0, imageGearItem) title=g.Title onerror="this.src='https://via.placeholder.com/640x427/FFFFFF/?text=Image+not+found'")
-        //- img(src=meta.imageResizer(640, 0, `/assets/images/gear/${g.Slug}.png`) title=g.Title)
+        img(src=helpers.imageUrl(imageGearItem, 640) title=g.Title onerror="this.src='https://via.placeholder.com/640x427/FFFFFF/?text=Image+not+found'")
+        //- img(src=helpers.imageUrl(`/assets/images/gear/${g.Slug}.png`) title=g.Title)
         h3: a(href=linkAmazon title=g.Title target='_blank')= g.Title
         p= g.Description
         a.gear-link(href=linkAmazon title=g.Title target='_blank') &nbsp;

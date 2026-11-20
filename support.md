@@ -1,4 +1,5 @@
 ---
+description: "Ways to support my work, from YouTube memberships to a paid Substack subscription. Always optional, always appreciated."
 title: Support
 ---
 

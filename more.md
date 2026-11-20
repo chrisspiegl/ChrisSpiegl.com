@@ -1,4 +1,5 @@
 ---
+description: "Tools, projects, and other things I've made over the years."
 title: More
 ---
 

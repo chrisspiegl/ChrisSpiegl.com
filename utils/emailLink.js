@@ -14,7 +14,12 @@ function emailLink(text, subject, body, address) {
 
   if (text && typeof text === 'object') {
     ({
-      text, subject, body, address, className, title,
+      text,
+      subject,
+      body,
+      address,
+      className,
+      title,
     } = text)
   }
 
@@ -22,14 +27,20 @@ function emailLink(text, subject, body, address) {
   const label = text || to
   const query = []
 
-  if (subject) query.push(`subject=${encodeURIComponent(subject)}`)
-  if (body) query.push(`body=${encodeURIComponent(body)}`)
+  if (subject)
+    query.push(`subject=${encodeURIComponent(subject)}`)
+  if (body)
+    query.push(`body=${encodeURIComponent(body)}`)
 
-  const href = `mailto:${to}${query.length > 0 ? `?${query.join('&')}` : ''}`
+  const href = `mailto:${to}${query.length > 0
+    ? `?${query.join('&')}`
+    : ''}`
   const attributes = [`href="${escapeHtml(href)}"`]
 
-  if (className) attributes.push(`class="${escapeHtml(className)}"`)
-  if (title) attributes.push(`title="${escapeHtml(title)}"`)
+  if (className)
+    attributes.push(`class="${escapeHtml(className)}"`)
+  if (title)
+    attributes.push(`title="${escapeHtml(title)}"`)
 
   return `<a ${attributes.join(' ')}>${escapeHtml(label)}</a>`
 }

@@ -1,50 +1,32 @@
----
-eleventyExcludeFromCollections: true
----
+# ChrisSpiegl.com
 
-# [ChrisSpiegl.com](https://ChrisSpiegl.com)
+Personal website of Chris Spiegl, built with [Eleventy 3](https://www.11ty.dev/) (Pug layouts, Markdown content) and deployed on [Cloudflare Pages](https://pages.cloudflare.com/). Writing lives on [Field Notes](https://chrisspiegl.substack.com); this site is the hub around it.
 
-Building a new personal website.
+## Commands
 
-This site is deployed via [Cloudflare Pages](https://pages.cloudflare.com/) which makes the whole hosting free and with much less server stuff to worry about. The only thing I have not yet figured out properly is how I could host images somewhere reliable and structured.
+```sh
+pnpm install
+pnpm dev          # local server with live reload
+pnpm build        # production build into _site/
+pnpm lint         # ESLint (@antfu/eslint-config)
+pnpm format       # ESLint with --fix
+pnpm check        # link check of _site/
+```
 
-## TODO
+Node is pinned in `.node-version` (24); Cloudflare Pages reads it too.
 
-- Go through all pages one more time
-- Fix block quote oversize to have padding left right on mobile
+## How things work
 
-## Later
+- **Images**: only originals live in `assets/images/`. In production every `<img>` points at Cloudflare Images (`/cdn-cgi/image/...`), which resizes on request and serves AVIF, WebP or JPEG depending on the browser. Widths are fixed to 320/640/960/1280/1920 (`utils/images.js`) to keep unique transformations low (free tier: 5,000 per month; format doesn't count). Local and preview builds use the originals. Force a mode with `IMAGES_CDN=cloudflare` or `IMAGES_CDN=local`.
+- **Fonts**: Playfair Display is linked from Google Fonts in `_includes/layout.pug`; Cloudflare Fonts rewrites it to load from this domain.
+- **Icons**: inline SVGs bundled at build time from Iconify (`utils/icons.js`, `{% icon "fa7-brands:youtube" %}`).
+- **Sharing**: Open Graph and Twitter tags use `ogImage` from front matter, else `imageHero`, else the first image on the page, else the default photo, cropped to 1200x630 by Cloudflare. Set `description` in front matter for each page.
+- **Analytics**: Cloudflare Web Analytics only (cookieless, injected by Pages).
+- **Location**: the header pulls the current city from Nomad List at build time; a daily rebuild keeps it fresh.
+- **Redirects**: `_data/redirects.json` builds `_redirects` for Cloudflare plus HTML pages for local overview.
 
-- Go Through Blog Posts of the Past
-  + Once this is done, remove the "ignore drafts from .gitignore"
-- Images for Books
-- Images for Movies
-- Images for Gear
-- Update Gear List, Details, Categories, add new YouTube Studio Setup
+## Cloudflare settings this site depends on
 
-## Random Notes, Inspiration, and possible Additions
-
-### Webmentions
-
-- https://webmention.io
-- https://brid.gy/twitter/ChrisSpiegl
-
-### Scheduled posts via Collectoin Filter
-
-- https://remysharp.com/2019/06/26/scheduled-and-draft-11ty-posts
-- needs scheduled rebuild in addition to github pull hook based rebuild
-
-### Example Blog Template for Inspiration
-
-- https://github.com/arpitbatra123/eleventy-blog-mnml
-- https://github.com/11ty/eleventy-base-blog
-- https://github.com/hankchizljaw/hylia/blob/master/.eleventy.js
-- https://github.com/pborenstein/pborenstein.com
-- https://github.com/jamesdoc/jamesdoc.com
-- https://github.com/maxboeck/eleventastic
-
-### Generate Images On the Fly so no proxy is necessary
-
-Also this technique could be used to furhter preprocess SASS and Javascript to minify and potentially even inject instead of have external CSS/JS files.
-
-- https://github.com/jamesdoc/jamesdoc.com/blob/8443c59e761b4588d67cb2948005068872a54b98/src/_assets/img.11ty.js
+- Images > Transformations: enabled for the chrisspiegl.com zone.
+- Speed > Settings > Content Optimization: Cloudflare Fonts on.
+- Web Analytics: enabled for the Pages project.

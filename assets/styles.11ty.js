@@ -1,13 +1,13 @@
 // Shamelessly modified from Eleventastic:
 // https://github.com/maxboeck/eleventastic
 
-const process = require('process')
-const path = require('path')
-const sass = require('sass')
+const path = require('node:path')
+const process = require('node:process')
 const CleanCSS = require('clean-css')
 const cssesc = require('cssesc')
+const sass = require('sass')
 
-const isProd = process.env.ELEVENTY_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production'
 
 // Main entry point name
 const fileName = 'style.scss'
@@ -28,17 +28,20 @@ module.exports = class {
   async compile(config) {
     return new Promise((resolve, reject) => {
       const sassOptions = {
-        loadPaths: [path.join(__dirname, 'scss')],
+        loadPaths: [
+          path.join(__dirname, 'scss'),
+        ],
         style: isProd ? 'compressed' : 'expanded',
         sourceMap: !isProd,
         sourceMapIncludeSources: !isProd,
-        quietDeps: true
+        quietDeps: true,
       }
 
       try {
         const result = sass.compile(config.filePath, sassOptions)
         return resolve(result.css.toString())
-      } catch (error) {
+      }
+      catch (error) {
         return reject(error)
       }
     })
@@ -53,7 +56,8 @@ module.exports = class {
         return minified
       }
       return css
-    } catch (error) {
+    }
+    catch (error) {
       return this.renderError(error)
     }
   }
