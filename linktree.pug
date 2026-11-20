@@ -20,6 +20,10 @@ bare: true
     { title: 'What\'s in My Bag', sub: 'The gear I actually use and recommend.', url: 'https://www.amazon.com/shop/chrisspiegl', icon: 'fa7-brands:amazon', platform: 'Amazon' },
     { title: 'Let\'s Work Together', sub: `Pull up a chair · ${meta.authorEmail}`, url: `mailto:${meta.authorEmail}`, icon: 'fa7-solid:envelope', platform: 'Email' },
   ]
+  const ventures = [
+    { title: 'Niyama.Academy', sub: 'An online yoga studio for all levels, with Nicole.', url: 'https://niyama.academy', icon: 'fa7-solid:spa' },
+    { title: 'BOLSTair', sub: 'A travel-friendly inflatable yoga and fitness bolster.', url: 'https://bolstair.com', icon: 'fa7-solid:suitcase-rolling' },
+  ]
 
 section.linktree
   img.linktree-avatar&attributes(helpers.imageAttrs(meta.avatarImage, { sizes: '112px', loading: false, defaultWidth: 320, alt: meta.authorName }))
@@ -49,5 +53,16 @@ section.linktree
             span.linktree-sub(title=link.sub)= link.sub
           span.linktree-arrow(aria-hidden="true") →
 
+  h2.linktree-heading What I'm building
+  ul.linktree-links.linktree-ventures
+    each link in ventures
+      li
+        a(href=link.url aria-label=`${link.title}: ${link.sub}`)
+          span.linktree-icon!= helpers.icon(link.icon)
+          span.linktree-text
+            span.linktree-title= link.title
+            span.linktree-sub(title=link.sub)= link.sub
+          span.linktree-arrow(aria-hidden="true") →
+
   p.linktree-more
-    a(href="/") More about me on ChrisSpiegl.com
+    a(href="/now/") What I'm doing #[span.linktree-now /now]

@@ -724,6 +724,8 @@ img[width][height] {
 }
 
 .linktree-tagline {
+  max-width: 26rem;
+  margin: 0 auto;
   color: var(--color-ink-muted);
   font-size: var(--font-size-minus-1);
   line-height: 1.5;
@@ -906,8 +908,29 @@ img[width][height] {
   transition: transform 0.15s, color 0.15s;
 }
 
+.linktree .linktree-heading {
+  margin: 1.5rem 0 1rem;
+  padding: 0;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
 .linktree .linktree-more {
-  font-size: var(--font-size-minus-2);
+  padding: 1.5rem 0 3rem;
+  font-size: var(--font-size-minus-1);
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+}
+
+.linktree-now {
+  font-style: italic;
 }
 
 // The global `*` font rule would otherwise put every span back in the serif.
@@ -935,4 +958,43 @@ img[width][height] {
   .linktree-arrow {
     display: none;
   }
+
+  .linktree-tagline {
+    font-size: 1.05rem;
+  }
+}
+
+// Typography: pretty wrapping and hyphenation for running text, balanced headings.
+// html(lang="en") is set in the layout, which hyphens: auto needs.
+p,
+li,
+dd,
+blockquote,
+figcaption,
+.footnote-popover {
+  hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  hyphens: manual;
+  text-wrap: balance;
+}
+
+// Never hyphenate code, navigation, or UI labels.
+pre,
+code,
+nav,
+.btn,
+.linktree-links,
+.linktree-social,
+.linktree-total {
+  hyphens: manual;
 }
