@@ -138,8 +138,31 @@ function imageHtml(src, options) {
   return `<img ${Object.entries(attrs).map(([k, v]) => `${k}="${escapeAttr(v)}"`).join(' ')}>`
 }
 
+// On production builds, check once that the zone actually serves
+// transformations. If not (feature switched off), fall back to originals
+// instead of shipping broken images.
+async function verifyCloudflareImages(siteUrl, sampleSrc) {
+  if (process.env.IMAGES_CDN || !useCloudflare())
+    return
+  const probe = `${siteUrl}/cdn-cgi/image/width=${WIDTHS[0]},format=auto${sampleSrc}`
+  try {
+    const response = await fetch(probe, {
+      method: 'HEAD',
+      signal: AbortSignal.timeout(8000),
+    })
+    if (response.ok && (response.headers.get('content-type') || '').startsWith('image/'))
+      return
+    console.warn(`[images] Cloudflare Images not available (HTTP ${response.status}); using original images.`)
+  }
+  catch (error) {
+    console.warn(`[images] Cloudflare Images check failed (${error.message}); using original images.`)
+  }
+  process.env.IMAGES_CDN = 'local'
+}
+
 module.exports = {
   WIDTHS,
+  verifyCloudflareImages,
   SIZES,
   dimensions,
   imageAttributes,

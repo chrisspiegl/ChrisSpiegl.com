@@ -7,13 +7,14 @@ const markdownItAnchor = require('markdown-it-anchor')
 const markdownItContainer = require('markdown-it-container')
 const markdownItFootnote = require('markdown-it-footnote')
 
+const meta = require('./_data/meta')
 const canonicalLink = require('./utils/canonicalLink')
 const { toDate, isValidDate } = require('./utils/dates')
 const emailLink = require('./utils/emailLink')
 const filters = require('./utils/filters.js')
 const { lastCommitDate } = require('./utils/gitFileDates')
 const { icon } = require('./utils/icons')
-const { imageHtml } = require('./utils/images')
+const { imageHtml, verifyCloudflareImages } = require('./utils/images')
 const transforms = require('./utils/transforms.js')
 
 const now = new Date()
@@ -59,6 +60,8 @@ const containerImageSizes = {
 }
 
 module.exports = (config) => {
+  config.on('eleventy.before', () => verifyCloudflareImages(meta.url, meta.avatarImage))
+
   config.addPlugin(pluginPug)
   config.addPlugin(pluginRss)
   config.addPlugin(pluginSyntaxHighlight)
