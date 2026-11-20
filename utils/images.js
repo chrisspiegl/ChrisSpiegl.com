@@ -10,6 +10,7 @@ const fs = require('node:fs')
 const path = require('node:path')
 const process = require('node:process')
 const { imageSize } = require('image-size')
+const { placeholder } = require('./thumbhash')
 
 // The only widths the site ever requests. Keep this list short: each width per
 // image is one "unique transformation" per month (format/quality don't count).
@@ -130,6 +131,10 @@ function imageAttributes(src, { alt = '', sizes = 'content', loading = 'lazy', t
     attrs.title = title
   if (className)
     attrs.class = className
+  // Blurred ThumbHash preview behind the image until it has loaded (no JS needed).
+  const preview = placeholder(src)
+  if (preview)
+    attrs.style = `background:url(${preview}) center/cover no-repeat`
   return attrs
 }
 
