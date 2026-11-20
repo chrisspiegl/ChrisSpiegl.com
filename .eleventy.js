@@ -15,6 +15,7 @@ const filters = require('./utils/filters.js')
 const { lastCommitDate } = require('./utils/gitFileDates')
 const { icon } = require('./utils/icons')
 const { imageHtml, verifyCloudflareImages } = require('./utils/images')
+const { preparePlaceholders } = require('./utils/thumbhash')
 const transforms = require('./utils/transforms.js')
 
 const now = new Date()
@@ -61,6 +62,7 @@ const containerImageSizes = {
 
 module.exports = (config) => {
   config.on('eleventy.before', () => verifyCloudflareImages(meta.url, meta.avatarImage))
+  config.on('eleventy.before', preparePlaceholders)
 
   config.addPlugin(pluginPug)
   config.addPlugin(pluginRss)
