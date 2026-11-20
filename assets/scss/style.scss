@@ -130,6 +130,7 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
   --font-system: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-serif: "Playfair Display", -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   --font-text: "Spectral", -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   // font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   // --font-sans-serif: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
   --font-sans-serif: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -699,17 +700,19 @@ img[width][height] {
 }
 
 .linktree {
-  width: 90%;
-  max-width: 36rem;
+  width: 100%;
+  max-width: 32rem;
   margin: 0 auto;
+  padding: 0 1rem;
   text-align: center;
 
   h1 {
-    padding: 0.5rem 0 0.25rem;
+    padding: 0.75rem 0 0.25rem;
+    letter-spacing: -0.01em;
   }
 
   p {
-    padding-bottom: 1rem;
+    padding-bottom: 0;
   }
 }
 
@@ -723,23 +726,71 @@ img[width][height] {
 .linktree-tagline {
   color: var(--color-ink-muted);
   font-size: var(--font-size-minus-1);
+  line-height: 1.5;
 }
 
-.linktree-total {
-  font-size: var(--font-size-minus-1);
+.linktree-social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+
+  #content & li,
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    color: var(--color-ink-strong);
+    font-size: 1.6rem;
+    transition: color 0.15s, background-color 0.15s;
+
+    svg.icon {
+      vertical-align: 0;
+    }
+
+    &:hover {
+      color: var(--color-accent);
+      background: var(--color-paper-raised);
+    }
+  }
+}
+
+.linktree .linktree-total {
+  display: inline-block;
+  margin: 0.75rem 0 1.75rem;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--color-ink-muted);
 
   strong {
-    color: var(--color-accent);
+    font-family: var(--font-ui);
+    color: var(--color-ink-strong);
+    font-weight: 600;
   }
 }
 
 .linktree-links {
   list-style: none;
-  padding: 0.5rem 0 1.5rem;
+  padding: 0 0 2rem;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  font-family: var(--font-ui);
 
   #content & li,
   li {
@@ -751,19 +802,33 @@ img[width][height] {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 0.9rem 1.25rem;
+    min-height: 4.5rem;
+    font-family: var(--font-ui);
+    padding: 0.85rem 1.25rem 0.85rem 0.85rem;
     border: 1px solid var(--color-rule);
-    border-radius: 8px;
-    background: var(--color-paper-raised);
+    border-radius: 14px;
+    background: #faf7f3;
     color: var(--color-ink-strong);
     text-align: left;
     text-decoration: none;
-    transition: background-color 0.15s, border-color 0.15s;
+    box-shadow: 0 1px 2px rgba(54, 55, 55, 0.04);
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
 
     &:hover {
-      border-color: var(--color-accent);
-      background: var(--color-paper);
+      border-color: #c9c2b9;
+      box-shadow: 0 4px 14px rgba(54, 55, 55, 0.08);
+      transform: translateY(-1px);
       text-decoration: none;
+
+      .linktree-arrow {
+        transform: translateX(3px);
+        color: var(--color-accent);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
     }
 
     &.is-primary {
@@ -771,39 +836,75 @@ img[width][height] {
       border-color: var(--color-accent);
       color: var(--color-white);
 
-      .linktree-sub {
+      .linktree-icon {
+        background: rgba(255, 255, 255, 0.16);
+        color: var(--color-white);
+      }
+
+      .linktree-sub,
+      .linktree-arrow {
         color: rgba(255, 255, 255, 0.85);
       }
 
       &:hover {
         background: var(--color-accent-dark);
-      }
-    }
+        border-color: var(--color-accent-dark);
 
-    svg.icon {
-      flex-shrink: 0;
-      font-size: 1.5rem;
+        .linktree-arrow {
+          color: var(--color-white);
+        }
+      }
     }
   }
 }
 
+.linktree-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 10px;
+  background: var(--color-paper);
+  color: var(--color-ink-strong);
+  font-size: 1.25rem;
+}
+
 .linktree-text {
   display: flex;
+  flex: 1;
   flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
 }
 
 .linktree-title {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: var(--font-size-minus-1);
+  font-weight: 600;
+  font-size: 1.05rem;
   line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .linktree-sub {
-  font-size: var(--font-size-minus-2);
+  font-size: 0.875rem;
+  line-height: 1.35;
   color: var(--color-ink-muted);
 }
 
-.linktree-more {
+.linktree-arrow {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  color: var(--color-ink-muted);
+  transition: transform 0.15s, color 0.15s;
+}
+
+.linktree .linktree-more {
   font-size: var(--font-size-minus-2);
+}
+
+// The global `*` font rule would otherwise put every span back in the serif.
+.linktree-links *,
+.linktree-total * {
+  font-family: var(--font-ui);
 }

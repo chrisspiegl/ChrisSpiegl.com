@@ -86,13 +86,22 @@ async function resolve(name, lookup) {
   return { count: manual[name], live: false }
 }
 
-// 16934 -> "16.9K", 36 -> "36"
-function short(count) {
-  if (count >= 1_000_000)
-    return `${(count / 1_000_000).toFixed(1).replace(/\.0$/, '')}M`
-  if (count >= 1000)
-    return `${(count / 1000).toFixed(1).replace(/\.0$/, '')}K`
-  return String(count)
+// Compact, pretty-bytes style, rounded down so it never overstates:
+// 36 -> "36", 9250 -> "9.2K", 32336 -> "32.3K", 150400 -> "150K", 1234567 -> "1.2M"
+function compact(count) {
+  const units = ['', 'K', 'M', 'B']
+  let value = count
+  let unit = 0
+  while (value >= 1000 && unit < units.length - 1) {
+    value /= 1000
+    unit++
+  }
+  const decimals = unit > 0 && value < 100
+    ? 1
+    : 0
+  const factor = 10 ** decimals
+  const floored = Math.floor(value * factor) / factor
+  return `${floored.toFixed(decimals).replace(/\.0$/, '')}${units[unit]}`
 }
 
 module.exports = async function () {
@@ -102,31 +111,13 @@ module.exports = async function () {
     resolve('substack', substack),
   ])
 
-  const platforms = {
-    youtube: {
-      ...yt,
-      label: short(yt.count),
-    },
-    instagram: {
-      ...ig,
-      label: short(ig.count),
-    },
-    substack: {
-      ...ss,
-      label: short(ss.count),
-    },
-  }
+  const platforms = { youtube: yt, instagram: ig, substack: ss }
   const total = yt.count + ig.count + ss.count
-  // Round down so the headline never overstates: 32,336 -> "32,300+"
-  const step = total >= 10_000
-    ? 100
-    : 10
-  const rounded = Math.floor(total / step) * step
 
   return {
     platforms,
     total,
-    totalLabel: `${rounded.toLocaleString('en-US')}+`,
+    totalLabel: compact(total),
     manualAsOf: manual.asOf,
     allLive: yt.live && ig.live && ss.live,
     updated: new Date().toISOString(),

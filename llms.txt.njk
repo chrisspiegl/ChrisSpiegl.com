@@ -7,12 +7,18 @@ eleventyExcludeFromCollections: true
 
 > {{ meta.description }} Personal website of {{ meta.authorName }}: who he is, what he's working on now, how he uses AI, and the tools he uses. His writing lives in Field Notes on Substack.
 
-This file follows the llms.txt convention (https://llmstxt.org). It's generated on every build and lists only the public pages linked from the site's navigation.
+This file follows the llms.txt convention (https://llmstxt.org). It's generated on every build and lists the public pages linked from the site, plus the tools.
 
 ## Pages
-{%- set publicPages = ['/', '/now/', '/ai/', '/uses/', '/linktree/', '/privacy-policy/', '/legal-disclosure/'] %}
+{%- set publicPages = ['/', '/now/', '/ai/', '/uses/', '/linktree/', '/more/', '/privacy-policy/', '/legal-disclosure/'] %}
 {% for url in publicPages %}{% for item in collections.sitemap %}{% if item.url == url %}
 - [{{ (item.data.title or meta.authorName) | safe }}]({{ item.url | absoluteUrl(meta.url) }}){% if item.data.description %}: {{ item.data.description | safe }}{% endif %}{% endif %}{% endfor %}{% endfor %}
+
+## Tools
+
+Small browser tools I built for my own work and kept public.
+{% for item in collections.sitemap %}{% if item.url.startsWith('/tools/') %}
+- [{{ item.data.title | safe }}]({{ item.url | absoluteUrl(meta.url) }}){% if item.data.description %}: {{ item.data.description | safe }}{% endif %}{% endif %}{% endfor %}
 
 ## Elsewhere
 {% for profile in meta.profiles %}
