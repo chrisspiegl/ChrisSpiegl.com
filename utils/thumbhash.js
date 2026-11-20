@@ -1,7 +1,7 @@
 // Build-time ThumbHash placeholders for images.
 //
 // Before each build, every image in assets/images gets a ThumbHash
-// (https://evanw.github.io/thumbhash/), rendered to a tiny blurred WebP data URL.
+// (https://evanw.github.io/thumbhash/), rendered to a tiny blurred, lossless WebP data URL.
 // utils/images.js puts that data URL on the <img> as a CSS background, so a
 // blurred preview shows instantly and the real image paints over it once it
 // loads. No JavaScript runs in the browser.
@@ -19,6 +19,8 @@ const imagesDir = path.join(rootDir, 'assets', 'images')
 const cacheFile = path.join(rootDir, '.cache', 'thumbhash.json')
 const IMAGE_PATTERN = /\.(?:jpe?g|png|webp)$/i
 const CONCURRENCY = 4
+// Bump when the placeholder encoding changes, to rebuild the cache.
+const VERSION = 2
 
 let placeholders = {}
 
@@ -60,15 +62,16 @@ async function placeholderFor(file, thumbhash) {
       return null
   }
 
-  // Decode the hash back to a tiny image and store it as a compressed WebP;
-  // the library's own PNG output is uncompressed (about 5 KB per image).
+  // Decode the hash back to a tiny image and store it as a lossless WebP
+  // (about 0.9 KB). Lossy WebP is smaller but shows visible blocks once the
+  // browser scales it up; the library's own PNG output is uncompressed (~4 KB).
   const hash = thumbhash.rgbaToThumbHash(info.width, info.height, data)
   const { w, h, rgba } = thumbhash.thumbHashToRGBA(hash)
   const webp = await sharp(Buffer.from(rgba), {
     raw: { width: w, height: h, channels: 4 },
   })
     .removeAlpha()
-    .webp({ quality: 70 })
+    .webp({ lossless: true })
     .toBuffer()
   return `data:image/webp;base64,${webp.toString('base64')}`
 }
@@ -84,7 +87,7 @@ async function preparePlaceholders() {
     const src = `/${path.relative(rootDir, file).split(path.sep).join('/')}`
     const { size, mtimeMs } = fs.statSync(file)
     const cached = cache[src]
-    if (cached && cached.size === size && cached.mtimeMs === mtimeMs)
+    if (cached && cached.version === VERSION && cached.size === size && cached.mtimeMs === mtimeMs)
       next[src] = cached
     else
       todo.push({ file, src, size, mtimeMs })
@@ -94,7 +97,12 @@ async function preparePlaceholders() {
   for (let i = 0; i < todo.length; i += CONCURRENCY) {
     await Promise.all(todo.slice(i, i + CONCURRENCY).map(async ({ file, src, size, mtimeMs }) => {
       try {
-        next[src] = { size, mtimeMs, dataUrl: await placeholderFor(file, thumbhash) }
+        next[src] = {
+          version: VERSION,
+          size,
+          mtimeMs,
+          dataUrl: await placeholderFor(file, thumbhash),
+        }
       }
       catch {
         failed++
