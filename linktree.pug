@@ -45,6 +45,7 @@ section.linktree
         a(href=link.url class=link.primary ? 'is-primary' : null aria-label=`${link.title}: ${link.sub} (${link.platform})`)
           span.linktree-icon!= helpers.icon(link.icon)
           span.linktree-text
+            span.linktree-platform= link.platform
             span.linktree-title= link.title
             span.linktree-sub= link.sub
           span.linktree-arrow(aria-hidden="true") →

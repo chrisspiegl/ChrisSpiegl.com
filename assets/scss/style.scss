@@ -879,6 +879,19 @@ img[width][height] {
   min-width: 0;
 }
 
+.linktree-platform {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+
+  .is-primary & {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
 .linktree-title {
   font-weight: 600;
   font-size: 1.05rem;
