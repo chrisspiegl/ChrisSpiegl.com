@@ -14,10 +14,10 @@ bare: true
     { name: 'Email', url: `mailto:${meta.authorEmail}`, icon: 'fa7-solid:envelope' },
   ]
   const links = [
-    { title: 'Field Notes', sub: 'Essays on traveling slowly', url: 'https://chrisspiegl.substack.com', icon: 'fa7-brands:substack', platform: 'Substack', primary: true },
-    { title: 'Tech, Cameras, & Travel', sub: 'Thoughts and tutorials', url: 'https://www.youtube.com/@ChrisSpiegl', icon: 'fa7-brands:youtube', platform: 'YouTube' },
-    { title: 'Through the Viewfinder', sub: 'Photos from the road', url: 'https://www.instagram.com/chrisspiegl', icon: 'fa7-brands:instagram', platform: 'Instagram' },
-    { title: 'What\'s in My Bag', sub: 'The gear I actually use', url: 'https://www.amazon.com/shop/chrisspiegl', icon: 'fa7-brands:amazon', platform: 'Amazon' },
+    { title: 'Field Notes', sub: 'Be a traveler, not a tourist.', url: 'https://chrisspiegl.substack.com', icon: 'fa7-brands:substack', platform: 'Substack', primary: true },
+    { title: 'My Films', sub: 'Thoughts, tutorials, tech, cameras, and travel.', url: 'https://www.youtube.com/@ChrisSpiegl', icon: 'fa7-brands:youtube', platform: 'YouTube' },
+    { title: 'Through the Viewfinder', sub: 'Photos about life, the road less traveled, and the in-between.', url: 'https://www.instagram.com/chrisspiegl', icon: 'fa7-brands:instagram', platform: 'Instagram' },
+    { title: 'What\'s in My Bag', sub: 'The gear I actually use and recommend.', url: 'https://www.amazon.com/shop/chrisspiegl', icon: 'fa7-brands:amazon', platform: 'Amazon' },
     { title: 'Let\'s Work Together', sub: `Pull up a chair · ${meta.authorEmail}`, url: `mailto:${meta.authorEmail}`, icon: 'fa7-solid:envelope', platform: 'Email' },
   ]
 
@@ -45,11 +45,8 @@ section.linktree
         a(href=link.url class=link.primary ? 'is-primary' : null aria-label=`${link.title}: ${link.sub} (${link.platform})`)
           span.linktree-icon!= helpers.icon(link.icon)
           span.linktree-text
-            span.linktree-title
-              = link.title
-              if link.platform !== 'Email'
-                span.linktree-on= ` on ${link.platform}`
-            span.linktree-sub= link.sub
+            span.linktree-title= link.platform === 'Email' ? link.title : `${link.title} on ${link.platform}`
+            span.linktree-sub(title=link.sub)= link.sub
           span.linktree-arrow(aria-hidden="true") →
 
   p.linktree-more

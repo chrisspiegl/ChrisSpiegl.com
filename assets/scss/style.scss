@@ -879,8 +879,11 @@ img[width][height] {
   min-width: 0;
 }
 
-.linktree-on {
-  font-weight: 400;
+.linktree-title,
+.linktree-sub {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .linktree-title {
@@ -927,5 +930,9 @@ img[width][height] {
 
   .linktree-title {
     font-size: 1rem;
+  }
+
+  .linktree-arrow {
+    display: none;
   }
 }
