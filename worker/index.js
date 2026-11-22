@@ -165,7 +165,7 @@ async function rebuild(controller, env) {
 async function notify(env, level, text) {
   if (!env.PUSHNOTICE_CHAT_IDCHAT || !env.PUSHNOTICE_CHAT_SECRET)
     return
-  await fetch('https://api.pushnotice.chat/v1/chatnotice/', {
+  const response = await fetch('https://api.pushnotice.chat/v1/chatnotice/', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({
@@ -178,6 +178,10 @@ async function notify(env, level, text) {
       text,
     }),
   }).catch(error => console.error(`PushNotice failed: ${error.message}`))
+  if (response && !response.ok) {
+    const data = await response.json().catch(() => ({}))
+    console.error(`PushNotice: HTTP ${response.status}: ${data?.message || 'no reason given'}`)
+  }
 }
 
 export default {
