@@ -16,6 +16,9 @@
 //   CF_BUILDS_API_TOKEN      optional, "Workers CI Read" token: exact trigger,
 //                            queue time and PR link from the Workers Builds API
 //   PUSHNOTICE_MARKDOWN      "0" sends plain text instead of a ``` code block
+//   PUSHNOTICE_VERBOSE       "1" always sends the full report; by default a
+//                            build where everything works sends a few short
+//                            lines, and only failures get the full details
 
 const { spawn, execFileSync } = require('node:child_process')
 const fs = require('node:fs')
@@ -114,6 +117,15 @@ function ago(date) {
   if (seconds < 129_600)
     return `${Math.round(seconds / 3600)}h ago`
   return `${Math.round(seconds / 86_400)} days ago`
+}
+
+// 16900 -> "16.9K", rounded down like the site's own counter.
+function compactCount(n) {
+  if (!Number.isFinite(n))
+    return '?'
+  if (n < 1000)
+    return String(n)
+  return `${Math.floor(n / 100) / 10}K`.replace('.0K', 'K')
 }
 
 function number(n) {
@@ -422,6 +434,39 @@ async function report({ state, deploy, failed, logTail }) {
       ? [GAP, '📜 last lines', ...logTail]
       : []),
   ]
+
+  // All good: a tiny plain summary. Something broken (or PUSHNOTICE_VERBOSE=1):
+  // the full report above.
+  if (!failed && !broken.length && process.env.PUSHNOTICE_VERBOSE !== '1') {
+    const short = (name, p) => p && `${name} ${compactCount(p.count)}${p.status === 'live'
+      ? ''
+      : '*'}`
+    const counts = [
+      short('YT', f.youtube),
+      short('IG', f.instagram),
+      short('SS', f.substack),
+    ].filter(Boolean)
+    const target = env.platform === 'Cloudflare Pages'
+      ? `built on Pages (${env.branch})`
+      : env.production
+        ? 'live'
+        : `preview ${env.branch}`
+    const tiny = [
+      `✓ chrisspiegl.com ${target} · ${trigger.replace(/^\S+\s/, '')} · ${duration(totalMs)}`,
+      `${env.sha.slice(0, 7)} ${truncate(commit.subject, 44)}`,
+      counts.length && `${counts.join(' · ')}${location?.now
+        ? ` · ${location.now}`
+        : ''}${missing.length
+        ? `  (* manual)`
+        : ''}`,
+      !env.production && url,
+    ].filter(Boolean)
+    return {
+      text: tiny.join('\n'),
+      level: 'info',
+      silent: !env.production,
+    }
+  }
 
   const body = lines
     .filter(line => typeof line === 'string' && line !== '')
