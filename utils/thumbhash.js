@@ -6,10 +6,17 @@
 // blurred preview shows instantly and the real image paints over it once it
 // loads. No JavaScript runs in the browser.
 //
-// Results are cached in .cache/thumbhash.json by path, size and modification
-// time, so only new or changed images are processed.
+// Results are cached in .cache/thumbhash.json by each image's content hash, so
+// only new or changed images are processed. The hash is the git blob SHA-1:
+// one `git ls-files -s` call gives it for every committed image without reading
+// any file. Images that are untracked or modified locally are hashed the same
+// way in Node, so their cache entries still match once they are committed.
+// Keying on content (not modification time) keeps the cache valid on a fresh
+// clone, such as each Cloudflare build, and when an image is renamed or moved.
 
 const { Buffer } = require('node:buffer')
+const { execFileSync } = require('node:child_process')
+const crypto = require('node:crypto')
 const fs = require('node:fs')
 const path = require('node:path')
 const sharp = require('sharp')
@@ -20,7 +27,7 @@ const cacheFile = path.join(rootDir, '.cache', 'thumbhash.json')
 const IMAGE_PATTERN = /\.(?:jpe?g|png|webp)$/i
 const CONCURRENCY = 4
 // Bump when the placeholder encoding changes, to rebuild the cache.
-const VERSION = 2
+const VERSION = 3
 
 let placeholders = {}
 
@@ -39,11 +46,53 @@ function walk(dir) {
 
 function readCache() {
   try {
-    return JSON.parse(fs.readFileSync(cacheFile, 'utf8'))
+    const cache = JSON.parse(fs.readFileSync(cacheFile, 'utf8'))
+    if (cache.version === VERSION && cache.entries)
+      return cache.entries
   }
-  catch {
-    return {}
+  catch {}
+  return {}
+}
+
+// Path (relative to the repo, with /) -> git blob SHA-1, for every image that
+// is committed and unchanged in the working tree. Empty when git is missing.
+function gitHashes() {
+  const git = args => execFileSync('git', args, {
+    cwd: rootDir,
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'ignore'],
+  })
+  const hashes = new Map()
+  try {
+    for (const line of git([
+      'ls-files',
+      '-s',
+      '-z',
+      '--',
+      'assets/images',
+    ]).split('\0')) {
+      // "<mode> <sha> <stage>\t<path>"
+      const match = /^\d+ ([0-9a-f]+) \d+\t(.+)$/s.exec(line)
+      if (match)
+        hashes.set(match[2], match[1])
+    }
+    for (const changed of git([
+      'ls-files',
+      '-m',
+      '-z',
+      '--',
+      'assets/images',
+    ]).split('\0'))
+      hashes.delete(changed)
   }
+  catch {}
+  return hashes
+}
+
+// The same SHA-1 git would give this file, computed from its bytes.
+function blobHash(file) {
+  const data = fs.readFileSync(file)
+  return crypto.createHash('sha1').update(`blob ${data.length}\0`).update(data).digest('hex')
 }
 
 async function placeholderFor(file, thumbhash) {
@@ -81,28 +130,26 @@ async function preparePlaceholders() {
   const cache = readCache()
   const next = {}
   const files = walk(imagesDir)
-  const todo = []
+  const fromGit = gitHashes()
+  const bySrc = {}
+  const todo = new Map()
 
   for (const file of files) {
-    const src = `/${path.relative(rootDir, file).split(path.sep).join('/')}`
-    const { size, mtimeMs } = fs.statSync(file)
-    const cached = cache[src]
-    if (cached && cached.version === VERSION && cached.size === size && cached.mtimeMs === mtimeMs)
-      next[src] = cached
+    const relative = path.relative(rootDir, file).split(path.sep).join('/')
+    const hash = fromGit.get(relative) || blobHash(file)
+    bySrc[`/${relative}`] = hash
+    if (hash in cache)
+      next[hash] = cache[hash]
     else
-      todo.push({ file, src, size, mtimeMs })
+      todo.set(hash, file)
   }
 
   let failed = 0
-  for (let i = 0; i < todo.length; i += CONCURRENCY) {
-    await Promise.all(todo.slice(i, i + CONCURRENCY).map(async ({ file, src, size, mtimeMs }) => {
+  const jobs = [...todo]
+  for (let i = 0; i < jobs.length; i += CONCURRENCY) {
+    await Promise.all(jobs.slice(i, i + CONCURRENCY).map(async ([hash, file]) => {
       try {
-        next[src] = {
-          version: VERSION,
-          size,
-          mtimeMs,
-          dataUrl: await placeholderFor(file, thumbhash),
-        }
+        next[hash] = await placeholderFor(file, thumbhash)
       }
       catch {
         failed++
@@ -110,21 +157,23 @@ async function preparePlaceholders() {
     }))
   }
 
-  if (todo.length) {
+  // Rewrite when something was added, or when entries for removed images can
+  // be dropped.
+  if (todo.size || Object.keys(next).length !== Object.keys(cache).length) {
     fs.mkdirSync(path.dirname(cacheFile), { recursive: true })
-    fs.writeFileSync(cacheFile, JSON.stringify(next))
+    fs.writeFileSync(cacheFile, JSON.stringify({ version: VERSION, entries: next }))
   }
 
-  placeholders = next
-  const count = Object.values(next).filter(entry => entry.dataUrl).length
-  console.log(`[thumbhash] ${count} placeholders (${todo.length} new${failed
+  placeholders = Object.fromEntries(Object.entries(bySrc).map(([src, hash]) => [src, next[hash] || null]))
+  const count = Object.values(placeholders).filter(Boolean).length
+  console.log(`[thumbhash] ${count} of ${files.length} images have placeholders (${todo.size} new, ${fromGit.size} hashed by git${failed
     ? `, ${failed} failed`
     : ''})`)
 }
 
 // Data URL of the blurred preview for a local image, or null.
 function placeholder(src) {
-  return (placeholders[src] && placeholders[src].dataUrl) || null
+  return placeholders[src] || null
 }
 
 module.exports = { placeholder, preparePlaceholders }
