@@ -15,7 +15,7 @@
 //   PUSHNOTICE_CHAT_SECRET   PushNotice chat secret
 //   CF_BUILDS_API_TOKEN      optional, "Workers CI Read" token: exact trigger,
 //                            queue time and PR link from the Workers Builds API
-//   PUSHNOTICE_MARKDOWN      "1" wraps the report in a ``` code block
+//   PUSHNOTICE_MARKDOWN      "0" sends plain text instead of `inline code` lines
 
 const { spawn, execFileSync } = require('node:child_process')
 const fs = require('node:fs')
@@ -288,13 +288,19 @@ function liveSources(stats) {
 
 const MARK = { 'live': '✓', 'no-key': '⚠', 'failed': '✗' }
 
-// Plain text by default: PushNotice/Telegram collapsed the newlines inside a
-// ``` block. PUSHNOTICE_MARKDOWN=1 wraps the body in a code block anyway.
+// PushNotice/Telegram drops messages with ``` or <pre> blocks (tested
+// 22 Nov 2026), but renders `inline code`. So each line becomes its own
+// inline code span, which reads like one monospace block. Blank lines stay
+// blank. PUSHNOTICE_MARKDOWN=0 sends plain text instead.
 function fence(lines) {
-  const body = lines.filter(line => typeof line === 'string').join('\n')
-  return process.env.PUSHNOTICE_MARKDOWN === '1'
-    ? `\`\`\`\n${body}\n\`\`\``
-    : body
+  const kept = lines.filter(line => typeof line === 'string')
+  if (process.env.PUSHNOTICE_MARKDOWN === '0')
+    return kept.join('\n')
+  return kept
+    .map(line => line.trim()
+      ? `\`${line.replaceAll('`', '\'')}\``
+      : '')
+    .join('\n')
 }
 
 async function report({ state, deploy, failed, logTail }) {
@@ -493,22 +499,6 @@ async function deploy(args) {
   const failed = result.code === 0
     ? null
     : 'deploy'
-  // TEMPORARY: a commit with [format-test] in its subject sends the same
-  // sample in several formats, to see which one PushNotice/Telegram renders.
-  if (/\[format-test\]/.test(commitInfo().subject)) {
-    const sample = [
-      '⏱ 12.1s total',
-      '   build 7.4s · deploy 4.2s',
-      '📦 343 files · 28 MB',
-      '   132 pages',
-    ]
-    await send([
-      { text: `Format A: triple backticks\n\`\`\`\n${sample.join('\n')}\n\`\`\``, level: 'info', silent: true },
-      { text: `Format B: triple backticks + language\n\`\`\`text\n${sample.join('\n')}\n\`\`\``, level: 'info', silent: true },
-      { text: `Format C: HTML pre\n<pre>${sample.join('\n')}</pre>`, level: 'info', silent: true },
-      { text: `Format D: inline code per line\n${sample.map(line => `\`${line}\``).join('\n')}`, level: 'info', silent: true },
-    ])
-  }
   await send(await report({
     state,
     deploy: info,
