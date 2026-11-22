@@ -28,5 +28,12 @@
   },
   "observability": {
     "enabled": true
+  },
+  // Branch previews (wrangler preview). They serve the same static assets;
+  // the cron stays production-only.
+  "previews": {
+    "observability": {
+      "enabled": true
+    }
   }
 }
