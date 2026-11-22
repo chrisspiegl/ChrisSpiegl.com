@@ -247,15 +247,19 @@ async function buildDetails(env) {
 function describeTrigger(env, commit, details) {
   const meta = details?.build_trigger_metadata
   if (meta?.build_trigger_source) {
+    // The API reports e.g. "push_event", "pull_request", "manual", "retry",
+    // "api"; a deploy hook build carries the hook's name.
     const hook = details.deploy_hook?.deploy_hook_name
+    if (hook)
+      return `⏰ deploy hook "${hook}"`
+    const source = meta.build_trigger_source.replace(/_event$/, '')
     return {
       push: '📦 git push',
       pull_request: '🔀 pull request',
-      manual: '👆 manual retry',
-      api: hook
-        ? `⏰ deploy hook "${hook}"`
-        : '🤖 API',
-    }[meta.build_trigger_source] || meta.build_trigger_source
+      manual: '👆 manual build',
+      retry: '🔁 retry',
+      api: '🤖 API',
+    }[source] || source
   }
   if (!env.production)
     return '🔀 branch / PR preview'
