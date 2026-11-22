@@ -166,12 +166,12 @@ module.exports = async function () {
     })
 
     const result = locationResult(data.location)
-    buildStats.record('location', { now: result.now.string, next: result.next.string })
+    buildStats.record('location', { now: result.now.string, next: result.next.string, status: 'live' })
     return result
   }
   catch (error) {
     console.warn(`Nomad List lookup failed: ${error.message}`)
-    buildStats.record('location', { now: unknownPlace, failed: true })
+    buildStats.record('location', { now: unknownPlace, status: 'failed', error: error.message })
     return unknownResult()
   }
 }

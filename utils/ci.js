@@ -342,7 +342,27 @@ async function report({ state, deploy, failed, logTail }) {
       : `👀 Preview ready (${env.branch})`
   }
 
-  const follower = (label, p) => p && row(label, `${number(p.count).padStart(7)}  ${p.live ? 'live' : 'fallback'}`)
+  // Live data health: ✅ fresh from the API/feed, ⚪ no API key (manual
+  // value), ❌ the API/feed failed (manual value or unknown location).
+  const sources = [
+    ['YouTube', f.youtube],
+    ['Instagram', f.instagram],
+    ['Substack', f.substack],
+    ['Nomad List', stats.location],
+  ].filter(([, source]) => source)
+  const broken = sources.filter(([, source]) => source.status === 'failed')
+  const missing = sources.filter(([, source]) => source.status === 'no-key')
+  const mark = source => ({ 'live': '✅', 'no-key': '⚪', 'failed': '❌' })[source.status] || '❔'
+  const why = source => ({
+    'live': 'live',
+    'no-key': `no API key · manual ${source.asOf}`,
+  })[source.status] || `FAILED${source.asOf
+    ? ` · manual ${source.asOf}`
+    : ''} · ${truncate((source.error || '?').replace(/^\w+: /, ''), 50)}`
+  const follower = (label, p) => p && row(label, `${mark(p)} ${number(p.count).padStart(7)}  ${why(p)}`)
+  const location = stats.location
+  if (broken.length && !failed)
+    headline += `\n⚠️ live data broken: ${broken.map(([name]) => name).join(', ')}`
 
   const lines = [
     row('trigger', trigger),
@@ -351,6 +371,18 @@ async function report({ state, deploy, failed, logTail }) {
     commit.author && row('author', `${commit.author}, ${ago(commit.date)}`),
     details?.pull_request?.pull_request_url && row('pr', details.pull_request.pull_request_url),
     url && row('url', url),
+    ...section('📊 live data', [
+      follower('YouTube', f.youtube),
+      follower('Instagram', f.instagram),
+      follower('Substack', f.substack),
+      stats.followers && row('total', `   ${number(stats.followers.total).padStart(7)}  →  ${stats.followers.totalLabel}`),
+      location && row('location', location.status === 'failed'
+        ? `${mark(location)} ${why(location)}`
+        : `${mark(location)} ${location.now}${location.next
+          ? `  →  ${location.next}`
+          : ''}`),
+      sources.length && row('health', `✅ ${sources.length - broken.length - missing.length} live · ⚪ ${missing.length} no key · ❌ ${broken.length} failed`),
+    ]),
     ...section('⏱  timing', [
       queueMs !== null && row('queue', duration(queueMs)),
       state.buildMs && row('build', `${duration(state.buildMs)}  (eleventy ${duration(stats.eleventy?.ms)}, thumbhash ${duration(th.ms)})`),
@@ -376,15 +408,6 @@ async function report({ state, deploy, failed, logTail }) {
         ? `restored ✓  (${cache.fetches} API responses)`
         : 'cold ✗  (nothing restored)'),
       th.images && row('thumbhash', `${th.cached} cached · ${th.computed} new · ${th.hashedByGit} via git`),
-    ]),
-    ...section('📊 live data', [
-      follower('YouTube', f.youtube),
-      follower('Instagram', f.instagram),
-      follower('Substack', f.substack),
-      stats.followers && row('total', `${number(stats.followers.total).padStart(7)}  →  ${stats.followers.totalLabel}`),
-      stats.location && row('location', `${stats.location.now}${stats.location.next
-        ? `  →  ${stats.location.next}`
-        : ''}`),
     ]),
     ...section('🤓 nerd corner', [
       row('runner', `${env.platform} · ${os.platform()} ${os.arch()} · ${os.cpus().length} cpu · ${bytes(os.totalmem())} ram`),
@@ -412,8 +435,11 @@ async function report({ state, deploy, failed, logTail }) {
     : `${headline}\n\n${body}`
   return {
     text,
-    level: failed ? 'error' : 'info',
-    silent: !failed && !env.production,
+    level: failed || broken.length
+      ? 'error'
+      : 'info',
+    // Previews are quiet, unless something is broken.
+    silent: !failed && !broken.length && !env.production,
   }
 }
 

@@ -40,15 +40,17 @@ async function fetchJson(url, label) {
   })
 }
 
+// Each lookup returns null when it isn't configured, and throws when it is
+// configured but fails, so the build report can tell the two apart.
 async function youtube() {
   const key = process.env.YOUTUBE_API_KEY
   if (!key)
     return null
   const data = await fetchJson(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${YOUTUBE_CHANNEL_ID}&key=${key}`, 'YouTube')
   const count = Number(data?.items?.[0]?.statistics?.subscriberCount)
-  return Number.isFinite(count)
-    ? count
-    : null
+  if (!Number.isFinite(count))
+    throw new TypeError('unexpected response')
+  return count
 }
 
 async function instagram() {
@@ -61,30 +63,44 @@ async function instagram() {
     : `https://graph.instagram.com/${GRAPH_VERSION}/me?fields=followers_count&access_token=${token}`
   const data = await fetchJson(url, 'Instagram')
   const count = Number(data?.followers_count)
-  return Number.isFinite(count)
-    ? count
-    : null
+  if (!Number.isFinite(count))
+    throw new TypeError('unexpected response')
+  return count
 }
 
 async function substack() {
   // Public profile data, the same numbers substack.com shows on the profile page.
   const data = await fetchJson(`https://substack.com/api/v1/user/${SUBSTACK_HANDLE}/public_profile`, 'Substack')
   const count = Number(data?.subscriberCountNumber)
-  return Number.isFinite(count)
-    ? count
-    : null
+  if (!Number.isFinite(count))
+    throw new TypeError('unexpected response')
+  return count
 }
 
+// status: "live" (from the API), "no-key" (lookup not configured) or "failed"
+// (configured but the API call failed). The last two use the manual value.
 async function resolve(name, lookup) {
   try {
     const live = await lookup()
     if (live !== null)
-      return { count: live, live: true }
+      return { count: live, live: true, status: 'live' }
+    return {
+      count: manual[name],
+      live: false,
+      status: 'no-key',
+      asOf: manual.asOf,
+    }
   }
   catch (error) {
     console.warn(`[followers] ${error.message}; using manual value.`)
+    return {
+      count: manual[name],
+      live: false,
+      status: 'failed',
+      error: error.message,
+      asOf: manual.asOf,
+    }
   }
-  return { count: manual[name], live: false }
 }
 
 // Compact, pretty-bytes style, rounded down so it never overstates:
