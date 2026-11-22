@@ -25,9 +25,9 @@ const TIMEOUT_MS = 8000
 const INSTAGRAM_COUNT_URL = process.env.INSTAGRAM_COUNT_URL || 'https://chrisspiegl.com/_worker/instagram.json'
 
 const manual = {
-  asOf: '2026-10-14',
+  asOf: '2026-11-22',
   youtube: 16900,
-  instagram: 15400,
+  instagram: 13800,
   substack: 36,
 }
 
