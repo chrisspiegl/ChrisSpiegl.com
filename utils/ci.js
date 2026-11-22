@@ -21,6 +21,7 @@ const { spawn, execFileSync } = require('node:child_process')
 const fs = require('node:fs')
 const path = require('node:path')
 const process = require('node:process')
+const { stripVTControlCharacters } = require('node:util')
 const zlib = require('node:zlib')
 
 const rootDir = path.join(__dirname, '..')
@@ -218,7 +219,7 @@ function parseDeploy(output) {
       ? Number(uploaded[2])
       : null,
     versionId: (/(?:Current|Worker) Version ID: ([\w-]+)/.exec(output) || [])[1] || '',
-    previewUrl: (/(?:Version )?Preview URL: (https:\/\/\S+)/.exec(output) || [])[1] || '',
+    previewUrl: (/(?:Version )?Preview URLs?:\s+(https:\/\/\S+)/.exec(stripVTControlCharacters(output)) || [])[1] || '',
     workerSize: (/Total Upload: ([\d.]+ \w+) \/ gzip: ([\d.]+ \w+)/.exec(output) || []).slice(1).join(' / gzip '),
     startup: (/Worker Startup Time: (\d+ ms)/.exec(output) || [])[1] || '',
   }
@@ -488,6 +489,14 @@ async function deploy(args) {
   const [command, ...rest] = args.length
     ? args
     : ['wrangler', 'deploy']
+  // Workers Builds checks out a detached HEAD, so name the Preview after the
+  // branch it builds (wrangler would otherwise ask git and find no branch).
+  if (command === 'wrangler' && rest[0] === 'preview' && !rest.includes('--name')) {
+    const branch = process.env.WORKERS_CI_BRANCH || git('rev-parse', '--abbrev-ref', 'HEAD')
+    const name = (branch || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 50)
+    if (name && name !== 'head')
+      rest.push('--name', name)
+  }
   // Prefer the project's own wrangler over a global one.
   const local = path.join(rootDir, 'node_modules', '.bin', command)
   const result = await run(fs.existsSync(local)

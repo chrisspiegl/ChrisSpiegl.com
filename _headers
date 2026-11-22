@@ -27,6 +27,13 @@
   Cache-Control: public, max-age=600, must-revalidate
 
 # Keep preview and workers.dev / pages.dev addresses out of search results.
+# Cloudflare adds noindex to workers.dev Previews itself, but not to Previews
+# on a custom domain: <branch>.preview.chrisspiegl.com and
+# <deployment>-<branch>.preview.chrisspiegl.com.
+https://preview.chrisspiegl.com/*
+  X-Robots-Tag: noindex
+https://:name.preview.chrisspiegl.com/*
+  X-Robots-Tag: noindex
 https://:name.:account.workers.dev/*
   X-Robots-Tag: noindex
 https://:project.pages.dev/*
