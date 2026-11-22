@@ -16,13 +16,9 @@
 //   CF_BUILDS_API_TOKEN      optional, "Workers CI Read" token: exact trigger,
 //                            queue time and PR link from the Workers Builds API
 //   PUSHNOTICE_MARKDOWN      "0" sends plain text instead of a ``` code block
-//   PUSHNOTICE_VERBOSE       "1" always sends the full report; by default a
-//                            build where everything works sends a few short
-//                            lines, and only failures get the full details
 
 const { spawn, execFileSync } = require('node:child_process')
 const fs = require('node:fs')
-const os = require('node:os')
 const path = require('node:path')
 const process = require('node:process')
 const zlib = require('node:zlib')
@@ -35,7 +31,6 @@ const statsFile = path.join(cacheDir, 'build-stats.json')
 const SITE_URL = 'https://chrisspiegl.com'
 const PRODUCTION_BRANCH = process.env.PRODUCTION_BRANCH || 'main'
 const WIDTH = 13
-const GAP = '\0gap'
 
 // --- small helpers ---------------------------------------------------------
 
@@ -66,19 +61,6 @@ function git(...args) {
   }
 }
 
-function version(command, ...args) {
-  try {
-    return execFileSync(command, args, {
-      cwd: rootDir,
-      encoding: 'utf8',
-      stdio: ['ignore', 'pipe', 'ignore'],
-    }).trim().split('\n').pop()
-  }
-  catch {
-    return '?'
-  }
-}
-
 function packageVersion(name) {
   return readJson(path.join(rootDir, 'node_modules', name, 'package.json')).version || '?'
 }
@@ -106,26 +88,6 @@ function duration(ms) {
   if (ms < 60_000)
     return `${(ms / 1000).toFixed(1)}s`
   return `${Math.floor(ms / 60_000)}m ${Math.round((ms % 60_000) / 1000)}s`
-}
-
-function ago(date) {
-  const seconds = Math.round((Date.now() - date.getTime()) / 1000)
-  if (seconds < 90)
-    return `${seconds}s ago`
-  if (seconds < 5400)
-    return `${Math.round(seconds / 60)} min ago`
-  if (seconds < 129_600)
-    return `${Math.round(seconds / 3600)}h ago`
-  return `${Math.round(seconds / 86_400)} days ago`
-}
-
-// 16900 -> "16.9K", rounded down like the site's own counter.
-function compactCount(n) {
-  if (!Number.isFinite(n))
-    return '?'
-  if (n < 1000)
-    return String(n)
-  return `${Math.floor(n / 100) / 10}K`.replace('.0K', 'K')
 }
 
 function number(n) {
@@ -305,16 +267,29 @@ function describeTrigger(env, commit, details) {
 }
 
 // --- the report --------------------------------------------------------------
+//
+// One compact report per build. When any live data source is not live (API
+// failed, or no key so a manual value was used), a second message lists what
+// needs a check. A failed build or deploy adds the last log lines.
 
-function row(label, value) {
-  return `${label.padEnd(WIDTH)}${value}`
+// Live data sources, with what to do when one isn't live.
+function liveSources(stats) {
+  const f = stats.followers?.platforms || {}
+  return [
+    { name: 'YouTube', data: f.youtube, fix: 'set or check YOUTUBE_API_KEY (Google Cloud quota?)' },
+    { name: 'Instagram', data: f.instagram, fix: 'set or renew INSTAGRAM_ACCESS_TOKEN (tokens expire)' },
+    { name: 'Substack', data: f.substack, fix: 'public profile API changed or unreachable' },
+    { name: 'Nomad List', data: stats.location, fix: 'nomads.com profile JSON unreachable or changed' },
+  ].filter(source => source.data)
 }
 
-function section(title, rows) {
-  const lines = rows.filter(Boolean)
-  return lines.length
-    ? [GAP, title, ...lines]
-    : []
+const MARK = { 'live': '✓', 'no-key': '⚠', 'failed': '✗' }
+
+function fence(lines) {
+  const body = lines.filter(line => typeof line === 'string').join('\n')
+  return process.env.PUSHNOTICE_MARKDOWN === '0'
+    ? body
+    : `\`\`\`\n${body}\n\`\`\``
 }
 
 async function report({ state, deploy, failed, logTail }) {
@@ -327,168 +302,113 @@ async function report({ state, deploy, failed, logTail }) {
   const cache = state.cacheBefore || {}
   const th = stats.thumbhash || {}
   const f = stats.followers?.platforms || {}
+  const sources = liveSources(stats)
+  const issues = sources.filter(source => source.data.status !== 'live')
   const totalMs = Date.now() - (state.startedAt || Date.now())
-  const queueMs = details?.created_on && details?.running_on
-    ? new Date(details.running_on) - new Date(details.created_on)
-    : null
-  const readingMinutes = stats.eleventy?.words
-    ? Math.round(stats.eleventy.words / 230)
-    : null
   const url = env.production
     ? SITE_URL
     : (deploy?.previewUrl || env.pagesUrl || '')
 
   let headline
-  if (failed === 'build') {
+  if (failed === 'build')
     headline = `❌ ChrisSpiegl.com build failed (${env.branch})`
-  }
-  else if (failed === 'deploy') {
+  else if (failed === 'deploy')
     headline = `❌ ChrisSpiegl.com deploy failed (${env.branch})`
-  }
-  else if (env.platform === 'Cloudflare Pages') {
+  else if (env.platform === 'Cloudflare Pages')
     headline = `✅ ChrisSpiegl.com built on Pages, deploying now (${env.branch})`
-  }
-  else {
-    headline = env.production
-      ? '✅ ChrisSpiegl.com is live'
-      : `👀 Preview ready (${env.branch})`
-  }
+  else if (env.production)
+    headline = '✅ ChrisSpiegl.com is live'
+  else
+    headline = `👀 Preview ready (${env.branch})`
 
-  // Live data health: ✅ fresh from the API/feed, ⚪ no API key (manual
-  // value), ❌ the API/feed failed (manual value or unknown location).
-  const sources = [
-    ['YouTube', f.youtube],
-    ['Instagram', f.instagram],
-    ['Substack', f.substack],
-    ['Nomad List', stats.location],
-  ].filter(([, source]) => source)
-  const broken = sources.filter(([, source]) => source.status === 'failed')
-  const missing = sources.filter(([, source]) => source.status === 'no-key')
-  const mark = source => ({ 'live': '✅', 'no-key': '⚪', 'failed': '❌' })[source.status] || '❔'
-  const why = source => ({
-    'live': 'live',
-    'no-key': `no API key · manual ${source.asOf}`,
-  })[source.status] || `FAILED${source.asOf
-    ? ` · manual ${source.asOf}`
-    : ''} · ${truncate((source.error || '?').replace(/^\w+: /, ''), 50)}`
-  const follower = (label, p) => p && row(label, `${mark(p)} ${number(p.count).padStart(7)}  ${why(p)}`)
+  const mark = data => MARK[data.status] || '?'
+  const follower = (name, data) => data && `${name} ${number(data.count)} ${mark(data)}`
+  const followers = [
+    follower('YouTube', f.youtube),
+    follower('Instagram', f.instagram),
+    follower('Substack', f.substack),
+  ].filter(Boolean)
   const location = stats.location
-  if (broken.length && !failed)
-    headline += `\n⚠️ live data broken: ${broken.map(([name]) => name).join(', ')}`
+
+  const timing = [
+    state.buildMs && `build ${duration(state.buildMs)} (eleventy ${duration(stats.eleventy?.ms)}, thumbhash ${duration(th.ms)})`,
+    deploy && `deploy ${duration(deploy.ms)}`,
+    `total ${duration(totalMs)}`,
+  ].filter(Boolean)
+
+  const output = failed === 'build'
+    ? null
+    : [
+        `${number(site.files)} files`,
+        bytes(site.bytes),
+        stats.eleventy && `${number(stats.eleventy.pages)} pages`,
+        stats.eleventy && `${number(stats.eleventy.words)} words (~${Math.round(stats.eleventy.words / 230)} min read)`,
+        deploy?.newFiles !== null && deploy?.newFiles !== undefined && `${number(deploy.newFiles)} uploaded`,
+      ].filter(Boolean)
 
   const lines = [
-    row('trigger', trigger),
-    row('branch', `${env.branch} @ ${env.sha.slice(0, 7)}`),
-    commit.subject && row('commit', `"${truncate(commit.subject, 48)}"`),
-    commit.author && row('author', `${commit.author}, ${ago(commit.date)}`),
-    details?.pull_request?.pull_request_url && row('pr', details.pull_request.pull_request_url),
-    url && row('url', url),
-    ...section('📊 live data', [
-      follower('YouTube', f.youtube),
-      follower('Instagram', f.instagram),
-      follower('Substack', f.substack),
-      stats.followers && row('total', `   ${number(stats.followers.total).padStart(7)}  →  ${stats.followers.totalLabel}`),
-      location && row('location', location.status === 'failed'
-        ? `${mark(location)} ${why(location)}`
-        : `${mark(location)} ${location.now}${location.next
-          ? `  →  ${location.next}`
-          : ''}`),
-      sources.length && row('health', `✅ ${sources.length - broken.length - missing.length} live · ⚪ ${missing.length} no key · ❌ ${broken.length} failed`),
-    ]),
-    ...section('⏱  timing', [
-      queueMs !== null && row('queue', duration(queueMs)),
-      state.buildMs && row('build', `${duration(state.buildMs)}  (eleventy ${duration(stats.eleventy?.ms)}, thumbhash ${duration(th.ms)})`),
-      deploy && row('deploy', duration(deploy.ms)),
-      row('total', `${duration(totalMs)}  (after install)`),
-    ]),
-    ...section('📦 output', failed === 'build'
-      ? []
-      : [
-          row('files', `${number(site.files)}  ·  ${bytes(site.bytes)}`),
-          stats.eleventy && row('pages', `${number(stats.eleventy.pages)}  ·  ${number(stats.eleventy.words)} words (~${readingMinutes} min read)`),
-          row('html', `${bytes(site.htmlBytes)}  ·  biggest ${site.largest?.url || '?'} ${bytes(site.largest?.size)}`),
-          site.homeGzip && row('home page', `${bytes(site.homeGzip)} gzipped`),
-          deploy?.newFiles !== null && deploy?.newFiles !== undefined && row('uploaded', `${number(deploy.newFiles)} new  ·  ${number(deploy.unchanged ?? site.files - deploy.newFiles)} unchanged`),
-          deploy?.versionId && row('version', deploy.versionId.slice(0, 8)),
-          deploy?.workerSize && row('worker', `${deploy.workerSize}${deploy.startup
-            ? `  ·  startup ${deploy.startup}`
-            : ''}`),
-          stats.images && row('images', stats.images),
-        ]),
-    ...section('🧊 cache', [
-      row('build cache', cache.restored
-        ? `restored ✓  (${cache.fetches} API responses)`
-        : 'cold ✗  (nothing restored)'),
-      th.images && row('thumbhash', `${th.cached} cached · ${th.computed} new · ${th.hashedByGit} via git`),
-    ]),
-    ...section('🤓 nerd corner', [
-      row('runner', `${env.platform} · ${os.platform()} ${os.arch()} · ${os.cpus().length} cpu · ${bytes(os.totalmem())} ram`),
-      row('stack', `node ${process.versions.node} · pnpm ${version('pnpm', '--version')} · eleventy ${packageVersion('@11ty/eleventy')}`),
-      deploy && row('', `wrangler ${packageVersion('wrangler')}`),
-      commit.commits && row('repo', `${number(commit.commits)} commits${commit.firstCommit
-        ? ` since ${commit.firstCommit.toISOString().slice(0, 10)}`
-        : ''}`),
-      env.buildId && row('build id', env.buildId),
-    ]),
+    `${'trigger'.padEnd(WIDTH)}${trigger}`,
+    `${'commit'.padEnd(WIDTH)}${env.branch}@${env.sha.slice(0, 7)} "${truncate(commit.subject, 40)}"`,
+    Boolean(url) && !env.production && `${'url'.padEnd(WIDTH)}${url}`,
+    `⏱  ${timing.join(' · ')}`,
+    output && `📦 ${output.join(' · ')}`,
+    `🧊 build cache ${cache.restored
+      ? 'restored ✓'
+      : 'cold ✗'} · thumbhash ${th.cached ?? '?'} cached · ${th.computed ?? '?'} new`,
+    followers.length && `📊 ${followers.join(' · ')} → ${stats.followers?.totalLabel || '?'}`,
+    location && `📍 ${location.status === 'live'
+      ? `${location.now}${location.next
+        ? ` → ${location.next}`
+        : ''}`
+      : 'unknown'} ${mark(location)}`,
+    `🤓 node ${process.versions.node.split('.')[0]} · eleventy ${packageVersion('@11ty/eleventy')} · ${commit.commits
+      ? `${number(commit.commits)} commits since ${commit.firstCommit?.toISOString().slice(0, 10)}`
+      : ''}`,
     ...(logTail
-      ? [GAP, '📜 last lines', ...logTail]
+      ? ['', '📜 last lines', ...logTail]
       : []),
   ]
 
-  // All good: a tiny plain summary. Something broken (or PUSHNOTICE_VERBOSE=1):
-  // the full report above.
-  if (!failed && !broken.length && process.env.PUSHNOTICE_VERBOSE !== '1') {
-    const short = (name, p) => p && `${name} ${compactCount(p.count)}${p.status === 'live'
-      ? ''
-      : '*'}`
-    const counts = [
-      short('YT', f.youtube),
-      short('IG', f.instagram),
-      short('SS', f.substack),
-    ].filter(Boolean)
-    const target = env.platform === 'Cloudflare Pages'
-      ? `built on Pages (${env.branch})`
-      : env.production
-        ? 'live'
-        : `preview ${env.branch}`
-    const tiny = [
-      `✓ chrisspiegl.com ${target} · ${trigger.replace(/^\S+\s/, '')} · ${duration(totalMs)}`,
-      `${env.sha.slice(0, 7)} ${truncate(commit.subject, 44)}`,
-      counts.length && `${counts.join(' · ')}${location?.now
-        ? ` · ${location.now}`
-        : ''}${missing.length
-        ? `  (* manual)`
-        : ''}`,
-      !env.production && url,
-    ].filter(Boolean)
-    return {
-      text: tiny.join('\n'),
-      level: 'info',
-      silent: !env.production,
-    }
-  }
+  const messages = [
+    {
+      text: `${headline}\n${fence(lines)}`,
+      level: failed
+        ? 'error'
+        : 'info',
+      silent: !failed && !env.production,
+    },
+  ]
 
-  const body = lines
-    .filter(line => typeof line === 'string' && line !== '')
-    .map(line => line === GAP
-      ? ''
-      : line)
-    .join('\n')
-  const markdown = process.env.PUSHNOTICE_MARKDOWN !== '0'
-  const text = markdown
-    ? `${headline}\n\`\`\`\n${body}\n\`\`\``
-    : `${headline}\n\n${body}`
-  return {
-    text,
-    level: failed || broken.length
-      ? 'error'
-      : 'info',
-    // Previews are quiet, unless something is broken.
-    silent: !failed && !broken.length && !env.production,
+  if (issues.length) {
+    const problem = issues.map(({ name, data, fix }) => {
+      const what = data.status === 'no-key'
+        ? 'no API key'
+        : `FAILED: ${truncate((data.error || '?').replace(/^\w+: /, ''), 60)}`
+      const used = data.count !== undefined
+        ? `used manual value ${number(data.count)} from ${data.asOf}`
+        : 'shown as unknown on the site'
+      return [
+        `${MARK[data.status] || '?'} ${name}`,
+        `  ${what}`,
+        `  ${used}`,
+        `  → ${fix}`,
+      ].join('\n')
+    })
+    messages.push({
+      text: `⚠️ ChrisSpiegl.com build needs a check: ${issues.length} of ${sources.length} live data sources not live\n${fence(problem)}`,
+      level: 'error',
+      silent: false,
+    })
   }
+  return messages
 }
 
-async function send({ text, level, silent }) {
+async function send(messages) {
+  for (const message of messages)
+    await sendOne(message)
+}
+
+async function sendOne({ text, level, silent }) {
   console.log(`\n${text}\n`)
   const idChat = process.env.PUSHNOTICE_CHAT_IDCHAT
   const secret = process.env.PUSHNOTICE_CHAT_SECRET
@@ -588,9 +508,10 @@ async function main() {
   if (step === 'deploy')
     return deploy(args)
   if (step === 'report') {
-    console.log((await report({
+    for (const message of await report({
       state: readJson(runFile),
-    })).text)
+    }))
+      console.log(`${message.text}\n`)
     return 0
   }
   console.error('Usage: node utils/ci.js build | deploy [command…] | report')
