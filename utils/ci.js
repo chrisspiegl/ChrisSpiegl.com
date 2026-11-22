@@ -442,7 +442,11 @@ async function sendOne({ text, level, silent }) {
       }),
       signal: AbortSignal.timeout(10_000),
     })
-    console.log(`[ci] PushNotice: HTTP ${response.status}`)
+    // PushNotice answers 500 for a wrong chat id or secret; the reason is in the body.
+    const reason = response.ok
+      ? ''
+      : `: ${(await response.json().catch(() => ({})))?.message || 'no reason given'}`
+    console.log(`[ci] PushNotice: HTTP ${response.status}${reason}`)
   }
   catch (error) {
     // A failed notice must never fail the build.
