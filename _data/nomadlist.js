@@ -1,5 +1,6 @@
 const EleventyFetch = require('@11ty/eleventy-fetch')
 const { differenceInCalendarDays } = require('date-fns')
+const buildStats = require('../utils/buildStats')
 const { dateReadable, formatDate, isValidDate, toDate } = require('../utils/dates')
 
 const headerIncludesUntil = true
@@ -164,10 +165,13 @@ module.exports = async function () {
       },
     })
 
-    return locationResult(data.location)
+    const result = locationResult(data.location)
+    buildStats.record('location', { now: result.now.string, next: result.next.string, status: 'live' })
+    return result
   }
   catch (error) {
     console.warn(`Nomad List lookup failed: ${error.message}`)
+    buildStats.record('location', { now: unknownPlace, status: 'failed', error: error.message })
     return unknownResult()
   }
 }

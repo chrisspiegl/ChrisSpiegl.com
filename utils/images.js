@@ -33,8 +33,10 @@ function useCloudflare() {
     return true
   if (process.env.IMAGES_CDN === 'local')
     return false
-  // Cloudflare Pages sets CF_PAGES_BRANCH; only production serves /cdn-cgi/image.
-  return process.env.CF_PAGES_BRANCH === (process.env.PRODUCTION_BRANCH || 'main')
+  // Cloudflare Pages sets CF_PAGES_BRANCH, Workers Builds WORKERS_CI_BRANCH.
+  // Only production serves /cdn-cgi/image.
+  const branch = process.env.CF_PAGES_BRANCH || process.env.WORKERS_CI_BRANCH
+  return branch === (process.env.PRODUCTION_BRANCH || 'main')
 }
 
 function isLocalImage(src) {

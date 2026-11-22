@@ -1,37 +1,43 @@
 [
   {
     "destination": "/books/",
-    "slug": "book"
+    "slug": "book",
+    "status": 301
   },
   {
     "destination": "/tags/",
-    "slug": "tag"
+    "slug": "tag",
+    "status": 301
   },
   {
     "destination": "/blog/",
-    "slug": "posts"
+    "slug": "posts",
+    "status": 301
   },
   {
     "destination": "/posts/",
-    "slug": "post"
+    "slug": "post",
+    "status": 301
   },
   {
     "destination": "/movies/",
-    "slug": "movie"
+    "slug": "movie",
+    "status": 301
   },
   {
     "destination": "/more/",
-    "slug": "podcast"
+    "slug": "podcast",
+    "status": 301
   },
   {
     "destination": "/#about",
-    "slug": "about"
+    "slug": "about",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/meet",
     "slug": "meet"
   },
-
   {
     "destination": "https://crsp.li/meet",
     "slug": "calendly"
@@ -42,11 +48,13 @@
   },
   {
     "destination": "https://crsp.li/500px",
-    "slug": "500px"
+    "slug": "500px",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/machmermal",
-    "slug": "machmermal"
+    "slug": "machmermal",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/chaptered",
@@ -96,7 +104,8 @@
   },
   {
     "destination": "/#contact",
-    "slug": "contact"
+    "slug": "contact",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/academy",
@@ -108,75 +117,93 @@
   },
   {
     "destination": "https://crsp.li/FacebookProfile",
-    "slug": "fb"
+    "slug": "fb",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/flickr",
-    "slug": "flickr"
+    "slug": "flickr",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/GooglePlus",
-    "slug": "g+"
+    "slug": "g+",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/instagram",
-    "slug": "ig"
+    "slug": "ig",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/instagram",
-    "slug": "instagram"
+    "slug": "instagram",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/discord",
-    "slug": "discord"
+    "slug": "discord",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/github",
-    "slug": "github"
+    "slug": "github",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/linkedin",
-    "slug": "in"
+    "slug": "in",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/linkedin",
-    "slug": "linkedin"
+    "slug": "linkedin",
+    "status": 301
   },
   {
     "destination": "/instaspaces/",
-    "slug": "instaspace"
+    "slug": "instaspace",
+    "status": 301
   },
   {
     "destination": "/uses/",
-    "slug": "kit"
+    "slug": "kit",
+    "status": 301
   },
   {
     "destination": "/uses/",
-    "slug": "gear"
+    "slug": "gear",
+    "status": 301
   },
   {
     "destination": "/uses/",
-    "slug": "gear/podcasting"
+    "slug": "gear/podcasting",
+    "status": 301
   },
   {
     "destination": "/uses/",
-    "slug": "gear/travel"
+    "slug": "gear/travel",
+    "status": 301
   },
   {
     "destination": "/uses/",
-    "slug": "gear/desk"
+    "slug": "gear/desk",
+    "status": 301
   },
   {
     "destination": "/uses/",
-    "slug": "gear/software"
+    "slug": "gear/software",
+    "status": 301
   },
   {
     "destination": "/uses/",
-    "slug": "gear/dream"
+    "slug": "gear/dream",
+    "status": 301
   },
   {
     "destination": "/uses/",
-    "slug": "gear/previous"
+    "slug": "gear/previous",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/latest",
@@ -196,7 +223,8 @@
   },
   {
     "destination": "https://crsp.li/medium",
-    "slug": "medium"
+    "slug": "medium",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/donate",
@@ -204,7 +232,8 @@
   },
   {
     "destination": "https://crsp.li/protheme",
-    "slug": "protheme"
+    "slug": "protheme",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/donate",
@@ -224,55 +253,68 @@
   },
   {
     "destination": "https://crsp.li/protheme",
-    "slug": "themeco"
+    "slug": "themeco",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/tiktok",
-    "slug": "tiktok"
+    "slug": "tiktok",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/clubhouse",
-    "slug": "clubhouse"
+    "slug": "clubhouse",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/clubhouse",
-    "slug": "ch"
+    "slug": "ch",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/x",
-    "slug": "x"
+    "slug": "x",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/x",
-    "slug": "tw"
+    "slug": "tw",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/x",
-    "slug": "twitter"
+    "slug": "twitter",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/telegram",
-    "slug": "tg"
+    "slug": "tg",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/telegram",
-    "slug": "telegram"
+    "slug": "telegram",
+    "status": 301
   },
   {
     "destination": "/",
-    "slug": "waymarkers"
+    "slug": "waymarkers",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/youtube",
-    "slug": "youtube"
+    "slug": "youtube",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/youtube",
-    "slug": "yt"
+    "slug": "yt",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/twitch",
-    "slug": "twitch"
+    "slug": "twitch",
+    "status": 301
   },
   {
     "destination": "https://crsp.li/archive",
@@ -308,14 +350,17 @@
   },
   {
     "destination": "/tools/instaspaces/",
-    "slug": "instaspaces"
+    "slug": "instaspaces",
+    "status": 301
   },
   {
     "destination": "/tools/aspect-ratio-calculator/",
-    "slug": "aspect-ratio-calculator"
+    "slug": "aspect-ratio-calculator",
+    "status": 301
   },
   {
     "destination": "/tools/compound-interest-calculator",
-    "slug": "compound-interest-calculator"
+    "slug": "compound-interest-calculator",
+    "status": 301
   }
 ]
