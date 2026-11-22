@@ -493,6 +493,22 @@ async function deploy(args) {
   const failed = result.code === 0
     ? null
     : 'deploy'
+  // TEMPORARY: a commit with [format-test] in its subject sends the same
+  // sample in several formats, to see which one PushNotice/Telegram renders.
+  if (/\[format-test\]/.test(commitInfo().subject)) {
+    const sample = [
+      '⏱ 12.1s total',
+      '   build 7.4s · deploy 4.2s',
+      '📦 343 files · 28 MB',
+      '   132 pages',
+    ]
+    await send([
+      { text: `Format A: triple backticks\n\`\`\`\n${sample.join('\n')}\n\`\`\``, level: 'info', silent: true },
+      { text: `Format B: triple backticks + language\n\`\`\`text\n${sample.join('\n')}\n\`\`\``, level: 'info', silent: true },
+      { text: `Format C: HTML pre\n<pre>${sample.join('\n')}</pre>`, level: 'info', silent: true },
+      { text: `Format D: inline code per line\n${sample.map(line => `\`${line}\``).join('\n')}`, level: 'info', silent: true },
+    ])
+  }
   await send(await report({
     state,
     deploy: info,
