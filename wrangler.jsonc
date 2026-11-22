@@ -22,6 +22,13 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   },
+  // Plain runtime variables for the cron in worker/index.js. Its secrets
+  // (DEPLOY_HOOK, PUSHNOTICE_CHAT_SECRET) live in the dashboard under
+  // Settings → Variables and Secrets; deploys keep secrets but replace vars
+  // with this list.
+  "vars": {
+    "PUSHNOTICE_CHAT_IDCHAT": "21614670"
+  },
   // 03:00 UTC every day (10:00 in Bangkok).
   "triggers": {
     "crons": ["0 3 * * *"]
