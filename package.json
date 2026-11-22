@@ -22,6 +22,9 @@
     "build:clean": "run-s clean eleventy:prod",
     "eleventy:dev": "cross-env NODE_ENV=development eleventy --serve",
     "eleventy:prod": "node utils/unshallow.js && cross-env NODE_ENV=production eleventy",
+    "ci:build": "node utils/ci.js build",
+    "ci:deploy": "node utils/ci.js deploy wrangler deploy",
+    "ci:preview": "node utils/ci.js deploy wrangler versions upload",
     "clean": "shx rm -rf _site",
     "cleanup": "shx rm -rf _site .cache",
     "nuke": "pnpm cleanup && pnpm purge --lockfile && pnpm i",
@@ -60,6 +63,7 @@
     "sass": "^1.105.1",
     "sharp": "^0.35.5",
     "shx": "^0.4.0",
-    "thumbhash": "^0.1.1"
+    "thumbhash": "^0.1.1",
+    "wrangler": "^4.166.0"
   }
 }

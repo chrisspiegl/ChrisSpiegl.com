@@ -20,6 +20,7 @@ const crypto = require('node:crypto')
 const fs = require('node:fs')
 const path = require('node:path')
 const sharp = require('sharp')
+const buildStats = require('./buildStats')
 
 const rootDir = path.join(__dirname, '..')
 const imagesDir = path.join(rootDir, 'assets', 'images')
@@ -126,6 +127,7 @@ async function placeholderFor(file, thumbhash) {
 }
 
 async function preparePlaceholders() {
+  const started = performance.now()
   const thumbhash = await import('thumbhash')
   const cache = readCache()
   const next = {}
@@ -166,6 +168,15 @@ async function preparePlaceholders() {
 
   placeholders = Object.fromEntries(Object.entries(bySrc).map(([src, hash]) => [src, next[hash] || null]))
   const count = Object.values(placeholders).filter(Boolean).length
+  buildStats.record('thumbhash', {
+    images: files.length,
+    placeholders: count,
+    cached: Object.keys(cache).length,
+    computed: todo.size,
+    hashedByGit: fromGit.size,
+    failed,
+    ms: Math.round(performance.now() - started),
+  })
   console.log(`[thumbhash] ${count} of ${files.length} images have placeholders (${todo.size} new, ${fromGit.size} hashed by git${failed
     ? `, ${failed} failed`
     : ''})`)

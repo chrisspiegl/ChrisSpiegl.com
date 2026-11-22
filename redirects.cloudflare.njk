@@ -3,6 +3,8 @@ layout: blank
 permalink: /_redirects
 eleventyExcludeFromCollections: true
 ---
+{#- 301 for links that never change (old paths, profile short links),
+    302 (the default) for links whose target changes, such as /location. #}
 {%- for redirect in redirects %}
-/{{ redirect.slug | safe }} {{ redirect.destination | safe }} 302
+/{{ redirect.slug | safe }} {{ redirect.destination | safe }} {{ redirect.status or 302 }}
 {%- endfor %}

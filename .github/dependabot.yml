@@ -1,0 +1,19 @@
+# Weekly dependency updates, grouped into one pull request so there is only
+# one thing to review. Cloudflare builds a preview for it, so a quick look at
+# the preview link is usually enough before merging.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '03:00'
+      timezone: Etc/UTC
+    open-pull-requests-limit: 3
+    groups:
+      dependencies:
+        patterns: ['*']
+        update-types: [minor, patch]
+    commit-message:
+      prefix: deps

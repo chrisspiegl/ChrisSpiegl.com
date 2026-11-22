@@ -4,7 +4,7 @@
 // manual value below is used, so the build never breaks. Update the manual
 // values (and `asOf`) when you notice they drift.
 //
-// Environment variables (set them in Cloudflare Pages > Settings > Variables):
+// Build environment variables (Cloudflare: Settings > Build > Variables and secrets):
 //   YOUTUBE_API_KEY          YouTube Data API v3 key (Google Cloud console)
 //   INSTAGRAM_ACCESS_TOKEN   Instagram API token for a Business/Creator account
 //   INSTAGRAM_USER_ID        optional; with it the Facebook Graph host is used,
@@ -12,6 +12,7 @@
 
 const process = require('node:process')
 const EleventyFetch = require('@11ty/eleventy-fetch')
+const buildStats = require('../utils/buildStats')
 
 const YOUTUBE_CHANNEL_ID = 'UCrfYnHuKRC-Worm7OmMMcLQ'
 const SUBSTACK_HANDLE = 'chrisspiegl'
@@ -113,6 +114,12 @@ module.exports = async function () {
 
   const platforms = { youtube: yt, instagram: ig, substack: ss }
   const total = yt.count + ig.count + ss.count
+
+  buildStats.record('followers', {
+    platforms,
+    total,
+    totalLabel: compact(total),
+  })
 
   return {
     platforms,

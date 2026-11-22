@@ -1,6 +1,6 @@
 # ChrisSpiegl.com
 
-Personal website of Chris Spiegl, built with [Eleventy 3](https://www.11ty.dev/) (Pug layouts, Markdown content) and deployed on [Cloudflare Pages](https://pages.cloudflare.com/). Writing lives on [Field Notes](https://chrisspiegl.substack.com); this site is the hub around it.
+Personal website of Chris Spiegl, built with [Eleventy 3](https://www.11ty.dev/) (Pug layouts, Markdown content) and served as static assets by a [Cloudflare Worker](https://developers.cloudflare.com/workers/static-assets/) (`wrangler.jsonc`), built by Workers Builds on every push. Writing lives on [Field Notes](https://chrisspiegl.substack.com); this site is the hub around it.
 
 ## Commands
 
@@ -13,7 +13,7 @@ pnpm format       # ESLint with --fix
 pnpm check        # link check of _site/
 ```
 
-Node is pinned in `.node-version` (24); Cloudflare Pages reads it too.
+Node is pinned in `.node-version` (24); Cloudflare's build image reads it too.
 
 ## How things work
 
@@ -22,12 +22,16 @@ Node is pinned in `.node-version` (24); Cloudflare Pages reads it too.
 - **Fonts**: Playfair Display is linked from Google Fonts in `_includes/layout.pug`; Cloudflare Fonts rewrites it to load from this domain.
 - **Icons**: inline SVGs bundled at build time from Iconify (`utils/icons.js`, `{% icon "fa7-brands:youtube" %}`).
 - **Sharing**: Open Graph and Twitter tags use `ogImage` from front matter, else `imageHero`, else the first image on the page, else the default photo, cropped to 1200x630 by Cloudflare. Set `description` in front matter for each page.
-- **Analytics**: Cloudflare Web Analytics only (cookieless, injected by Pages).
-- **Location**: the header pulls the current city from Nomad List at build time; a daily rebuild keeps it fresh.
-- **Redirects**: `_data/redirects.json` builds `_redirects` for Cloudflare plus HTML pages for local overview.
+- **Analytics**: Cloudflare Web Analytics only (cookieless, injected automatically by Cloudflare).
+- **Location and follower counts**: fetched at build time (Nomad List, YouTube, Instagram, Substack). The Worker's daily cron (03:00 UTC, `worker/index.js`) calls a Workers Builds deploy hook to rebuild, so they stay at most a day old. No Worker code runs on page views.
+- **Build and deploy**: Workers Builds runs `pnpm ci:build` and `pnpm ci:deploy` (`pnpm ci:preview` for other branches). `utils/ci.js` wraps both and sends a PushNotice build report with trigger, timings, cache, output size and live data; facts from the build come from `utils/buildStats.js`. Without the PushNotice variables the report is only printed. Try it locally with `node utils/ci.js report` after a build.
+- **Headers**: `_headers` sets security headers, 10 minutes of browser cache for HTML and the stylesheet, a week for `/assets/*`, and `noindex` on workers.dev / pages.dev addresses.
+- **Redirects**: `_data/redirects.json` builds `_redirects` for Cloudflare plus HTML pages for local overview. Entries default to `302`; set `"status": 301` for links that never change.
+- **Dependencies**: Dependabot opens one grouped pull request per week (`.github/dependabot.yml`).
 
 ## Cloudflare settings this site depends on
 
 - Images > Transformations: enabled for the chrisspiegl.com zone.
 - Speed > Settings > Content Optimization: Cloudflare Fonts on.
-- Web Analytics: enabled for the Pages project.
+- Web Analytics: enabled for chrisspiegl.com with automatic setup.
+- Workers & Pages > chrisspiegl-com: Workers Builds connected to this repo (build `pnpm ci:build`, deploy `pnpm ci:deploy`, non-production branches `pnpm ci:preview`), build variables `YOUTUBE_API_KEY`, `PUSHNOTICE_CHAT_IDCHAT`, `PUSHNOTICE_CHAT_SECRET` (optional `INSTAGRAM_ACCESS_TOKEN`, `CF_BUILDS_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`), Worker secrets `DEPLOY_HOOK`, `PUSHNOTICE_CHAT_IDCHAT`, `PUSHNOTICE_CHAT_SECRET`.
