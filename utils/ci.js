@@ -15,7 +15,7 @@
 //   PUSHNOTICE_CHAT_SECRET   PushNotice chat secret
 //   CF_BUILDS_API_TOKEN      optional, "Workers CI Read" token: exact trigger,
 //                            queue time and PR link from the Workers Builds API
-//   PUSHNOTICE_MARKDOWN      "0" sends plain text instead of a ``` code block
+//   PUSHNOTICE_MARKDOWN      "1" wraps the report in a ``` code block
 
 const { spawn, execFileSync } = require('node:child_process')
 const fs = require('node:fs')
@@ -30,7 +30,6 @@ const runFile = path.join(cacheDir, 'ci-run.json')
 const statsFile = path.join(cacheDir, 'build-stats.json')
 const SITE_URL = 'https://chrisspiegl.com'
 const PRODUCTION_BRANCH = process.env.PRODUCTION_BRANCH || 'main'
-const WIDTH = 13
 
 // --- small helpers ---------------------------------------------------------
 
@@ -280,20 +279,22 @@ function describeTrigger(env, commit, details) {
 function liveSources(stats) {
   const f = stats.followers?.platforms || {}
   return [
-    { name: 'YouTube', data: f.youtube, fix: 'set or check YOUTUBE_API_KEY (Google Cloud quota?)' },
-    { name: 'Instagram', data: f.instagram, fix: 'set or renew INSTAGRAM_ACCESS_TOKEN (tokens expire)' },
-    { name: 'Substack', data: f.substack, fix: 'public profile API changed or unreachable' },
-    { name: 'Nomad List', data: stats.location, fix: 'nomads.com profile JSON unreachable or changed' },
+    { name: 'YouTube', data: f.youtube, fix: 'check YOUTUBE_API_KEY / quota' },
+    { name: 'Instagram', data: f.instagram, fix: 'set or renew INSTAGRAM_ACCESS_TOKEN' },
+    { name: 'Substack', data: f.substack, fix: 'Substack profile API changed?' },
+    { name: 'Nomad List', data: stats.location, fix: 'nomads.com profile JSON changed?' },
   ].filter(source => source.data)
 }
 
 const MARK = { 'live': '✓', 'no-key': '⚠', 'failed': '✗' }
 
+// Plain text by default: PushNotice/Telegram collapsed the newlines inside a
+// ``` block. PUSHNOTICE_MARKDOWN=1 wraps the body in a code block anyway.
 function fence(lines) {
   const body = lines.filter(line => typeof line === 'string').join('\n')
-  return process.env.PUSHNOTICE_MARKDOWN === '0'
-    ? body
-    : `\`\`\`\n${body}\n\`\`\``
+  return process.env.PUSHNOTICE_MARKDOWN === '1'
+    ? `\`\`\`\n${body}\n\`\`\``
+    : body
 }
 
 async function report({ state, deploy, failed, logTail }) {
@@ -334,40 +335,38 @@ async function report({ state, deploy, failed, logTail }) {
   ].filter(Boolean)
   const location = stats.location
 
-  const timing = [
-    state.buildMs && `build ${duration(state.buildMs)} (eleventy ${duration(stats.eleventy?.ms)}, thumbhash ${duration(th.ms)})`,
-    deploy && `deploy ${duration(deploy.ms)}`,
-    `total ${duration(totalMs)}`,
-  ].filter(Boolean)
-
-  const output = failed === 'build'
-    ? null
-    : [
-        `${number(site.files)} files`,
-        bytes(site.bytes),
-        stats.eleventy && `${number(stats.eleventy.pages)} pages`,
-        stats.eleventy && `${number(stats.eleventy.words)} words (~${Math.round(stats.eleventy.words / 230)} min read)`,
-        deploy?.newFiles !== null && deploy?.newFiles !== undefined && `${number(deploy.newFiles)} uploaded`,
-      ].filter(Boolean)
+  // Short lines (phone width): a title line per topic, details indented below.
+  const sub = text => `   ${text}`
+  const short = text => truncate(text, 34)
+  const pages = stats.eleventy
+    ? `${number(stats.eleventy.pages)} pages · ${number(stats.eleventy.words)} words`
+    : null
 
   const lines = [
-    `${'trigger'.padEnd(WIDTH)}${trigger}`,
-    `${'commit'.padEnd(WIDTH)}${env.branch}@${env.sha.slice(0, 7)} "${truncate(commit.subject, 40)}"`,
-    Boolean(url) && !env.production && `${'url'.padEnd(WIDTH)}${url}`,
-    `⏱  ${timing.join(' · ')}`,
-    output && `📦 ${output.join(' · ')}`,
-    `🧊 build cache ${cache.restored
+    `${trigger} · ${env.branch}@${env.sha.slice(0, 7)}`,
+    commit.subject && `"${short(commit.subject)}"`,
+    Boolean(url) && !env.production && url,
+    '',
+    `⏱ ${duration(totalMs)} total`,
+    state.buildMs && sub(`build ${duration(state.buildMs)}${deploy
+      ? ` · deploy ${duration(deploy.ms)}`
+      : ''}`),
+    stats.eleventy && sub(`eleventy ${duration(stats.eleventy.ms)} · thumbhash ${duration(th.ms)}`),
+    failed !== 'build' && `📦 ${number(site.files)} files · ${bytes(site.bytes)}`,
+    failed !== 'build' && pages && sub(pages),
+    failed !== 'build' && deploy?.newFiles !== null && deploy?.newFiles !== undefined && sub(`${number(deploy.newFiles)} uploaded`),
+    `🧊 cache ${cache.restored
       ? 'restored ✓'
-      : 'cold ✗'} · thumbhash ${th.cached ?? '?'} cached · ${th.computed ?? '?'} new`,
-    followers.length && `📊 ${followers.join(' · ')} → ${stats.followers?.totalLabel || '?'}`,
+      : 'cold ✗'}`,
+    th.images && sub(`thumbhash ${th.cached} cached · ${th.computed} new`),
+    stats.followers && `📊 ${stats.followers.totalLabel} followers`,
+    ...followers.map(sub),
     location && `📍 ${location.status === 'live'
-      ? `${location.now}${location.next
-        ? ` → ${location.next}`
-        : ''}`
-      : 'unknown'} ${mark(location)}`,
-    `🤓 node ${process.versions.node.split('.')[0]} · eleventy ${packageVersion('@11ty/eleventy')} · ${commit.commits
-      ? `${number(commit.commits)} commits since ${commit.firstCommit?.toISOString().slice(0, 10)}`
-      : ''}`,
+      ? location.now
+      : 'location unknown'} ${mark(location)}`,
+    location?.next && sub(`next: ${location.next}`),
+    `🤓 node ${process.versions.node.split('.')[0]} · eleventy ${packageVersion('@11ty/eleventy')}`,
+    commit.commits && sub(`${number(commit.commits)} commits since ${commit.firstCommit?.getUTCFullYear()}`),
     ...(logTail
       ? ['', '📜 last lines', ...logTail]
       : []),
@@ -387,19 +386,19 @@ async function report({ state, deploy, failed, logTail }) {
     const problem = issues.map(({ name, data, fix }) => {
       const what = data.status === 'no-key'
         ? 'no API key'
-        : `FAILED: ${truncate((data.error || '?').replace(/^\w+: /, ''), 60)}`
+        : `FAILED: ${truncate((data.error || '?').replace(/^\w+: /, ''), 40)}`
       const used = data.count !== undefined
-        ? `used manual value ${number(data.count)} from ${data.asOf}`
+        ? `using manual ${number(data.count)} (${data.asOf})`
         : 'shown as unknown on the site'
       return [
         `${MARK[data.status] || '?'} ${name}`,
-        `  ${what}`,
-        `  ${used}`,
-        `  → ${fix}`,
+        `   ${what}`,
+        `   ${used}`,
+        `   → ${fix}`,
       ].join('\n')
     })
     messages.push({
-      text: `⚠️ ChrisSpiegl.com build needs a check: ${issues.length} of ${sources.length} live data sources not live\n${fence(problem)}`,
+      text: `⚠️ ChrisSpiegl.com needs a check\n${issues.length} of ${sources.length} live data sources not live\n\n${fence(problem.join('\n\n').split('\n'))}`,
       level: 'error',
       silent: false,
     })
