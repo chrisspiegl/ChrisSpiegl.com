@@ -1,0 +1,35 @@
+# Response headers for the static site (Cloudflare Workers static assets and
+# Pages read this file from the output root). Rules apply in file order: to
+# change a header a broader rule already set, detach it with "! Name" first.
+# Docs: https://developers.cloudflare.com/workers/static-assets/headers/
+
+# Every page and file.
+# HTML: browsers reuse a page for 10 minutes, then check for changes (a tiny
+# 304 when nothing changed). A deploy reaches every visitor within 10 minutes.
+/*
+  Cache-Control: public, max-age=600, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+  Content-Security-Policy: base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests
+
+# Images, favicons and other assets rarely change but aren't fingerprinted:
+# cache for a week, then refresh in the background for another day.
+/assets/*
+  ! Cache-Control
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# The stylesheet changes with the design and has no hash in its name, so it
+# follows the HTML: 10 minutes.
+/assets/style.css
+  ! Cache-Control
+  Cache-Control: public, max-age=600, must-revalidate
+
+# Keep preview and workers.dev / pages.dev addresses out of search results.
+https://:name.:account.workers.dev/*
+  X-Robots-Tag: noindex
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:deployment.:project.pages.dev/*
+  X-Robots-Tag: noindex

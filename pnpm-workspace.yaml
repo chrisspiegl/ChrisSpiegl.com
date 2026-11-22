@@ -2,3 +2,5 @@ allowBuilds:
   '@parcel/watcher': false
   puppeteer: false
   sharp: true
+  esbuild: true
+  workerd: true

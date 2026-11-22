@@ -8,13 +8,14 @@ const markdownItContainer = require('markdown-it-container')
 const markdownItFootnote = require('markdown-it-footnote')
 
 const meta = require('./_data/meta')
+const buildStats = require('./utils/buildStats')
 const canonicalLink = require('./utils/canonicalLink')
 const { toDate, isValidDate } = require('./utils/dates')
 const emailLink = require('./utils/emailLink')
 const filters = require('./utils/filters.js')
 const { lastCommitDate } = require('./utils/gitFileDates')
 const { icon } = require('./utils/icons')
-const { imageHtml, verifyCloudflareImages } = require('./utils/images')
+const { imageHtml, useCloudflare, verifyCloudflareImages } = require('./utils/images')
 const { preparePlaceholders } = require('./utils/thumbhash')
 const transforms = require('./utils/transforms.js')
 
@@ -63,6 +64,32 @@ const containerImageSizes = {
 module.exports = (config) => {
   config.on('eleventy.before', () => verifyCloudflareImages(meta.url, meta.avatarImage))
   config.on('eleventy.before', preparePlaceholders)
+
+  // Facts for the build report sent by utils/ci.js (see utils/buildStats.js).
+  let buildStarted = 0
+  config.on('eleventy.before', () => {
+    buildStarted = performance.now()
+  })
+  config.on('eleventy.after', ({ results }) => {
+    const pages = results.filter(result => result.outputPath && result.outputPath.endsWith('.html'))
+    const words = pages.reduce((sum, page) => {
+      const text = String(page.content || '')
+        .replace(/<(script|style|svg)[\s\S]*?<\/\1>/gi, ' ')
+        .replace(/<[^>]+>/g, ' ')
+      return sum + (text.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu) || []).length
+    }, 0)
+    buildStats.write({
+      eleventy: {
+        ms: Math.round(performance.now() - buildStarted),
+        files: results.length,
+        pages: pages.length,
+        words,
+      },
+      images: useCloudflare()
+        ? 'Cloudflare Images'
+        : 'original files',
+    })
+  })
 
   config.addPlugin(pluginPug)
   config.addPlugin(pluginRss)
@@ -113,6 +140,7 @@ module.exports = (config) => {
     return true
   }
 
+  config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('assets/favicon')
   // Originals only: Cloudflare Images resizes and converts them on request.
   config.addPassthroughCopy('assets/images')

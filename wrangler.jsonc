@@ -1,0 +1,29 @@
+// ChrisSpiegl.com as a Cloudflare Worker with static assets.
+//
+// Every page and file is served straight from the static assets in _site:
+// free, unlimited, and never runs Worker code. The only code is the daily
+// cron in worker/index.js, which starts a fresh build through a Workers
+// Builds deploy hook so follower counts and the Nomad List location stay
+// current. Build and deploy run through utils/ci.js, which also sends the
+// PushNotice build report.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chrisspiegl-com",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "./_site",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  // 03:00 UTC every day (10:00 in Bangkok).
+  "triggers": {
+    "crons": ["0 3 * * *"]
+  },
+  "observability": {
+    "enabled": true
+  }
+}
