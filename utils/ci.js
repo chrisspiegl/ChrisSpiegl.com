@@ -15,7 +15,7 @@
 //   PUSHNOTICE_CHAT_SECRET   PushNotice chat secret
 //   CF_BUILDS_API_TOKEN      optional, "Workers CI Read" token: exact trigger,
 //                            queue time and PR link from the Workers Builds API
-//   PUSHNOTICE_MARKDOWN      "0" sends plain text instead of `inline code` lines
+//   PUSHNOTICE_MARKDOWN      "0" sends plain text instead of a <pre> block
 
 const { spawn, execFileSync } = require('node:child_process')
 const fs = require('node:fs')
@@ -288,19 +288,20 @@ function liveSources(stats) {
 
 const MARK = { 'live': '✓', 'no-key': '⚠', 'failed': '✗' }
 
-// PushNotice/Telegram drops messages with ``` or <pre> blocks (tested
-// 22 Nov 2026), but renders `inline code`. So each line becomes its own
-// inline code span, which reads like one monospace block. Blank lines stay
-// blank. PUSHNOTICE_MARKDOWN=0 sends plain text instead.
+// PushNotice sends Telegram HTML: a <pre> block shows as a real code block
+// (tested 22 Nov 2026; ``` blocks were dropped). Links go outside the block
+// so they stay clickable. PUSHNOTICE_MARKDOWN=0 sends plain text instead.
+function escapeHtml(text) {
+  return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+}
+
 function fence(lines) {
   const kept = lines.filter(line => typeof line === 'string')
   if (process.env.PUSHNOTICE_MARKDOWN === '0')
     return kept.join('\n')
-  return kept
-    .map(line => line.trim()
-      ? `\`${line.replaceAll('`', '\'')}\``
-      : '')
-    .join('\n')
+  const links = kept.filter(line => line.startsWith('https://'))
+  const body = kept.filter(line => !line.startsWith('https://')).join('\n').replace(/^\n+|\n+$/g, '')
+  return [`<pre>${escapeHtml(body)}</pre>`, ...links].join('\n')
 }
 
 async function report({ state, deploy, failed, logTail }) {
