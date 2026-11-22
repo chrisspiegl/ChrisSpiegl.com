@@ -6,9 +6,13 @@
 //
 // Build environment variables (Cloudflare: Settings > Build > Variables and secrets):
 //   YOUTUBE_API_KEY          YouTube Data API v3 key (Google Cloud console)
-//   INSTAGRAM_ACCESS_TOKEN   Instagram API token for a Business/Creator account
+//   INSTAGRAM_ACCESS_TOKEN   optional, normally unset: the token lives in the
+//                            Worker (worker/index.js), which renews it and serves
+//                            the count at /_worker/instagram.json. Set it here
+//                            only to test a token at build time.
 //   INSTAGRAM_USER_ID        optional; with it the Facebook Graph host is used,
 //                            without it graph.instagram.com/me (Instagram Login)
+//   INSTAGRAM_COUNT_URL      optional; where the Worker serves the count
 
 const process = require('node:process')
 const EleventyFetch = require('@11ty/eleventy-fetch')
@@ -18,6 +22,7 @@ const YOUTUBE_CHANNEL_ID = 'UCrfYnHuKRC-Worm7OmMMcLQ'
 const SUBSTACK_HANDLE = 'chrisspiegl'
 const GRAPH_VERSION = 'v21.0'
 const TIMEOUT_MS = 8000
+const INSTAGRAM_COUNT_URL = process.env.INSTAGRAM_COUNT_URL || 'https://chrisspiegl.com/_worker/instagram.json'
 
 const manual = {
   asOf: '2026-10-14',
@@ -53,10 +58,30 @@ async function youtube() {
   return count
 }
 
+// The count the Worker stores. Its 503 answer says what is missing, so a Worker
+// without a token reads as "no-key", not as a failure.
+async function instagramFromWorker() {
+  const response = await fetch(INSTAGRAM_COUNT_URL, {
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  })
+    .catch((error) => {
+      throw new Error(`Instagram (Worker): ${error.message}`)
+    })
+  const data = await response.json().catch(() => ({}))
+  const count = Number(data?.count)
+  if (response.ok && Number.isFinite(count) && count > 0)
+    return count
+  if (data?.token === false)
+    return null
+  throw new Error(`Instagram (Worker): ${data?.error || (data?.kv === false
+    ? 'no KV binding'
+    : `HTTP ${response.status}`)}`)
+}
+
 async function instagram() {
   const token = process.env.INSTAGRAM_ACCESS_TOKEN
   if (!token)
-    return null
+    return instagramFromWorker()
   const userId = process.env.INSTAGRAM_USER_ID
   const url = userId
     ? `https://graph.facebook.com/${GRAPH_VERSION}/${userId}?fields=followers_count&access_token=${token}`
