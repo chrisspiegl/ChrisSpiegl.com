@@ -10,7 +10,7 @@ eleventyExcludeFromCollections: true
 This file follows the llms.txt convention (https://llmstxt.org). It's generated on every build and lists the public pages linked from the site, plus the tools.
 
 ## Pages
-{%- set publicPages = ['/', '/now/', '/ai/', '/uses/', '/links/', '/more/', '/privacy-policy/', '/legal-disclosure/'] %}
+{%- set publicPages = ['/', '/now', '/ai', '/uses', '/links', '/more', '/privacy-policy', '/legal-disclosure'] %}
 {% for url in publicPages %}{% for item in collections.sitemap %}{% if item.url == url %}
 - [{{ (item.data.title or meta.authorName) | safe }}]({{ item.url | absoluteUrl(meta.url) }}){% if item.data.description %}: {{ item.data.description | safe }}{% endif %}{% endif %}{% endfor %}{% endfor %}
 
