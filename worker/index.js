@@ -118,6 +118,11 @@ async function warnBeforeExpiry(env) {
   }
 }
 
+// Which token and route a failure belongs to, so a new secret retries at once.
+function instagramSource(env) {
+  return `${env.INSTAGRAM_USER_ID || 'me'}:${(env.INSTAGRAM_ACCESS_TOKEN || '').slice(-12)}`
+}
+
 // With { report: true } (the daily cron) a failed lookup also sends a PushNotice,
 // so an expired or revoked token is noticed within a day.
 async function updateInstagram(env, { report = false } = {}) {
@@ -150,6 +155,7 @@ async function updateInstagram(env, { report = false } = {}) {
     : {
         error: data?.error?.message || `HTTP ${response.status}`,
         failedAt: Date.now(),
+        source: instagramSource(env),
       }
   if (result.error)
     console.error(`[instagram] Follower count failed: ${result.error}`)
@@ -158,7 +164,7 @@ async function updateInstagram(env, { report = false } = {}) {
   const previous = await env.INSTAGRAM.get('count', 'json')
   // Keep the last good count when a lookup fails.
   const stored = result.error && previous?.count
-    ? { ...previous, failedAt: result.failedAt }
+    ? { ...previous, failedAt: result.failedAt, source: result.source }
     : result
   await env.INSTAGRAM.put('count', JSON.stringify(stored))
   return stored
@@ -172,7 +178,10 @@ async function instagramJson(env) {
   const age = stored?.updatedAt
     ? Date.now() - Date.parse(stored.updatedAt)
     : Infinity
-  const recentFailure = stored?.failedAt && Date.now() - stored.failedAt < RETRY_AFTER
+  // Wait an hour before retrying a failure, unless the setup changed since.
+  const recentFailure = stored?.failedAt
+    && stored.source === instagramSource(env)
+    && Date.now() - stored.failedAt < RETRY_AFTER
   if (age > COUNT_MAX_AGE && !recentFailure)
     stored = await updateInstagram(env)
   const body = stored?.count
