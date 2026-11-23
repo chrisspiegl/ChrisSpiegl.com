@@ -18,13 +18,21 @@
 //    (Settings > Variables and Secrets). Pasting a new token there later
 //    replaces the stored one on the next run.
 //
+//    Facebook login instead (no business portfolio needed): set
+//    INSTAGRAM_USER_ID to the Instagram account id (instagram_business_account
+//    of the linked Facebook Page) and INSTAGRAM_ACCESS_TOKEN to a Page token
+//    made from a long-lived user token. Such a Page token doesn't expire, so
+//    the Worker uses it as it is and skips renewal.
+//
 // Worker secrets / vars (Settings > Variables and Secrets):
 //   DEPLOY_HOOK              Workers Builds deploy hook URL (secret)
-//   INSTAGRAM_ACCESS_TOKEN   long-lived Instagram token (secret)
+//   INSTAGRAM_ACCESS_TOKEN   long-lived Instagram token, or Facebook Page token (secret)
+//   INSTAGRAM_USER_ID        only with a Facebook Page token: Instagram account id (secret or var)
 //   PUSHNOTICE_CHAT_IDCHAT   PushNotice chat id (var in wrangler.jsonc)
 //   PUSHNOTICE_CHAT_SECRET   PushNotice chat secret (secret)
 
 const GRAPH = 'https://graph.instagram.com'
+const FACEBOOK_GRAPH = 'https://graph.facebook.com/v21.0'
 const DAY = 24 * 60 * 60 * 1000
 const REFRESH_AFTER = 7 * DAY // tokens last 60 days; renew well before that
 const COUNT_MAX_AGE = 12 * 60 * 60 * 1000
@@ -82,14 +90,56 @@ async function renewIfDue(env, entry) {
 }
 
 // Renew the token when due and store the follower count. Returns the stored count entry.
-async function updateInstagram(env) {
+// A Page token made from a long-lived user token has no expiry date, but Meta
+// can still set one (expires_at) or stop its data access (data_access_expires_at).
+// Warn two weeks ahead, so there is time to make a new token. Silent when the
+// check itself fails: the daily lookup reports real failures.
+const WARN_BEFORE = 14 * DAY
+
+async function warnBeforeExpiry(env) {
+  const token = encodeURIComponent(env.INSTAGRAM_ACCESS_TOKEN)
+  const data = await fetch(`${FACEBOOK_GRAPH}/debug_token?input_token=${token}&access_token=${token}`)
+    .then(response => response.json())
+    .then(body => body?.data)
+    .catch(() => null)
+  if (!data)
+    return
+  if (data.is_valid === false) {
+    await notify(env, 'error', `📸 Instagram token is no longer valid (${data.error?.message || 'no reason given'}).\nMake a new Page token and paste it into the Worker secret INSTAGRAM_ACCESS_TOKEN.`)
+    return
+  }
+  const ends = [data.expires_at, data.data_access_expires_at]
+    .filter(seconds => seconds > 0)
+    .map(seconds => seconds * 1000)
+  const soonest = Math.min(...ends)
+  if (Number.isFinite(soonest) && soonest - Date.now() < WARN_BEFORE) {
+    const days = Math.max(0, Math.round((soonest - Date.now()) / DAY))
+    await notify(env, 'warning', `📸 Instagram token stops working in about ${days} days (${new Date(soonest).toISOString().slice(0, 10)}).\nMake a new Page token and paste it into the Worker secret INSTAGRAM_ACCESS_TOKEN.`)
+  }
+}
+
+// With { report: true } (the daily cron) a failed lookup also sends a PushNotice,
+// so an expired or revoked token is noticed within a day.
+async function updateInstagram(env, { report = false } = {}) {
   if (!env.INSTAGRAM)
     return null
-  let entry = await currentToken(env)
-  if (!entry)
-    return null
-  entry = await renewIfDue(env, entry)
-  const response = await fetch(`${GRAPH}/me?fields=followers_count&access_token=${encodeURIComponent(entry.token)}`)
+  let url
+  if (env.INSTAGRAM_USER_ID) {
+    // Facebook login: the Page token doesn't expire, nothing to renew.
+    if (!env.INSTAGRAM_ACCESS_TOKEN)
+      return null
+    url = `${FACEBOOK_GRAPH}/${encodeURIComponent(env.INSTAGRAM_USER_ID)}?fields=followers_count&access_token=${encodeURIComponent(env.INSTAGRAM_ACCESS_TOKEN)}`
+    if (report)
+      await warnBeforeExpiry(env)
+  }
+  else {
+    let entry = await currentToken(env)
+    if (!entry)
+      return null
+    entry = await renewIfDue(env, entry)
+    url = `${GRAPH}/me?fields=followers_count&access_token=${encodeURIComponent(entry.token)}`
+  }
+  const response = await fetch(url)
   const data = await response.json().catch(() => ({}))
   const count = Number(data?.followers_count)
   const result = Number.isFinite(count) && response.ok
@@ -103,6 +153,8 @@ async function updateInstagram(env) {
       }
   if (result.error)
     console.error(`[instagram] Follower count failed: ${result.error}`)
+  if (result.error && report)
+    await notify(env, 'error', `📸 Instagram follower count failed: ${result.error}\nThe site keeps the last count. If the token expired or was revoked, paste a new one into the Worker secret INSTAGRAM_ACCESS_TOKEN.`)
   const previous = await env.INSTAGRAM.get('count', 'json')
   // Keep the last good count when a lookup fails.
   const stored = result.error && previous?.count
@@ -196,7 +248,7 @@ export default {
     ctx.waitUntil((async () => {
       // Count first, so the build that follows reads today's number.
       try {
-        await updateInstagram(env)
+        await updateInstagram(env, { report: true })
       }
       catch (error) {
         console.error(`[instagram] ${error.message}`)
