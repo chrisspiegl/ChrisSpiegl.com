@@ -281,7 +281,7 @@ function liveSources(stats) {
   const f = stats.followers?.platforms || {}
   return [
     { name: 'YouTube', data: f.youtube, fix: 'check YOUTUBE_API_KEY / quota' },
-    { name: 'Instagram', data: f.instagram, fix: 'Worker secret INSTAGRAM_ACCESS_TOKEN set? check /_worker/instagram.json' },
+    { name: 'Instagram', data: f.instagram, fix: 'build variable INSTAGRAM_ACCESS_TOKEN (Facebook Page token) set and valid?' },
     { name: 'Substack', data: f.substack, fix: 'Substack profile API changed?' },
     { name: 'Nomad List', data: stats.location, fix: 'nomads.com profile JSON changed?' },
   ].filter(source => source.data)

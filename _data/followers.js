@@ -6,13 +6,8 @@
 //
 // Build environment variables (Cloudflare: Settings > Build > Variables and secrets):
 //   YOUTUBE_API_KEY          YouTube Data API v3 key (Google Cloud console)
-//   INSTAGRAM_ACCESS_TOKEN   optional, normally unset: the token lives in the
-//                            Worker (worker/index.js), which renews it and serves
-//                            the count at /_worker/instagram.json. Set it here
-//                            only to test a token at build time.
-//   INSTAGRAM_USER_ID        optional; with it the Facebook Graph host is used,
-//                            without it graph.instagram.com/me (Instagram Login)
-//   INSTAGRAM_COUNT_URL      optional; where the Worker serves the count
+//   INSTAGRAM_ACCESS_TOKEN   Facebook Page token (doesn't expire) for the Page linked
+//                            to the Instagram account; see INSTAGRAM_USER_ID below
 
 const process = require('node:process')
 const EleventyFetch = require('@11ty/eleventy-fetch')
@@ -21,8 +16,9 @@ const buildStats = require('../utils/buildStats')
 const YOUTUBE_CHANNEL_ID = 'UCrfYnHuKRC-Worm7OmMMcLQ'
 const SUBSTACK_HANDLE = 'chrisspiegl'
 const GRAPH_VERSION = 'v21.0'
+// Instagram account id (instagram_business_account of the linked Facebook Page).
+const INSTAGRAM_USER_ID = process.env.INSTAGRAM_USER_ID || '17841400977130010'
 const TIMEOUT_MS = 8000
-const INSTAGRAM_COUNT_URL = process.env.INSTAGRAM_COUNT_URL || 'https://chrisspiegl.com/_worker/instagram.json'
 
 const manual = {
   asOf: '2026-11-22',
@@ -58,38 +54,25 @@ async function youtube() {
   return count
 }
 
-// The count the Worker stores. Its 503 answer says what is missing, so a Worker
-// without a token reads as "no-key", not as a failure.
-async function instagramFromWorker() {
-  const response = await fetch(INSTAGRAM_COUNT_URL, {
-    signal: AbortSignal.timeout(TIMEOUT_MS),
-  })
-    .catch((error) => {
-      throw new Error(`Instagram (Worker): ${error.message}`)
-    })
-  const data = await response.json().catch(() => ({}))
-  const count = Number(data?.count)
-  if (response.ok && Number.isFinite(count) && count > 0)
-    return count
-  if (data?.token === false)
-    return null
-  throw new Error(`Instagram (Worker): ${data?.error || (data?.kv === false
-    ? 'no KV binding'
-    : `HTTP ${response.status}`)}`)
-}
-
+// Instagram via the Facebook Graph API: a Page token made from a long-lived
+// user token doesn't expire, so a plain build variable is enough. Meta's own
+// error message is kept (no URL: it contains the token), so the build report
+// says why a lookup failed.
 async function instagram() {
   const token = process.env.INSTAGRAM_ACCESS_TOKEN
   if (!token)
-    return instagramFromWorker()
-  const userId = process.env.INSTAGRAM_USER_ID
-  const url = userId
-    ? `https://graph.facebook.com/${GRAPH_VERSION}/${userId}?fields=followers_count&access_token=${token}`
-    : `https://graph.instagram.com/${GRAPH_VERSION}/me?fields=followers_count&access_token=${token}`
-  const data = await fetchJson(url, 'Instagram')
+    return null
+  const url = `https://graph.facebook.com/${GRAPH_VERSION}/${INSTAGRAM_USER_ID}?fields=followers_count&access_token=${encodeURIComponent(token)}`
+  const response = await fetch(url, {
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  })
+    .catch((error) => {
+      throw new Error(`Instagram: ${error.message}`)
+    })
+  const data = await response.json().catch(() => ({}))
   const count = Number(data?.followers_count)
-  if (!Number.isFinite(count))
-    throw new TypeError('unexpected response')
+  if (!response.ok || !Number.isFinite(count))
+    throw new Error(`Instagram: ${data?.error?.message || `HTTP ${response.status}`}`)
   return count
 }
 
