@@ -18,13 +18,21 @@
 //    (Settings > Variables and Secrets). Pasting a new token there later
 //    replaces the stored one on the next run.
 //
+//    Facebook login instead (no business portfolio needed): set
+//    INSTAGRAM_USER_ID to the Instagram account id (instagram_business_account
+//    of the linked Facebook Page) and INSTAGRAM_ACCESS_TOKEN to a Page token
+//    made from a long-lived user token. Such a Page token doesn't expire, so
+//    the Worker uses it as it is and skips renewal.
+//
 // Worker secrets / vars (Settings > Variables and Secrets):
 //   DEPLOY_HOOK              Workers Builds deploy hook URL (secret)
-//   INSTAGRAM_ACCESS_TOKEN   long-lived Instagram token (secret)
+//   INSTAGRAM_ACCESS_TOKEN   long-lived Instagram token, or Facebook Page token (secret)
+//   INSTAGRAM_USER_ID        only with a Facebook Page token: Instagram account id (secret or var)
 //   PUSHNOTICE_CHAT_IDCHAT   PushNotice chat id (var in wrangler.jsonc)
 //   PUSHNOTICE_CHAT_SECRET   PushNotice chat secret (secret)
 
 const GRAPH = 'https://graph.instagram.com'
+const FACEBOOK_GRAPH = 'https://graph.facebook.com/v21.0'
 const DAY = 24 * 60 * 60 * 1000
 const REFRESH_AFTER = 7 * DAY // tokens last 60 days; renew well before that
 const COUNT_MAX_AGE = 12 * 60 * 60 * 1000
@@ -85,11 +93,21 @@ async function renewIfDue(env, entry) {
 async function updateInstagram(env) {
   if (!env.INSTAGRAM)
     return null
-  let entry = await currentToken(env)
-  if (!entry)
-    return null
-  entry = await renewIfDue(env, entry)
-  const response = await fetch(`${GRAPH}/me?fields=followers_count&access_token=${encodeURIComponent(entry.token)}`)
+  let url
+  if (env.INSTAGRAM_USER_ID) {
+    // Facebook login: the Page token doesn't expire, nothing to renew.
+    if (!env.INSTAGRAM_ACCESS_TOKEN)
+      return null
+    url = `${FACEBOOK_GRAPH}/${encodeURIComponent(env.INSTAGRAM_USER_ID)}?fields=followers_count&access_token=${encodeURIComponent(env.INSTAGRAM_ACCESS_TOKEN)}`
+  }
+  else {
+    let entry = await currentToken(env)
+    if (!entry)
+      return null
+    entry = await renewIfDue(env, entry)
+    url = `${GRAPH}/me?fields=followers_count&access_token=${encodeURIComponent(entry.token)}`
+  }
+  const response = await fetch(url)
   const data = await response.json().catch(() => ({}))
   const count = Number(data?.followers_count)
   const result = Number.isFinite(count) && response.ok
