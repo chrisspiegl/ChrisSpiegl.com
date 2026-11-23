@@ -112,7 +112,7 @@ async function resolve(name, lookup) {
 }
 
 // Compact, pretty-bytes style, rounded down so it never overstates:
-// 36 -> "36", 9250 -> "9.2K", 32336 -> "32.3K", 150400 -> "150K", 1234567 -> "1.2M"
+// 36 -> "36", 9250 -> "9.25K", 32336 -> "32.33K", 150400 -> "150.4K", 1234567 -> "1.23M"
 function compact(count) {
   const units = ['', 'K', 'M', 'B']
   let value = count
@@ -121,12 +121,19 @@ function compact(count) {
     value /= 1000
     unit++
   }
-  const decimals = unit > 0 && value < 100
-    ? 1
-    : 0
+  const decimals = unit === 0
+    ? 0
+    : value < 100
+      ? 2
+      : 1
+  // Divide the whole count once (9200 / 10 = 920), so float error can't turn 9.2 into 9.19.
   const factor = 10 ** decimals
-  const floored = Math.floor(value * factor) / factor
-  return `${floored.toFixed(decimals).replace(/\.0$/, '')}${units[unit]}`
+  const floored = Math.floor(count / (1000 ** unit / factor)) / factor
+  const digits = floored.toFixed(decimals)
+  const trimmed = decimals
+    ? digits.replace(/\.?0+$/, '')
+    : digits
+  return `${trimmed}${units[unit]}`
 }
 
 module.exports = async function () {
