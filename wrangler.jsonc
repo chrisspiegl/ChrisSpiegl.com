@@ -1,11 +1,10 @@
 // ChrisSpiegl.com as a Cloudflare Worker with static assets.
 //
 // Every page and file is served straight from the static assets in _site:
-// free, unlimited, and never runs Worker code. The only code is in
-// worker/index.js: the daily cron, which renews the Instagram token, stores
-// the follower count and starts a fresh build through a Workers Builds deploy
-// hook so follower counts and the Nomad List location stay current, and the
-// small /_worker/instagram.json endpoint the build reads the count from. Build and deploy run through utils/ci.js, which also sends the
+// free, unlimited, and never runs Worker code. The only code is the daily
+// cron in worker/index.js, which starts a fresh build through a Workers
+// Builds deploy hook so follower counts and the Nomad List location stay
+// current. Build and deploy run through utils/ci.js, which also sends the
 // PushNotice build report.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
@@ -21,23 +20,13 @@
     "directory": "./_site",
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page",
-    // Only /_worker/* runs the Worker first; every other path is a static asset.
-    "run_worker_first": ["/_worker/*"]
+    "not_found_handling": "404-page"
   },
-  // Instagram token and follower count (worker/index.js). No id: the first
-  // `wrangler deploy` creates the namespace and binds it, named
-  // "chrisspiegl-com-instagram" (<worker name>-<binding>); later deploys keep
-  // that binding. To use a namespace you created yourself, add its "id" here.
-  "kv_namespaces": [
-    { "binding": "INSTAGRAM" }
-  ],
   // Plain runtime variables for the cron in worker/index.js. Its secrets
-  // (DEPLOY_HOOK, PUSHNOTICE_CHAT_SECRET, INSTAGRAM_ACCESS_TOKEN) live in the dashboard under
+  // (DEPLOY_HOOK, PUSHNOTICE_CHAT_SECRET) live in the dashboard under
   // Settings → Variables and Secrets; deploys keep secrets but replace vars
   // with this list.
   "vars": {
-    "INSTAGRAM_USER_ID": "17841400977130010",
     "PUSHNOTICE_CHAT_IDCHAT": "21614670"
   },
   // 03:00 UTC every day (10:00 in Bangkok).
@@ -55,7 +44,6 @@
     },
     // Previews don't inherit the top-level vars.
     "vars": {
-      "INSTAGRAM_USER_ID": "17841400977130010",
       "PUSHNOTICE_CHAT_IDCHAT": "21614670"
     }
   }
