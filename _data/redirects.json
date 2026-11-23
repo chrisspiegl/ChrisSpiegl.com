@@ -297,7 +297,7 @@
     "status": 301
   },
   {
-    "destination": "/",
+    "destination": "/links/",
     "slug": "waymarkers",
     "status": 301
   },

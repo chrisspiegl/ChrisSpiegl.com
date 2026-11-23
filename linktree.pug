@@ -1,7 +1,12 @@
 ---
 title: Links
 description: "Field Notes, YouTube, Instagram, and the gear I use: everything I make, in one place."
-permalink: /linktree/
+# /links is the main page; /linktree serves the same page (old bio links), with /links as canonical.
+pagination:
+  data: linkPagePaths
+  size: 1
+  alias: linkPagePath
+canonicalPath: /links/
 layout: page.pug
 bare: true
 ---

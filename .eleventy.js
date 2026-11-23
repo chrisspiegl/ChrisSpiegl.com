@@ -22,7 +22,7 @@ const transforms = require('./utils/transforms.js')
 const now = new Date()
 
 const sitemapExcludedPrefixes = ['/tag/', '/tags/', '/gear/view/']
-const sitemapExcludedPaths = new Set(['/styleguide/', '/404.html'])
+const sitemapExcludedPaths = new Set(['/styleguide/', '/404.html', '/linktree/'])
 
 function includeInSitemap(item) {
   const url = item.url
