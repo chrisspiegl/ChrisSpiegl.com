@@ -19,7 +19,7 @@
   "assets": {
     "directory": "./_site",
     "binding": "ASSETS",
-    "html_handling": "auto-trailing-slash",
+    "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
   },
   // Plain runtime variables for the cron in worker/index.js. Its secrets

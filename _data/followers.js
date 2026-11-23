@@ -1,4 +1,4 @@
-// Follower counts for /linktree, fetched at build time from official/public sources.
+// Follower counts for /links, fetched at build time from official/public sources.
 //
 // Each platform is optional. When a live lookup isn't configured or fails, the
 // manual value below is used, so the build never breaks. Update the manual

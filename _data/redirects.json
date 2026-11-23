@@ -1,31 +1,31 @@
 [
   {
-    "destination": "/books/",
+    "destination": "/books",
     "slug": "book",
     "status": 301
   },
   {
-    "destination": "/tags/",
+    "destination": "/tags",
     "slug": "tag",
     "status": 301
   },
   {
-    "destination": "/blog/",
+    "destination": "/blog",
     "slug": "posts",
     "status": 301
   },
   {
-    "destination": "/posts/",
+    "destination": "/posts",
     "slug": "post",
     "status": 301
   },
   {
-    "destination": "/movies/",
+    "destination": "/movies",
     "slug": "movie",
     "status": 301
   },
   {
-    "destination": "/more/",
+    "destination": "/more",
     "slug": "podcast",
     "status": 301
   },
@@ -59,36 +59,6 @@
   {
     "destination": "https://crsp.li/chaptered",
     "slug": "tools/podcast-show-notes-formatter"
-  },
-  {
-    "destination": "https://crsp.li/linktree",
-    "slug": "aff/infostack-podcast",
-    "note": "Redirect Infostack Podcast Bundle Offer to Linktree"
-  },
-  {
-    "destination": "https://crsp.li/linktree",
-    "slug": "infostack-podcast",
-    "note": "Redirect Infostack Podcast Bundle Offer to Linktree"
-  },
-  {
-    "destination": "https://crsp.li/linktree",
-    "slug": "infostack-podcast-bonus",
-    "note": "Redirect Infostack Podcast Bundle Offer to Linktree"
-  },
-  {
-    "destination": "https://crsp.li/linktree",
-    "slug": "hofluencer",
-    "note": "Redirect Hofluencer pages to Linktree"
-  },
-  {
-    "destination": "https://crsp.li/linktree",
-    "slug": "hofluencer/2021-frst-meetup",
-    "note": "Redirect Hofluencer pages to Linktree"
-  },
-  {
-    "destination": "https://crsp.li/linktree",
-    "slug": "hofluencer/*",
-    "note": "Redirect Hofluencer pages to Linktree"
   },
   {
     "destination": "https://crsp.li/:splat",
@@ -161,47 +131,47 @@
     "status": 301
   },
   {
-    "destination": "/instaspaces/",
+    "destination": "/instaspaces",
     "slug": "instaspace",
     "status": 301
   },
   {
-    "destination": "/uses/",
+    "destination": "/uses",
     "slug": "kit",
     "status": 301
   },
   {
-    "destination": "/uses/",
+    "destination": "/uses",
     "slug": "gear",
     "status": 301
   },
   {
-    "destination": "/uses/",
+    "destination": "/uses",
     "slug": "gear/podcasting",
     "status": 301
   },
   {
-    "destination": "/uses/",
+    "destination": "/uses",
     "slug": "gear/travel",
     "status": 301
   },
   {
-    "destination": "/uses/",
+    "destination": "/uses",
     "slug": "gear/desk",
     "status": 301
   },
   {
-    "destination": "/uses/",
+    "destination": "/uses",
     "slug": "gear/software",
     "status": 301
   },
   {
-    "destination": "/uses/",
+    "destination": "/uses",
     "slug": "gear/dream",
     "status": 301
   },
   {
-    "destination": "/uses/",
+    "destination": "/uses",
     "slug": "gear/previous",
     "status": 301
   },
@@ -297,7 +267,12 @@
     "status": 301
   },
   {
-    "destination": "/",
+    "destination": "/links",
+    "slug": "linktree",
+    "status": 301
+  },
+  {
+    "destination": "/links",
     "slug": "waymarkers",
     "status": 301
   },
@@ -349,12 +324,12 @@
     "slug": "consulting"
   },
   {
-    "destination": "/tools/instaspaces/",
+    "destination": "/tools/instaspaces",
     "slug": "instaspaces",
     "status": 301
   },
   {
-    "destination": "/tools/aspect-ratio-calculator/",
+    "destination": "/tools/aspect-ratio-calculator",
     "slug": "aspect-ratio-calculator",
     "status": 301
   },
