@@ -6,10 +6,19 @@ eleventyExcludeFromCollections: true
 {#- 301 for links that never change (old paths, profile short links),
     302 (the default) for links whose target changes, such as /location.
     Each rule also covers the trailing-slash form, so /linktree/ redirects like /linktree
-    instead of serving the meta-refresh fallback page. #}
+    instead of serving the meta-refresh fallback page.
+    Static rules come first: Cloudflare counts every rule after the first wildcard as
+    dynamic, and allows only 100 dynamic rules (2,000 static). #}
 {%- for redirect in redirects %}
+{%- if not ('*' in redirect.slug) %}
 /{{ redirect.slug | safe }} {{ redirect.destination | safe }} {{ redirect.status or 302 }}
-{%- if not ('*' in redirect.slug) and not ('.' in redirect.slug) %}
+{%- if not ('.' in redirect.slug) %}
 /{{ redirect.slug | safe }}/ {{ redirect.destination | safe }} {{ redirect.status or 302 }}
+{%- endif %}
+{%- endif %}
+{%- endfor %}
+{%- for redirect in redirects %}
+{%- if '*' in redirect.slug %}
+/{{ redirect.slug | safe }} {{ redirect.destination | safe }} {{ redirect.status or 302 }}
 {%- endif %}
 {%- endfor %}
