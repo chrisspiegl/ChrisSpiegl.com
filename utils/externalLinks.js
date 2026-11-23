@@ -2,9 +2,9 @@ const { siteName, url: siteUrl } = require('../_data/meta')
 
 const siteHost = new URL(siteUrl).hostname.replace(/^www\./, '')
 
+// Only the site itself counts as internal: subdomains (go.nicolereiher.com, …) get the utm_source too.
 function isOwnHost(hostname) {
-  const host = hostname.replace(/^www\./, '').toLowerCase()
-  return host === siteHost || host.endsWith(`.${siteHost}`)
+  return hostname.replace(/^www\./, '').toLowerCase() === siteHost
 }
 
 function decodeHref(value) {
