@@ -22,16 +22,17 @@ const transforms = require('./utils/transforms.js')
 const now = new Date()
 
 const sitemapExcludedPrefixes = ['/tag/', '/tags/', '/gear/view/']
-const sitemapExcludedPaths = new Set(['/styleguide/', '/404.html'])
+const sitemapExcludedPaths = new Set(['/styleguide', '/404.html'])
 
 function includeInSitemap(item) {
   const url = item.url
   const inputPath = item.inputPath || ''
-  if (!url || !url.endsWith('/'))
+  // Pages only: skip files such as /feed.xml or /404.html.
+  if (!url || /\.[a-z0-9]+$/i.test(url))
     return false
   if (item.data && (item.data.layout === 'redirect' || item.data.redirect))
     return false
-  if (sitemapExcludedPrefixes.some(prefix => url.startsWith(prefix)))
+  if (sitemapExcludedPrefixes.some(prefix => url.startsWith(prefix) || `${url}/` === prefix))
     return false
   if (sitemapExcludedPaths.has(url))
     return false
@@ -102,6 +103,12 @@ module.exports = (config) => {
   config.ignores.add('mta-sts/**')
 
   config.addWatchTarget('./assets/scss/')
+
+  // URLs without trailing slash: /now, not /now/. Pages are still written as now/index.html,
+  // and Cloudflare (html_handling: drop-trailing-slash) serves them at /now.
+  config.addUrlTransform(({ url }) => url.length > 1 && url.endsWith('/')
+    ? url.slice(0, -1)
+    : url)
 
   // Transforms
   Object.keys(transforms).forEach((transformName) => {
