@@ -11,7 +11,7 @@ html(lang="en")
       - var pageTitle = title
     - var fullTitle = pageTitle ? `${pageTitle} | ${meta.siteTitle}` : meta.siteTitle
     - var pageDescription = description || meta.description
-    - var canonicalUrl = helpers.absoluteUrl(canonicalPath || page.url)
+    - var canonicalUrl = helpers.absoluteUrl(page.url)
     - var shareImage = helpers.ogImageUrl(helpers.pickShareImage({ ogImage, imageHero, content }))
     - var shareImageAlt = ogImageAlt || (pageTitle ? `${pageTitle} by ${meta.authorName}` : meta.authorName)
 
