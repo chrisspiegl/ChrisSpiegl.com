@@ -8,7 +8,9 @@ footer {
   padding-top: 4rem;
   padding-bottom: 3rem;
 
+  // Search follows the site fonts, not the footer mono.
   #search {
+    font-family: var(--font-body);
     margin: 4rem auto;
     width: 100%;
     form {

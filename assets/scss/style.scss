@@ -142,6 +142,7 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
   --font-body: var(--font-text);
   --font-caption: var(--font-text);
   --font-footer: var(--font-mono);
+  --font-controls: var(--font-ui); // nav, buttons, submit
   --font-heading: var(--font-serif);
   --font-list: var(--font-text);
   --font-code: var(--font-mono);
@@ -653,7 +654,7 @@ input:not([type=submit]) {
 }
 
 input[type=submit] {
-  font-family: var(--font-ui) !important;
+  font-family: var(--font-controls) !important;
   padding: .5rem !important;
   margin: .5rem 0 !important;
 }
@@ -661,7 +662,7 @@ input[type=submit] {
 input[type=submit],
 .btn,
 .btn-block {
-  font-family: var(--font-ui) !important;
+  font-family: var(--font-controls) !important;
   cursor: pointer !important;
   font-size: var(--font-size-minus-1) !important;
 }
