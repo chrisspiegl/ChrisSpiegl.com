@@ -1,7 +1,6 @@
 pre {
   max-width: 100%;
-  overflow: scroll;
-  padding: 0 var(--space-4);
+  overflow: auto;
   display: block;
   overflow-wrap: normal;
 }

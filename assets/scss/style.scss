@@ -29,7 +29,7 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
 */
   --color-ink: #4e4a45;          /* body text (Substack print_on_web_bg) */
   --color-ink-strong: #363737;   /* headings (Substack cover_print_primary) */
-  --color-ink-muted: #807e7b;    /* secondary text, placeholders */
+  --color-ink-muted: #6b6864;    /* secondary text, placeholders (4.5:1 on paper) */
   --color-paper: #eee8e0;        /* page background */
   --color-surface: #faf7f3;      /* cards, fields, nav pills, code */
   --color-paper-raised: #e0dad3; /* table rows, hover fills, icon tiles */
@@ -568,10 +568,6 @@ input[type=submit]:hover {
 .btn-block {
   display: flex !important;
   width: 100% !important;
-}
-
-.btn-center {
-  margin: auto;
 }
 
 input:not([type=submit]):not([type=checkbox]):not([type=radio]):not([type=hidden]),
