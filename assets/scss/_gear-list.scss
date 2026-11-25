@@ -20,7 +20,8 @@ $gear-column-min: 20rem;
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: var(--space-3) var(--space-3) var(--space-4);
+  padding: 0 0 var(--space-4);
+  overflow: hidden; // the photo runs edge to edge and takes the card's top corners
   text-align: left;
   background: var(--color-surface);
   border: 1px solid var(--color-rule);
@@ -40,6 +41,8 @@ $gear-column-min: 20rem;
   aspect-ratio: 3 / 2;
   object-fit: contain;
   background: var(--color-white);
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-rule);
 }
 
 .gear-item h3 {
@@ -47,7 +50,7 @@ $gear-column-min: 20rem;
   z-index: 2;
   letter-spacing: 0;
   margin: 0;
-  padding: var(--space-3) 0 var(--space-1);
+  padding: var(--space-3) var(--space-4) var(--space-1);
   font-size: var(--font-size-small);
   font-weight: 600;
   line-height: var(--line-height-ui);
@@ -69,7 +72,7 @@ $gear-column-min: 20rem;
 
 .gear-item p {
   margin: 0;
-  padding: 0;
+  padding: 0 var(--space-4);
   font-size: var(--font-size-small);
   line-height: var(--line-height-ui);
   color: var(--color-ink-muted);
@@ -86,7 +89,8 @@ $gear-column-min: 20rem;
 
 .gear-item .gear-link:focus-visible {
   outline: var(--focus-ring);
-  outline-offset: 2px;
+  outline-offset: -2px; // inside, so the card's overflow doesn't clip it
+  border-radius: var(--radius-lg);
 }
 
 .uses-section {
