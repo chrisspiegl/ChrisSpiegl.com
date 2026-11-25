@@ -178,18 +178,18 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
   // --font-size-minus-4: 0.5em;
 }
 
-*,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-blockquote {
+// Body font on the root only, so every element inherits the font of its
+// section: a link inside a heading stays in the heading font, nav links in
+// the UI font. Form controls don't inherit fonts by default.
+html {
   font-family: var(--font-body);
-  // font-weight: normal;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
 h1,
