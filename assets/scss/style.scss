@@ -17,7 +17,7 @@
 @use "tools";
 
 // @import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i&display=swap');
-// Fraunces and Spectral are linked in _includes/layout.pug so Cloudflare Fonts can serve it from this domain.
+// Spectral is linked in _includes/layout.pug so Cloudflare Fonts can serve it from this domain.
 
 :root {
   --break-mobile: #{vars.$break-mobile};
@@ -128,11 +128,7 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
 
   // --font-system: 'Vollkorn', -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-system: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  // Fraunces Soft 50 / Wonk 0 is set on html (font-variation-settings).
-  // VARIANT all-Spectral: headings and controls in Spectral; /links buttons keep --font-ui.
-  // --font-serif: "Fraunces", ui-serif, Georgia, serif;
-  --font-serif: var(--font-text);
-  --font-text: "Spectral", -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+  --font-text: "Spectral", ui-serif, "New York", Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, "Noto Serif", "DejaVu Serif", serif;
   --font-ui: system-ui, sans-serif;
   // font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   // --font-sans-serif: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
@@ -144,8 +140,8 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
   --font-body: var(--font-text);
   --font-caption: var(--font-text);
   --font-footer: var(--font-mono);
-  --font-controls: var(--font-text); // nav, buttons, submit (VARIANT; was --font-ui)
-  --font-heading: var(--font-serif);
+  --font-controls: var(--font-text); // nav, buttons, submit; /links buttons use --font-ui
+  --font-heading: var(--font-text);
   --font-list: var(--font-text);
   --font-code: var(--font-mono);
   --font-code-size: 1em;
@@ -186,9 +182,6 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
 // the UI font. Form controls don't inherit fonts by default.
 html {
   font-family: var(--font-body);
-  // Fraunces: Soft 50, Wonk 0 (its default is Wonk 1). Fonts without these
-  // axes (Spectral, system fonts) ignore the setting.
-  font-variation-settings: "SOFT" 50, "WONK" 0;
 }
 
 button,
