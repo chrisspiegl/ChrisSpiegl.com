@@ -17,7 +17,7 @@
 @use "tools";
 
 // @import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i&display=swap');
-// Fraunces, Spectral and Geist Mono are linked in _includes/layout.pug so Cloudflare Fonts can serve it from this domain.
+// Fraunces and Spectral are linked in _includes/layout.pug so Cloudflare Fonts can serve it from this domain.
 
 :root {
   --break-mobile: #{vars.$break-mobile};
@@ -136,7 +136,7 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
   // --font-sans-serif: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
   --font-sans-serif: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   // --font-mono: Consolas, Menlo, Monaco, "Courier New", Courier, monospace;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Geist Mono", monospace;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, "Cascadia Code", Consolas, "DejaVu Sans Mono", monospace;
 
 
   --font-body: var(--font-text);
