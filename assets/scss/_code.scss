@@ -1,7 +1,7 @@
 pre {
   max-width: 100%;
   overflow: scroll;
-  padding: 0 1em;
+  padding: 0 var(--space-4);
   display: block;
   overflow-wrap: normal;
 }
@@ -24,7 +24,7 @@ code:not([class]) {
 /* for naked <code> */
 pre:not([class]) code:not([class]) {
   background-color: inherit;
-  color: var(--color-darkred)
+  color: var(--color-ink-strong)
 }
 
 a[href] code {
@@ -39,6 +39,6 @@ code[class*="language-"], pre[class*="language-"] {
 
 pre[class*="language-"] {
   border-style: none;
-  border-radius: 0.25em;
-  margin: 0 0 1em 0 !important;
+  border-radius: var(--radius-sm);
+  margin: 0 0 var(--space-4) 0 !important;
 }

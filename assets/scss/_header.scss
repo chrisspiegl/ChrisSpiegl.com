@@ -1,14 +1,14 @@
 @use "variables" as vars;
 
 body>header {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
 
   section.top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 2rem;
+    padding-bottom: var(--space-6);
 
     section.header {
       display: flex;
@@ -22,7 +22,7 @@ body>header {
         border-radius: 50%;
         width: 6rem;
         height: 6rem;
-        margin-right: 1rem;
+        margin-right: var(--space-4);
         flex-shrink: 0;
       }
 
@@ -31,18 +31,18 @@ body>header {
         min-width: 0;
         // margin-top: 1rem;
         font-family: var(--font-body);
-        line-height: 1.6rem;
+        line-height: var(--line-height-text);
 
         h1,
         p.site-name {
           font-family: var(--font-heading);
-          font-size: var(--font-size-plus-1);
+          font-size: var(--font-size-h2);
           font-weight: bold;
           // text-transform: uppercase;
           // text-align: center;
-          margin-bottom: .2rem;
+          margin-bottom: var(--space-1);
           padding: 0;
-          line-height: 2rem;
+          line-height: var(--line-height-tight);
         }
 
         a {
@@ -65,13 +65,13 @@ body>header {
           text-align: left;
           padding: 0;
           margin: 0;
-          font-size: 1rem;
+          font-size: var(--font-size-small);
         }
 
         p.site-name {
-          margin-bottom: .2rem;
-          line-height: 2rem;
-          font-size: var(--font-size-plus-1);
+          margin-bottom: var(--space-1);
+          line-height: var(--line-height-tight);
+          font-size: var(--font-size-h2);
         }
 
         p.location-line {
@@ -89,7 +89,7 @@ body>header {
 
       a {
         display: block;
-        padding: 0 1rem;
+        padding: 0 var(--space-4);
         color: var(--color-foreground);
         font-size: 1.5rem;
         line-height: 1;
@@ -115,7 +115,7 @@ body>header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 1.5rem;
+      gap: var(--space-5);
 
       section.header {
         flex-direction: column;
@@ -125,7 +125,7 @@ body>header {
         max-width: 100%;
 
         #avatar {
-          margin: 0 0 1rem;
+          margin: 0 0 var(--space-4);
         }
 
         .text {

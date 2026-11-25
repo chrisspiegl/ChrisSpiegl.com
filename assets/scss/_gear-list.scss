@@ -6,11 +6,11 @@ $gear-column-min: 20rem;
   width: min(100%, calc(3 * var(--content-width)));
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, #{$gear-column-min}), 1fr));
-  gap: 1.25rem;
+  gap: var(--space-5);
   align-items: stretch;
-  padding-block: 1.5rem 3rem;
-  padding-left: max(1rem, env(safe-area-inset-left));
-  padding-right: max(1rem, env(safe-area-inset-right));
+  padding-block: var(--space-5) var(--space-7);
+  padding-left: max(var(--space-4), env(safe-area-inset-left));
+  padding-right: max(var(--space-4), env(safe-area-inset-right));
   margin-inline: auto;
 }
 
@@ -20,15 +20,15 @@ $gear-column-min: 20rem;
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0.75rem 0.75rem 1rem;
+  padding: var(--space-3) var(--space-3) var(--space-4);
   text-align: left;
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-88);
-  border-radius: 4px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-lg);
 
   &:hover,
   &:focus-within {
-    border-color: var(--color-orange);
+    border-color: var(--color-accent);
   }
 }
 
@@ -47,10 +47,10 @@ $gear-column-min: 20rem;
   z-index: 2;
   letter-spacing: 0;
   margin: 0;
-  padding: 0.85rem 0 0.35rem;
-  font-size: 1.05rem;
+  padding: var(--space-3) 0 var(--space-1);
+  font-size: var(--font-size-small);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: var(--line-height-ui);
   color: var(--color-heading);
 }
 
@@ -70,9 +70,9 @@ $gear-column-min: 20rem;
 .gear-item p {
   margin: 0;
   padding: 0;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  color: var(--color-gray-30);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-ui);
+  color: var(--color-ink-muted);
   overflow-wrap: anywhere;
 }
 
@@ -85,10 +85,10 @@ $gear-column-min: 20rem;
 }
 
 .gear-item .gear-link:focus-visible {
-  outline: 2px solid var(--color-orange);
+  outline: var(--focus-ring);
   outline-offset: 2px;
 }
 
 .uses-section {
-  scroll-margin-top: 1.5rem;
+  scroll-margin-top: var(--space-5);
 }

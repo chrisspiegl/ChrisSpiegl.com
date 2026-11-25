@@ -3,19 +3,19 @@
  **/
 
 dl {
-  font-size: var(--font-size-minus-0);
+  font-size: var(--font-size-base);
 }
 
 dt {
   color: var(--color-heading);
   font-family: var(--font-heading);
   font-weight: 400;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 
 }
 
 dd {
-  margin-left: 1em;
+  margin-left: var(--space-4);
 }
 
 /**
@@ -37,18 +37,18 @@ ol {
  */
 
 #content li {
-  padding-bottom: 1rem;
+  padding-bottom: var(--space-4);
   &:last-child {
     padding-bottom: 0;
   }
   blockquote {
-    margin-top: 1rem;
+    margin-top: var(--space-4);
   }
 }
 
 main ol,
 main ul {
-  padding-left: 1em;
+  padding-left: var(--space-4);
 }
 
 /**
@@ -76,30 +76,30 @@ main ul {
 }
 
 .posts-entry-title a {
-  color: var(--color-gray-30);
+  color: var(--color-ink);
 }
 
 .posts-entry-summary {
   font-family: var(--font-body);
-  font-size: var(--font-size-minus-0);
-  color: var(--color-gray-40);
+  font-size: var(--font-size-base);
+  color: var(--color-ink-muted);
 }
 
 .posts-entry-date {
   font-family: var(--font-body);
   font-weight: 400;
-  color: var(--color-gray-40);
-  font-size: var(--font-size-minus-1);
+  color: var(--color-ink-muted);
+  font-size: var(--font-size-small);
   font-style: italic;
 }
 
 .posts-entry-tag {
   font-family: var(--font-heading);
-  font-size: var(--font-size-minus-1);
+  font-size: var(--font-size-small);
 }
 
 .posts-entry-footer {
-  line-height: 1;
+  line-height: var(--line-height-ui);
 }
 
 .posts-entry-summary,
@@ -111,5 +111,5 @@ main ul {
 .tagslist-tags-link {}
 
 .tagslist-tags {
-  color: var(--color-red)
+  color: var(--color-accent)
 }

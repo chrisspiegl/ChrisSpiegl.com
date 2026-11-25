@@ -2,22 +2,22 @@
 
 footer {
   grid-area: foot;
-  font-size: var(--font-size-minus-3);
+  font-size: var(--font-size-tiny);
   color: var(--color-footer);
   font-family: var(--font-footer);
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-7);
 
   // Search follows the site fonts, not the footer mono.
   #search {
     font-family: var(--font-body);
-    margin: 4rem auto;
+    margin: var(--space-8) auto;
     width: 100%;
     form {
       display: grid;
-      grid-gap: 1rem;
+      grid-gap: var(--space-4);
       grid-template-columns: 3fr 1fr;
-      padding-bottom: 2rem;
+      padding-bottom: var(--space-6);
 
       @media screen and (max-width: vars.$break-mobile) {
         grid-template-columns: 1fr;
@@ -31,11 +31,11 @@ footer {
     list-style: none;
     display: flex;
     justify-content: center;
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: (vars.$ipad-11-portrait - 1px)) {
       display: block;
       text-align: center;
       li {
-        padding: .5rem 0 0;
+        padding: var(--space-2) 0 0;
       }
     }
   }
@@ -43,8 +43,8 @@ footer {
   li:not(:first-child):before {
     content: "⋅";
     opacity: .35;
-    margin: 0 .5rem;
-    @media screen and (max-width: 700px) {
+    margin: 0 var(--space-2);
+    @media screen and (max-width: (vars.$ipad-11-portrait - 1px)) {
       margin: 0;
       content: "";
     }
