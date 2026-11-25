@@ -1,6 +1,7 @@
 @use "variables" as vars;
 
 .navMain {
+  font-family: var(--font-ui);
 
   &.gear {
     padding-bottom: 0.5rem;
