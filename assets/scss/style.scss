@@ -129,7 +129,9 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
   // --font-system: 'Vollkorn', -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-system: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   // Fraunces Soft 50 / Wonk 0 is set on html (font-variation-settings).
-  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  // VARIANT all-Spectral: headings and controls in Spectral; /links buttons keep --font-ui.
+  // --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-serif: var(--font-text);
   --font-text: "Spectral", -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   --font-ui: system-ui, sans-serif;
   // font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
@@ -142,7 +144,7 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
   --font-body: var(--font-text);
   --font-caption: var(--font-text);
   --font-footer: var(--font-mono);
-  --font-controls: var(--font-ui); // nav, buttons, submit
+  --font-controls: var(--font-text); // nav, buttons, submit (VARIANT; was --font-ui)
   --font-heading: var(--font-serif);
   --font-list: var(--font-text);
   --font-code: var(--font-mono);

@@ -61,7 +61,8 @@ html(lang="en")
     //- It only rewrites <link> tags, never CSS @import, so the font must be linked here.
     //- One link per family: Cloudflare Fonts only picks up the first family
     //- of a combined link. Fraunces Soft/Wonk are set in CSS (font-variation-settings).
-    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap")
+    //- VARIANT all-Spectral: Fraunces not loaded
+    //- link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&display=swap")
     link(rel="stylesheet" href="/assets/style.css")
     link(rel="alternate" href="/feed.xml" type="application/atom+xml", title=`${meta.siteTitle} Atom Feed`)
