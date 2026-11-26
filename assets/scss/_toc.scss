@@ -1,0 +1,220 @@
+@use "variables" as vars;
+
+/*
+### "On this page" (pages with `toc: true`)
+Phone: a bar that sticks to the top of the screen and opens into the list.
+From 820px: a column on the left that stays in view while you read.
+*/
+
+:root {
+  --toc-width: 13rem;
+}
+
+.toc {
+  position: sticky;
+  top: var(--space-2);
+  z-index: 10;
+  margin-bottom: var(--space-5);
+  font-family: var(--font-controls);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-ui);
+}
+
+.toc-details {
+  padding-bottom: 0;
+  cursor: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 14px rgba(54, 55, 55, 0.08);
+}
+
+.toc-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--control-height);
+  padding: 0 var(--space-4);
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius-md);
+  color: var(--color-ink-strong);
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  // Chevron that turns when the list is open.
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0.5em;
+    height: 0.5em;
+    margin-left: auto;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-25%) rotate(45deg);
+    transition: transform 0.15s;
+  }
+
+  .toc-details[open] > &::after {
+    transform: translateY(25%) rotate(-135deg);
+  }
+}
+
+.toc-label {
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+// The section you're reading, shown in the closed bar on phones.
+.toc-current {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--color-ink-muted);
+
+  &:not(:empty)::before {
+    content: "·";
+    margin-right: var(--space-2);
+  }
+}
+
+#content .toc-list,
+#content .toc-list ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#content .toc-list {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 0 var(--space-2) var(--space-3);
+  border-top: 1px solid var(--color-rule);
+  padding-top: var(--space-2);
+
+  li {
+    padding: 0;
+  }
+
+  ol a {
+    padding-left: var(--space-6);
+    font-size: var(--font-size-tiny);
+  }
+
+  a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    color: var(--color-ink);
+    text-decoration: none;
+    hyphens: manual;
+
+    &:hover {
+      color: var(--color-accent);
+      background: var(--color-paper-raised);
+    }
+
+    &[aria-current] {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+  }
+}
+
+// Jumping to a heading leaves room for the sticky bar above it.
+.has-toc :is(h2, h3)[id] {
+  scroll-margin-top: calc(var(--control-height) + var(--space-5));
+}
+
+@media (min-width: vars.$ipad-11-portrait) {
+  .container.has-toc {
+    display: grid;
+    grid-template-columns: var(--toc-width) minmax(0, 1fr);
+    gap: var(--space-7);
+    max-width: calc(var(--content-width) + var(--toc-width) + var(--space-7));
+  }
+
+  .toc {
+    align-self: start;
+    top: var(--space-5);
+    margin: 0;
+  }
+
+  // In the column the list is plain text on the page, no bar around it.
+  .toc-details {
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .toc-summary {
+    min-height: 0;
+    padding: var(--space-4) 0 var(--space-2);
+    cursor: default;
+    pointer-events: none;
+    font-size: var(--font-size-tiny);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+
+    &::after,
+    .toc-current {
+      display: none;
+    }
+  }
+
+  // Open without JavaScript too, where the browser supports it.
+  .toc-details::details-content {
+    content-visibility: visible;
+    display: contents;
+  }
+
+  #content .toc-list {
+    max-height: calc(100vh - var(--space-8) - var(--space-5));
+    padding: 0;
+    border-top: 0;
+    border-left: 1px solid var(--color-rule);
+
+    a {
+      margin-left: -1px;
+      padding: var(--space-1) var(--space-3);
+      border-left: 2px solid transparent;
+      border-radius: 0;
+      line-height: var(--line-height-ui);
+
+      &:hover {
+        background: none;
+      }
+
+      &[aria-current] {
+        border-left-color: var(--color-accent);
+      }
+    }
+
+    ol a {
+      padding-left: var(--space-5);
+    }
+  }
+
+  .has-toc :is(h2, h3)[id] {
+    scroll-margin-top: var(--space-5);
+  }
+
+  // Full-width blocks center on the screen, which the TOC column would push
+  // off center. On TOC pages they fill the text column instead.
+  .has-toc :is(.image-hero, .quote-hero, .header-image-three, .cal-scheduling) {
+    left: auto;
+    right: auto;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+
+    p,
+    blockquote,
+    img {
+      max-width: 100%;
+    }
+  }
+}

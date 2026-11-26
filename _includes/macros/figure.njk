@@ -1,10 +1,8 @@
-{%- macro figure(imgSrc, caption) -%}
-
+{#- A picture with a caption. imgSrc is a path under /assets/images, served
+    responsive through utils/images.js. The caption may use Markdown. -#}
+{%- macro figure(imgSrc, caption, alt) -%}
 <figure>
-<img src="{{ imgSrc }}" width="100%">
-<figcaption>
-{{ caption | markdown | safe }}
-</figcaption>
+{% image imgSrc, alt or "", "content" %}
+<figcaption>{{ caption | markdown | safe }}</figcaption>
 </figure>
-
 {%- endmacro -%}

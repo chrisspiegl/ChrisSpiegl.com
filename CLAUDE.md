@@ -34,7 +34,9 @@ The design tokens are the custom properties in `:root` at the top of `assets/scs
 - **Breakpoints:** only `vars.$break-mobile` (480px) and `vars.$ipad-11-portrait` (820px) from `_variables.scss`.
 - **Cards** (/uses, /links) are on `--color-surface` with a `--color-rule` border and `--radius-lg`. A card photo runs edge to edge and is clipped by the card (`overflow: hidden`).
 
-The /styleguide page (`styleguide.md`) shows the elements rendered. Check a change there and on /, /uses and /links, at desktop and phone width, before pushing.
+- **Table of contents:** a page opts in with `toc: true` in its front matter (layout `page`). Its Markdown `h2` and `h3` headings are listed in a column on the left from 820px, and in a sticky bar that opens at the top on phones. Markup in `_includes/page.pug`, styles in `_toc.scss`, script in `_includes/scripts/toc.js`.
+
+The /styleguide page (`styleguide.md`) shows the elements rendered, and documents each token and Markdown pattern. Its helper classes (`.sg-*` in `_styleguide.scss`) are for that page only. When you add or change a token, update the styleguide too. Check a change there and on /, /uses and /links, at desktop and phone width, before pushing.
 
 ## Working rules
 

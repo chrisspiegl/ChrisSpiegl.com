@@ -254,6 +254,8 @@ body {
 @include meta.load-css("_books.scss");
 @include meta.load-css("_movies.scss");
 @include meta.load-css("_tools.scss");
+@include meta.load-css("_toc.scss");
+@include meta.load-css("_styleguide.scss");
 
 
 a {
@@ -360,6 +362,7 @@ article header {
 }
 
 img {
+  max-width: 100%;
   border-radius: var(--radius-sm);
 }
 

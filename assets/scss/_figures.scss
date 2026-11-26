@@ -19,3 +19,7 @@ figcaption {
   font-weight: 400;
   color: var(--color-figure-caption);
 }
+
+figcaption p {
+  padding-bottom: 0;
+}
