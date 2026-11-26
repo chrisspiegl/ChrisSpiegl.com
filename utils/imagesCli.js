@@ -273,7 +273,7 @@ async function processFile(file, images, now) {
   if (existing && existing.uploadedHash === hash && existing.hash !== hash)
     return { key, status: 'unchanged' }
   // Unchanged.
-  if (existing && !force && existing.hash === hash && (existing.uploadedAt || noUpload))
+  if (existing && !force && existing.hash === hash && (existing.uploadedAt || (noUpload && !dryRun)))
     return { key, status: 'unchanged' }
 
   // 2. Shooting data and place, read before the metadata goes.
