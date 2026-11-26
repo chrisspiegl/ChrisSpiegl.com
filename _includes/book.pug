@@ -5,10 +5,11 @@ block content
     - const linkAmazon = `https://assoc-redirect.amazon.com/g/r/https://amazon.com/dp/${isbn}?tag=cstrax-20`
     .book-list
       div.cover-photo
-        if cover
-          img(src=helpers.imageUrl(`/assets/images/book/${cover}.png`, 640) title=titleCombined onerror="this.src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found'")
+        - const coverSrc = cover ? `/assets/images/book/${cover}.png` : null
+        if coverSrc && helpers.hasImage(coverSrc)
+          img(src=helpers.imageUrl(coverSrc, 640) alt=titleCombined title=titleCombined)
         else
-          img(src='https://via.placeholder.com/640x800/FFFFFF/?text=Image+not+found' title=titleCombined)
+          span.image-missing(aria-hidden='true')
       div.details
         h2= titleCombined
         p Last Updated:

@@ -28,7 +28,7 @@ block content
           .gear-item(id=g.Slug)
             - const imageGearItem = `/assets/images/gear/${g.Slug}.png`
             if helpers.hasImage(imageGearItem)
-              img(src=helpers.imageUrl(imageGearItem, 640) alt=g.Title title=g.Title)
+              img&attributes(helpers.imageAttrs(imageGearItem, { alt: g.Title, title: g.Title, sizes: 'card', shape: false }))
             else
               span.image-missing(aria-hidden='true')
             h3: a(href=linkAmazon title=g.Title target='_blank')= g.Title

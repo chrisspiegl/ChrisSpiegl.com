@@ -31,6 +31,8 @@ const SIZES = {
   third: '34vw',
   full: '100vw',
   avatar: '96px',
+  // /uses cards: one column on phones, then a grid of cards at least 20rem wide.
+  card: '(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 420px',
 }
 
 const QUALITY = 82
@@ -214,7 +216,7 @@ function escapeAttr(value) {
 }
 
 // Build attributes for an <img>. `sizes` can be a key of SIZES or a raw value.
-function imageAttributes(src, { alt = '', sizes = 'content', loading = 'lazy', title, className, defaultWidth = 1200, strict = false } = {}) {
+function imageAttributes(src, { alt = '', sizes = 'content', loading = 'lazy', title, className, defaultWidth = 1200, strict = false, shape = true } = {}) {
   resolve(src, { strict })
   // Reuse one of the srcset URLs as the fallback src, so it costs no extra transformation.
   const offered = widthsFor(src)
@@ -243,10 +245,11 @@ function imageAttributes(src, { alt = '', sizes = 'content', loading = 'lazy', t
   // Blurred ThumbHash preview behind the image until it has loaded (no JS needed).
   // aspect-ratio keeps the box (and the preview) at the image's shape even
   // while the image is missing; class-level width/height still win.
+  // `shape: false` leaves the shape to the CSS (fixed-shape tiles).
   const preview = placeholder(src)
   if (preview) {
     attrs.style = `background:url(${preview}) center/cover no-repeat`
-    if (size)
+    if (size && shape)
       attrs.style += `;aspect-ratio:${size.width}/${size.height}`
   }
   return attrs
