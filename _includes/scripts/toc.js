@@ -26,6 +26,13 @@
   syncOpen()
   desktop.addEventListener('change', syncOpen)
 
+  // On desktop the list stays open: Enter or a click on "On this page" must
+  // not close it.
+  details.querySelector('summary').addEventListener('click', (event) => {
+    if (desktop.matches)
+      event.preventDefault()
+  })
+
   const closeOnPhone = () => {
     if (!desktop.matches)
       details.open = false

@@ -165,6 +165,8 @@ All margins, paddings and gaps come from eight steps. Paragraphs, lists and code
 <div><div class="sg-radius" style="border-radius:var(--radius-pill);width:9rem"></div><code>--radius-pill</code><br>pills: tags, the follower count</div>
 </div>
 
+The one shadow is `--shadow-raised`, for things that lift off the page: a hovered card and the open TOC bar on phones.
+
 ## Squircle
 
 The squircle is the ChrisSpiegl.com shape for everything square or round: avatars, icon tiles and round icon buttons. It is the same shape as the Niyama.Academy avatar squircle, one smooth curve per corner. It is never used for buttons, fields, cards, photos or anything else that isn't square.
