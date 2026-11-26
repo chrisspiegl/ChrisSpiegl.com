@@ -71,7 +71,8 @@ html(lang="en")
       header.container
         section.top
           section.header
-            img#avatar&attributes(helpers.imageAttrs(meta.avatarImage, { sizes: 'avatar', loading: false, defaultWidth: 320 }))
+            //- Inlined (utils/images.js): no extra request, no placeholder needed.
+            img#avatar&attributes(helpers.inlineImageAttrs(meta.avatarImage))
             div.text
               //- The site name is a heading only on the home page; every other page owns its <h1>.
               if page.url === '/'

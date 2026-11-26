@@ -312,6 +312,40 @@ function hasImage(src) {
   return resolve(src).kind !== 'missing'
 }
 
+// Small images written straight into the HTML as data URIs (the header
+// avatar): no extra request and nothing pops in, at the cost of a few KB in
+// every page. Built once per build in eleventy.before, as a 2x WebP.
+const inlined = new Map()
+async function prepareInlineImage(src, cssPixels) {
+  const sharp = require('sharp')
+  const width = cssPixels * 2
+  const buffer = await sharp(path.join(rootDir, src))
+    .rotate()
+    .resize(width, width, { fit: 'cover' })
+    .webp({ quality: 80 })
+    .toBuffer()
+  inlined.set(src, {
+    src: `data:image/webp;base64,${buffer.toString('base64')}`,
+    width: cssPixels,
+    height: cssPixels,
+  })
+}
+
+// <img> attributes for an inlined image; falls back to the normal responsive
+// image when it wasn't prepared.
+function inlineImageAttributes(src, options = {}) {
+  const item = inlined.get(src)
+  if (!item)
+    return imageAttributes(src, options)
+  return {
+    src: item.src,
+    alt: options.alt || '',
+    width: item.width,
+    height: item.height,
+    decoding: 'async',
+  }
+}
+
 // The original file on R2, for "View full resolution" links.
 function originalUrl(src) {
   const target = resolve(src)
@@ -350,6 +384,8 @@ async function verifyCloudflareImages(siteUrl, sampleSrc) {
 module.exports = {
   WIDTHS,
   hasImage,
+  inlineImageAttributes,
+  prepareInlineImage,
   prepareRepoImageInfo,
   imageInfo,
   originalUrl,
