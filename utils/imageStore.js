@@ -15,7 +15,7 @@ const path = require('node:path')
 
 const R2_URL = 'https://r2.chrisspiegl.com'
 const SRC_PREFIX = '/assets/images/'
-const REPO_FOLDERS = ['other', 'qrcodes', 'FridayWallpaper']
+const REPO_FOLDERS = ['other', 'qrcodes']
 
 const rootDir = path.join(__dirname, '..')
 const imagesDir = path.join(rootDir, 'assets', 'images')
@@ -103,7 +103,16 @@ function existsExactly(file) {
   return true
 }
 
+// Top-level folders on R2 ("gear", "post", ...), for the redirects that keep
+// old /assets/images/... links working.
+function r2Folders() {
+  return [
+    ...new Set(Object.keys(readManifest().images).map(key => key.split('/')[0]).filter(folder => !folder.startsWith('_'))),
+  ].sort()
+}
+
 module.exports = {
+  r2Folders,
   R2_URL,
   REPO_FOLDERS,
   SRC_PREFIX,

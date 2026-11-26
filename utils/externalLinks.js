@@ -29,7 +29,8 @@ function withUtm(href) {
 
   if (url.protocol !== 'http:' && url.protocol !== 'https:')
     return href
-  if (isOwnHost(url.hostname))
+  // The image store (r2.chrisspiegl.com) serves files, not pages to attribute.
+  if (isOwnHost(url.hostname) || url.hostname === 'r2.chrisspiegl.com')
     return href
 
   const hasSource = [

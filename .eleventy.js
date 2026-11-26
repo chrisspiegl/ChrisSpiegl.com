@@ -17,6 +17,7 @@ const filters = require('./utils/filters.js')
 const { lastCommitDate } = require('./utils/gitFileDates')
 const { icon } = require('./utils/icons')
 const { imageHtml, prepareRepoImageInfo, useCloudflare, verifyCloudflareImages } = require('./utils/images')
+const imageStore = require('./utils/imageStore')
 const { preparePlaceholders } = require('./utils/thumbhash')
 const transforms = require('./utils/transforms.js')
 
@@ -149,6 +150,7 @@ module.exports = (config) => {
     return true
   }
 
+  config.addGlobalData('r2Folders', () => imageStore.r2Folders())
   config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('assets/favicon')
   // Originals only: Cloudflare Images resizes and converts them on request.
@@ -405,6 +407,17 @@ module.exports = (config) => {
         ? 'eager'
         : 'lazy',
     })
+  }
+
+  // Links to a pushed image (such as a "full size" download link) go straight
+  // to R2; _redirects covers old links from elsewhere.
+  const defaultLinkOpen = md.renderer.rules.link_open || ((tokens, idx, options, _env, self) => self.renderToken(tokens, idx, options))
+  md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+    const href = tokens[idx].attrGet('href')
+    const key = imageStore.keyFor(href)
+    if (key && imageStore.entry(key))
+      tokens[idx].attrSet('href', imageStore.r2Url(key))
+    return defaultLinkOpen(tokens, idx, options, env, self)
   }
 
   md.renderer.rules.footnote_caption = (tokens, idx) => {
