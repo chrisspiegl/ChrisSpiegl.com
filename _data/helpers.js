@@ -2,6 +2,7 @@
 const { icon } = require('../utils/icons')
 const { imageAttributes, imageHtml, imageUrl } = require('../utils/images')
 const { absoluteUrl, ogImageUrl, pickShareImage } = require('../utils/seo')
+const { tocItems } = require('../utils/toc')
 
 module.exports = {
   icon,
@@ -11,4 +12,5 @@ module.exports = {
   ogImageUrl,
   absoluteUrl,
   pickShareImage,
+  tocItems,
 }

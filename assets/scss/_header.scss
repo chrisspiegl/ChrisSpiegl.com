@@ -1,4 +1,5 @@
 @use "variables" as vars;
+@use "shapes";
 
 body>header {
   padding-top: var(--space-6);
@@ -18,8 +19,8 @@ body>header {
       min-width: 0;
 
       #avatar {
-        // position: absolute;
-        border-radius: 50%;
+        @include shapes.squircle;
+
         width: 6rem;
         height: 6rem;
         margin-right: var(--space-4);

@@ -1,0 +1,39 @@
+// The ChrisSpiegl.com squircle (Chris, 26 Nov 2026): the same shape as the
+// Niyama.Academy avatar squircle. Only for things that are square or round:
+// avatars, icon tiles, round icon buttons. Never for buttons, fields, cards
+// or anything else that isn't square. A circle stays allowed for avatars.
+//
+// The shape is the token --mask-squircle (in style.scss :root), applied as a
+// CSS mask so it scales to any size. A mask also clips outlines, so a
+// focusable squircle draws its focus ring with squircle-focus-ring instead.
+
+@mixin squircle {
+  border-radius: 0;
+  -webkit-mask: var(--mask-squircle) center / 100% 100% no-repeat;
+  mask: var(--mask-squircle) center / 100% 100% no-repeat;
+}
+
+// A 2px squircle ring in the accent, 2px outside the element. Use on ::after
+// of a focusable element that has position: relative and no mask of its own.
+@mixin squircle-focus-ring {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  background: var(--color-accent);
+  pointer-events: none;
+  -webkit-mask:
+    var(--mask-squircle) center / 100% 100% no-repeat,
+    var(--mask-squircle) center / calc(100% - 4px) calc(100% - 4px) no-repeat;
+  -webkit-mask-composite: xor;
+  mask:
+    var(--mask-squircle) center / 100% 100% no-repeat exclude,
+    var(--mask-squircle) center / calc(100% - 4px) calc(100% - 4px) no-repeat;
+}
+
+.squircle {
+  @include squircle;
+}
+
+.circle {
+  border-radius: 50%;
+}

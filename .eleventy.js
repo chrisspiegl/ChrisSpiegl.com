@@ -58,7 +58,6 @@ function sitemapLastMod(item) {
 const containerImageSizes = {
   'image-hero': 'full',
   'header-image-three': 'third',
-  'image-sbs': 'half',
   'side-by-side': 'half',
 }
 
@@ -249,9 +248,80 @@ module.exports = (config) => {
     },
   })
 
+  // !!! figure [wide] [pair]: pictures with an optional caption below.
+  //   figure            as wide as the text
+  //   figure wide       wider than the text
+  //   figure pair       two pictures side by side, as wide as the text
+  //   figure pair wide  two pictures side by side, wider than the text
+  // Any paragraph after the pictures becomes the caption.
+  const figureSizes = {
+    'figure': 'content',
+    'figure wide': '(min-width: 1225px) 1225px, 100vw',
+    'figure pair': '(min-width: 1089px) 490px, 45vw',
+    'figure pair wide': '(min-width: 1225px) 612px, 50vw',
+  }
+  md.use(markdownItContainer, 'figure', {
+    marker: '!',
+    render(tokens, idx, _options, env) {
+      if (tokens[idx].nesting === 1) {
+        const words = tokens[idx].info.trim().split(/\s+/)
+        const isWide = words.includes('wide')
+        const isPair = words.includes('pair')
+        env.imageSizes = figureSizes[['figure', isPair && 'pair', isWide && 'wide'].filter(Boolean).join(' ')]
+        const classes = ['figure', isWide && 'figure-wide', isPair && 'figure-pair'].filter(Boolean).join(' ')
+        return `<figure class="${classes}">\n`
+      }
+      env.imageSizes = undefined
+      return '</figure>\n'
+    },
+  })
+
+  // Inside a figure, the text after the pictures becomes a <figcaption>, whether
+  // it follows on the next line or after a blank line.
+  const isBlank = token => ['softbreak', 'hardbreak'].includes(token.type)
+    || (token.type === 'text' && !token.content.trim())
+  md.core.ruler.push('figure_caption', (state) => {
+    const tokens = []
+    let depth = 0
+    for (let i = 0; i < state.tokens.length; i++) {
+      const token = state.tokens[i]
+      if (token.type === 'container_figure_open')
+        depth++
+      if (token.type === 'container_figure_close')
+        depth--
+      const inline = state.tokens[i + 1]
+      if (!depth || token.type !== 'paragraph_open' || !inline || inline.type !== 'inline') {
+        tokens.push(token)
+        continue
+      }
+      const children = inline.children || []
+      const lastImage = children.findLastIndex(child => child.type === 'image')
+      const rest = children.slice(lastImage + 1)
+      const captionStart = rest.findIndex(child => !isBlank(child))
+      const paragraph = (kids, tag) => {
+        const open = new state.Token('paragraph_open', tag, 1)
+        const content = new state.Token('inline', '', 0)
+        content.children = kids
+        content.content = kids.map(kid => kid.content).join('')
+        return [
+          open,
+          content,
+          new state.Token('paragraph_close', tag, -1),
+        ]
+      }
+      if (lastImage === -1)
+        tokens.push(...paragraph(children, 'figcaption'))
+      else if (captionStart === -1)
+        tokens.push(...paragraph(children, 'p'))
+      else
+        tokens.push(...paragraph(children.slice(0, lastImage + 1), 'p'), ...paragraph(rest.slice(captionStart), 'figcaption'))
+      i += 2 // skip the original inline and paragraph_close
+    }
+    state.tokens = tokens
+  })
+
   md.use(markdownItContainer, 'image-hero', sizedContainer('image-hero'))
     .use(markdownItContainer, 'signature', { marker: '!' })
-    .use(markdownItContainer, 'image-sbs', sizedContainer('image-sbs'))
     .use(markdownItContainer, 'text-center', { marker: '!' })
     .use(markdownItContainer, 'side-by-side', sizedContainer('side-by-side'))
     .use(markdownItContainer, 'header-image-three', sizedContainer('header-image-three'))
