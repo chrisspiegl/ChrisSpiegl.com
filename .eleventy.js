@@ -16,7 +16,7 @@ const { figureMeta } = require('./utils/figureMeta')
 const filters = require('./utils/filters.js')
 const { lastCommitDate } = require('./utils/gitFileDates')
 const { icon } = require('./utils/icons')
-const { imageHtml, prepareInlineImage, prepareRepoImageInfo, useCloudflare, verifyCloudflareImages } = require('./utils/images')
+const { imageHtml, prepareRepoImageInfo, useCloudflare, verifyCloudflareImages } = require('./utils/images')
 const imageStore = require('./utils/imageStore')
 const { preparePlaceholders } = require('./utils/thumbhash')
 const transforms = require('./utils/transforms.js')
@@ -67,8 +67,6 @@ module.exports = (config) => {
   config.on('eleventy.before', () => verifyCloudflareImages(meta.url, meta.avatarImage))
   config.on('eleventy.before', preparePlaceholders)
   config.on('eleventy.before', prepareRepoImageInfo)
-  // The header avatar, 96 CSS px (6rem in _header.scss).
-  config.on('eleventy.before', () => prepareInlineImage(meta.avatarImage, 96))
 
   // Facts for the build report sent by utils/ci.js (see utils/buildStats.js).
   let buildStarted = 0
