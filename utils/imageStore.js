@@ -1,7 +1,8 @@
 // Where the site's images live, and the manifest that describes them.
 //
 // Content images (everything in assets/images except the folders in
-// REPO_FOLDERS) are stored in the R2 bucket behind https://r2.chrisspiegl.com
+// REPO_FOLDERS) are stored in the R2 bucket behind https://r2.chrisspiegl.com,
+// under images/ (https://r2.chrisspiegl.com/images/<key>)
 // instead of git. Markdown keeps writing /assets/images/<key>, and
 // `pnpm images:push` (utils/imagesCli.js) uploads new files and records each
 // one in _data/images.json: size, content hash, ThumbHash, EXIF and location.
@@ -14,6 +15,9 @@ const fs = require('node:fs')
 const path = require('node:path')
 
 const R2_URL = 'https://r2.chrisspiegl.com'
+// Images live under images/ in the bucket, so the rest of it stays free for
+// other public files of the site (PDFs and such).
+const R2_PREFIX = 'images/'
 const SRC_PREFIX = '/assets/images/'
 const REPO_FOLDERS = ['other', 'qrcodes']
 
@@ -80,7 +84,7 @@ function r2Url(key, { source = false } = {}) {
   const version = item && item.hash
     ? `?v=${item.hash.slice(0, 8)}`
     : ''
-  return `${R2_URL}/${encodeURI(objectKey)}${version}`
+  return `${R2_URL}/${R2_PREFIX}${encodeURI(objectKey)}${version}`
 }
 
 // True when the file exists on disk with exactly this spelling. macOS ignores
@@ -113,6 +117,7 @@ function r2Folders() {
 
 module.exports = {
   r2Folders,
+  R2_PREFIX,
   R2_URL,
   REPO_FOLDERS,
   SRC_PREFIX,

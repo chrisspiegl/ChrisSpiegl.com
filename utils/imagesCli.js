@@ -149,6 +149,7 @@ async function wrangler(params) {
   }
 }
 
+// `key` is the path under images/ in the bucket (store.R2_PREFIX).
 async function upload(key, buffer, contentType, cacheControl = CACHE_CONTROL) {
   const temp = path.join(os.tmpdir(), `r2-${crypto.randomUUID()}`)
   fs.writeFileSync(temp, buffer)
@@ -157,7 +158,7 @@ async function upload(key, buffer, contentType, cacheControl = CACHE_CONTROL) {
       'r2',
       'object',
       'put',
-      `${BUCKET}/${key}`,
+      `${BUCKET}/${store.R2_PREFIX}${key}`,
       '--file',
       temp,
       '--content-type',
@@ -366,7 +367,7 @@ async function push() {
     ? ' (dry run)'
     : noUpload
       ? ' (manifest only, no upload)'
-      : ` -> R2 ${BUCKET} (${JURISDICTION})`}`)
+      : ` -> R2 ${BUCKET}/${store.R2_PREFIX} (${JURISDICTION})`}`)
 
   const counts = {
     new: 0,
@@ -392,7 +393,7 @@ async function push() {
   if (!dryRun && (counts.new || counts.updated)) {
     store.writeManifest({ ...manifest, images })
     if (!noUpload)
-      await upload('_manifest/images.json', fs.readFileSync(store.manifestFile), 'application/json', 'no-cache')
+      await upload('_manifest.json', fs.readFileSync(store.manifestFile), 'application/json', 'no-cache')
   }
   console.log(`[images] ${counts.new} new, ${counts.updated} updated, ${counts.unchanged} unchanged${counts.failed
     ? `, ${counts.failed} failed`

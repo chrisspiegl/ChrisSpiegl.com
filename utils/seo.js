@@ -1,7 +1,7 @@
 // Helpers for canonical URLs and social sharing (Open Graph / Twitter cards).
 const { url: siteUrl, defaultImage } = require('../_data/meta')
 const { transformedUrl } = require('./images')
-const { R2_URL, srcFor } = require('./imageStore')
+const { R2_PREFIX, R2_URL, srcFor } = require('./imageStore')
 
 const OG_WIDTH = 1200
 const OG_HEIGHT = 630
@@ -23,7 +23,7 @@ function pickShareImage({ ogImage, imageHero, content } = {}) {
     if (match) {
       const found = match[1]
       return found.startsWith(R2_URL)
-        ? srcFor(decodeURI(found.slice(R2_URL.length + 1)).replace(/@display(\.\w+)$/, '$1'))
+        ? srcFor(decodeURI(found.slice(`${R2_URL}/${R2_PREFIX}`.length)).replace(/@display(\.\w+)$/, '$1'))
         : found
     }
   }

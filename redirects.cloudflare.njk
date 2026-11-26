@@ -24,5 +24,5 @@ eleventyExcludeFromCollections: true
 {%- endfor %}
 {#- Content images moved to R2 (utils/imageStore.js): old links still work. #}
 {%- for folder in r2Folders %}
-/assets/images/{{ folder }}/* https://r2.chrisspiegl.com/{{ folder }}/:splat 301
+/assets/images/{{ folder }}/* https://r2.chrisspiegl.com/images/{{ folder }}/:splat 301
 {%- endfor %}
