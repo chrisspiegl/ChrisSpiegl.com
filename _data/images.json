@@ -1,5 +1,610 @@
 {
   "images": {
+    "FridayWallpaper/FridayWallpaper-1-Blue-Bridge.jpg": {
+      "originalName": "FridayWallpaper-1-Blue-Bridge.jpg",
+      "width": 5505,
+      "height": 3686,
+      "bytes": 5928323,
+      "type": "image/jpeg",
+      "hash": "c4f46e439ec21830a9b7fff421e3b8d491628d05956ed067206f19626e6a53f4",
+      "uploadedHash": "2bd0603786da50dce4ea08799c77314d7240136178f95012d19b5ea8de988e88",
+      "thumbhash": "data:image/webp;base64,UklGRmYCAABXRUJQVlA4TFoCAAAvH4AFAM2VIaL/sTg4fBwcvv8BIBAEiZEkKZLk2bN396S/nMy/E2pIkiTJbSQPAGt7Ev9/ppYAUnYkSYpkeQ4d6K/A6ffwi9+LCD64eXO++/CuV+/lPj3j4OTmPp7Leez27+n37Q9/pnfOD5+fT1+e95+u62PP/fzx9/vnb5+/ff3kx1d+cIAcjDDLRgC7GImhp+yaTlsZpmJTz7FZHHBMQEPr5YXDA7/EjADARWCcI4w7/8aNC66AFzsk9H+b/TVE0l4M1GEnBqEZwvwuzxynkw3vypRtnvzj3aaDWjPhyWvNRUCje0IM8VuuS+gdzWK8/CMjBiMAiAGMWLotHVZN5jqnVwYa43/agBgxYkAAhA0gtjKZHtfONhKz3GQghpggAAswgxgA7ky8OgjG6gEAI0AjmwLAkMUmIDTEHswoQACMYAQssTSzaGYRMyKmjB5BbLpjBIgZMQVi2QjYwrCkDWUWrkaoMAKAwGK0WKwMtiyYxYgWAScAkBbEBqQRGo0ObBG2RgBMQuukwEAMqAxGACYWi3ZMgKWximkNB0A8mQ6DjQQAI4bMljgmYoKshqLTpiMwISNgNLKtspFZNVsYRlBDVuAObMrJbOqYYiCm2lYN0wyammVbJtoC5qY2tYOcvCPbSNomAROyRduAWDFhqFf2HwNolsMeAphqZiGTAZJZbLWjMk2bg/V/gEEMGYCJJQBGsYEYGZkGHZzh+RJkAHbyBBbYFDIrWwAjlGlDR64hnmMgRgAGghEDZSsTA8EgHJyoTbtnyTaahWyJAdW2ahsxkEYGEEwGGg==",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "focalLength": 85,
+        "aperture": 5,
+        "exposureTime": 0.0008333333333333334,
+        "iso": 50,
+        "capturedAt": "2010-06-17T18:10:44",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": null,
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-10-Mountain-Fog.jpg": {
+      "originalName": "FridayWallpaper-10-Mountain-Fog.jpg",
+      "width": 5614,
+      "height": 3742,
+      "bytes": 13830877,
+      "type": "image/jpeg",
+      "hash": "fddb452f59791ea448e0e5cc0b027befcb594df99ed273f7b391b8df5d8334da",
+      "uploadedHash": "29542402f6e781c6fcfdb0780aff1507f71490ddb3e8b2573ff908af4a9ea170",
+      "thumbhash": "data:image/webp;base64,UklGRnICAABXRUJQVlA4TGUCAAAvH4AFAE0oatsGevUef8bjENH/FOB7C4Jsm/pTDuEE5whFbdtA4Y/SMHZ8+h+S9Idkk4BiJEmKZMtz4T39n6T8Pld8EsJx20iORK25/HP1rysIjSQ5kqLmcDx/gt7sZEzAp+dbuiQ86q0P9VEf3Vce7uVP/Z7f+WP+ovaYp70673ltj85jmzEbGAbETMtzPVWDDA2IiFpEJhiM2RgYngJkTMuTEhGIks6OOKwowYwNmTHmtRZMsjUeylJWIkVczlrXIrLGlhljAPbWAyGZlgfpiNJcTtdal7i0LnGWtWWZMRu89WAQYe6SUutIlyMijiauHckgDDZj661BUQWpuJYuKRWrapWUrJJMNJnBmJ41xemSG1Xu1VVKqSqRCpWqHCVgTQBWNUK0VWizwLAamgwC2iwxxbZgbch5UMumO2ZMMNCysGmRkRlQG7DKZoLZby5AOQMFmLShrRa2AKCcuc2IITMxP7pktFEDhmJDxrKs2AIxaFOGyQyQrx6G0bHBBoZoC5ZlGVgAq2aTAWANnz1YMNNWHAF7eNgObDWTFWwCIwaCNYPP/c+gLYOjNtpUYVmYNnEmwf+yETK+eWprC9NWo23KrBWBcRcwmP8ZZdjKz9/7Ahk7ZdxRA2UGkGZpd44DABMYRvDH/9too+5m1CisjGoZGWqb8ggz6DBMA2zqEaMNgZUh6CworIzCoF0dC//r2OMaFiMmm2opiyiNFdRi1GJWNgIwqF6PF/5LbWRKUzW1LFmmRYwyK6Ywgs3rfgEYGVFWTJhilaYhhAGRnYAYYo/zjBiBEWRLWpiCTcUsJAOmDAAEAA==",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "focalLength": 28,
+        "aperture": 5.6,
+        "iso": 100,
+        "capturedAt": "2010-08-10T16:34:53",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Unterseen",
+        "country": "Switzerland",
+        "countryCode": "CH",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-11-Field-Of-Shadows.jpg": {
+      "originalName": "FridayWallpaper-11-Field-Of-Shadows.jpg",
+      "width": 5616,
+      "height": 3744,
+      "bytes": 39385141,
+      "type": "image/jpeg",
+      "hash": "2c15582807d3905908371e37f42e973876daf2ac41794c3cb390a0030f2b34d6",
+      "uploadedHash": "31bb674178328deaf7fff707446fc13c20bf5064382741dc213c6e9ab773d2fa",
+      "thumbhash": "data:image/webp;base64,UklGRkICAABXRUJQVlA4TDUCAAAvH4AFAE2ISRP81z+xISL6n2VhQSBA4f/KwqhBODh//wMAIADABwDIjSTJkSTPunsM5Xz9CfxB7AoBR5IkRZLn0vFJJ/H/n7hHIbmRJEeSzHtXfzHZcfrNiAn4YWMcYwwEOI4xhkBKPDw0ACAi8B48A4JxjGEEAMZiAAGM+HKEmx3cbDBQALDMxGBosxkHDowBUPD9nbnZ3MFmAAIEkCEADUBAjCDGty+bmx3cbDYDghAuCyYIHgIEIaaM+PJps7mDmx0chuk4XY7VMmlkIPHo1Z6yKQDk3evvzdYdurmDbbM5ro5jdVktlkZsihjx1LNVjQx7ed+6dQd36GbbtpmOy2m5Wg2QRm0DxIKwoPHv+Y0lYhjIGZkYIUZg4oXwlBji190bMSgD8D4QxDCFbKr5mlkTYAgAfl4+GWlGEkbQYEQMoFmakG1hT+ULU5j9Pn0BgMQEZMQSBmXEGCz2yMisAcS/83dheTQAEBgByACKkVkaGggM2umnEZZEEozAECCAUYBZTFpggNfz38poEkDIRtKM8JwAjJgQ7O3pPwqFQAOCZmTEkgeAxIAB9PYXAxPhQsNkIyjDppCHRwLY6y9II1omQEygbdUIPIqBGECs+0kayfzLtJgYwahthMdiBGYJbMR1LcmKVrKpbQINQ5ohCJgBKoNRzP8fiJKVovW9KbABYC0IYHRlMGIJM/7/YlFKVqs2ZRixMAIYCAIjtjQA+heRlVILGc1iaWTEoGzEBsVaGJAGAA==",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "focalLength": 28,
+        "aperture": 6.3,
+        "iso": 50,
+        "capturedAt": "2010-04-23T19:07:52",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Feilitzsch",
+        "country": "Germany",
+        "countryCode": "DE",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-12-Sunset-Patterns.jpg": {
+      "originalName": "FridayWallpaper-12-Sunset-Patterns.jpg",
+      "width": 5583,
+      "height": 3714,
+      "bytes": 11581532,
+      "type": "image/jpeg",
+      "hash": "845c4dcb42c22ad154f88bc8cc15b51ec9ef52d9db0536dec4133b52e722165b",
+      "uploadedHash": "550e843d6c3f1a62bad1454ce40d5f72bbc78512a909db5943429be72e52e1a7",
+      "thumbhash": "data:image/webp;base64,UklGRvoCAABXRUJQVlA4TO0CAAAvH4AFAM2VIaL/sSDMNur7/AGHcSiK2raBU34WRHcYZBtp/pRDuLt/gP7HeMZ4L3hCIhFUUIwkSZFsefTDz2p8/fVi/vtsOj8JQUGSJEWSpJ69e8zw/2cu9FSaxEiSFEny6F17BtlefxmYYW8y8lsf3uqjff6Tz344Hz+dt7v7ePZ8ff769uzl+cuLT148Xs0rXuU1N4zL5fJwuTw8PDxcxnuPzuXHpG0OwubmK0ZsYoNrAGPEGBjAwJd//HSIobawUdrDl3wfuObMY4bLwPgPF2B88++XOU0bGmrQAJ7te3vnuXYfu5ZdY4zL+D++/v9TMOqINusMWtp2NHZLT8uy7HEfHnvcxx57XHABvvjnI6y2aDqi1VhNmRhb/pObRW6Wvd03bwPvfv9kIjqzjnV0yjmbZULmcLAIhoxF7rXI2AfX/eFLGJPOuToda3VqtZrYzrG5c0ezAMACrKf14LGuP374hGg13JrOORan4sTptK1zWblzyyk2oGwP/d8uJrafzycYkrMfrSa3k+ZYytJp5jSKyIkIu8qmMKjv9gWU9VNQZ+pnp9Otak5lzTE6FscinWZFlRgZfNdf/mrbYehH6Dklv5rTs+YkxbEsxbGT5sROihbEfHffY+envmKAel3drJP8z711WkQci2hO0qmm8rkE/NgbuLZdX3jSNuSlu7BOVz2zsog4aYs46tSnEwUJn97316fd/Zmm+XY3bYZmz8mKCURWnFWnRTu9hJ0UgDf589OzZ7+n66wfsy1tKwPAAsWmMhOlRVEo4BJ5zeVm3H7Npo3N01aAyRYywHhdqS0sQwHBw+PX8jBbj22uMVl6tqU2kI3KADRAYpaBC08u4+ba2mZibluyYaudXGYgMLUBgAPiutwsY7quIbpvLzYyDbNgQHaGajIBOAQyxmWZ1Fxz5jkbGFiwGWoL2YQ0SHNAZOhpjGlLTWyTBhuYBBvF5mTEvPmg8N/ARunYeLYX2jDCBmrVB0aD3PlAYAA=",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "focalLength": 28,
+        "aperture": 5.6,
+        "iso": 100,
+        "capturedAt": "2010-06-28T21:07:54",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Valencia",
+        "country": "Spain",
+        "countryCode": "ES",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-13-Fence-The-Green.jpg": {
+      "originalName": "FridayWallpaper-13-Fence-The-Green.jpg",
+      "width": 3428,
+      "height": 2292,
+      "bytes": 6328617,
+      "type": "image/jpeg",
+      "hash": "df62cd0c731497c1a40d5f866eebb7101cb8a8c7916aeb5a19cd55854d4da260",
+      "uploadedHash": "69cded1d39379082eb29509401a113f0839f6df4050d31e4f95df96c0c8da4f6",
+      "thumbhash": "data:image/webp;base64,UklGRl4CAABXRUJQVlA4TFICAAAvH4AFAM2VIaL/sRAIJPtTBjGMQCAJYX/OAQgkbd4/pRFe4Kf/kW2ou7QUBwAgRpIkqcniB2vlPXpOtBsO27YNJKo9/O+/cA2hbSRBktN39/yBPaapiC//lzx41NNuOpfnf4453g7tserqTk5niAqp8c9v/fDOWz85mLDKVjACIBSQpFFMLAmFWCWxasf9UnsrgFlglUJJZSqoM46TRhRVQyjr6MdWzGIrVpFEUhWdogoqS6oiKRWJnX7vn20nw6aMliqh02mkUqGLUkmS03JWqAR+7h/ZMGRiAXVCqROSqlAouVJUKp2lHfFz/xZMzLAVlaSiKqlaoiIUlWqlUC3h5/6AZXIHGEgVFVXSKCaJCtQJ1EjFb6OZDatRfLOKUaGAwJSYWCpQqAYcWYwyMzEkxlWWBpjQDGIAFGpT0OdqVmYRazGQgNklBpsts7GIgYHcAX0tsYJhlgazw4DNrGGGNW2YNVmYpclcPgqw0UoMYFvYsE2byTPMtIEZW7GB3H4lsHUsCGyBmbEx2zKbaWOsMZmxxSzr+Q9LKgRGsC1sDN6W2UxmMmPLTIZtsen1NypQjZJmlG1htg9mYtYwc8xMe7GtieGVIAQFSAyYGWzYNpoFtmE2+YyNbbHn0SAoQVcSw0ZsMJBNhgGaGduwsenpraKlUitoFGJmadhiFVDItthoG4y2e68FXVgVRZkCYkbVaCAJ0GCWtmlbrp60VEtRUAjSCDFCITGFNIMZGebiAYRIVJsaAUCMCgEFgBhsCk4eAQkjCGKkEUYACrEpRiMjNgI=",
+      "exif": {
+        "model": "Canon EOS 30D",
+        "focalLength": 85,
+        "aperture": 2.2,
+        "iso": 320,
+        "capturedAt": "2010-08-09T06:34:04",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Fendels",
+        "country": "Austria",
+        "countryCode": "AT",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-14-Vintage-Mode.jpg": {
+      "originalName": "FridayWallpaper-14-Vintage-Mode.jpg",
+      "width": 3504,
+      "height": 2336,
+      "bytes": 9423883,
+      "type": "image/jpeg",
+      "hash": "42a9b970e5f6dee79afb52a7227fc3dc2ebd8355b116b987653909bc25faf460",
+      "uploadedHash": "acf92ed51775ad859ec7c480a46b47e768fea2d7956800a8713beb0c23e12ffc",
+      "thumbhash": "data:image/webp;base64,UklGRs4CAABXRUJQVlA4TMICAAAvH4AFAM2VIaL/sVDTthFU/ii/A9DpptPhIBOG2OmUQP+AAqhpJAW6nH+RDwigpIL+B86Hdbe3LY0uMUNiRQDFSJIUyZZHP2bWX0Hm92EnPyghQZIkR5E8euDE/x8LrJiUGEmSIkkePUdP+kvJeJyRwNPXzzfe3m3veMNLe3J6ZPeOuzkqWC7ddNPt9vf6iz/X7/mx83V9Wh9v7/lkv/8B7n89nvdXbhSwanaKlWYFhcTO6UiA5GCVpr++/Pmnp++f5/PV44tRBoopcSDWaRxnqWPKqZicJWGV/Lb3XvfCbZsyCspoK7R2alLqVFVVoa6YnRXSUObdGYGRgmMdZmTprrQ6BwedUlWA6x1wp8yOt2cAtTntRLzPYTYSKumgDqoCiLFp12LVzqszEFMwO1lrmALNOt21Wqk4eU5gDeAq4MkDWKwA24KJ7bd++K0fweHiUHb3d/3d/j8u1mLI7Lj3TAgAW8e28WO/MSARFwCwO+ziuLBN9j6n7fZ8bcQIpuxSc5FhSkh3jMDA/gy7ftm2BjH87t8K0iy0NBdddoWYAkd37IBb/syyl40ZBpi+9lMMxDBriY3l4qGHdQJYVmzZl32YATDQJz8QGIphQ2Cg0pNne8TArvGyH5NtClDBR99jBdhoiY1QgUI4nNg1fjbMQBIqFJ+39cSjARYzBcQqqMRokxkrBhQ6B9VH3X+T4Wk9YWBgQkgSQ2ViAwuS0EnV+ZQLP28A/2aLm2xjBgqh2AZgG4DlnFXlNncRf8HjWLMXczVjBsAIEJixYWm0UpXycAjgCsa8LmbMbANGo2wDbAPbVJLS2TluGyGX1mIttjFjG7YRgwG2DWxLGp1IuY1yBufQo4VprM3MzGhuiw0wi9nUrKVpVbkiEOcARq41s2zDNvxvJjaaiSGIcqJxmBMAV7UWA8CsGQwwKy1G7EBLLYgJ",
+      "exif": {
+        "model": "Canon EOS 30D",
+        "lens": "EF28mm f/1.8 USM",
+        "focalLength": 28,
+        "aperture": 22,
+        "exposureTime": 0.2,
+        "iso": 100,
+        "capturedAt": "2010-03-19T17:55:05",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "region": "Bavaria",
+        "country": "Germany",
+        "source": "iptc"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-15-Old-Shelter.jpg": {
+      "originalName": "FridayWallpaper-15-Old-Shelter.jpg",
+      "width": 3076,
+      "height": 2051,
+      "bytes": 6746570,
+      "type": "image/jpeg",
+      "hash": "f6be8e6ec6277402d90600ed0277a19ceba2caef219b75c7bd23e39fad3bd80b",
+      "uploadedHash": "2cf3251148d5936fa743b588aa0fda4d3d4b77d96ea82b6a9ec786ad5257971f",
+      "thumbhash": "data:image/webp;base64,UklGRnICAABXRUJQVlA4TGUCAAAvH4AFAE2ISRP22z+yGSL6n7qFQCDJn3KOScSCKR5CZwratmHCH2UgBMBO/wPAMHql4j6mCNqRJCmyLc++fO/jp9zT/5sZ9m7HAyUgtm0jSKJy/Td89z922LZtIFG5//03riO/+RonLzhZqts+1uM86jZ5We/yGV/ma/tKX/AJb9eLdfnIYx7bQ89pS+wwTk5OFjyPZs0LAMVKDCiAATEhRi/bODmcLOV5MeQAXjIlEIGyd1IwgBneeMvq5DC7ny418BDFXmnhlkmmYmVABvTw7jYOu45JeYbAKnivirhlu8Vut6cC1ghC+KTNVsdWUnsGqGyoIornVoQp1TahmQzg0546tiyq9sy2skFBROueJqJYjABZMJNPmhyWRcozsg1iiolaK92EqcCgZljEencbFQAsWMQSUyJlEVEM0lhoCVpetroZ1BAsoDWWY+yuklkRFWYKYi0jnhnVxNRQWEY1aZF46SpYYoyAIVMZvwuQjaixQJYYVaCpbLeYBTFCS7aFH4WJdY1JsAxIZbE7HU9lowLIRkAM3+1Q0YCMBQIKVuApxY5JGgIQA77dB2CNoBgIbFYlU7GkwVqyTTWyofD9ftgNlmCQgCHHzC0GZkExhQEg8OuCR4DRNYihYRmQYVQyMBQDgeHxPmge5fCNYCxGZsK2hFqzFjWgwEC2s0+MshknDeRGxgyTtEZYaFEYZUts6nV/o7Z1DeMjMNrAIWMzkkkWwgoDMfB+H1CNSswIAG0yrO7RbCU0LQBpI7G3/cAIoxoxCxgxEG5GsiUaDcWoWaNXEksjGDALqG1psYEAyqzw/wgAAA==",
+      "exif": {
+        "model": "Canon EOS 30D",
+        "lens": "EF28mm f/1.8 USM",
+        "focalLength": 28,
+        "aperture": 18,
+        "exposureTime": 0.008,
+        "iso": 100,
+        "capturedAt": "2010-03-19T17:12:53",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Bobengruen",
+        "region": "Bavaria",
+        "country": "Germany",
+        "source": "iptc"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-16-Mountain-Rock.jpg": {
+      "originalName": "FridayWallpaper-16-Mountain-Rock.jpg",
+      "width": 5591,
+      "height": 3707,
+      "bytes": 34932281,
+      "type": "image/jpeg",
+      "hash": "29aee9f3da888aeef26eeb09601b346517689ee9699b971baccb1a5a97538e85",
+      "uploadedHash": "10f07f35d4ea3de4df9f27eef572bc32d1ec7b568dc26f37e04ec55025356968",
+      "thumbhash": "data:image/webp;base64,UklGRrQCAABXRUJQVlA4TKcCAAAvH4AFAM2VIaL/sTATMAkR6J8O1AC7TSIkSDHRqKK2baDyR1kIfe6K1v/wKMD7gxQCByEIBsVIkhTJlkc/RtmfovD5H3aq4aBtI0Fy5p4/zWexldg2kiRJVPX1nIvnvw/73sxExI//v1TLZnde53V5e2Mf7Kt917frqz64zq4X52H+m//mf+dx19OuB/d/u/9y/XZ+zs/6kwceHQESU2mnUVjOrAqQpAqSELIpG+Efh1FtndLS0q5mV2IVdSeqqlIlqYBCiPnjQlAhLVBbv6lGkv/VkbuPqkN3JKljgDLyhykV9aaib1AA6piqunO8jqurO2dOqmqdQsjw5w3h5LsGqlkC1OiodOdU93N03H3ldMUJhRD+vf+hkGo6Ge1YAIocVUcnp7qfo+5x5ArqWIKn7xtIbil2x1gyABR5s1ynqjeq6n9X/tYpVID7faSiYGnNChu2TMiqXW9Qp9SpknP6L/WQhOr8foBIPmbyNpbNxIYgSZUqOSquVL+JFN7dE0Jig221uaxmGzZNNYJUIZSKSvoq5t09lVUDTcvYzVwbt8YMW0sAq1CxOohq5M29UFYtJmOMe7YuvK/GWMbERqwYJUgo1JMh7YKNprmned5eV7PN7GKbXdlWNmiEVAivLW+GTGHinqaV97r9TDeb2bh4u9mGybBKKOR5Qa88lU0nNzBtbdnma1zGHdu1bathgwKSxOMghFeVIwDMYsb88Npau8ymMTBiOhEuHg+PoBSUIg08zQLMe723xjLbLAYoxF0PPAxCooNyxjQFAFZmwtZMzzkzQkLdwMOghHOmhIkDmhCYddi0MhMDgAooTxM7JXDGHAIh0RB/GFuzYS4AEOQt5mWkQYg5IAIB5NYMwFYwAJI275CLAVBiCeCMgIiaFYPFxAhAeWECAA==",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "focalLength": 28,
+        "aperture": 5.6,
+        "iso": 100,
+        "capturedAt": "2010-08-10T14:27:40",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Unterseen",
+        "country": "Switzerland",
+        "countryCode": "CH",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-17-Electricity-Walking.jpg": {
+      "originalName": "FridayWallpaper-17-Electricity-Walking.jpg",
+      "width": 5615,
+      "height": 3743,
+      "bytes": 10273403,
+      "type": "image/jpeg",
+      "hash": "9fd8c13c6c2d31546c6c409ed3a4eba44496c22305ca08099cdf636fbf71db0e",
+      "uploadedHash": "db9df703c9403154ebff0528345d2ee5a9fa6832b419a5d099c48ab096557bcf",
+      "thumbhash": "data:image/webp;base64,UklGRrgBAABXRUJQVlA4TKsBAAAvH4AFAM2VIaL/sYuI/odGliTbauQ89fDevP+1DFP3IsqgN2CXQTIqjlmGF/5lDARt28bbzh/yQyBp4/t3/mICbrwvxjqb2WKblxusccIh++xxwOHosqEt2+HLJguO2B+72eXex5vpYCp1YmUQjMjJ6L42dwpknAEEp2JFxH4WsaRBSJi7akUXKPkWQy76FbYSUvskcDEKugGBYFFnqCWt9iepCQFlgoeQGC7GSTR95ZgkIE7oEkUX2AZFyIP+2AjgMi9rhswjDE2FUE/aiUJ/oWUM4reBChFFgJQcD8I84iJNs0aAGEGg9YQAyPgYjAEwstzXsCw4j23gK4DE+nyGsLoxjLO1+yovAKH1/cmsKCGAjqVZL8aUNPiPAkNLSAKMs49HJJCwB6IQkndziBcLqRKSkI9LbQDyYH6XiE6KZOUDMzm0cU7yINRep7aIQvIgaaroRVFWljQm33RDSWrepr+NautdBTJNan0+v82v8HJp7FoLS0QWtDdODMezorybky8F8WIEEhIz8aZN0IZkfkdeAgrEBCIyIUMNIawhhvECYlhuA9hKINReAA==",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "lens": "EF28mm f/1.8 USM",
+        "focalLength": 28,
+        "aperture": 7.1,
+        "exposureTime": 0.1,
+        "iso": 50,
+        "capturedAt": "2010-04-18T20:11:59",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Bad Lobenstein",
+        "country": "Germany",
+        "countryCode": "DE",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-18-Winter-Tree.jpg": {
+      "originalName": "FridayWallpaper-18-Winter-Tree.jpg",
+      "width": 3504,
+      "height": 2336,
+      "bytes": 14454017,
+      "type": "image/jpeg",
+      "hash": "ae0a24420f355d455a7e4fe515eb5cbb745b21014437185c00d91bcbe5d097f7",
+      "uploadedHash": "e6fc138237d9bc8b3ce9dae1471aaf69a5acc452e4c9e107b3f5b0059dea83e4",
+      "thumbhash": "data:image/webp;base64,UklGRmYCAABXRUJQVlA4TFoCAAAvH4AFAE0obNsGDbUdQ0T/g6x/1kdIC8Jso/pTDuGehyIWTIaQP2knYbZR/SmHcAD36H8AuHcYaQZh8C1JkiVJkm0hiVp8Zv3/N9w6uG8fgaBt2zjT+VM8lDJo20aQe1yeP8JfYgL++F88Xh5PpxBJcToizNrMmKzJ5m39M3/xJ3/q7/VPys3Ty7euXYW0UokjokRE1LKo5okhtsSn07VvvTxOJSGVW7WI4ziVs+PqmIEAI+ar0+Pj08upJJZKnII9Xbodx9XjEotN2ZSRn7tbLx8fn46TpEglS+zpztPL8eraczNgjYxmfvqPx5ef9fI4JS1FiWS783Q5XZ5eHQojw1prt6//eO1HH18ep5NEigjzdOfq6nS5XAzEWov10t0dHz/81Meno6T/0XDX6VQul9NpDf9L7B4ArDCcJFKJBpdaqZXa5cIsABrgyjQEZuUUErdCUFMScqoFaUCMgItMbcYq3FQREQIUkhApQLOwxKBjGjGy4SgpIgJqWbg1CQmzZMQEammbBTQcKSJKA0VqWUACaJYWGyhG+N+b6v8JVsuCZUBaGiDhtNZsxCzUUpS4FUzR7xm0tgz835gJQIzY7JaUW1GLRrCMGa1NMLMQsEQKKJoSBRIJCaVA3MqafvlltZoWbqFlgRSIEhEkKYCiZVkt0zT9Mk1jtSIlWBSWhdZESlKKFNGYxjJNY6zGGAPQ1iALlsRKAFjDWMaYxlhWYyy/LMtCWLDsrIGJAMAaDC1jjGEGTWYBAzSAoKUsABDR2syaLUQLZmYBAZIJZhoiCwKANdAamTVjQA==",
+      "exif": {
+        "model": "Canon EOS 30D",
+        "focalLength": 28,
+        "aperture": 14,
+        "exposureTime": 0.0015625,
+        "iso": 400,
+        "capturedAt": "2010-04-04T14:05:41",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "neighborhood": "Katzwang - Rednitztal",
+        "city": "Nuremberg",
+        "region": "Bavaria",
+        "country": "Germany",
+        "source": "iptc"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-19-Spanish-Formation.jpg": {
+      "originalName": "FridayWallpaper-19-Spanish-Formation.jpg",
+      "width": 5610,
+      "height": 3737,
+      "bytes": 8609550,
+      "type": "image/jpeg",
+      "hash": "c29cc22af4805b8e5a4ac43b6f5b4040d669fe68133cb941bbfad19cd79f16ea",
+      "uploadedHash": "bc852317ebbf18c6ba65dbf8694be5143fbf73ceb2e6d1448784dd71d709f14c",
+      "thumbhash": "data:image/webp;base64,UklGRlQCAABXRUJQVlA4TEcCAAAvH4AFAE2oaduAxfLbEdH/iB6zbSEQSPKnHGEcgUCKQxhhwmyjvs4fcQiH0P8AB1hAbX5KkBBJkiNJHlVD7vlzOX1Xr0AYSNsmvZL7NzkHbRsJknt3z5/ng5jEBPz6/7A8elgmI9SBoA76ya2fdkIMq2UZZjE6I2IsooRUJASiC64RiAijIUSupcuRklSjqhIQFOg4cfTfUZZwlq4xTqpSqiIVgYRwdagbhZRTQ0m4XEhUGVemqqmqKFBFuBypIlRTo6mkBV0xGlcmq6nVaKXVAQqEi92BlE12Tc8oSoHIZGtra7M12VRQSaBgXQgx7Jo8q1YmJSIebR49PDxZPSr/SCIQJHZNW1abmUEbxfAoVsuyTFImLWkkAEgadi3LpU3dZs7ibCcmy2psKgKBCGkErTKs1pY4A2CutdrKMKyGkRYUyCSQkGJYHhaWzkOAOc9PT4yGYRRJIE1IAC2J1fLMNmJkg3aWvvbIzKhEJJBEhiAAMWw982C7ZKCz5vLu0WJWJI2kkUYCoItJw7I8MAIYAS/9WhGSAJLIAnE6LhZiWZ51aSM5axPby16tJY0CEJGVjI7TrZ9GMexsmoMhDpQXARkBAhRkAB1H6+YWTuYoRsDi1gto5J+KsYKKwcLphm7BqNvEhBzxBghASFZUVc4KsVugmxuQEVOOwNkHAEGaTMnA0GUEuLFA5gJLbADK1wAQxMACRYW0HaADOJlgONUA890DAiIbJCSCR12CgFsAblUsDmRXB/DPWBIoRhkAECMYuY3pYXFkAA==",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "focalLength": 85,
+        "aperture": 5,
+        "iso": 50,
+        "capturedAt": "2010-06-17T18:13:27",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Valencia",
+        "country": "Spain",
+        "countryCode": "ES",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-2-Sunset-Silhouette.jpg": {
+      "originalName": "FridayWallpaper-2-Sunset-Silhouette.jpg",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 1057551,
+      "type": "image/jpeg",
+      "hash": "9f16584e3e95b1e50ee649622ae0c2b232c26c803b3e09f7963da6a7c76925aa",
+      "uploadedHash": "98d8776fead891b54697fe1aed90c76a834ac44df818f0cfaa841644749ac529",
+      "thumbhash": "data:image/webp;base64,UklGRmQCAABXRUJQVlA4TFgCAAAvH0AEAE0ICQi6/499iOh/NpIFYbZR/SkHce/jMNO2jduOP96ditq2gcIfZVQQfe3of0xc3Zz3ESN4ASA7sm3VVnqchzvkn57D18PlnonHIEmSJEWS1HKYZ04r8/8nLlM7hDaSJEmOntXxOf7Q5snIu/7p4HBuOrdcd1x3/G7/65auyjq5cDktx9xYN4+buTpwsa98+u0jH/lsX+07F/huixGQ4Ep3hClr5cKlXaVZAFtH6z+/AXPgz+Y8UFodRm51X7eUULayzDKtzGKpzI74zw/+Ckx4+hw6dnO60amqEypWsUzDNlbWjmadmlDjv/3K3/W/zbPPJEWn5BSdjhFa2s6TOTtjsGbnZCpBrNqEePY5hYo6HXQ6UDVgMmeZsWCdrApVILDYnEdfZCqqqlMdOeDUrGXgjLFWteQoKSmAwXb347U0nZKqI5XU0k4GZ7CChDqmqFIZyBaOu1soUFXuKlUaMdjGhtG9KB21OgViGMa3mwdABZSkJAZ2WYwpC0dV6j3OyxMYZhbX15/JVlgFSQDMLNuIhVRHX9VZUgDbwPaubyE2YsUMBsyaCzZilZWOoyVVI9uYmfHSMDAWM2mbZr5hZqNtRKkl6QjSNrZhG88H7BTGYLuYzYxttrGtMkiSkikYdtJlp2XXX//G5fhxvW8337zjLGbbnGbbMLOBUK1GKmxjtJ0bv+3nP7jwz/n3fOL9o7PnHNvMtmHb7Oc3c+Gb8VANkI39+Xn5yeXhwd/ymXOXweRffg9/eXR1897w3Hy/vXMH/79890Vsy18G/7jhmnsO/AU=",
+      "exif": {
+        "make": "Canon",
+        "model": "Canon EOS 5D Mark II",
+        "focalLength": 28,
+        "aperture": 6.3,
+        "exposureTime": 0.008,
+        "iso": 160,
+        "exposureCompensation": 0,
+        "flash": false,
+        "capturedAt": "2010-04-17T20:12:24",
+        "software": "Adobe Photoshop CS5 Macintosh",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": null,
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-20-Setting-Sun-Field.jpg": {
+      "originalName": "FridayWallpaper-20-Setting-Sun-Field.jpg",
+      "width": 5582,
+      "height": 3725,
+      "bytes": 19727277,
+      "type": "image/jpeg",
+      "hash": "195dfcbcce01168c1dc8855f3590b9546b2ae5a351f9fdb7d9f5e6a889c2f909",
+      "uploadedHash": "333701c3025cb9da32a4b3322c4343110f6d83ce347a51184889e5f1cb403425",
+      "thumbhash": "data:image/webp;base64,UklGRoICAABXRUJQVlA4THYCAAAvH4AFAM2VIaL/sRAIJPlT7rKEkCDFRKMEkjbvn9IID3BO/xOM+BKnAdmxbZu21fr1s638E9OXjT3SkCRJtmo3WWLJzDiy978xHomhITSS5EiKPE/g+fP8NRVx3d917l14/HGPPnb/jZvPnZ+w/a2/9o8jtdOcHji1GlvWFqYd9jc/892+5Ot8zx9um/M5ZTGBWWUKGTGsAGYxTGKwihXw7NslGBYDVAZQTQyAac1amLWCASy8+XlMBmxryiBRU6CawWATm8bKACswvPpxYLINGMkIpaYCssHExmLZdpDBALFH3w/Dpi0bm0JKidAAtpixsrE57OB/FZDp2quDTTazBbAoqqYCjAMz2snMapWtLIFV+3d4GNvhwWyTkZAomZKeLEPZba0YVo1YAvp89T/BbLYYIEmhQrPA2AYDkJaYAuzD3wObacO2QIhC0iyw0QyAqUagbAq9/XVhy2ZNZmJQpphVtsHMAFC2KgmqDT78tsm2xhYzU8wIsA3bsIk1SqhYUoyQj/9hsoaZYGYWw4ztCWzDrAWhQgUqMD8un2QWewwLzDAcYxu22QazhgoVZSrN6MPn/92brSyWJoOBWbPZNtvGjFmCJKiAxJ7o6Q17BEasB2KY7ca2jW3M0Fqi8ChCYXTg5OmHWJAQWBqMmbGtDSMoqAdKSwY4OXr4QFoiCRUxYMPGyACECklLEMCO2ydBUlFJQhmGDQNAhU+hQmUTssGfKzUKRaVCEqFG24ohIeggyYNRgRH8vrwgdBKqJElLIAYQIFUeJI1iYgL8ce6mNmU6yBSqxIhR2RIE0pJQAWAEc/2/5b5QNqFioJoFAAJCQGDKAAI=",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "lens": "EF28mm f/1.8 USM",
+        "focalLength": 28,
+        "aperture": 3.5,
+        "exposureTime": 0.00625,
+        "iso": 50,
+        "capturedAt": "2010-04-23T20:10:06",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Feilitzsch",
+        "country": "Germany",
+        "countryCode": "DE",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-21-Woodblock.jpg": {
+      "originalName": "FridayWallpaper-21-Woodblock.jpg",
+      "width": 3464,
+      "height": 2310,
+      "bytes": 5438150,
+      "type": "image/jpeg",
+      "hash": "335ed250adacaa3c5c28a5b1869d625cf77f695a8139d6ebae39802ec4f7d553",
+      "uploadedHash": "38cb4ebc6737001868ad2fef4cf8ba55caa5ae46a40b3abf7ecb8f0e272ff82f",
+      "thumbhash": "data:image/webp;base64,UklGRhADAABXRUJQVlA4TAMDAAAvH4AFAM2VIaL/sVDTNpLkffhj3HIBrK46IGraNoKTHatOBfDcKWgjSTn/Kk8C80P/w8PyfP5+lBUS8vTUB2MaEGRHtq3ayhjrueHknw5JOHy5O6yBBSExkiRFkjx6d+8e9NfvdWDslBBJkiNJHr2n+MN6PKf+f2cyNuLelz9HOs1556Jz3uOkx+E59PKzvrZPPT/692F/P/j7yd+v/GRy2q64qVvc4Pzzk+fNvfq1T199+OrT977/7qRqLChshEfY3DAmVRirqIoFACA0ZKtcQM4fQWEYHnhhuGa8SmApIACrwyBjhIAxRDt/xYIa4Q3DBtw5KYuEtQiTI50Ush0UjTJkqI7fDsYkXhi6uGH8bVurSmx7UgkjwKKMOgq1x8TQVK9TAJv/aBjg/vnw4xkWDIICyKksoqM8OwjyMFPYx/eAVQ7ujv7dBz337Hv9eMXbKgWV0iFAdEBRvv8zE46JAev5W0Dzns7t9PbErEqxCDVe2OHQ0akZC4FRnk1oU0R70kFAFLEpMGDwYqP3AdmIPgDoEjBELNqscl82RYwOMUgsMj6Q8TAKbADs0bkAWERsRT28ARmQzYJpQAmahmDoUAAVw049QwpWCTzbXBSabmSzMIplAIQCRSCYKlq1YBJTaK/vTRRBA0Adh5agAgGAgLS02JYlmMKkb/9vIMoUhDFbXPXIWFBYUEEwkef6bVprKQPsYJcBwBBTRbO0K/IoiYtrtQV1teqnldaYhSmsK/+TAMJSs4qdZVf+tzC8AA1PxH5tKbLSqrECbkMAIiLafrHZiaaws+faOrz3gS9iVULCrbBtMLgbFkCCbLNq29m07YnBAc+vfU4N1EApUwA0Vu2uoAAWHa1ltWk2TFG2sen2vExNmzLGUgQBkFsAYqLqf63aJpoqhNjGfDReDtqchpHn2PGaBRQ41wRYpSLV1uHfYkMDZDzz7MDLtHFGc8z/7EwpyiBTnQEsqDAmYaWBbgwxtpGnifcxzZp4EjrGkiJHAPm/ogAwRIAYZP4ROjYEoAgA",
+      "exif": {
+        "model": "Canon EOS 30D",
+        "focalLength": 85,
+        "aperture": 2.2,
+        "iso": 320,
+        "capturedAt": "2010-08-09T06:34:18",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Fendels",
+        "country": "Austria",
+        "countryCode": "AT",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-3-Art-Of-Life.png": {
+      "originalName": "FridayWallpaper-3-Art-Of-Life.png",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 3626808,
+      "type": "image/png",
+      "hash": "57de8d7d4b2dd89f8de27b43f7b6628015f7bbb40c325ddd19e0d16bb6206bb4",
+      "uploadedHash": "8f19aba016b82901b88e107a83e868c057be522a673997c40cf597d2c9f5ffc8",
+      "thumbhash": "data:image/webp;base64,UklGRgICAABXRUJQVlA4TPUBAAAvH0AEAE2obduGxVN6GNH/iIF//IIg26b+lEO4wyWCMNuo/pRDOIB79D+dbwVgkBzAbRxJBds9m/9785xrRWCvIEACSRv3/p3voG0kwXHm+HN6lUtxbORP/2u9eJsfvOXZHm4u3doXj1568XDr5sp9F1V0cafO75v+wjS00QIyoabOVly6EL0QLTS4QpNxo8E4oZH5l19cxYWkXK6icoAgtPBLQ01dIRqMnallKiRRJCcJBFQqFBcdN4wG04ahdk7cOgYkOQSUIHLQqK4gjkZDR8HVw1Bj1RVEoVErUlIqFEIH01qhezScGpnaGRRZaSmxixrMusCaattpUX9x2D12NGqYimotdFNgtV0/SUZd7T5JdZns0mVCwmyBXxIg4RHRSIG2YylJ7XoIk9EkrFJsrSgUEr1M6fIU+HcsQi3W2KJdW9gxXEgFXSIlSIEiHPTbIstWiG0U27VF0xsC4pfCQRHhoDgE/fQsW7CmF41i0QbbmDkGAbgsKSUnESjKD/phNjNms2qzxrNso6mxI2hQeMlSHBAenYDw3qzapk2sMau1Tc93bIjopEgFEpBy24QTn89mtTZrejYrioUx6xillyVwFAdEgv++LLJZNTbjBrGNkC2+UWt1dxEO4aBFRxEgC4NA0UQRxC+yGqYiVIkfhUPAERwA",
+      "exif": {
+        "artist": "Chris Spiegl",
+        "copyright": "© Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": null,
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-4-Scrape-The-Sky.jpg": {
+      "originalName": "FridayWallpaper-4-Scrape-The-Sky.jpg",
+      "width": 5611,
+      "height": 3742,
+      "bytes": 16053184,
+      "type": "image/jpeg",
+      "hash": "12e257c28d24828594b49b756f74be4b7f3683e0d4119ce70955d3d9aa2dedf8",
+      "uploadedHash": "df06dc73bf0e5a5631ed931b209b0cbd49048385e22919073971020b7624e8e7",
+      "thumbhash": "data:image/webp;base64,UklGRtwCAABXRUJQVlA4TNACAAAvH4AFAE2QSdtA7s6/4nmI6H8O3YJI26b+VQ4eXo5YMNmZP2cQitq2gcofZZ+7NwDV1P8wLMSnHsNg8E6MGSC3jSRJUmRmzey6uv4/zq5wIxJy2DaCHNBz/ZebX1YQ2kiSJDlqjsLxx/ntZMTX33fXy14tfVPvfW4f37h1n/51eutQD3/z4/7W3cnXa/fh+dzz2lOeu+d39737Wf8qbaUt1VVIVVHSXZRKUaYqUwkFxXKtx8tjdqarmWyn0D1DV1qbraquqYruJIXFeO3V5equR0c91TVdVZWqo4ymdtS12922tqqWYDEer7vyrLteqzSMTXUa5dRRMtocpnJm1GrUBeed1115dNezzmq2e4ZOVY6mO4ymphtNd7R7GLVraiRk53Wdv5Jxpe6GseoqxXRT3Y12GO0hR9NNDa0qlcRCLDuL6Wm2011VRWl2U6qqu67uRpNh1FV3pUJS4USkLISKjHHAE0TTTkULJRDGsPmfwUDjEhD3ItAQs8CAxdFySeoEQQpYGIQwlAYkeHwwQRgqbhDGi8gtqFayITWKDzASqJA26tkvcUGCMRbNJewCCiWIBCwaRKJqkERp/v2waAyJg62VFXYg1IuAHhlhcbRWIyeptODPj4AEY3wcw8K8NwpYQoUXQZCOloqqFSI9/TgC4oQ3w9jr70MQg2SU0bh/FhGgl5Z2KqmWc+8XGJ9wwxzmLvZnx3jAJTaOBv+Ah9JS1ZG0cMLvH4iOocLe6x+7MAZcGjuZxTIQTH2pJKpKv1OQ7oMhB9hc9od5gbGwdWHLAIuEJi9S6Y4qVlX3Egbwun/GWI5hXAZjeSBLvCIc9aoT1VEK1BtDi/tnYWCLly/DwixgFjwY2AkVPuqISoIOuE8QZgWMiw/mWgyWAa8EkxyVeiU6pFQIA3E0louFuVgYxBOLISxIoiBK4JDCEAjjWo2LtZhdICywhAHJUcwCWjY=",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "focalLength": 28,
+        "aperture": 5.6,
+        "iso": 100,
+        "capturedAt": "2010-06-27T15:26:18",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": null,
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-5-Green-Leaf.jpg": {
+      "originalName": "FridayWallpaper-5-Green-Leaf.jpg",
+      "width": 5616,
+      "height": 3744,
+      "bytes": 10457083,
+      "type": "image/jpeg",
+      "hash": "e5853df90e469cdf88c7a6a950f5ac18b6dfb5dfb3df303be7a8742cfb6b2b44",
+      "uploadedHash": "732403523642acd0fd3a4bdd64d62ec388dca16debfd69e6b2faa1108d84cd5e",
+      "thumbhash": "data:image/webp;base64,UklGRoICAABXRUJQVlA4THUCAAAvH4AFAE0obNsGxe0YI/of477/d+J3i4EfCEVt20Dlj3IQ7i3aq//huzQAnkVSWRgoRJIkSZLMPGsflMsfxN04DQ/GbdsGEt39p73/xUDaNun9i7qzRfz7npLUd37nT/3NX/3ld316ZW0ouMZU/6//dLdal7BM2BbtaU4UJCVH1ES5xGWIbZTFUs7jrce++tivisImSpQ4yKVcou5u26JPH29efbVPv8hEC9FUctaJEndyKhrL5civ89WXp4/Hr/rFY4tCKsuVXEy5orlLZR24fDnqy+Pp8eqrj1/1yHoVhaUid9OF6OKy7tUTy5XJkuhVeIke0UOipVzqLtzpsouWFZfdc74yWRlXIq6UilKvxFGOnShRScalXBfFZYd88norE7gRCqWZkEkewbiEwtEojhCKtDQKLIpmVT9qceOwLJO4UpGFhrMhAhzUEE+dIZVQYH7SkHEcox6SWNS46shxVdxM61YIxQ24aD+tIZtwBfNASurmEIrGqTikGRehVRyM6iENmSTq7oSqI9QqMs5P+EeqthYZ7cgPpUKURKfujlpXHeFGNRzS9FzV1qIdoQEZkhRSoqJDV9dFNk7T0+qP1rRqvWgVh8AogSikXJHgEI4doWikF6en+YFb01NatIoFzB1ZxXaoC3WhI0D1wno412xVMw4xLKRgd+iYHbAcitAIh/yE07RqPS2MU1iWAgSoSxAj6u6IqTOt89bcjtZwCoE7BHenBClhLbo6D6KRXqM1nMIpLYLgDh0gOaQcoxzKELC4oR5OV8PBWjaKwO52M4oSc8oSgrbRqIobobXIBqPIthMzi7K0ARfmaSEODTjXIqbiBgA=",
+      "exif": {
+        "make": "Canon",
+        "model": "Canon EOS 5D Mark II",
+        "lens": "105mm",
+        "focalLength": 105,
+        "aperture": 8,
+        "exposureTime": 0.008,
+        "iso": 500,
+        "exposureCompensation": -0.3,
+        "flash": false,
+        "capturedAt": "2012-07-12T15:57:52",
+        "software": "Adobe Photoshop Lightroom 4.1 (Macintosh)",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2012 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": null,
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-6-Crain.jpg": {
+      "originalName": "FridayWallpaper-6-Crain.jpg",
+      "width": 5608,
+      "height": 3738,
+      "bytes": 12266475,
+      "type": "image/jpeg",
+      "hash": "48cec893c7d98de71c4969f41d434aacf3612fbfa76ec07508cc45fc4adcfc05",
+      "uploadedHash": "81807e8fc671ed957d4a6c35d1b13c8187d2cd52c827071cc600adb85940ff2b",
+      "thumbhash": "data:image/webp;base64,UklGRpACAABXRUJQVlA4TIMCAAAvH4AFAE2ISRP227+xHSL6n+gLs4wkLcL700355QM8iJm2bVM+225CguT/Sw7Yjf2PyIEHB+bbAEAhkiRHsuVRM/cEms8f2pP5NQaJbSQ5ksQ8rd5/Y3+6w3HbNoJEpdjr/717d44J+MPnePTywauXR8+VggsKihQpUhBmv/1/+f3y++n322/2+qeHVx8v3hevHu7WKSgo/RcwAMTEPt7+N8+L98X70jvPeqrbHU5OXf8PwEA2ff73u+3W++J98axHV/dw6+Hk1Mmtq/qXxizQEIPY539vcy+927Oe9aRbtw5PTp7cOlWlSkeTLJjayuFwMXr/va1nu/WsJ5dunTx2z1OHc13dO6ojtVoBjBgou8r9PK3j1sPpLicnTx6ePNfVvbvqTjenf1FoZiD8/nzTzXG6dPPkyWPnPPXoXnX3Hk63TrduWvgnIcbPl9e2AmQAC2DVcjZqFy1DoDCQZNbim680WKDMGgrg5ViuhRYSqEEC2aQ1vp2vkVXXFKsGI0FaySRqwQoQTBAQ389PjFgdI1aIQQ0hNRZSGC6gDCPg5/lDekmmBBMjSNAQkgUkRjBCDbAzgyQdFoRixKYCLC2BphgBYACnQq4OO5YMCBphhFhLYlBsgFAjfFpzjf+oSabCiE2Z0YpJTKRNgDDZYvisNtU0sJJBWtGSZNBMZoKZCAYT4KtghUnJJAJkawVtKb9HtKFhrEHwjzZqGoCaKU3dpgVs0cbMhYVB29IGvmIpk9CLhClN1ZZg0YZogy0zwdAA+SzWENpADUFtCdRs0tiQkcnaEGZkfIiQWYQ2EhiFCcLYign7HRhhtLDmVmxn1ayyHVqYYpUmJlus2n4awIm1FtYaAA==",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "focalLength": 85,
+        "aperture": 4,
+        "iso": 50,
+        "capturedAt": "2010-06-17T18:43:21",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Valencia",
+        "country": "Spain",
+        "countryCode": "ES",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-7-Dark-Forest.jpg": {
+      "originalName": "FridayWallpaper-7-Dark-Forest.jpg",
+      "width": 3504,
+      "height": 2336,
+      "bytes": 10999929,
+      "type": "image/jpeg",
+      "hash": "b53d29f8686f59beff7f9c723a31690b99c8b30d506dac8b26912140c7f460a1",
+      "uploadedHash": "4fa72ae573f49ddad06d8f509adead55954751249233b303e5f26044417e7bae",
+      "thumbhash": "data:image/webp;base64,UklGRqICAABXRUJQVlA4TJYCAAAvH4AFAM2VIaL/sSDMNqo/5T0HcSCK2raBY3kWQndPQds2zPijNIx99T+wyCvotRAGj4UBsiPbVm2lx5X3HpAE+Ufm8uWwJxYExEaSFEmRc0/++8owJbGNJEeSGCPu7t9/W/V/Z0zAy/241J3HedKzrhfzvJ53PedJD7p2XWZrc6p1Od3rKU+nx9yOc/alfWpv2yte5+P2mUuYtVPG1tXGdi5Qs6pNWFlm1bXDWklMNQtyBWIARmBg68qGmGHt5DqHtYS1qq0KcAUMq8CCANiKbANjLMOMIQkBFRkB2Qo1GiGAbYWxtjXGYNaKUZGgs3JWZdWOEAqjjJRtNYY5jGUsjQoVJD82lRmoQA0qU9m6xFjTyeI6MVihoEh8GyMSgqipqJG6bDTtMGNzDtdq1CwpFF59/QQKSaqm64JSl2LKFHM229i22ZBNoVSe0vPtGywpuESFKqmqmIINx9xtDcOZWC4UD7l/yF0XhQqVqqKohGaJzRxsOGOYyrhQsQkmVI1CVAohdZHOBqMZ58om2FSN/ONcgIdiFQhiroIAoUxmGDbZRmIk/XP/3+iREwRipRFbsYqp2oSYCbYRMwqQ391fNlcILGA0B8AAKHM1S4MJLA2EjOsTRgCYtTlq20xsClAIaRbESIw0S+sEtsC2Zti1NTYWACmUSEvZykiaJfz4OxMDrNlmN5yxNhgIUlFUEopCjKA+f3+6hz8MWxtstm1tsw5BKElVRRKVKSQ8Xi8fP/n17/s3v/+2o2Ntxm5ja7S2mEqlqFTJpSxBeLyeH9+/gfHl068P299htibXZCbUQFJXVKkMuUjI2zf89xs/3vn/P5iZyzYBoFpCBUWlArx+9/Xjf/iODxtMDBYYASqgMgUjyeMGAA==",
+      "exif": {
+        "model": "Canon EOS 30D",
+        "lens": "EF28mm f/1.8 USM",
+        "focalLength": 28,
+        "aperture": 4,
+        "exposureTime": 0.025,
+        "iso": 100,
+        "capturedAt": "2010-03-19T17:34:27",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Bobengruen",
+        "region": "Bavaria",
+        "country": "Germany",
+        "source": "iptc"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-8-Wind-Turbines.jpg": {
+      "originalName": "FridayWallpaper-8-Wind-Turbines.jpg",
+      "width": 5616,
+      "height": 3744,
+      "bytes": 5941207,
+      "type": "image/jpeg",
+      "hash": "f0356315d8344d7c2f9ef982da8891b6a4a60aa91da8fde6043a4e6a1522ec29",
+      "uploadedHash": "5e5428ca3b0f6da98bad5d43419b39e061c814a37b887e2a58df2b11fcd1c6d6",
+      "thumbhash": "data:image/webp;base64,UklGRswCAABXRUJQVlA4TMACAAAvH4AFAM2VIaL/sSDItqk/5RBOcA6xYIqH0JmZgEnWPyUnJwFA+x+g4rv5xIkRgADlSJIU25bH3PsYVqTr15Jx9yVgPPdMPn4qSG4kyZEk8+pZcnf6i8a/J8WyDomRJDm2krXvPYQJmID/dmkNT3SQTdpUsveOL/59vOUBj+wh97mZ1XVd+F8XruvcmSbLSunQUUelrYvz7/p7/nD+5J+5zK6nwcqwlU0ssRRDQm2CAFg1ZZ2MIB7/dxizTGwa0iim3lfDBCB2QlQkOF7+0mIb02AYQCqsrFPDihkMFKqolujhtz82c9Yym2wDqxAqcnitAxuWQcwqUiWlPf/+2yxsa8zOMu+LUlbZgjEmXnNq66RSSevlt18LOx1eY0wTWwXVVJRhjXcmtjo2oU5JXn/7JZPt7NjGsljZOrUSJNj337ZTYzYGkCrkyIsfNdMO27S0DaxKKFWsWMaYnWuwAUmV77/73rPXrdz6tKW57EozkiQVEpiz3M61jNlHP1x3NxtiRR5zkkbqaDkS1sos453aKoqi+PX5V4dHHiF1z3vdlCDqsIoklmmYBaOoVCr84uvOOTbpCnYKZVUSdA5qxCxgsSBJqiTVd/fnkFR1KlQICimrSCQtSO87pKrY8eXnJ9Sp5FhFhQKj2gq14GipLOVdTlVF8fX7V4XqkFShbDDsTAAqiuAQSh2nQ0UdJT///JB7/dO9VqgMLus2h5fd58mUyZAylJw4bo4UYefy/3Y3//F/0//ca3Plja+83d2vk7vL/8+u19P+6wkuOe6Lr/mczQbGGBh88WYf/YfuBj7yCYAvPly/LpecB+zJA5/h042LbrDH9YIPGTd8Ftfbx+1+TzPZrs7/HjzweRwOB9y43cv95zsDpnHncrnGvw/PgNcHI65ciRjx/sbzdg8ARnDWxY0X/wEOFwbixYsRhwsAAA==",
+      "exif": {
+        "make": "Canon",
+        "model": "Canon EOS 5D Mark II",
+        "lens": "EF85mm f/1.8 USM",
+        "focalLength": 85,
+        "aperture": 3.5,
+        "exposureTime": 0.003125,
+        "iso": 400,
+        "exposureCompensation": -2,
+        "flash": false,
+        "capturedAt": "2010-04-17T20:36:10",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Langenbach",
+        "region": "Bavaria",
+        "country": "Germany",
+        "countryCode": "DE",
+        "source": "iptc"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
+    "FridayWallpaper/FridayWallpaper-9-Electricity.jpg": {
+      "originalName": "FridayWallpaper-9-Electricity.jpg",
+      "width": 5615,
+      "height": 3743,
+      "bytes": 17882945,
+      "type": "image/jpeg",
+      "hash": "e2d3147c9b23ce29019c6ed1df9101bae65c6ccf34250c944525763c3214aaf0",
+      "uploadedHash": "5d133a7bb86a213b877860e433aa0cb696d350fe0958173ff4d4d9d345dad737",
+      "thumbhash": "data:image/webp;base64,UklGRnwCAABXRUJQVlA4THACAAAvH4AFAM2VIaL/sVDTthFU/kgz9rnxgITatm0Y/38tR6cM/Y8L8bv/MNPDDBLbNhIkier9uQv9c97da6cBoW0kQZLTv88f5bP43WLYtm0YKtv/H2+O+P/n1HN+zvPjef7Xs/N85/nOs9fvnh/P0/NzT3dq9Wef7f35fL5v9//Z+3rf3nfve//v+/Z9/X3+9Ooas6sxkImZFbAgQAwkAUAIiB8nsASLYSvbMIsljFhFKEi7C4QAvx3QrADbarNMaz6aWaFC6kAXRYUQlV+tEtiqz71kz6bZxMYSRJWkVFwdL12ErP5dzQotDGxbLuwylr7tFnWopEqoK0VRxGkEgGFzj7lt21jsX38jrHuiok6S7rxSUbhpkzDrFjZds93Ytm99UCiZLlXUFTiSCvjrXzUkzKw8uzY286+PAUmoqrSEuqKqQPVpSYBYjWFmy1gMQpKqcVQq1Lm11GH6mgDVFLbVMg1mIFSoGKkAiVxRKNdAZSoLMTPY+gJUIwliPOsilKRQWEyhQoANAkCFCpBmJgZCESp0JKYQCtQqECoqklgmsImt0KhCeAnVqgQHBCpVkiSBWcZk/1WG3YWEvEQSJCX5VamokivEwmIbsyvbWLW5DOiIUWEVUJWkSl1RgcVsro1xGW1zNoXMBFYlk5JE1eXrpLQrptnV2Mw2y/DZWwjdr135CyhEcgepo6KaBWO2+ctmbWvFDwN8aXaZIogKVRVSx8SaTbMr33Ntmo1Vswv4LGkEqKHlF4U6WgUtZm3aNs3GyravVQZ8ZRMgSFhCJVaNVtnKjGVMw7bKVrDYHTFQDKAQoxghW8emGCtmVoyYpQE=",
+      "exif": {
+        "model": "Canon EOS 5D Mark II",
+        "lens": "EF28mm f/1.8 USM",
+        "focalLength": 28,
+        "aperture": 7.1,
+        "exposureTime": 0.2,
+        "iso": 50,
+        "capturedAt": "2010-04-18T20:14:21",
+        "software": "Adobe Photoshop Lightroom",
+        "artist": "Chris Spiegl",
+        "copyright": "© 2010 Chris Spiegl, ChrisSpiegl.com"
+      },
+      "location": {
+        "city": "Bad Lobenstein",
+        "country": "Germany",
+        "countryCode": "DE",
+        "source": "gps"
+      },
+      "createdAt": "2026-11-26T10:17:43.820Z",
+      "updatedAt": "2026-11-26T10:17:43.820Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
+    },
     "gear/10-percent-happier.png": {
       "originalName": "10-percent-happier.png",
       "width": 1000,
@@ -13,7 +618,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/4-hour-work-week.png": {
       "originalName": "4-hour-work-week.png",
@@ -28,7 +634,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/4-hour-workweek.png": {
       "originalName": "4-hour-workweek.png",
@@ -43,7 +650,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/airbnb.png": {
       "originalName": "airbnb.png",
@@ -58,7 +666,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/anker-powercore-plus-26800.png": {
       "originalName": "anker-powercore-plus-26800.png",
@@ -73,7 +682,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/anker-usb-type-c-charging-hub.png": {
       "originalName": "anker-usb-type-c-charging-hub.png",
@@ -88,7 +698,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/apple-airpods.png": {
       "originalName": "apple-airpods.png",
@@ -103,7 +714,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/apple-iphone-7-plus.png": {
       "originalName": "apple-iphone-7-plus.png",
@@ -118,7 +730,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/apple-macbook-pro.png": {
       "originalName": "apple-macbook-pro.png",
@@ -133,7 +746,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/apple-magic-keyboard.png": {
       "originalName": "apple-magic-keyboard.png",
@@ -148,7 +762,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/apple-magic-trackpad-2.png": {
       "originalName": "apple-magic-trackpad-2.png",
@@ -163,7 +778,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/aputure-mc.png": {
       "originalName": "aputure-mc.png",
@@ -178,7 +794,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/artlist.png": {
       "originalName": "artlist.png",
@@ -193,7 +810,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/atem-mini.png": {
       "originalName": "atem-mini.png",
@@ -208,7 +826,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/atomos-ninja-v.png": {
       "originalName": "atomos-ninja-v.png",
@@ -223,7 +842,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/atr-2100.png": {
       "originalName": "atr-2100.png",
@@ -238,7 +858,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/audiio.png": {
       "originalName": "audiio.png",
@@ -253,7 +874,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/b-w-variable-nd.png": {
       "originalName": "b-w-variable-nd.png",
@@ -268,7 +890,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/behringer-x-touch-mini.png": {
       "originalName": "behringer-x-touch-mini.png",
@@ -283,7 +906,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/bose-qc-35.png": {
       "originalName": "bose-qc-35.png",
@@ -298,7 +922,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/buffer.png": {
       "originalName": "buffer.png",
@@ -313,7 +938,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-continuous-power-adapter-lp-e6n.png": {
       "originalName": "canon-continuous-power-adapter-lp-e6n.png",
@@ -328,7 +954,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-dual-battery-charger-lp-e6n-usb-type-c.png": {
       "originalName": "canon-dual-battery-charger-lp-e6n-usb-type-c.png",
@@ -343,7 +970,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-ef-100mm-macro.png": {
       "originalName": "canon-ef-100mm-macro.png",
@@ -358,7 +986,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-ef-16-35mm-iii.png": {
       "originalName": "canon-ef-16-35mm-iii.png",
@@ -373,7 +1002,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-ef-70-200mm-ii.png": {
       "originalName": "canon-ef-70-200mm-ii.png",
@@ -388,7 +1018,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-eos-1dxii.png": {
       "originalName": "canon-eos-1dxii.png",
@@ -402,7 +1033,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-eos-6dii.png": {
       "originalName": "canon-eos-6dii.png",
@@ -417,7 +1049,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-eos-r.png": {
       "originalName": "canon-eos-r.png",
@@ -432,7 +1065,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-eos-r5.png": {
       "originalName": "canon-eos-r5.png",
@@ -447,7 +1081,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-lp-e6n.png": {
       "originalName": "canon-lp-e6n.png",
@@ -462,7 +1097,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-rf-15-35mm-f-2-8.png": {
       "originalName": "canon-rf-15-35mm-f-2-8.png",
@@ -476,7 +1112,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-rf-24-105-f-4.png": {
       "originalName": "canon-rf-24-105-f-4.png",
@@ -491,7 +1128,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-rf-35mm-f-1-8.png": {
       "originalName": "canon-rf-35mm-f-1-8.png",
@@ -506,7 +1144,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/canon-rf-70-200mm-f-4.png": {
       "originalName": "canon-rf-70-200mm-f-4.png",
@@ -521,7 +1160,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/creativecloud.png": {
       "originalName": "creativecloud.png",
@@ -536,7 +1176,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/daily-stoic.png": {
       "originalName": "daily-stoic.png",
@@ -551,7 +1192,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/deity-v-mic-d3-pro.png": {
       "originalName": "deity-v-mic-d3-pro.png",
@@ -566,7 +1208,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/digestive-bitters.png": {
       "originalName": "digestive-bitters.png",
@@ -581,7 +1224,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/digitalocean.png": {
       "originalName": "digitalocean.png",
@@ -596,7 +1240,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/dji-air-2s.png": {
       "originalName": "dji-air-2s.png",
@@ -610,7 +1255,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/dji-fpv-system.png": {
       "originalName": "dji-fpv-system.png",
@@ -625,7 +1271,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/dji-mavic-fly-more-pack.png": {
       "originalName": "dji-mavic-fly-more-pack.png",
@@ -640,7 +1287,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/dji-mavic-guard.png": {
       "originalName": "dji-mavic-guard.png",
@@ -655,7 +1303,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/dji-mavic-nd-filters.png": {
       "originalName": "dji-mavic-nd-filters.png",
@@ -670,7 +1319,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/dji-ronin-s.png": {
       "originalName": "dji-ronin-s.png",
@@ -685,7 +1335,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/ebl-aa-battery-charger-usb-type-c.png": {
       "originalName": "ebl-aa-battery-charger-usb-type-c.png",
@@ -700,7 +1351,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/ego-is-the-enemy.png": {
       "originalName": "ego-is-the-enemy.png",
@@ -715,7 +1367,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/elgat-cam-link-4k.png": {
       "originalName": "elgat-cam-link-4k.png",
@@ -730,7 +1383,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/erasable-notebook.png": {
       "originalName": "erasable-notebook.png",
@@ -745,7 +1399,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/extreme-ownership.png": {
       "originalName": "extreme-ownership.png",
@@ -760,7 +1415,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/farber-castel-e-motion-medium-nib-fountain-pen.png": {
       "originalName": "farber-castel-e-motion-medium-nib-fountain-pen.png",
@@ -775,7 +1431,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/feelworld-t7-monitor.png": {
       "originalName": "feelworld-t7-monitor.png",
@@ -790,7 +1447,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/flexispot.png": {
       "originalName": "flexispot.png",
@@ -805,7 +1463,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/flow.png": {
       "originalName": "flow.png",
@@ -820,7 +1479,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/folding-tripod-mount.png": {
       "originalName": "folding-tripod-mount.png",
@@ -835,7 +1495,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/friction-arm-small.png": {
       "originalName": "friction-arm-small.png",
@@ -850,7 +1511,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/glyph-atom-raid-4tb-ssd.png": {
       "originalName": "glyph-atom-raid-4tb-ssd.png",
@@ -865,7 +1527,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gnarbox-v2.png": {
       "originalName": "gnarbox-v2.png",
@@ -880,7 +1543,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-dome.png": {
       "originalName": "gopro-dome.png",
@@ -895,7 +1559,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-fusion-360.png": {
       "originalName": "gopro-fusion-360.png",
@@ -909,7 +1574,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-fusion-charger.png": {
       "originalName": "gopro-fusion-charger.png",
@@ -924,7 +1590,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-hero-5.png": {
       "originalName": "gopro-hero-5.png",
@@ -939,7 +1606,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-hero-7.png": {
       "originalName": "gopro-hero-7.png",
@@ -954,7 +1622,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-hero-charger.png": {
       "originalName": "gopro-hero-charger.png",
@@ -969,7 +1638,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-max-dual-charger.png": {
       "originalName": "gopro-max-dual-charger.png",
@@ -983,7 +1653,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-max-grip-tripod.png": {
       "originalName": "gopro-max-grip-tripod.png",
@@ -998,7 +1669,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-max.png": {
       "originalName": "gopro-max.png",
@@ -1013,7 +1685,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-stick.png": {
       "originalName": "gopro-stick.png",
@@ -1028,7 +1701,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-suction.png": {
       "originalName": "gopro-suction.png",
@@ -1043,7 +1717,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/gopro-tripod-adapter.png": {
       "originalName": "gopro-tripod-adapter.png",
@@ -1058,7 +1733,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/headlamp.png": {
       "originalName": "headlamp.png",
@@ -1073,7 +1749,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/iphone-11-pro-max.png": {
       "originalName": "iphone-11-pro-max.png",
@@ -1088,7 +1765,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/jab-jab-jab-right-hook.png": {
       "originalName": "jab-jab-jab-right-hook.png",
@@ -1103,7 +1781,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/joby-gorillapod-5k-kit.png": {
       "originalName": "joby-gorillapod-5k-kit.png",
@@ -1118,7 +1797,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/k-and-m-mic-desk-stand.png": {
       "originalName": "k-and-m-mic-desk-stand.png",
@@ -1133,7 +1813,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/kindle-paperwhite.png": {
       "originalName": "kindle-paperwhite.png",
@@ -1148,7 +1829,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/leeventi-teleprompter.png": {
       "originalName": "leeventi-teleprompter.png",
@@ -1163,7 +1845,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/leuchtturm1917-notebook-a5-dotted.png": {
       "originalName": "leuchtturm1917-notebook-a5-dotted.png",
@@ -1178,7 +1861,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/lg-ultra-38.png": {
       "originalName": "lg-ultra-38.png",
@@ -1193,7 +1877,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/lumafusion.png": {
       "originalName": "lumafusion.png",
@@ -1208,7 +1893,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/manfrotto-mobile-phone-adapter.png": {
       "originalName": "manfrotto-mobile-phone-adapter.png",
@@ -1223,7 +1909,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/mans-search-for-meaning.png": {
       "originalName": "mans-search-for-meaning.png",
@@ -1238,7 +1925,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/mary-oliver.png": {
       "originalName": "mary-oliver.png",
@@ -1253,7 +1941,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/moment-lenses.png": {
       "originalName": "moment-lenses.png",
@@ -1268,7 +1957,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/movo-ws160-windscreen-for-deity-v3-mic-pro.png": {
       "originalName": "movo-ws160-windscreen-for-deity-v3-mic-pro.png",
@@ -1283,7 +1973,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/n26bank.png": {
       "originalName": "n26bank.png",
@@ -1298,7 +1989,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/nalgene-1l-bottle.png": {
       "originalName": "nalgene-1l-bottle.png",
@@ -1313,7 +2005,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/nalgene-drink-lid.png": {
       "originalName": "nalgene-drink-lid.png",
@@ -1328,7 +2021,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/national-geographic-travel-tripod.png": {
       "originalName": "national-geographic-travel-tripod.png",
@@ -1343,7 +2037,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/nomadlist.png": {
       "originalName": "nomadlist.png",
@@ -1358,7 +2053,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/np-f970-batteries.png": {
       "originalName": "np-f970-batteries.png",
@@ -1373,7 +2069,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/np-f970-dual-charger.png": {
       "originalName": "np-f970-dual-charger.png",
@@ -1388,7 +2085,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/np-fw50-dual-charger.png": {
       "originalName": "np-fw50-dual-charger.png",
@@ -1403,7 +2101,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/obstacle-is-the-way.png": {
       "originalName": "obstacle-is-the-way.png",
@@ -1418,7 +2117,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/oktava-mk-012.png": {
       "originalName": "oktava-mk-012.png",
@@ -1433,7 +2133,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/peak-design-camera-cube-l.png": {
       "originalName": "peak-design-camera-cube-l.png",
@@ -1447,7 +2148,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/peak-design-everyday-sling-5l.png": {
       "originalName": "peak-design-everyday-sling-5l.png",
@@ -1461,7 +2163,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/peak-design-packing-cube-large-and-small.png": {
       "originalName": "peak-design-packing-cube-large-and-small.png",
@@ -1475,7 +2178,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/peak-design-travel-backpack-45l.png": {
       "originalName": "peak-design-travel-backpack-45l.png",
@@ -1490,7 +2194,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/peakdesign-capture-clip.png": {
       "originalName": "peakdesign-capture-clip.png",
@@ -1505,7 +2210,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/peakdesign-everyday-backpack.png": {
       "originalName": "peakdesign-everyday-backpack.png",
@@ -1519,7 +2225,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/peakdesign-field-pouch.png": {
       "originalName": "peakdesign-field-pouch.png",
@@ -1534,7 +2241,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/peakdesign-lens-kit.png": {
       "originalName": "peakdesign-lens-kit.png",
@@ -1549,7 +2257,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/peakdesign-slide-lite.png": {
       "originalName": "peakdesign-slide-lite.png",
@@ -1563,7 +2272,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/psychological-warfare.png": {
       "originalName": "psychological-warfare.png",
@@ -1578,7 +2288,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/revolut.png": {
       "originalName": "revolut.png",
@@ -1593,7 +2304,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-extension-cable.png": {
       "originalName": "rode-extension-cable.png",
@@ -1608,7 +2320,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-nt-usb-mini.png": {
       "originalName": "rode-nt-usb-mini.png",
@@ -1623,7 +2336,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-podmic.png": {
       "originalName": "rode-podmic.png",
@@ -1638,7 +2352,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-psa-1-mic-arm.png": {
       "originalName": "rode-psa-1-mic-arm.png",
@@ -1653,7 +2368,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-sm4-r.png": {
       "originalName": "rode-sm4-r.png",
@@ -1668,7 +2384,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-smartlav-plus.png": {
       "originalName": "rode-smartlav-plus.png",
@@ -1683,7 +2400,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-trrs-to-trs-adaptor.png": {
       "originalName": "rode-trrs-to-trs-adaptor.png",
@@ -1698,7 +2416,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-video-mic-pro-plus.png": {
       "originalName": "rode-video-mic-pro-plus.png",
@@ -1713,7 +2432,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-video-micro.png": {
       "originalName": "rode-video-micro.png",
@@ -1728,7 +2448,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-videomic-ntg.png": {
       "originalName": "rode-videomic-ntg.png",
@@ -1743,7 +2464,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/rode-wireless-go-ii.png": {
       "originalName": "rode-wireless-go-ii.png",
@@ -1758,7 +2480,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/roost-stand.png": {
       "originalName": "roost-stand.png",
@@ -1773,7 +2496,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/samsung-t3.png": {
       "originalName": "samsung-t3.png",
@@ -1787,7 +2511,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/samsung-x5.png": {
       "originalName": "samsung-x5.png",
@@ -1801,7 +2526,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sandisk-micro-128gb.png": {
       "originalName": "sandisk-micro-128gb.png",
@@ -1816,7 +2542,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sapiens.png": {
       "originalName": "sapiens.png",
@@ -1831,7 +2558,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/scaleway.png": {
       "originalName": "scaleway.png",
@@ -1846,7 +2574,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/shoe-dog.png": {
       "originalName": "shoe-dog.png",
@@ -1861,7 +2590,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/shure-a57aws.png": {
       "originalName": "shure-a57aws.png",
@@ -1876,7 +2606,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/shure-beta-57a.png": {
       "originalName": "shure-beta-57a.png",
@@ -1891,7 +2622,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sigma-35.png": {
       "originalName": "sigma-35.png",
@@ -1906,7 +2638,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sigma-mc11-ef-to-sony-e.png": {
       "originalName": "sigma-mc11-ef-to-sony-e.png",
@@ -1921,7 +2654,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sirui-b-00-ball-head.png": {
       "originalName": "sirui-b-00-ball-head.png",
@@ -1936,7 +2670,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sirui-t-025x.png": {
       "originalName": "sirui-t-025x.png",
@@ -1951,7 +2686,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sirui.jpg": {
       "originalName": "sirui.jpg",
@@ -1965,7 +2701,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/skillshare.png": {
       "originalName": "skillshare.png",
@@ -1980,7 +2717,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sony-a7ii.png": {
       "originalName": "sony-a7ii.png",
@@ -1995,7 +2733,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sony-a7sii.png": {
       "originalName": "sony-a7sii.png",
@@ -2010,7 +2749,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/sparkcamera.png": {
       "originalName": "sparkcamera.png",
@@ -2025,7 +2765,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/ssd-500gb.png": {
       "originalName": "ssd-500gb.png",
@@ -2039,7 +2780,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/systems-mindset.png": {
       "originalName": "systems-mindset.png",
@@ -2054,7 +2796,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/tentacle-sync-e.png": {
       "originalName": "tentacle-sync-e.png",
@@ -2069,7 +2812,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/tentacle-track-e.png": {
       "originalName": "tentacle-track-e.png",
@@ -2084,7 +2828,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/traderepublic.png": {
       "originalName": "traderepublic.png",
@@ -2099,7 +2844,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/transferwise.png": {
       "originalName": "transferwise.png",
@@ -2114,7 +2860,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/travel-adapter.png": {
       "originalName": "travel-adapter.png",
@@ -2129,7 +2876,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/tribe-of-mentors.png": {
       "originalName": "tribe-of-mentors.png",
@@ -2144,7 +2892,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/tripod-adapter-plate.png": {
       "originalName": "tripod-adapter-plate.png",
@@ -2159,7 +2908,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/tubebuddy.png": {
       "originalName": "tubebuddy.png",
@@ -2174,7 +2924,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/usb-type-c-adapter.png": {
       "originalName": "usb-type-c-adapter.png",
@@ -2189,7 +2940,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/usb-type-c-card-reader.png": {
       "originalName": "usb-type-c-card-reader.png",
@@ -2204,7 +2956,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/usb-type-c-hub.png": {
       "originalName": "usb-type-c-hub.png",
@@ -2219,7 +2972,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/viltrox-dc-50.png": {
       "originalName": "viltrox-dc-50.png",
@@ -2233,7 +2987,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/walkolution-aera.png": {
       "originalName": "walkolution-aera.png",
@@ -2248,7 +3003,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/war-of-art.png": {
       "originalName": "war-of-art.png",
@@ -2263,7 +3019,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/waveapps.png": {
       "originalName": "waveapps.png",
@@ -2278,7 +3035,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/xlr-ultra-hd-nylon-cable.png": {
       "originalName": "xlr-ultra-hd-nylon-cable.png",
@@ -2293,7 +3051,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zeiss-batis-25.png": {
       "originalName": "zeiss-batis-25.png",
@@ -2308,7 +3067,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zeiss-batis-85.png": {
       "originalName": "zeiss-batis-85.png",
@@ -2323,7 +3083,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zencastr.png": {
       "originalName": "zencastr.png",
@@ -2338,7 +3099,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zendure-superport-4.png": {
       "originalName": "zendure-superport-4.png",
@@ -2353,7 +3115,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zendure-supertank.png": {
       "originalName": "zendure-supertank.png",
@@ -2368,7 +3131,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zhiyun-crane-v2.png": {
       "originalName": "zhiyun-crane-v2.png",
@@ -2383,7 +3147,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zhiyun-weebill-2-pro.png": {
       "originalName": "zhiyun-weebill-2-pro.png",
@@ -2398,7 +3163,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zinc-spray.png": {
       "originalName": "zinc-spray.png",
@@ -2413,7 +3179,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zoom-f6.png": {
       "originalName": "zoom-f6.png",
@@ -2427,7 +3194,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "gear/zoom-h5-recorder.png": {
       "originalName": "zoom-h5-recorder.png",
@@ -2442,7 +3210,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "post/2020/2018-10-13-meditating-at-angles-landing.jpg": {
       "originalName": "2018-10-13-meditating-at-angles-landing.jpg",
@@ -2456,7 +3225,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     },
     "post/test-first-hero-image.jpg": {
       "originalName": "test-first-hero-image.jpg",
@@ -2470,7 +3240,8 @@
       "exif": null,
       "location": null,
       "createdAt": "2026-10-17T10:29:05.000Z",
-      "updatedAt": "2026-11-26T05:02:35.906Z"
+      "updatedAt": "2026-11-26T05:02:35.906Z",
+      "uploadedAt": "2026-11-26T10:17:43.820Z"
     }
   }
 }
