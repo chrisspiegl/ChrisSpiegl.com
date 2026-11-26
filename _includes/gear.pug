@@ -4,7 +4,9 @@ block content
     - const titleCombined = `${gear.Title}`
     - const linkAmazon = (gear.Link.includes('amazon')) ? `https://assoc-redirect.amazon.com/g/r/${gear.Link}?tag=cstrax-20` : gear.Link
 
-    a(href=page.url, title="Permalink"): img(src=helpers.imageUrl(`/assets/images/gear/${gear.Slug}.png`, 640) alt=gear.Title)
+    - const imageGear = `/assets/images/gear/${gear.Slug}.png`
+    if helpers.hasImage(imageGear)
+      a(href=page.url, title="Permalink"): img(src=helpers.imageUrl(imageGear, 640) alt=gear.Title)
     h2
       a(href=page.url, title="Permalink")!= titleCombined
     p Last Updated:

@@ -27,7 +27,10 @@ block content
             const linkAmazon = (isAmazon) ? `https://assoc-redirect.amazon.com/g/r/${g.Link}?tag=cstrax-20` : g.Link
           .gear-item(id=g.Slug)
             - const imageGearItem = `/assets/images/gear/${g.Slug}.png`
-            img(src=helpers.imageUrl(imageGearItem, 640) alt=g.Title title=g.Title onerror="this.src='https://via.placeholder.com/640x427/FFFFFF/?text=Image+not+found'")
+            if helpers.hasImage(imageGearItem)
+              img(src=helpers.imageUrl(imageGearItem, 640) alt=g.Title title=g.Title)
+            else
+              span.image-missing(aria-hidden='true')
             h3: a(href=linkAmazon title=g.Title target='_blank')= g.Title
             p= g.Description
             a.gear-link(href=linkAmazon title=g.Title target='_blank') &nbsp;

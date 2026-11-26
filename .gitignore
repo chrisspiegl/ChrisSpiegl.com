@@ -90,10 +90,10 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-assets/images/FridayWallpaper/*.jpg
 # Content images live on R2 (pnpm images:push); only assets/images/other is in git.
 /assets/images/*
 !/assets/images/other/
 # Local backups and files kept out of R2 (old 500px previews, draft backups).
 /_archive/
 .wrangler
+/_site_production/

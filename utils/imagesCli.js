@@ -204,7 +204,12 @@ async function cleanCopy(buffer, format, orientation) {
 }
 
 // Never upload a file that still says where it was taken or who owns the camera.
-async function assertClean(buffer, credit) {
+// Two checks: cleaning it again and adding the credit gives the same bytes
+// (so nothing but the credit is left, in every format, WebP included), and
+// exifr finds no sensitive tag.
+async function assertClean(buffer, format, credit) {
+  if (!embedCredit(stripMetadata(buffer, format), format, credit).equals(buffer))
+    throw new Error('metadata survived cleaning')
   const exifr = (await import('exifr')).default
   const left = await exifr.parse(buffer, {
     gps: true,
@@ -288,7 +293,7 @@ async function processFile(file, images, now) {
   if (credit?.copyright)
     exif.copyright = credit.copyright
   clean.buffer = embedCredit(clean.buffer, clean.format, credit)
-  await assertClean(clean.buffer, credit)
+  await assertClean(clean.buffer, clean.format, credit)
   const info = await sharp(clean.buffer).metadata()
   const size = { width: info.width, height: info.height }
 

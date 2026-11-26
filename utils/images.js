@@ -79,6 +79,14 @@ function resolve(src, { strict = false } = {}) {
   const onDisk = store.existsExactly(path.join(rootDir, src))
   if (item) {
     result = { kind: 'r2', key, item, onDisk }
+    // Recorded with --no-upload but never uploaded: the live site would show
+    // a broken image, so production stops; other builds only warn.
+    if (!item.uploadedAt && (process.env.WORKERS_CI || process.env.CI)) {
+      const message = `[images] ${src} is in _data/images.json but not uploaded yet. Run pnpm images:push.`
+      if (useCloudflare())
+        throw new Error(message)
+      warnOnce(message)
+    }
   }
   else if (onDisk) {
     result = { kind: 'local', key }
@@ -290,6 +298,12 @@ function imageInfo(src) {
   return repoInfo.get(src) || null
 }
 
+// False when an image path points at nothing (not pushed, not in the repo),
+// so templates can leave out a broken <img>.
+function hasImage(src) {
+  return resolve(src).kind !== 'missing'
+}
+
 // The original file on R2, for "View full resolution" links.
 function originalUrl(src) {
   const target = resolve(src)
@@ -327,6 +341,7 @@ async function verifyCloudflareImages(siteUrl, sampleSrc) {
 
 module.exports = {
   WIDTHS,
+  hasImage,
   prepareRepoImageInfo,
   imageInfo,
   originalUrl,

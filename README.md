@@ -63,11 +63,11 @@ Uploads use Wrangler with a year of caching: run `npx wrangler login` once (or s
 ```sh
 git clone --mirror git@github.com:chrisspiegl/ChrisSpiegl.com.git chrisspiegl-com-rewrite.git
 cd chrisspiegl-com-rewrite.git
-git filter-repo --invert-paths --path assets/images/gear --path assets/images/post --path assets/images/book
+git filter-repo --invert-paths --path assets/images/gear --path assets/images/post --path assets/images/book --path assets/images/FridayWallpaper --path _site_production
 git push --force --mirror origin
 ```
 
-GitHub refuses the hidden `refs/pull/*` refs in a mirror push; those errors are expected and the branches still update. Then delete and re-clone your working copies (or `git fetch && git reset --hard origin/main` on each branch), and keep your local `assets/images` folder: those files are your originals.
+Besides the content images this drops `_site_production/`, an old build output committed in May 2021 that is about 98 MB of the history (the moved images are about 31 MB). Neither is in the current tree. GitHub refuses the hidden `refs/pull/*` refs in a mirror push; those errors are expected and the branches still update. Then delete and re-clone your working copies (or `git fetch && git reset --hard origin/main` on each branch), and keep your local `assets/images` folder: those files are your originals.
 
 ## Cloudflare settings this site depends on
 
