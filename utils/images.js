@@ -251,6 +251,11 @@ function imageAttributes(src, { alt = '', sizes = 'content', loading = 'lazy', t
     attrs.style = `background:url(${preview}) center/cover no-repeat`
     if (size && shape)
       attrs.style += `;aspect-ratio:${size.width}/${size.height}`
+    // A transparent image would show the blur through its empty areas:
+    // drop the preview once it has loaded, back to the CSS background (without
+    // JavaScript it stays).
+    if (resolve(src).item?.transparent)
+      attrs.onload = 'this.style.background=\'\''
   }
   return attrs
 }

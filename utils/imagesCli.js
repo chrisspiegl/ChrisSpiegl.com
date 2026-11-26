@@ -33,7 +33,7 @@ const sharp = require('sharp')
 const { creditFor, embedCredit, isMine } = require('./copyright')
 const { readMeta, stripMetadata } = require('./imageMeta')
 const store = require('./imageStore')
-const { placeholderFor } = require('./thumbhash')
+const { hasTransparency, placeholderFor } = require('./thumbhash')
 
 const BUCKET = process.env.R2_BUCKET || 'chrisspiegl-com-r2-production'
 const JURISDICTION = process.env.R2_JURISDICTION || 'eu'
@@ -305,7 +305,10 @@ async function processFile(file, images, now) {
     type: TYPES[clean.format],
     hash,
     uploadedHash: sha256(clean.buffer),
-    thumbhash: await placeholderFor(clean.buffer, await import('thumbhash')),
+    // Transparent cut-outs (gear product shots) are previewed on white, the
+    // tile colour they sit on; the page drops the preview once they load.
+    thumbhash: await placeholderFor(clean.buffer, await import('thumbhash'), { background: '#ffffff' }),
+    transparent: await hasTransparency(clean.buffer) || undefined,
     exif: Object.keys(exif).length
       ? exif
       : null,
