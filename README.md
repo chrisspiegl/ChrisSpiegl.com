@@ -58,16 +58,7 @@ Uploads use Wrangler with a year of caching: run `pnpm install` after pulling th
 
 **Figures**: `!!! figure exif` adds a line with camera, lens, exposure and place, `!!! figure full` a "View full resolution" link with pixel and file size, `nolocation` leaves the place out of that line. Camera and lens display names, and links to their /uses entry, are in `_data/cameras.json`.
 
-**Removing the images from git history** (one time, after the R2 move is merged and pushed; it changes every commit id). On your Mac, with `brew install git-filter-repo`:
-
-```sh
-git clone --mirror git@github.com:chrisspiegl/ChrisSpiegl.com.git chrisspiegl-com-rewrite.git
-cd chrisspiegl-com-rewrite.git
-git filter-repo --invert-paths --path assets/images/gear --path assets/images/post --path assets/images/book --path assets/images/FridayWallpaper --path _site_production
-git push --force --mirror origin
-```
-
-Besides the content images this drops `_site_production/`, an old build output committed in May 2021 that is about 98 MB of the history (the moved images are about 31 MB). Neither is in the current tree. GitHub refuses the hidden `refs/pull/*` refs in a mirror push; those errors are expected and the branches still update. Then delete and re-clone your working copies (or `git fetch && git reset --hard origin/main` on each branch), and keep your local `assets/images` folder: those files are your originals.
+**Git history:** the content images and an old 2021 build output (`_site_production/`) were removed from all of git history on 26 Nov 2026 with `git filter-repo`, which took the repo from about 144 MB to 10 MB and changed every commit id. Any copy cloned before then must be re-cloned, never pulled or reset: a `git reset --hard origin/main` from an old commit deletes the image files that commit still tracked. Back up `assets/images` first if those files are your only copies, and run `pnpm images:pull` in the new clone if you want the images on disk.
 
 ## Cloudflare settings this site depends on
 
