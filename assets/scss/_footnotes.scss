@@ -1,5 +1,5 @@
 .footnotes {
-  font-size: var(--font-size-minus-2);
+  font-size: var(--font-size-small);
 
   p {
     margin-bottom: 0;
@@ -20,29 +20,27 @@
   position: relative;
   top: -0.5em;
   line-height: 1.2;
-  font-size: var(--font-size-minus-2);
-  margin-left: 0.2rem;
-  border-radius: .2rem;
+  font-size: var(--font-size-tiny);
+  margin-left: var(--space-1);
+  border-radius: var(--radius-sm);
   min-width: 1rem;
   text-align: center;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   color: var(--color-white);
-  background-color: var(--color-light);
-  opacity: 0.6;
+  background-color: var(--color-ink-muted);
 
   &:hover {
-    background-color: var(--color-light);
-    opacity: 1;
+    background-color: var(--color-accent);
     text-decoration: none;
   }
 }
 
 .footnotes-sep {
-  margin-top: 2em;
+  margin-top: var(--space-6);
   border: 0;
-  border-top: 1px solid var(--color-light);
-  padding-top: 1em;
+  border-top: 1px solid var(--color-rule);
+  padding-top: var(--space-4);
 }
 
 .footnote-backref {
@@ -55,18 +53,18 @@
 // Footnote popovers, created by _includes/scripts/footnotes.js
 $footnote-button-height: 1.25rem;
 $footnote-transition-duration: 0.15s;
-$footnote-mobile-breakpoint: 767.98px;
+$footnote-mobile-breakpoint: 819.98px;
 
 .footnote-button {
   display: inline-block;
   min-width: $footnote-button-height;
   height: $footnote-button-height;
   margin: 0 0.1rem 0 0.15rem;
-  padding: 0 0.4rem;
+  padding: 0 var(--space-2);
   border: 0;
-  border-radius: $footnote-button-height;
+  border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: var(--font-size-tiny);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   line-height: $footnote-button-height;
@@ -75,7 +73,7 @@ $footnote-mobile-breakpoint: 767.98px;
   position: relative;
   top: -0.35em;
   color: var(--color-white);
-  background-color: var(--color-lighter);
+  background-color: var(--color-ink-muted);
   cursor: pointer;
   -webkit-font-smoothing: antialiased;
   transition: background-color $footnote-transition-duration ease;
@@ -83,11 +81,11 @@ $footnote-mobile-breakpoint: 767.98px;
   &:hover,
   &:focus-visible,
   &.is-active {
-    background-color: var(--color-orange);
+    background-color: var(--color-accent);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-orange);
+    outline: var(--focus-ring);
     outline-offset: 2px;
   }
 }
@@ -97,15 +95,15 @@ $footnote-mobile-breakpoint: 767.98px;
   width: min(24em, calc(100vw - 2rem));
   max-height: 18em;
   overflow: auto;
-  padding: 0.9rem 1.1rem;
-  border: 1px solid var(--color-gray-88);
-  border-radius: 0.5rem;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-lg);
   font-family: var(--font-body);
-  font-size: var(--font-size-minus-1);
-  line-height: 1.4;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-ui);
   text-align: left;
   color: var(--color-heading);
-  background-color: #faf7f2;
+  background-color: var(--color-surface);
   box-shadow: 0 0.25rem 1.25rem rgba(34, 40, 48, 0.15);
 
   opacity: 0;
@@ -130,7 +128,7 @@ $footnote-mobile-breakpoint: 767.98px;
   ul,
   ol,
   pre {
-    padding-bottom: 0.75rem;
+    padding-bottom: var(--space-3);
 
     &:last-child {
       padding-bottom: 0;
@@ -146,7 +144,7 @@ $footnote-mobile-breakpoint: 767.98px;
 @supports (anchor-name: --footnote) {
   .footnote-popover {
     inset: auto;
-    margin: 0.5rem 0;
+    margin: var(--space-2) 0;
     position-area: bottom span-right;
     position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
   }
@@ -161,7 +159,7 @@ $footnote-mobile-breakpoint: 767.98px;
     max-height: 50vh;
     margin: 0;
     border-width: 1px 0 0;
-    border-radius: 0.75rem 0.75rem 0 0;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     position-area: none;
     position-try-fallbacks: none;
     transform: translateY(100%);

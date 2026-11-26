@@ -99,6 +99,7 @@ module.exports = (config) => {
 
   // Keep repo docs and server-config notes out of the public build.
   config.ignores.add('README.md')
+  config.ignores.add('CLAUDE.md')
   config.ignores.add('_mta-sts/**')
   config.ignores.add('mta-sts/**')
 
