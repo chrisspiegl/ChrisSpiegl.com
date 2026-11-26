@@ -265,8 +265,12 @@ async function processFile(file, images, now) {
   const hash = sha256(buffer)
   const existing = images[key]
 
-  // Unchanged, or a copy downloaded with `pnpm images:pull`.
-  if (existing && !force && (existing.hash === hash || existing.uploadedHash === hash) && (existing.uploadedAt || noUpload))
+  // A copy downloaded with `pnpm images:pull` has no metadata left: never
+  // read it again, even with --force, or its EXIF and place would be lost.
+  if (existing && existing.uploadedHash === hash && existing.hash !== hash)
+    return { key, status: 'unchanged' }
+  // Unchanged.
+  if (existing && !force && existing.hash === hash && (existing.uploadedAt || noUpload))
     return { key, status: 'unchanged' }
 
   // 2. Shooting data and place, read before the metadata goes.
