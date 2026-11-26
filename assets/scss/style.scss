@@ -1,5 +1,6 @@
 @use "sass:meta";
 @use "variables" as vars;
+@use "shapes";
 
 @use "tables";
 @use "lists";
@@ -98,8 +99,14 @@ Values taken from chrisspiegl.substack.com so the site and the newsletter feel l
   --radius-lg: 14px;            // cards
   --radius-pill: 999px;
 
+  // The squircle (same as the Niyama.Academy avatar squircle). Only for square or
+  // round things: avatars, icon tiles, round icon buttons. Apply with the
+  // squircle mixin in _shapes.scss. A circle (50%) stays allowed for avatars.
+  --mask-squircle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' preserveAspectRatio='none'%3E%3Cpath d='M0 .5C0 0 0 0 .5 0S1 0 1 .5 1 1 .5 1 0 1 0 .5Z'/%3E%3C/svg%3E");
+
   --control-height: 48px;       // buttons and fields
   --focus-ring: 2px solid var(--color-accent);
+  --shadow-raised: 0 4px 14px rgba(54, 55, 55, 0.08); // hovered cards, the open phone TOC
 }
 
 // Body font on the root only, so every element inherits the font of its
@@ -254,6 +261,8 @@ body {
 @include meta.load-css("_books.scss");
 @include meta.load-css("_movies.scss");
 @include meta.load-css("_tools.scss");
+@include meta.load-css("_toc.scss");
+@include meta.load-css("_styleguide.scss");
 
 
 a {
@@ -360,6 +369,7 @@ article header {
 }
 
 img {
+  max-width: 100%;
   border-radius: var(--radius-sm);
 }
 
@@ -662,9 +672,10 @@ img[width][height] {
 }
 
 .linktree-avatar {
+  @include shapes.squircle;
+
   width: 7rem;
   height: 7rem;
-  border-radius: 50%;
   object-fit: cover;
 }
 
@@ -691,23 +702,47 @@ img[width][height] {
   }
 
   a {
+    position: relative;
+    isolation: isolate;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 2.75rem;
     height: 2.75rem;
-    border-radius: 50%;
     color: var(--color-ink-strong);
     font-size: 1.6rem;
-    transition: color 0.15s, background-color 0.15s;
+    transition: color 0.15s;
 
     svg.icon {
       vertical-align: 0;
     }
 
+    // Hover fill in the squircle shape.
+    &::before {
+      @include shapes.squircle;
+
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: transparent;
+      transition: background-color 0.15s;
+    }
+
     &:hover {
       color: var(--color-accent);
+    }
+
+    &:hover::before {
       background: var(--color-paper-raised);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus-visible::after {
+      @include shapes.squircle-focus-ring;
     }
   }
 }
@@ -763,7 +798,7 @@ img[width][height] {
 
     &:hover {
       border-color: var(--color-rule-strong);
-      box-shadow: 0 4px 14px rgba(54, 55, 55, 0.08);
+      box-shadow: var(--shadow-raised);
       transform: translateY(-1px);
       text-decoration: none;
 
@@ -806,13 +841,14 @@ img[width][height] {
 }
 
 .linktree-icon {
+  @include shapes.squircle;
+
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
-  border-radius: var(--radius-md);
   background: var(--color-paper);
   color: var(--color-ink-strong);
   font-size: 1.25rem;

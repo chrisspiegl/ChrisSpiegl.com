@@ -1,6 +1,30 @@
 extends layout
 block content
 
-  article.container
+  //- `toc: true` in a page's front matter adds the "On this page" list:
+  //- a sticky column on the left from 820px, a sticky bar that opens on phones.
+  - var tocList = toc ? helpers.tocItems(content) : []
 
-    != content
+  if tocList.length
+    article.container.has-toc
+      nav.toc(aria-label="On this page")
+        details.toc-details
+          summary.toc-summary
+            span.toc-label On this page
+            span.toc-current(aria-hidden="true")
+          ol.toc-list
+            each item in tocList
+              li(class=item.children.length ? 'toc-branch' : null)
+                a(href=`#${item.id}` title=item.text)= item.text
+                if item.children.length
+                  ol(id=`toc-${item.id}`)
+                    each child in item.children
+                      li: a(href=`#${child.id}` title=child.text)= child.text
+      div.toc-content
+        != content
+    script
+      include scripts/toc.js
+  else
+    article.container
+
+      != content

@@ -30,11 +30,15 @@ The design tokens are the custom properties in `:root` at the top of `assets/scs
   Line heights are `--line-height-tight` (1.2, headings), `--line-height-ui` (1.4) and `--line-height-text` (1.6).
 - **Spacing:** `--space-1` to `--space-8`, which is 4, 8, 12, 16, 24, 32, 48 and 64px.
 - **Radius:** `--radius-sm` 4px (images, code), `--radius-md` 8px (buttons, fields), `--radius-lg` 14px (cards), and `--radius-pill`.
+- **Shadow:** only `--shadow-raised`, for a hovered card and the open phone TOC.
+- **Squircle:** the brand shape for anything square or round: avatars, icon tiles, round icon buttons (`--mask-squircle`, `@include shapes.squircle` from `_shapes.scss`, or the class `squircle`). It is the Niyama.Academy avatar squircle (`M0 .5C0 0 0 0 .5 0S1 0 1 .5 1 1 .5 1 0 1 0 .5Z` in a 0 to 1 box). Never use it for buttons, fields, cards, photos or other non-square shapes. A circle (`circle`) stays allowed for avatars. A mask clips outlines, so focusable squircles use `shapes.squircle-focus-ring` on `::after`.
 - **Controls:** buttons (`.btn`, submit) and fields share `--control-height` (48px), one padding and `--font-size-small`. Anything focusable gets `outline: var(--focus-ring)`.
 - **Breakpoints:** only `vars.$break-mobile` (480px) and `vars.$ipad-11-portrait` (820px) from `_variables.scss`.
 - **Cards** (/uses, /links) are on `--color-surface` with a `--color-rule` border and `--radius-lg`. A card photo runs edge to edge and is clipped by the card (`overflow: hidden`).
+- **Figures:** put photos in `!!! figure` (text width), `!!! figure wide` (wider than the text), `!!! figure pair` or `!!! figure pair wide` (two side by side). Text after the pictures becomes the `<figcaption>`.
+- **Table of contents:** a page opts in with `toc: true` in its front matter (layout `page`). Its Markdown `h2` and `h3` headings are listed in a column on the left from 820px, and in a sticky bar that opens at the top on phones. When the screen has room the text column stays centered, as on pages without a TOC. Sections fold: only top-level entries show, the one being read opens by itself, and entries stay on one line with an ellipsis. Wide figures stay centered on the text; on laptops they stop short of the TOC, and only once the text is centered do they pass over it while the TOC fades out. Without JavaScript all entries show and nothing folds or fades. Markup in `_includes/page.pug`, styles in `_toc.scss`, script in `_includes/scripts/toc.js`.
 
-The /styleguide page (`styleguide.md`) shows the elements rendered. Check a change there and on /, /uses and /links, at desktop and phone width, before pushing.
+The /styleguide page (`styleguide.md`) shows the elements rendered, and documents each token and Markdown pattern. Its helper classes (`.sg-*` in `_styleguide.scss`) are for that page only. When you add or change a token, update the styleguide too. Check a change there and on /, /uses and /links, at desktop and phone width, before pushing.
 
 ## Working rules
 

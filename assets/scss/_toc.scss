@@ -1,0 +1,307 @@
+@use "variables" as vars;
+
+/*
+### "On this page" (pages with `toc: true`)
+Phone: a bar that sticks to the top of the screen and opens into the list.
+From 820px: a column on the left that stays in view while you read.
+*/
+
+:root {
+  --toc-width: 13rem;
+}
+
+.toc {
+  position: sticky;
+  top: var(--space-2);
+  z-index: 10;
+  margin-bottom: var(--space-5);
+  font-family: var(--font-controls);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-ui);
+}
+
+.toc-details {
+  padding-bottom: 0;
+  cursor: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-raised);
+}
+
+.toc-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--control-height);
+  padding: 0 var(--space-4);
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius-md);
+  color: var(--color-ink-strong);
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  // Chevron that turns when the list is open.
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0.5em;
+    height: 0.5em;
+    margin-left: auto;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-25%) rotate(45deg);
+    transition: transform 0.15s;
+  }
+
+  .toc-details[open] > &::after {
+    transform: translateY(25%) rotate(-135deg);
+  }
+}
+
+.toc-label {
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+// The section you're reading, shown in the closed bar on phones.
+.toc-current {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--color-ink-muted);
+
+  &:not(:empty)::before {
+    content: "·";
+    margin-right: var(--space-2);
+  }
+}
+
+#content .toc-list,
+#content .toc-list ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#content .toc-list {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 0 var(--space-2) var(--space-3);
+  border-top: 1px solid var(--color-rule);
+  padding-top: var(--space-2);
+
+  li {
+    padding: 0;
+  }
+
+  ol a {
+    padding-left: var(--space-6);
+    font-size: var(--font-size-tiny);
+  }
+
+  // One line per entry; a long title ends in "…" (the full title is the tooltip).
+  a {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    color: var(--color-ink);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    hyphens: manual;
+
+    &:hover {
+      color: var(--color-accent);
+      background: var(--color-paper-raised);
+    }
+
+    &[aria-current] {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    // The list scrolls and folds, which clips anything drawn outside an
+    // entry, so the focus ring sits inside it.
+    &:focus-visible {
+      outline-offset: -2px;
+    }
+  }
+
+  // The section that holds the subsection you're reading.
+  .is-reading > a {
+    color: var(--color-accent);
+  }
+}
+
+// Folding (added by toc.js): a section shows its subsections only when open.
+// Without the script every subsection stays visible.
+.toc.is-enhanced .toc-branch {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows 0.2s;
+
+  > ol {
+    min-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: visibility 0s 0.2s;
+  }
+
+  &.is-open {
+    grid-template-rows: auto 1fr;
+
+    > ol {
+      visibility: visible;
+      transition: visibility 0s;
+    }
+  }
+}
+
+// Jumping to a heading leaves room for the sticky bar above it.
+.has-toc :is(h2, h3)[id] {
+  scroll-margin-top: calc(var(--control-height) + var(--space-5));
+}
+
+@media (min-width: vars.$ipad-11-portrait) {
+  // Three columns: TOC, text, and an empty one that mirrors the TOC. The text
+  // grows to --content-width first, then the empty column takes what is left,
+  // so on large screens the text sits in the middle of the screen like on any
+  // other page, and on laptops the empty column shrinks away.
+  .container.has-toc {
+    --toc-page: min(100vw - 2 * var(--space-5), var(--content-width) + 2 * (var(--toc-width) + var(--space-7)));
+    --toc-text: min(var(--content-width), var(--toc-page) - var(--toc-width) - 2 * var(--space-7));
+    // Free space right of the text column, up to the screen edge.
+    --toc-room: calc((100vw - var(--toc-page)) / 2 + var(--toc-page) - var(--toc-width) - var(--space-7) - var(--toc-text) - var(--space-4));
+
+    display: grid;
+    grid-template-columns: var(--toc-width) minmax(0, var(--content-width)) minmax(0, 1fr);
+    column-gap: var(--space-7);
+    width: var(--toc-page);
+    max-width: none;
+  }
+
+  .toc-content {
+    grid-column: 2;
+  }
+
+  .toc {
+    align-self: start;
+    top: var(--space-5);
+    margin: 0;
+  }
+
+  // In the column the list is plain text on the page, no bar around it.
+  .toc-details {
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .toc-summary {
+    min-height: 0;
+    padding: var(--space-4) 0 var(--space-2);
+    font-size: var(--font-size-tiny);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+
+    &::after,
+    .toc-current {
+      display: none;
+    }
+  }
+
+  // With the script the list is always open here; without it, browsers that
+  // can't force it open below still let you click "On this page".
+  .toc.is-enhanced .toc-summary {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  // Open without JavaScript too, where the browser supports it.
+  .toc-details::details-content {
+    content-visibility: visible;
+    display: contents;
+  }
+
+  #content .toc-list {
+    max-height: calc(100vh - var(--space-8) - var(--space-5));
+    padding: 0;
+    border-top: 0;
+    border-left: 1px solid var(--color-rule);
+
+    a {
+      margin-left: -1px;
+      padding: var(--space-1) var(--space-3);
+      border-left: 2px solid transparent;
+      border-radius: 0;
+      line-height: var(--line-height-ui);
+
+      &:hover {
+        background: none;
+      }
+
+      &[aria-current] {
+        border-left-color: var(--color-accent);
+      }
+    }
+
+    ol a {
+      padding-left: var(--space-5);
+    }
+  }
+
+  .has-toc :is(h2, h3)[id] {
+    scroll-margin-top: var(--space-5);
+  }
+
+  // Full-width blocks center on the screen, which the TOC column would push
+  // off center. On TOC pages they fill the text column instead.
+  .has-toc :is(.image-hero, .quote-hero, .header-image-three, .cal-scheduling) {
+    left: auto;
+    right: auto;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+
+    p,
+    blockquote,
+    img {
+      max-width: 100%;
+    }
+  }
+
+  // Wide figures stay centered on the text: they grow the same amount on both
+  // sides, as far as the space on the right allows, and pass over the TOC
+  // column on the left. The TOC fades out while one is under it (toc.js).
+  .has-toc .figure-wide {
+    // Laptops: the free column next to the text is narrower than the TOC, so
+    // the text isn't centered. There a wide figure only grows into the gap and
+    // stops short of the TOC. Once that column is as wide as the TOC (text
+    // centered), the limit lifts and the figure passes over the TOC.
+    --figure-limit: calc(var(--space-7) - var(--space-4) + clamp(0px, (var(--toc-page) - 2 * var(--toc-width) - 2 * var(--space-7) - var(--toc-text) + 1px) * 1000, 10000px));
+    --figure-grow: clamp(0px, min(var(--toc-room), var(--figure-limit)), (var(--figure-wide-width) - var(--toc-text)) / 2);
+
+    left: auto;
+    z-index: 11;
+    width: calc(100% + 2 * var(--figure-grow));
+    margin-left: calc(-1 * var(--figure-grow));
+    transform: none;
+  }
+
+  .toc {
+    transition: opacity 0.2s, visibility 0s;
+  }
+
+  .toc.is-covered {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0s 0.2s;
+  }
+}
