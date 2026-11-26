@@ -162,8 +162,28 @@ All margins, paddings and gaps come from eight steps. Paragraphs, lists and code
 <div><div class="sg-radius" style="border-radius:var(--radius-sm)"></div><code>--radius-sm</code><br>4px, images, code</div>
 <div><div class="sg-radius" style="border-radius:var(--radius-md)"></div><code>--radius-md</code><br>8px, buttons, fields</div>
 <div><div class="sg-radius" style="border-radius:var(--radius-lg)"></div><code>--radius-lg</code><br>14px, cards</div>
-<div><div class="sg-radius" style="border-radius:var(--radius-pill)"></div><code>--radius-pill</code><br>pills, round icons</div>
+<div><div class="sg-radius" style="border-radius:var(--radius-pill);width:9rem"></div><code>--radius-pill</code><br>pills: tags, the follower count</div>
 </div>
+
+## Squircle
+
+The squircle is the ChrisSpiegl.com shape for everything square or round: avatars, icon tiles and round icon buttons. It is the same shape as the Niyama.Academy avatar squircle, one smooth curve per corner. It is never used for buttons, fields, cards, photos or anything else that isn't square.
+
+<div class="sg-radii">
+<div><img class="sg-shape squircle" src="/assets/images/other/avatar-spiegl-chris-leica-2022-08-20-L1010008.jpg" alt="Chris Spiegl in the squircle" width="96" height="96"><code>squircle</code><br>avatars, the default</div>
+<div><img class="sg-shape circle" src="/assets/images/other/avatar-spiegl-chris-leica-2022-08-20-L1010008.jpg" alt="Chris Spiegl in a circle" width="96" height="96"><code>circle</code><br>avatars, where a platform expects round</div>
+<div><div class="sg-shape sg-tile squircle"></div><code>squircle</code><br>icon tiles, icon buttons</div>
+</div>
+
+The shape is the token `--mask-squircle`, an SVG path in a 0 to 1 box applied as a CSS mask, so it scales to any size:
+
+```
+M0 .5 C0 0 0 0 .5 0 S1 0 1 .5 1 1 .5 1 0 1 0 .5 Z
+```
+
+In SCSS, `@use "shapes"` and `@include shapes.squircle;`. In HTML, add the class `squircle` (or `circle`). A mask also cuts off outlines, so a squircle you can tab to draws its focus ring with `@include shapes.squircle-focus-ring;` on its `::after`, like the social icons on /links.
+
+Used today: the avatar in the header and on /links, the social icons on /links (hover fill and focus ring) and the icon tiles in the /links buttons.
 
 ## Controls
 
