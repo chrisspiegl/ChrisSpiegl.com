@@ -268,6 +268,9 @@ async function processFile(file, images, now) {
       ? sourceFormat
       : 'jpeg'
   const target = EXTENSIONS[wantFormat]
+  // The real format decides the extension: a PNG saved as .jpg stays a PNG
+  // (sharp text and graphics, transparency) and is renamed to .png, so update
+  // the links to it.
   const name = safeName(originalName, target)
   if (name !== originalName) {
     const renamed = path.join(path.dirname(file), name)
