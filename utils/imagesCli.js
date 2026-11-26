@@ -30,6 +30,7 @@ const path = require('node:path')
 const process = require('node:process')
 const { promisify } = require('node:util')
 const sharp = require('sharp')
+const { creditFor, embedCredit, isMine } = require('./copyright')
 const { readMeta, stripMetadata } = require('./imageMeta')
 const store = require('./imageStore')
 const { placeholderFor } = require('./thumbhash')
@@ -47,8 +48,9 @@ const MAX_PIXELS = 100_000_000
 const MAX_SIDE = 12_000
 const MAX_BYTES = 100 * 1024 * 1024
 
-// Tags that must never reach R2.
-const SENSITIVE = /^(?:GPS|latitude|longitude|Make|Model|Lens|SerialNumber|BodySerialNumber|CameraSerialNumber|InternalSerialNumber|OwnerName|CameraOwnerName|Artist|Byline|By-line|DateTimeOriginal|City|State|Country|Sub-?location|Location)/i
+// Tags that must never reach R2. Artist and Copyright are written back on
+// purpose (utils/copyright.js) and checked separately in assertClean.
+const SENSITIVE = /^(?:GPS|latitude|longitude|Make|Model|Lens|SerialNumber|BodySerialNumber|CameraSerialNumber|InternalSerialNumber|OwnerName|CameraOwnerName|Byline|By-line|DateTimeOriginal|City|State|Country|Sub-?location|Location)/i
 
 const INPUT = /\.(?:jpe?g|png|webp|gif|heic|heif|tiff?)$/i
 const TYPES = {
@@ -202,7 +204,7 @@ async function cleanCopy(buffer, format, orientation) {
 }
 
 // Never upload a file that still says where it was taken or who owns the camera.
-async function assertClean(buffer) {
+async function assertClean(buffer, credit) {
   const exifr = (await import('exifr')).default
   const left = await exifr.parse(buffer, {
     gps: true,
@@ -215,6 +217,8 @@ async function assertClean(buffer) {
   const found = Object.keys(left).filter(name => SENSITIVE.test(name))
   if (found.length)
     throw new Error(`metadata survived cleaning (${found.slice(0, 5).join(', ')})`)
+  if ((left.Artist || credit?.artist) && left.Artist !== credit?.artist)
+    throw new Error(`unexpected artist in the upload (${left.Artist})`)
 }
 
 function overLimits({ width, height }, bytes) {
@@ -263,7 +267,28 @@ async function processFile(file, images, now) {
   // 2. Shooting data and place, read before the metadata goes.
   const meta = await readMeta(buffer)
   const clean = await cleanCopy(buffer, sourceFormat, meta.orientation)
-  await assertClean(clean.buffer)
+
+  // Copyright: Chris's old notices become the current one, anyone else's stay
+  // as they are, and the credit goes back into the uploaded copy.
+  // A hand-set artist or copyright in `overrides` is used exactly as written.
+  let credit = creditFor(meta.exif, key)
+  const hand = existing?.overrides || {}
+  if (hand.artist || hand.copyright) {
+    credit = {
+      artist: hand.artist || credit?.artist,
+      copyright: hand.copyright || credit?.copyright,
+      mine: isMine(hand.artist) || isMine(hand.copyright) || Boolean(credit?.mine),
+    }
+  }
+  const exif = { ...meta.exif }
+  delete exif.artist
+  delete exif.copyright
+  if (credit?.artist)
+    exif.artist = credit.artist
+  if (credit?.copyright)
+    exif.copyright = credit.copyright
+  clean.buffer = embedCredit(clean.buffer, clean.format, credit)
+  await assertClean(clean.buffer, credit)
   const info = await sharp(clean.buffer).metadata()
   const size = { width: info.width, height: info.height }
 
@@ -276,7 +301,9 @@ async function processFile(file, images, now) {
     hash,
     uploadedHash: sha256(clean.buffer),
     thumbhash: await placeholderFor(clean.buffer, await import('thumbhash')),
-    exif: meta.exif,
+    exif: Object.keys(exif).length
+      ? exif
+      : null,
     // `"location": false` in the manifest keeps a photo's place off the site for good.
     location: existing?.location === false
       ? false
@@ -293,6 +320,7 @@ async function processFile(file, images, now) {
   let display = null
   if (overLimits(size, clean.buffer.length)) {
     display = await displayCopy(clean.buffer, clean.format, size)
+    display = embedCredit(display, (await sharp(display).metadata()).format, credit)
     item.source = key.replace(/(\.\w+)$/, '@display$1')
   }
 

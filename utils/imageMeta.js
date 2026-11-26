@@ -40,12 +40,6 @@ function captureTime(raw, offset) {
   return `${y}-${m}-${d}T${hh}:${mm}:${ss}${zone}`
 }
 
-function withoutEmail(text) {
-  if (typeof text !== 'string')
-    return text
-  return text.replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g, '').replace(/,\s*,/g, ',').replace(/[\s,]+$/, '').trim() || undefined
-}
-
 function flashFired(flash) {
   if (typeof flash === 'number')
     return Boolean(flash & 1)
@@ -190,8 +184,8 @@ async function readMeta(input) {
     capturedAt: captureTime(exif.DateTimeOriginal || exif.CreateDate, exif.OffsetTimeOriginal || exif.OffsetTime),
     software: clean(ifd0.Software),
     artist: clean(pick(ifd0.Artist, iptc.Byline)),
-    // The manifest is public: no e-mail addresses from old copyright notices.
-    copyright: withoutEmail(clean(pick(ifd0.Copyright, rights, iptc.CopyrightNotice))),
+    // As found in the file; utils/copyright.js decides what is kept.
+    copyright: clean(pick(ifd0.Copyright, rights, iptc.CopyrightNotice)),
   })
   const orientation = typeof ifd0.Orientation === 'number'
     ? ifd0.Orientation

@@ -42,12 +42,13 @@ Node is pinned in `.node-version` (24); Cloudflare's build image reads it too.
 
 `pnpm dev` shows the local file right away, even before the push. A build on Cloudflare stops with the file name when an image isn't pushed, or when the path differs from the pushed file only in case (macOS ignores case, the web doesn't).
 
-**What `pnpm images:push` does** (`utils/imagesCli.js`, `utils/imageMeta.js`) for each new or changed file:
+**What `pnpm images:push` does** (`utils/imagesCli.js`, `utils/imageMeta.js`, `utils/copyright.js`) for each new or changed file:
 
 - Renames it to a URL-safe name that keeps your casing: spaces and underscores become hyphens, umlauts are spelled out, other special characters go, the extension is lowercase (`Leica Walk 01.JPG` → `Leica-Walk-01.jpg`).
 - Reads the shooting data: camera, lens, focal length (and 35 mm equivalent), aperture, shutter, ISO, exposure compensation, flash, capture time with its time zone, software, artist and copyright.
 - Reads the place: City/State/Country from IPTC/XMP (what Lightroom writes) first, else the GPS coordinates looked up offline against GeoNames towns (`all-the-cities`). Only city, region, country and country code are kept; coordinates and street-level fields never are.
-- Uploads a copy without EXIF, XMP, IPTC or comments (no GPS, serial numbers or owner names). JPEG, PNG and WebP are cleaned without re-encoding; the colour profile stays. Photos with an EXIF rotation are turned upright first. HEIC and TIFF are converted to JPEG. The push checks the cleaned copy and refuses to upload if any of that survived.
+- Keeps the copyright, updated where it's out of date (`_data/copyright.json`). A notice or artist that names Chris in an old spelling (Christoph Spiegl, cspiegl@cspiegl.com, cspiegl.com, chrissp.com) becomes `© <year taken> Chris Spiegl, ChrisSpiegl.com`, with artist Chris Spiegl. Anyone else's notice is kept word for word. An image with no notice gets Chris's only in the folders listed under `ownFolders` (FridayWallpaper); gear product shots and other images stay without one. A hand-set `artist` or `copyright` in `overrides` is used as written.
+- Uploads a copy without EXIF, XMP, IPTC or comments (no GPS, serial numbers or owner names). JPEG, PNG and WebP are cleaned without re-encoding; the colour profile stays. Photos with an EXIF rotation are turned upright first. HEIC and TIFF are converted to JPEG. Only the credit is written back: EXIF Artist and Copyright, XMP creator and rights, and for Chris's photos his e-mail and website as the creator's contact plus ChrisSpiegl.com as the rights web page. The push checks the cleaned copy and refuses to upload if anything else survived.
 - When a file is over Cloudflare's limits (100 megapixels, 12,000 px per side, 100 MB; [docs](https://developers.cloudflare.com/images/get-started/limits/)), it also uploads `<name>@display.<ext>`, just under the limits, as the source for resizing. The original stays the full-resolution download.
 - Writes the entry to `_data/images.json` and uploads a backup of that file to `_manifest/images.json` in the bucket.
 
