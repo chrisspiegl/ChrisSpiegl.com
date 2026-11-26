@@ -1,6 +1,7 @@
 // Helpers for canonical URLs and social sharing (Open Graph / Twitter cards).
 const { url: siteUrl, defaultImage } = require('../_data/meta')
-const { useCloudflare } = require('./images')
+const { transformedUrl } = require('./images')
+const { R2_PREFIX, R2_URL, srcFor } = require('./imageStore')
 
 const OG_WIDTH = 1200
 const OG_HEIGHT = 630
@@ -17,10 +18,14 @@ function pickShareImage({ ogImage, imageHero, content } = {}) {
   if (imageHero)
     return imageHero
   if (content) {
-    // Matches both original paths and /cdn-cgi/image/<options>/assets/... URLs.
-    const match = /<img[^>]+src="(?:\/cdn-cgi\/image\/[^/]+)?(\/assets\/[^"]+\.(?:jpe?g|png|webp))"/i.exec(content)
-    if (match)
-      return match[1]
+    // Matches original paths, R2 URLs, and both behind /cdn-cgi/image/<options>/.
+    const match = /<img[^>]+src="(?:[^"]*\/cdn-cgi\/image\/[^/]+\/?)?((?:\/assets\/|https:\/\/r2\.chrisspiegl\.com\/)[^"?]+\.(?:jpe?g|png|webp))/i.exec(content)
+    if (match) {
+      const found = match[1]
+      return found.startsWith(R2_URL)
+        ? srcFor(decodeURI(found.slice(`${R2_URL}/${R2_PREFIX}`.length)).replace(/@display(\.\w+)$/, '$1'))
+        : found
+    }
   }
   return defaultImage
 }
@@ -29,10 +34,8 @@ function pickShareImage({ ogImage, imageHero, content } = {}) {
 function ogImageUrl(src) {
   if (/^https?:\/\//.test(src))
     return src
-  if (!useCloudflare())
-    return absoluteUrl(src)
   const options = `width=${OG_WIDTH},height=${OG_HEIGHT},fit=cover,gravity=auto,format=auto,quality=85,onerror=redirect`
-  return absoluteUrl(`/cdn-cgi/image/${options}${src}`)
+  return absoluteUrl(transformedUrl(src, options))
 }
 
 module.exports = {

@@ -69,3 +69,17 @@ The pictures sit in a paragraph, the text after them becomes a <figcaption> (.el
   width: min(100vw - 2 * var(--space-4), var(--figure-wide-width));
   transform: translateX(-50%);
 }
+
+// Lines added by `!!! figure exif` and `!!! figure full` (utils/figureMeta.js):
+// camera and exposure, and the link to the full-resolution original.
+.figure-meta {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-tiny);
+  color: var(--color-ink-muted);
+  font-variant-numeric: tabular-nums;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

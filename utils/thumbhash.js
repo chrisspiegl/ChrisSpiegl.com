@@ -96,21 +96,33 @@ function blobHash(file) {
   return crypto.createHash('sha1').update(`blob ${data.length}\0`).update(data).digest('hex')
 }
 
-async function placeholderFor(file, thumbhash) {
-  // ThumbHash works on images up to 100x100 pixels.
-  const { data, info } = await sharp(file)
-    .rotate()
-    .resize(100, 100, { fit: 'inside' })
-    .ensureAlpha()
-    .raw()
-    .toBuffer({ resolveWithObject: true })
+// ThumbHash works on images up to 100x100 pixels.
+function pixels(file, background) {
+  let image = sharp(file).rotate().resize(100, 100, { fit: 'inside' })
+  if (background)
+    image = image.flatten({ background })
+  return image.ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+}
 
-  // Skip images with real transparency (logos, cut-outs): the blur would show
-  // through the transparent areas after the image has loaded.
+// True when the image has real transparency (cut-outs, logos).
+async function hasTransparency(file) {
+  const { data } = await pixels(file)
   for (let i = 3; i < data.length; i += 4) {
     if (data[i] < 250)
-      return null
+      return true
   }
+  return false
+}
+
+// `background`: the colour to put behind transparent images first (the tile
+// they sit on). Without it, transparent images get no preview, because the
+// blur would show through the transparent areas after the image has loaded.
+// With it, the page has to drop the preview once the image is in
+// (imageAttributes does that for pushed images marked `transparent`).
+async function placeholderFor(file, thumbhash, { background } = {}) {
+  if (await hasTransparency(file) && !background)
+    return null
+  const { data, info } = await pixels(file, background)
 
   // Decode the hash back to a tiny image and store it as a lossless WebP
   // (about 0.9 KB). Lossy WebP is smaller but shows visible blocks once the
@@ -187,4 +199,9 @@ function placeholder(src) {
   return placeholders[src] || null
 }
 
-module.exports = { placeholder, preparePlaceholders }
+module.exports = {
+  hasTransparency,
+  placeholder,
+  placeholderFor,
+  preparePlaceholders,
+}

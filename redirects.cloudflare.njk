@@ -22,3 +22,7 @@ eleventyExcludeFromCollections: true
 /{{ redirect.slug | safe }} {{ redirect.destination | safe }} {{ redirect.status or 302 }}
 {%- endif %}
 {%- endfor %}
+{#- Content images moved to R2 (utils/imageStore.js): old links still work. #}
+{%- for folder in r2Folders %}
+/assets/images/{{ folder }}/* https://r2.chrisspiegl.com/images/{{ folder }}/:splat 301
+{%- endfor %}

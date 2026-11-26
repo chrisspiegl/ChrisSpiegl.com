@@ -17,7 +17,7 @@ CSX.Ventures OÜ, Sepapaja tn 6, 15551 Tallinn, Estonia, is the data controller 
 
 The site is hosted on [Cloudflare Pages](https://pages.cloudflare.com/) and delivered through Cloudflare's network. When you visit, Cloudflare processes technical data such as your IP address, browser, and the pages you request, to deliver the site and protect it from abuse. This is necessary to run the website (GDPR Art. 6(1)(f)). See [Cloudflare's privacy policy](https://www.cloudflare.com/privacypolicy/).
 
-Fonts and images are also delivered from this domain through Cloudflare, so no request goes to Google or other font or image services.
+Fonts and images are also delivered from this domain (and its subdomain r2.chrisspiegl.com) through Cloudflare, so no request goes to Google or other font or image services.
 
 ## Analytics
 

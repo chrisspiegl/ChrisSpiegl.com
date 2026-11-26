@@ -33,7 +33,9 @@ $gear-column-min: 20rem;
   }
 }
 
-.gear-item img {
+// .image-missing: an empty tile of the same shape when a gear item has no photo yet.
+.gear-item img,
+.gear-item .image-missing {
   display: block;
   width: 100%;
   max-width: 100%;

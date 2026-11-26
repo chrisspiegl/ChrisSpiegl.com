@@ -1,0 +1,17 @@
+{
+  "owner": {
+    "name": "Chris Spiegl",
+    "email": "chris@ChrisSpiegl.com",
+    "url": "https://ChrisSpiegl.com"
+  },
+  "notice": "© {year} Chris Spiegl, ChrisSpiegl.com",
+  "noticeWithoutYear": "© Chris Spiegl, ChrisSpiegl.com",
+  "mine": [
+    { "match": "Christoph Spiegl", "note": "full name, used in Lightroom until 2026" },
+    { "match": "Chris Spiegl", "note": "current name" },
+    { "match": "cspiegl", "note": "old address cspiegl@cspiegl.com and site cspiegl.com" },
+    { "match": "chrissp.com", "note": "old chrissp.com addresses" },
+    { "match": "ChrisSpiegl.com", "note": "current site and address" }
+  ],
+  "ownFolders": ["FridayWallpaper"]
+}
