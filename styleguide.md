@@ -263,7 +263,7 @@ Put pictures in a `figure` block to set how wide they are. The text after the pi
 | Block | Width |
 | :--- | :--- |
 | `!!! figure` | As wide as the text. |
-| `!!! figure wide` | Wider than the text, up to 1225px, centered on the text. On TOC pages it passes over the TOC, which fades out until it has scrolled by. |
+| `!!! figure wide` | Wider than the text, up to 1225px, centered on the text. On TOC pages it stops short of the TOC on laptops; on large screens, where the text is centered, it passes over the TOC, which fades out until it has scrolled by. |
 | `!!! figure pair` | Two pictures side by side, as wide as the text together. |
 | `!!! figure pair wide` | Two pictures side by side, slightly wider than the text. |
 
@@ -481,6 +481,10 @@ toc: true
 
 - **From 820px** it is a column on the left that stays in view while you read, and marks the section you're in with an orange line. When the screen is wide enough, the text stays in the middle of the screen, as on pages without a TOC, and the TOC sits in the margin.
 - **On phones** it is a bar that sticks to the top of the screen. It shows the current section, opens into the full list when tapped, and closes after a jump.
+
+Only the sections are listed at first. The section you're reading opens by itself and closes again when you move on, and the arrow next to a section opens or closes it by hand. Every entry stays on one line and ends in "…" when it's too long.
+
+Without JavaScript the TOC still works: all subsections are listed, the phone bar opens and closes on a tap, and the column shows on desktop (in older browsers it opens with a click on "On this page"). What needs the script is folding, marking the current section, and closing the phone bar after a jump.
 
 Headings written as raw HTML have no id, so they stay out of the list. The samples under [Headings](#headings) are written that way.
 

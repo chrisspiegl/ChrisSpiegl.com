@@ -14,12 +14,12 @@ block content
             span.toc-current(aria-hidden="true")
           ol.toc-list
             each item in tocList
-              li
-                a(href=`#${item.id}`)= item.text
+              li(class=item.children.length ? 'toc-branch' : null)
+                a(href=`#${item.id}` title=item.text)= item.text
                 if item.children.length
-                  ol
+                  ol(id=`toc-${item.id}`)
                     each child in item.children
-                      li: a(href=`#${child.id}`)= child.text
+                      li: a(href=`#${child.id}` title=child.text)= child.text
       div.toc-content
         != content
     script

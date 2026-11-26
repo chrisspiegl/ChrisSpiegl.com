@@ -103,12 +103,17 @@ From 820px: a column on the left that stays in view while you read.
     font-size: var(--font-size-tiny);
   }
 
+  // One line per entry; a long title ends in "…" (the full title is the tooltip).
   a {
     display: block;
+    min-width: 0;
+    overflow: hidden;
     padding: var(--space-2) var(--space-3);
     border-radius: var(--radius-sm);
     color: var(--color-ink);
     text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     hyphens: manual;
 
     &:hover {
@@ -120,6 +125,70 @@ From 820px: a column on the left that stays in view while you read.
       color: var(--color-accent);
       font-weight: 600;
     }
+  }
+
+  // The section that holds the subsection you're reading.
+  .is-reading > a {
+    color: var(--color-accent);
+  }
+}
+
+// Folding (added by toc.js): a section shows its subsections only when open.
+// Without the script every subsection stays visible.
+.toc.is-enhanced .toc-branch {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows 0.2s;
+
+  > ol {
+    grid-column: 1 / -1;
+    min-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: visibility 0s 0.2s;
+  }
+
+  &.is-open {
+    grid-template-rows: auto 1fr;
+
+    > ol {
+      visibility: visible;
+      transition: visibility 0s;
+    }
+  }
+}
+
+.toc-fold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  padding: 0;
+  color: var(--color-ink-muted);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+
+  // Chevron: points right when closed, down when open.
+  &::before {
+    content: "";
+    width: 0.4em;
+    height: 0.4em;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 0.15s;
+  }
+
+  &[aria-expanded="true"]::before {
+    transform: rotate(45deg);
+  }
+
+  &:hover {
+    color: var(--color-accent);
+    background: var(--color-paper-raised);
   }
 }
 
@@ -166,8 +235,6 @@ From 820px: a column on the left that stays in view while you read.
   .toc-summary {
     min-height: 0;
     padding: var(--space-4) 0 var(--space-2);
-    cursor: default;
-    pointer-events: none;
     font-size: var(--font-size-tiny);
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -177,6 +244,13 @@ From 820px: a column on the left that stays in view while you read.
     .toc-current {
       display: none;
     }
+  }
+
+  // With the script the list is always open here; without it, browsers that
+  // can't force it open below still let you click "On this page".
+  .toc.is-enhanced .toc-summary {
+    cursor: default;
+    pointer-events: none;
   }
 
   // Open without JavaScript too, where the browser supports it.
@@ -236,7 +310,12 @@ From 820px: a column on the left that stays in view while you read.
   // sides, as far as the space on the right allows, and pass over the TOC
   // column on the left. The TOC fades out while one is under it (toc.js).
   .has-toc .figure-wide {
-    --figure-grow: clamp(0px, var(--toc-room), (var(--figure-wide-width) - var(--toc-text)) / 2);
+    // Laptops: the free column next to the text is narrower than the TOC, so
+    // the text isn't centered. There a wide figure only grows into the gap and
+    // stops short of the TOC. Once that column is as wide as the TOC (text
+    // centered), the limit lifts and the figure passes over the TOC.
+    --figure-limit: calc(var(--space-7) - var(--space-4) + clamp(0px, (var(--toc-page) - 2 * var(--toc-width) - 2 * var(--space-7) - var(--toc-text) + 1px) * 1000, 10000px));
+    --figure-grow: clamp(0px, min(var(--toc-room), var(--figure-limit)), (var(--figure-wide-width) - var(--toc-text)) / 2);
 
     left: auto;
     z-index: 11;
