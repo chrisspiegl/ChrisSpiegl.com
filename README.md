@@ -44,6 +44,7 @@ Node is pinned in `.node-version` (24); Cloudflare's build image reads it too.
 
 **What `pnpm images:push` does** (`utils/imagesCli.js`, `utils/imageMeta.js`, `utils/copyright.js`) for each new or changed file:
 
+- Turns a file whose content doesn't match its extension (a PNG saved as `.jpg`) into the format the name says, so links keep working.
 - Renames it to a URL-safe name that keeps your casing: spaces and underscores become hyphens, umlauts are spelled out, other special characters go, the extension is lowercase (`Leica Walk 01.JPG` → `Leica-Walk-01.jpg`).
 - Reads the shooting data: camera, lens, focal length (and 35 mm equivalent), aperture, shutter, ISO, exposure compensation, flash, capture time with its time zone, software, artist and copyright.
 - Reads the place: City/State/Country from IPTC/XMP (what Lightroom writes) first, else the GPS coordinates looked up offline against GeoNames towns (`all-the-cities`). Only city, region, country and country code are kept, plus `neighborhood` from Lightroom's Sublocation field when you typed one (never looked up from GPS); coordinates and street addresses never are.
@@ -52,7 +53,7 @@ Node is pinned in `.node-version` (24); Cloudflare's build image reads it too.
 - When a file is over Cloudflare's limits (100 megapixels, 12,000 px per side, 100 MB; [docs](https://developers.cloudflare.com/images/get-started/limits/)), it also uploads `<name>@display.<ext>`, just under the limits, as the source for resizing. The original stays the full-resolution download.
 - Writes the entry to `_data/images.json` and uploads a backup of that file to `_manifest/images.json` in the bucket.
 
-Uploads use Wrangler with a year of caching: run `npx wrangler login` once (or set `CLOUDFLARE_API_TOKEN`). The account is CSX.Ventures; `R2_BUCKET`, `R2_JURISDICTION` and `CLOUDFLARE_ACCOUNT_ID` override the defaults. Options: `--dry-run` shows what would happen, `--no-upload` only updates the manifest, `--force` processes every file again. `pnpm images:pull` downloads the cleaned copies of every image that isn't on disk, for a new computer or a fresh clone.
+Uploads use Wrangler with a year of caching: run `pnpm install` after pulling this change (it adds `exifr` and `all-the-cities`), then `npx wrangler login` once (or set `CLOUDFLARE_API_TOKEN`). The account is CSX.Ventures; `R2_BUCKET`, `R2_JURISDICTION` and `CLOUDFLARE_ACCOUNT_ID` override the defaults. Options: `--dry-run` shows what would happen, `--no-upload` only updates the manifest, `--force` processes every file again. `pnpm images:pull` downloads the cleaned copies of every image that isn't on disk, for a new computer or a fresh clone.
 
 **`_data/images.json`** has one entry per image, keyed by its path under `assets/images`: `originalName`, `width`, `height`, `bytes`, `type`, `hash` (SHA-256 of your file, also used as `?v=` so a replaced image shows at once despite the year of caching), `uploadedHash`, `thumbhash`, `exif`, `location`, `createdAt`, `updatedAt`, `uploadedAt`, and `source` for the smaller copy. Two hand edits are kept by later pushes: `"location": false` keeps a photo's place off the site (and out of this public repo) for good, and `"overrides": { ... }` replaces any `exif` value or the `location`.
 

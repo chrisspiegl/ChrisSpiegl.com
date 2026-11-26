@@ -59,6 +59,12 @@ const TYPES = {
   webp: 'image/webp',
   gif: 'image/gif',
 }
+const NAMED = {
+  '.jpg': 'jpeg',
+  '.jpeg': 'jpeg',
+  '.png': 'png',
+  '.webp': 'webp',
+}
 const EXTENSIONS = {
   jpeg: '.jpg',
   png: '.png',
@@ -186,7 +192,15 @@ function encode(image, format) {
 }
 
 // The file as it goes to R2: no metadata, upright, in a web format.
-async function cleanCopy(buffer, format, orientation) {
+// `want` is the format the file name promises: a PNG saved as .jpg is turned
+// into a real JPEG (on white, if it has transparency) so links keep working.
+async function cleanCopy(buffer, format, orientation, want = format) {
+  if (TYPES[format] && TYPES[want] && want !== format) {
+    let image = sharp(buffer).rotate()
+    if (want === 'jpeg')
+      image = image.flatten({ background: '#ffffff' })
+    return { buffer: await encode(image, want).toBuffer(), format: want }
+  }
   if (!TYPES[format]) {
     try {
       return { buffer: await encode(sharp(buffer).rotate(), 'jpeg').toBuffer(), format: 'jpeg' }
@@ -245,9 +259,15 @@ async function processFile(file, images, now) {
   // 1. A URL-safe name.
   const originalName = path.basename(file)
   const sourceFormat = (await sharp(file).metadata().catch(() => ({}))).format
-  const target = TYPES[sourceFormat]
-    ? EXTENSIONS[sourceFormat]
-    : '.jpg'
+  // The format the name promises wins (a PNG named .jpg becomes a JPEG, the
+  // name stays); without a web extension, the file's real format decides.
+  const named = NAMED[path.extname(originalName).toLowerCase()]
+  const wantFormat = named && TYPES[sourceFormat]
+    ? named
+    : TYPES[sourceFormat]
+      ? sourceFormat
+      : 'jpeg'
+  const target = EXTENSIONS[wantFormat]
   const name = safeName(originalName, target)
   if (name !== originalName) {
     const renamed = path.join(path.dirname(file), name)
@@ -275,7 +295,9 @@ async function processFile(file, images, now) {
 
   // 2. Shooting data and place, read before the metadata goes.
   const meta = await readMeta(buffer)
-  const clean = await cleanCopy(buffer, sourceFormat, meta.orientation)
+  const clean = await cleanCopy(buffer, sourceFormat, meta.orientation, wantFormat)
+  if (clean.format !== sourceFormat && TYPES[sourceFormat])
+    console.log(`  converted ${name} from ${sourceFormat.toUpperCase()} to ${clean.format.toUpperCase()} to match its name`)
 
   // Copyright: Chris's old notices become the current one, anyone else's stay
   // as they are, and the credit goes back into the uploaded copy.
