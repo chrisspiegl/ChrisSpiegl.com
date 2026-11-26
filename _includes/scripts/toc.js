@@ -3,8 +3,7 @@
 // phone bar opens and closes as a plain <details>. The script adds:
 // - desktop: the list is always open in the left column
 // - phone: the bar closes after a jump, on a tap outside, or on Escape
-// - folding: only sections are shown, the one you're reading opens by itself,
-//   and the arrow next to a section opens or closes it by hand
+// - folding: only sections are shown, the one you're reading opens by itself
 // - the section you're reading is marked, and shown in the closed phone bar
 // - the TOC fades out while a wide figure passes over it
 (() => {
@@ -50,37 +49,11 @@
     }
   })
 
-  // Folding. A section is open when you opened it by hand, or when you're
-  // reading it and haven't closed it by hand.
+  // Folding: a section shows its subsections only while you're reading it.
+  // Clicking a section jumps there, which opens it.
   const branches = [
     ...toc.querySelectorAll('.toc-branch'),
   ]
-  const chosen = new Map() // branch -> true (opened) or false (closed) by hand
-  let activeBranch = null
-
-  const renderFolds = () => {
-    branches.forEach((branch) => {
-      const open = chosen.has(branch)
-        ? chosen.get(branch)
-        : branch === activeBranch
-      branch.classList.toggle('is-open', open)
-      branch.querySelector(':scope > .toc-fold').setAttribute('aria-expanded', String(open))
-    })
-  }
-
-  branches.forEach((branch) => {
-    const link = branch.querySelector(':scope > a')
-    const button = document.createElement('button')
-    button.type = 'button'
-    button.className = 'toc-fold'
-    button.setAttribute('aria-controls', branch.querySelector(':scope > ol').id)
-    button.setAttribute('aria-label', `Subsections of ${link.textContent}`)
-    button.addEventListener('click', () => {
-      chosen.set(branch, !branch.classList.contains('is-open'))
-      renderFolds()
-    })
-    link.after(button)
-  })
 
   const headings = links
     .map(link => document.getElementById(decodeURIComponent(link.hash.slice(1))))
@@ -102,15 +75,11 @@
         activeLink = link
       }
     })
-    branches.forEach(branch => branch.classList.remove('is-reading'))
     const branch = activeLink && activeLink.closest('.toc-branch')
-    if (branch)
-      branch.classList.add('is-reading')
-    // Leaving a section forgets that you closed it, so it opens again next time.
-    if (activeBranch && activeBranch !== branch && chosen.get(activeBranch) === false)
-      chosen.delete(activeBranch)
-    activeBranch = branch
-    renderFolds()
+    branches.forEach((item) => {
+      item.classList.toggle('is-reading', item === branch)
+      item.classList.toggle('is-open', item === branch)
+    })
     if (activeLink) {
       current.textContent = activeLink.textContent
       // Keep the marked entry in view inside a long list.

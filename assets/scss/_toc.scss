@@ -137,12 +137,10 @@ From 820px: a column on the left that stays in view while you read.
 // Without the script every subsection stays visible.
 .toc.is-enhanced .toc-branch {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: auto 0fr;
   transition: grid-template-rows 0.2s;
 
   > ol {
-    grid-column: 1 / -1;
     min-height: 0;
     overflow: hidden;
     visibility: hidden;
@@ -156,39 +154,6 @@ From 820px: a column on the left that stays in view while you read.
       visibility: visible;
       transition: visibility 0s;
     }
-  }
-}
-
-.toc-fold {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  padding: 0;
-  color: var(--color-ink-muted);
-  background: none;
-  border: 0;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-
-  // Chevron: points right when closed, down when open.
-  &::before {
-    content: "";
-    width: 0.4em;
-    height: 0.4em;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-    transform: rotate(-45deg);
-    transition: transform 0.15s;
-  }
-
-  &[aria-expanded="true"]::before {
-    transform: rotate(45deg);
-  }
-
-  &:hover {
-    color: var(--color-accent);
-    background: var(--color-paper-raised);
   }
 }
 
