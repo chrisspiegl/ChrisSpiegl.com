@@ -52,22 +52,11 @@ Node is pinned in `.node-version` (24); Cloudflare's build image reads it too.
 - When a file is over Cloudflare's limits (100 megapixels, 12,000 px per side, 100 MB; [docs](https://developers.cloudflare.com/images/get-started/limits/)), it also uploads `<name>@display.<ext>`, just under the limits, as the source for resizing. The original stays the full-resolution download.
 - Writes the entry to `_data/images.json` and uploads a backup of that file to `images/_manifest.json` in the bucket. Every image goes to `images/<path under assets/images>`.
 
-Uploads use Wrangler with a year of caching: run `pnpm install` after pulling this change (it adds `exifr` and `all-the-cities`), then `npx wrangler login` once (or set `CLOUDFLARE_API_TOKEN`). The account is CSX.Ventures; `R2_BUCKET`, `R2_JURISDICTION` and `CLOUDFLARE_ACCOUNT_ID` override the defaults. Options: `--dry-run` shows what would happen, `--no-upload` only updates the manifest, `--force` processes every file again. `pnpm images:pull` downloads the cleaned copies of every image that isn't on disk, for a new computer or a fresh clone.
+Uploads use Wrangler with a year of caching: run `pnpm install`, then `npx wrangler login` once (or set `CLOUDFLARE_API_TOKEN`). The account is CSX.Ventures; `R2_BUCKET`, `R2_JURISDICTION` and `CLOUDFLARE_ACCOUNT_ID` override the defaults. Options: `--dry-run` shows what would happen, `--no-upload` only updates the manifest, `--force` processes every file again. `pnpm images:pull` downloads the cleaned copies of every image that isn't on disk, for a new computer or a fresh clone.
 
 **`_data/images.json`** has one entry per image, keyed by its path under `assets/images`: `originalName`, `width`, `height`, `bytes`, `type`, `hash` (SHA-256 of your file, also used as `?v=` so a replaced image shows at once despite the year of caching), `uploadedHash`, `thumbhash`, `exif`, `location`, `createdAt`, `updatedAt`, `uploadedAt`, and `source` for the smaller copy. Two hand edits are kept by later pushes: `"location": false` keeps a photo's place off the site (and out of this public repo) for good, and `"overrides": { ... }` replaces any `exif` value or the `location`.
 
 **Figures**: `!!! figure exif` adds a line with camera, lens, exposure and place, `!!! figure full` a "View full resolution" link with pixel and file size, `nolocation` leaves the place out of that line. Camera and lens display names, and links to their /uses entry, are in `_data/cameras.json`.
-
-**Removing the images from git history** (one time, after the R2 move is merged and pushed; it changes every commit id). On your Mac, with `brew install git-filter-repo`:
-
-```sh
-git clone --mirror git@github.com:chrisspiegl/ChrisSpiegl.com.git chrisspiegl-com-rewrite.git
-cd chrisspiegl-com-rewrite.git
-git filter-repo --invert-paths --path assets/images/gear --path assets/images/post --path assets/images/book --path assets/images/FridayWallpaper --path _site_production
-git push --force --mirror origin
-```
-
-Besides the content images this drops `_site_production/`, an old build output committed in May 2021 that is about 98 MB of the history (the moved images are about 31 MB). Neither is in the current tree. GitHub refuses the hidden `refs/pull/*` refs in a mirror push; those errors are expected and the branches still update. Then delete and re-clone your working copies (or `git fetch && git reset --hard origin/main` on each branch), and keep your local `assets/images` folder: those files are your originals.
 
 ## Cloudflare settings this site depends on
 
