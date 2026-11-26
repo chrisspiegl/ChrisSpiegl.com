@@ -67,6 +67,19 @@
     setActive(active.id)
   }
 
+  // On desktop, hide the TOC while a wide figure passes under it.
+  const wideFigures = [
+    ...document.querySelectorAll('.has-toc .figure-wide'),
+  ]
+  const updateCovered = () => {
+    const box = toc.getBoundingClientRect()
+    const covered = desktop.matches && wideFigures.some((figure) => {
+      const rect = figure.getBoundingClientRect()
+      return rect.left < box.right && rect.top < box.bottom && rect.bottom > box.top
+    })
+    toc.classList.toggle('is-covered', covered)
+  }
+
   let queued = false
   window.addEventListener('scroll', () => {
     if (queued)
@@ -75,7 +88,10 @@
     requestAnimationFrame(() => {
       queued = false
       update()
+      updateCovered()
     })
   }, { passive: true })
+  window.addEventListener('resize', updateCovered)
   update()
+  updateCovered()
 })()

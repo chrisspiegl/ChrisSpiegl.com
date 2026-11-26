@@ -129,11 +129,25 @@ From 820px: a column on the left that stays in view while you read.
 }
 
 @media (min-width: vars.$ipad-11-portrait) {
+  // Three columns: TOC, text, and an empty one that mirrors the TOC. The text
+  // grows to --content-width first, then the empty column takes what is left,
+  // so on large screens the text sits in the middle of the screen like on any
+  // other page, and on laptops the empty column shrinks away.
   .container.has-toc {
+    --toc-page: min(100vw - 2 * var(--space-5), var(--content-width) + 2 * (var(--toc-width) + var(--space-7)));
+    --toc-text: min(var(--content-width), var(--toc-page) - var(--toc-width) - 2 * var(--space-7));
+    // Free space right of the text column, up to the screen edge.
+    --toc-room: calc((100vw - var(--toc-page)) / 2 + var(--toc-page) - var(--toc-width) - var(--space-7) - var(--toc-text) - var(--space-4));
+
     display: grid;
-    grid-template-columns: var(--toc-width) minmax(0, 1fr);
-    gap: var(--space-7);
-    max-width: calc(var(--content-width) + var(--toc-width) + var(--space-7));
+    grid-template-columns: var(--toc-width) minmax(0, var(--content-width)) minmax(0, 1fr);
+    column-gap: var(--space-7);
+    width: var(--toc-page);
+    max-width: none;
+  }
+
+  .toc-content {
+    grid-column: 2;
   }
 
   .toc {
@@ -218,14 +232,26 @@ From 820px: a column on the left that stays in view while you read.
     }
   }
 
-  // Wide figures can't grow to the left into the TOC, so they grow to the
-  // right, into the free space beside the column.
+  // Wide figures stay centered on the text: they grow the same amount on both
+  // sides, as far as the space on the right allows, and pass over the TOC
+  // column on the left. The TOC fades out while one is under it (toc.js).
   .has-toc .figure-wide {
+    --figure-grow: clamp(0px, var(--toc-room), (var(--figure-wide-width) - var(--toc-text)) / 2);
+
     left: auto;
+    z-index: 11;
+    width: calc(100% + 2 * var(--figure-grow));
+    margin-left: calc(-1 * var(--figure-grow));
     transform: none;
-    width: calc(100% + min(
-      var(--content-width) * 0.25,
-      max(0px, (100vw - min(90vw, var(--content-width) + var(--toc-width) + var(--space-7))) / 2 - var(--space-4))
-    ));
+  }
+
+  .toc {
+    transition: opacity 0.2s, visibility 0s;
+  }
+
+  .toc.is-covered {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0s 0.2s;
   }
 }
