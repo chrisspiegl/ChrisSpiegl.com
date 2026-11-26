@@ -24,6 +24,12 @@
       details.open = false
   })
 
+  // A tap or click anywhere outside the open list closes it.
+  document.addEventListener('pointerdown', (event) => {
+    if (details.open && !desktop.matches && !toc.contains(event.target))
+      details.open = false
+  })
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && details.open && !desktop.matches) {
       details.open = false

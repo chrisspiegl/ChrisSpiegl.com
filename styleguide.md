@@ -244,7 +244,7 @@ A definition list is written in HTML:
 
 ## Images
 
-A Markdown image under `/assets/images` becomes a responsive image: Cloudflare Images serves it in the right size and format in production, with a blurred preview while it loads. Images get `--radius-sm`.
+A Markdown image under `/assets/images` becomes a responsive image: Cloudflare Images serves it in the right size and format in production, with a blurred preview while it loads. Images get `--radius-sm`. On its own, an image keeps its size and never grows wider than the text.
 
 <div class="sg-narrow">
 
@@ -256,23 +256,77 @@ A Markdown image under `/assets/images` becomes a responsive image: Cloudflare I
 ![A hike up a mountain](/assets/images/other/2017-07-17-at-10-33-24-mountain-hike.jpg)
 ```
 
-### Figures with captions
+### Figures
 
-The `figure` macro adds a caption, which may use Markdown. The arguments are the image path, the caption and the alt text.
+Put pictures in a `figure` block to set how wide they are. The text after the pictures becomes the caption, set small and muted on the right. There are four widths:
 
-{% from "macros/figure.njk" import figure %}
+| Block | Width |
+| :--- | :--- |
+| `!!! figure` | As wide as the text. |
+| `!!! figure wide` | Wider than the text, up to 1225px, centered. On TOC pages it grows to the right only. |
+| `!!! figure pair` | Two pictures side by side, as wide as the text together. |
+| `!!! figure pair wide` | Two pictures side by side, slightly wider than the text. |
 
-<div class="sg-narrow">
+A pair crops both pictures to the same height, so different shapes still line up.
 
-{{ figure("/assets/images/other/2017-07-02-at-11-24-39-thoughtful-berlin.jpg", "Berlin, July 2017. Photo by [Chris Spiegl](/).", "A thoughtful moment in Berlin") }}
+#### As wide as the text
 
-</div>
+!!! figure
+![Meditating at Angel's Landing](/assets/images/post/2020/2018-10-13-meditating-at-angles-landing.jpg)
+Angel's Landing, October 2018.
+!!!
 
-```njk
-{%- raw %}
-{% from "macros/figure.njk" import figure %}
-{{ figure("/assets/images/other/berlin.jpg", "Berlin, July 2017.", "Alt text") }}
-{% endraw %}
+```md
+!!! figure
+![Meditating at Angel's Landing](/assets/images/post/2020/angels-landing.jpg)
+Angel's Landing, October 2018.
+!!!
+```
+
+#### Wider than the text
+
+!!! figure wide
+![Meditating at Angel's Landing](/assets/images/post/2020/2018-10-13-meditating-at-angles-landing.jpg)
+The same photo, wider than the text.
+!!!
+
+```md
+!!! figure wide
+![Meditating at Angel's Landing](/assets/images/post/2020/angels-landing.jpg)
+The same photo, wider than the text.
+!!!
+```
+
+#### Two side by side
+
+!!! figure pair
+![A hike up a mountain](/assets/images/other/2017-07-17-at-10-33-24-mountain-hike.jpg)
+![Feet dangling over a view](/assets/images/other/2017-08-19-at-12-38-54-dangle-your-feet.jpg)
+Two pictures, as wide as the text.
+!!!
+
+```md
+!!! figure pair
+![A hike up a mountain](/assets/images/other/mountain-hike.jpg)
+![Feet dangling over a view](/assets/images/other/dangle-your-feet.jpg)
+Two pictures, as wide as the text.
+!!!
+```
+
+#### Two side by side, wider
+
+!!! figure pair wide
+![A hike up a mountain](/assets/images/other/2017-07-17-at-10-33-24-mountain-hike.jpg)
+![A thoughtful moment in Berlin](/assets/images/other/2017-07-02-at-11-24-39-thoughtful-berlin.jpg)
+Two pictures, slightly wider than the text.
+!!!
+
+```md
+!!! figure pair wide
+![A hike up a mountain](/assets/images/other/mountain-hike.jpg)
+![A thoughtful moment in Berlin](/assets/images/other/thoughtful-berlin.jpg)
+Two pictures, slightly wider than the text.
+!!!
 ```
 
 ### Signature
@@ -337,7 +391,7 @@ A quote set large and centered. On normal pages it spans the screen; on pages wi
 !!!
 ```
 
-The other wide containers, `image-hero`, `image-sbs` and `header-image-three`, are for photos: one across the screen, two side by side, or three in a row.
+For photos there are also `image-hero`, one photo across the whole screen, and `header-image-three`, three in a row. Most photos belong in a [figure](#figures).
 
 ### Folding text
 

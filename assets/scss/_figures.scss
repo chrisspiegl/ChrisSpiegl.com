@@ -20,6 +20,52 @@ figcaption {
   color: var(--color-figure-caption);
 }
 
-figcaption p {
-  padding-bottom: 0;
+/*
+### Figures (!!! figure [wide] [pair])
+The pictures sit in a paragraph, the text after them becomes a <figcaption> (.eleventy.js).
+*/
+
+:root {
+  --figure-wide-width: calc(var(--content-width) * 1.25); // 1225px
+}
+
+.figure {
+  margin: 0 0 var(--space-6);
+
+  > p {
+    padding-bottom: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  figcaption {
+    margin-top: var(--space-2);
+  }
+}
+
+// Two pictures side by side. Different shapes are cropped to the same height.
+.figure-pair > p {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+
+  br {
+    display: none;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Wider than the text: centered on the text column, never wider than the screen.
+.figure-wide {
+  position: relative;
+  left: 50%;
+  width: min(100vw - 2 * var(--space-4), var(--figure-wide-width));
+  transform: translateX(-50%);
 }

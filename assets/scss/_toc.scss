@@ -217,4 +217,15 @@ From 820px: a column on the left that stays in view while you read.
       max-width: 100%;
     }
   }
+
+  // Wide figures can't grow to the left into the TOC, so they grow to the
+  // right, into the free space beside the column.
+  .has-toc .figure-wide {
+    left: auto;
+    transform: none;
+    width: calc(100% + min(
+      var(--content-width) * 0.25,
+      max(0px, (100vw - min(90vw, var(--content-width) + var(--toc-width) + var(--space-7))) / 2 - var(--space-4))
+    ));
+  }
 }
