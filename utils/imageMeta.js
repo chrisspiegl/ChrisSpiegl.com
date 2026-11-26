@@ -1,7 +1,8 @@
 // Reading and cleaning image metadata for `pnpm images:push`.
 //
 // - readMeta(file): the shooting data worth keeping (camera, lens, exposure,
-//   capture time with its time zone) plus city and country. Location comes
+//   capture time with its time zone) plus city and country, and the
+//   neighborhood when it was typed into Lightroom's Sublocation field. Location comes
 //   from the IPTC/XMP fields first (what Lightroom writes), else from the GPS
 //   coordinates, looked up offline against GeoNames towns (all-the-cities).
 //   Coordinates themselves are never kept.
@@ -108,6 +109,9 @@ function locationFrom(parsed) {
   const photoshop = parsed.photoshop || {}
   const core = parsed.Iptc4xmpCore || {}
   const written = dropEmpty({
+    // Lightroom's "Sublocation" (IPTC Location): only ever what Chris typed,
+    // never looked up from GPS. Used as the neighborhood in captions.
+    neighborhood: clean(pick(core.Location, iptc.Sublocation)),
     city: clean(pick(photoshop.City, iptc.City)),
     region: clean(pick(photoshop.State, iptc.State, iptc['Province-State'])),
     country: clean(pick(photoshop.Country, iptc.Country, iptc.CountryName, iptc['Country-PrimaryLocationName'])),

@@ -2,6 +2,7 @@
 // from the image's entry in _data/images.json.
 //
 //   exif        "Leica Q3 · 28 mm · f/2.8 · 1/250 s · ISO 100 · Chiang Mai, Thailand"
+//               (or "· Nimman, Chiang Mai" when a neighborhood is set)
 //   full        "View full resolution · 9,520 × 6,336 · 24.1 MB"
 //   nolocation  leaves the place out of the exif line
 //
@@ -72,8 +73,12 @@ function exifLine(item, { location: showLocation = true } = {}) {
   const place = 'location' in (item.overrides || {})
     ? item.overrides.location
     : item.location
-  if (showLocation && place)
-    parts.push(escape([place.city, place.country].filter(Boolean).join(', ')))
+  // "Nimman, Chiang Mai" when a neighborhood is set, else "Chiang Mai, Thailand".
+  if (showLocation && place) {
+    parts.push(escape((place.neighborhood && place.city
+      ? [place.neighborhood, place.city]
+      : [place.city, place.country]).filter(Boolean).join(', ')))
+  }
   return parts.length
     ? parts.join(' · ')
     : null
