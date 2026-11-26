@@ -34,7 +34,7 @@ const { readMeta, stripMetadata } = require('./imageMeta')
 const store = require('./imageStore')
 const { placeholderFor } = require('./thumbhash')
 
-const BUCKET = process.env.R2_BUCKET || 'chrisspiegl-com'
+const BUCKET = process.env.R2_BUCKET || 'chrisspiegl-com-r2-production'
 const JURISDICTION = process.env.R2_JURISDICTION || 'eu'
 // CSX.Ventures, where the chrisspiegl-com Worker lives.
 const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID || '98a15ec912c10e09ccb4ba8951ded69f'
