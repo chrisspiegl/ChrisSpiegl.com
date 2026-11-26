@@ -266,7 +266,7 @@ A definition list is written in HTML:
 
 ## Images
 
-A Markdown image under `/assets/images` becomes a responsive image: Cloudflare Images serves it in the right size and format in production, with a blurred preview while it loads. Images get `--radius-sm`. On its own, an image keeps its size and never grows wider than the text.
+A Markdown image under `/assets/images` becomes a responsive image: Cloudflare Images serves it in the right size and format (AVIF where it can), with a blurred preview while it loads. Content images live on R2 (`r2.chrisspiegl.com`) and are added with `pnpm images:push`; the site images in `assets/images/other` stay in the repo. The path is the same either way. A path that doesn't exist, or differs in case from a pushed image, stops the build. Images get `--radius-sm`. On its own, an image keeps its size and never grows wider than the text.
 
 <div class="sg-narrow">
 
@@ -348,6 +348,26 @@ Two pictures, slightly wider than the text.
 ![A hike up a mountain](/assets/images/other/mountain-hike.jpg)
 ![A thoughtful moment in Berlin](/assets/images/other/thoughtful-berlin.jpg)
 Two pictures, slightly wider than the text.
+!!!
+```
+
+#### Shooting data and full resolution
+
+Add `exif` to a figure for a line with camera, lens, focal length, aperture, shutter, ISO and place, from the photo's EXIF and IPTC data. Add `full` for a link to the original at the size it was uploaded, with its pixel size and file size. `nolocation` leaves the place out. Camera and lens names come from `_data/cameras.json`, which can also link them to their entry on /uses.
+
+<div class="sg-narrow">
+
+!!! figure exif full
+![Chris Spiegl with his Leica](/assets/images/other/avatar-spiegl-chris-leica-2022-08-20-L1010008.jpg)
+A portrait from August 2022.
+!!!
+
+</div>
+
+```md
+!!! figure exif full
+![Chris Spiegl with his Leica](/assets/images/post/2026/Leica-Portrait.jpg)
+A portrait from August 2022.
 !!!
 ```
 

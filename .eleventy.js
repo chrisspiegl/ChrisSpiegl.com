@@ -12,10 +12,11 @@ const buildStats = require('./utils/buildStats')
 const canonicalLink = require('./utils/canonicalLink')
 const { toDate, isValidDate } = require('./utils/dates')
 const emailLink = require('./utils/emailLink')
+const { figureMeta } = require('./utils/figureMeta')
 const filters = require('./utils/filters.js')
 const { lastCommitDate } = require('./utils/gitFileDates')
 const { icon } = require('./utils/icons')
-const { imageHtml, useCloudflare, verifyCloudflareImages } = require('./utils/images')
+const { imageHtml, prepareRepoImageInfo, useCloudflare, verifyCloudflareImages } = require('./utils/images')
 const { preparePlaceholders } = require('./utils/thumbhash')
 const transforms = require('./utils/transforms.js')
 
@@ -64,6 +65,7 @@ const containerImageSizes = {
 module.exports = (config) => {
   config.on('eleventy.before', () => verifyCloudflareImages(meta.url, meta.avatarImage))
   config.on('eleventy.before', preparePlaceholders)
+  config.on('eleventy.before', prepareRepoImageInfo)
 
   // Facts for the build report sent by utils/ci.js (see utils/buildStats.js).
   let buildStarted = 0
@@ -150,6 +152,8 @@ module.exports = (config) => {
   config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('assets/favicon')
   // Originals only: Cloudflare Images resizes and converts them on request.
+  // On CI this is just the site images in the repo; content images come from
+  // R2 (utils/imageStore.js). Locally, any copies on disk are served too.
   config.addPassthroughCopy('assets/images')
   config.addPassthroughCopy({ 'assets/chrisspiegl.asc': 'chrisspiegl.asc' })
   config.addCollection('posts', (collection) => {
@@ -228,7 +232,7 @@ module.exports = (config) => {
   // {% icon "fa7-brands:youtube" %} → inline SVG, bundled at build time.
   config.addShortcode('icon', (name, label) => icon(name, { label }))
   // {% image "/assets/images/x.jpg", "Alt text", "content" %} → responsive <img>.
-  config.addShortcode('image', (src, alt, sizes) => imageHtml(src, { alt, sizes }))
+  config.addShortcode('image', (src, alt, sizes) => imageHtml(src, { alt, sizes, strict: true }))
 
   md.use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true }),
@@ -248,12 +252,16 @@ module.exports = (config) => {
     },
   })
 
-  // !!! figure [wide] [pair]: pictures with an optional caption below.
+  // !!! figure [wide] [pair] [exif] [full] [nolocation]: pictures with an optional caption below.
   //   figure            as wide as the text
   //   figure wide       wider than the text
   //   figure pair       two pictures side by side, as wide as the text
   //   figure pair wide  two pictures side by side, wider than the text
-  // Any paragraph after the pictures becomes the caption.
+  //   exif              adds a line with camera, lens, exposure and place
+  //   full              adds a "View full resolution" link to the original
+  //   nolocation        leaves the place out of the exif line
+  // Any paragraph after the pictures becomes the caption (utils/figureMeta.js
+  // adds the exif and full lines to it).
   const figureSizes = {
     'figure': 'content',
     'figure wide': '(min-width: 1225px) 1225px, 100vw',
@@ -282,39 +290,72 @@ module.exports = (config) => {
     || (token.type === 'text' && !token.content.trim())
   md.core.ruler.push('figure_caption', (state) => {
     const tokens = []
-    let depth = 0
+    const figures = []
+    const paragraph = (kids, tag) => {
+      const open = new state.Token('paragraph_open', tag, 1)
+      const content = new state.Token('inline', '', 0)
+      content.children = kids
+      content.content = kids.map(kid => kid.content).join('')
+      return [
+        open,
+        content,
+        new state.Token('paragraph_close', tag, -1),
+      ]
+    }
     for (let i = 0; i < state.tokens.length; i++) {
       const token = state.tokens[i]
-      if (token.type === 'container_figure_open')
-        depth++
-      if (token.type === 'container_figure_close')
-        depth--
+      if (token.type === 'container_figure_open') {
+        const words = token.info.trim().split(/\s+/)
+        figures.push({
+          exif: words.includes('exif'),
+          full: words.includes('full'),
+          location: !words.includes('nolocation'),
+          srcs: [],
+          caption: null,
+        })
+      }
+      if (token.type === 'container_figure_close') {
+        const closing = figures.pop()
+        const html = closing && (closing.exif || closing.full)
+          ? figureMeta(closing.srcs, closing)
+          : ''
+        if (html) {
+          const meta = new state.Token('html_inline', '', 0)
+          meta.content = html
+          if (closing.caption)
+            closing.caption.children.push(meta)
+          else
+            tokens.push(...paragraph([meta], 'figcaption'))
+        }
+      }
+      const figure = figures.at(-1)
       const inline = state.tokens[i + 1]
-      if (!depth || token.type !== 'paragraph_open' || !inline || inline.type !== 'inline') {
+      if (!figure || token.type !== 'paragraph_open' || !inline || inline.type !== 'inline') {
         tokens.push(token)
         continue
       }
       const children = inline.children || []
+      for (const child of children) {
+        if (child.type === 'image')
+          figure.srcs.push(child.attrGet('src'))
+      }
       const lastImage = children.findLastIndex(child => child.type === 'image')
       const rest = children.slice(lastImage + 1)
       const captionStart = rest.findIndex(child => !isBlank(child))
-      const paragraph = (kids, tag) => {
-        const open = new state.Token('paragraph_open', tag, 1)
-        const content = new state.Token('inline', '', 0)
-        content.children = kids
-        content.content = kids.map(kid => kid.content).join('')
-        return [
-          open,
-          content,
-          new state.Token('paragraph_close', tag, -1),
-        ]
+      let caption = null
+      if (lastImage === -1) {
+        caption = paragraph(children, 'figcaption')
+        tokens.push(...caption)
       }
-      if (lastImage === -1)
-        tokens.push(...paragraph(children, 'figcaption'))
-      else if (captionStart === -1)
+      else if (captionStart === -1) {
         tokens.push(...paragraph(children, 'p'))
-      else
-        tokens.push(...paragraph(children.slice(0, lastImage + 1), 'p'), ...paragraph(rest.slice(captionStart), 'figcaption'))
+      }
+      else {
+        caption = paragraph(rest.slice(captionStart), 'figcaption')
+        tokens.push(...paragraph(children.slice(0, lastImage + 1), 'p'), ...caption)
+      }
+      if (caption)
+        figure.caption = caption[1]
       i += 2 // skip the original inline and paragraph_close
     }
     state.tokens = tokens
@@ -355,6 +396,7 @@ module.exports = (config) => {
     if (!src || !src.startsWith('/assets/'))
       return self.renderToken(tokens, idx, options)
     return imageHtml(src, {
+      strict: true,
       alt: self.renderInlineAsText(token.children, options, env),
       title: token.attrGet('title') || undefined,
       sizes: (env && env.imageSizes) || 'content',

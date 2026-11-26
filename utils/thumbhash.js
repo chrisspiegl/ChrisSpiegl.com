@@ -187,4 +187,4 @@ function placeholder(src) {
   return placeholders[src] || null
 }
 
-module.exports = { placeholder, preparePlaceholders }
+module.exports = { placeholder, placeholderFor, preparePlaceholders }

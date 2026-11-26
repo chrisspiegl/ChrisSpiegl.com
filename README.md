@@ -17,8 +17,8 @@ Node is pinned in `.node-version` (24); Cloudflare's build image reads it too.
 
 ## How things work
 
-- **Images**: only originals live in `assets/images/`. In production every `<img>` points at Cloudflare Images (`/cdn-cgi/image/...`), which resizes on request and serves AVIF, WebP or JPEG depending on the browser. Widths are fixed to 320/640/960/1280/1920 (`utils/images.js`) to keep unique transformations low (free tier: 5,000 per month; format doesn't count). Local and preview builds use the originals. Force a mode with `IMAGES_CDN=cloudflare` or `IMAGES_CDN=local`.
-- **Image placeholders**: every image in `assets/images` gets a [ThumbHash](https://evanw.github.io/thumbhash/) at build time (`utils/thumbhash.js`, cached in `.cache/thumbhash.json`). It is inlined as a ~0.9 KB lossless blurred WebP CSS background (plus aspect-ratio) on the `<img>`, so a preview shows while the image loads, with no JavaScript. Images with transparency are skipped.
+- **Images**: content images (posts, pages, /uses gear) live in the R2 bucket `chrisspiegl-com` (EU jurisdiction), public at `https://r2.chrisspiegl.com`, and not in git. Only the site images in `assets/images/other` (avatar, default share photo, signatures) are committed. Markdown uses the same `/assets/images/...` path for both. In production every `<img>` points at Cloudflare Images (`/cdn-cgi/image/...`), which resizes on request and serves AVIF, WebP or JPEG depending on the browser, from a `srcset` of 320/640/960/1200/1920 px (`utils/images.js`; 1200 because Cloudflare encodes AVIF only up to 1,200 px), never larger than the original. Unique transformations stay low (free tier: 5,000 per month; format doesn't count). Local and preview builds use files on disk where they exist and the production transformation URLs otherwise. Force a mode with `IMAGES_CDN=cloudflare` or `IMAGES_CDN=local`. See "Images on R2" below.
+- **Image placeholders**: every image gets a [ThumbHash](https://evanw.github.io/thumbhash/) (stored in `_data/images.json` for R2 images, computed at build time for repo images by `utils/thumbhash.js`, cached in `.cache/thumbhash.json`). It is inlined as a ~0.9 KB lossless blurred WebP CSS background (plus aspect-ratio) on the `<img>`, so a preview shows while the image loads, with no JavaScript. Images with transparency are skipped.
 - **Fonts**: Spectral for headings, text, nav and buttons is linked from Google Fonts in `_includes/layout.pug`; Cloudflare Fonts rewrites the link to load it from this domain. The /links buttons use system UI; code and the footer use the system mono stack.
 - **Design tokens**: colors, type scale (1.25, body 20px), spacing (4–64px), radius, line heights and the 48px control height are custom properties at the top of `assets/scss/style.scss`. Use them instead of raw values. Breakpoints are `$break-mobile` (480px) and `$ipad-11-portrait` (820px) in `_variables.scss`.
 - **Icons**: inline SVGs bundled at build time from Iconify (`utils/icons.js`, `{% icon "fa7-brands:youtube" %}`).
@@ -31,9 +31,47 @@ Node is pinned in `.node-version` (24); Cloudflare's build image reads it too.
 - **Redirects**: `_data/redirects.json` builds `_redirects` for Cloudflare plus HTML pages for local overview. Entries default to `302`; set `"status": 301` for links that never change.
 - **Dependencies**: Dependabot opens one grouped pull request per week (`.github/dependabot.yml`).
 
+## Images on R2
+
+**Adding an image while writing**
+
+1. Export from Lightroom at the size you want to publish. Anything up to Cloudflare's limits works; bigger files are handled too (below). Exporting with "All metadata except location" or with location both work: the push removes GPS either way and keeps only city and country.
+2. Put the file in `assets/images/<folder>/` (any folder except `other`), for example `assets/images/post/2026/`.
+3. Run `pnpm images:push`. It prints the final path and uploads the file.
+4. Write `![Alt text](/assets/images/post/2026/Leica-Walk-01.jpg)` (or a `!!! figure`) and commit `_data/images.json` with the post.
+
+`pnpm dev` shows the local file right away, even before the push. A build on Cloudflare stops with the file name when an image isn't pushed, or when the path differs from the pushed file only in case (macOS ignores case, the web doesn't).
+
+**What `pnpm images:push` does** (`utils/imagesCli.js`, `utils/imageMeta.js`) for each new or changed file:
+
+- Renames it to a URL-safe name that keeps your casing: spaces and underscores become hyphens, umlauts are spelled out, other special characters go, the extension is lowercase (`Leica Walk 01.JPG` → `Leica-Walk-01.jpg`).
+- Reads the shooting data: camera, lens, focal length (and 35 mm equivalent), aperture, shutter, ISO, exposure compensation, flash, capture time with its time zone, software, artist and copyright.
+- Reads the place: City/State/Country from IPTC/XMP (what Lightroom writes) first, else the GPS coordinates looked up offline against GeoNames towns (`all-the-cities`). Only city, region, country and country code are kept; coordinates and street-level fields never are.
+- Uploads a copy without EXIF, XMP, IPTC or comments (no GPS, serial numbers or owner names). JPEG, PNG and WebP are cleaned without re-encoding; the colour profile stays. Photos with an EXIF rotation are turned upright first. HEIC and TIFF are converted to JPEG. The push checks the cleaned copy and refuses to upload if any of that survived.
+- When a file is over Cloudflare's limits (100 megapixels, 12,000 px per side, 100 MB; [docs](https://developers.cloudflare.com/images/get-started/limits/)), it also uploads `<name>@display.<ext>`, just under the limits, as the source for resizing. The original stays the full-resolution download.
+- Writes the entry to `_data/images.json` and uploads a backup of that file to `_manifest/images.json` in the bucket.
+
+Uploads use Wrangler with a year of caching: run `npx wrangler login` once (or set `CLOUDFLARE_API_TOKEN`). The account is CSX.Ventures; `R2_BUCKET`, `R2_JURISDICTION` and `CLOUDFLARE_ACCOUNT_ID` override the defaults. Options: `--dry-run` shows what would happen, `--no-upload` only updates the manifest, `--force` processes every file again. `pnpm images:pull` downloads the cleaned copies of every image that isn't on disk, for a new computer or a fresh clone.
+
+**`_data/images.json`** has one entry per image, keyed by its path under `assets/images`: `originalName`, `width`, `height`, `bytes`, `type`, `hash` (SHA-256 of your file, also used as `?v=` so a replaced image shows at once despite the year of caching), `uploadedHash`, `thumbhash`, `exif`, `location`, `createdAt`, `updatedAt`, `uploadedAt`, and `source` for the smaller copy. Two hand edits are kept by later pushes: `"location": false` keeps a photo's place off the site (and out of this public repo) for good, and `"overrides": { ... }` replaces any `exif` value or the `location`.
+
+**Figures**: `!!! figure exif` adds a line with camera, lens, exposure and place, `!!! figure full` a "View full resolution" link with pixel and file size, `nolocation` leaves the place out of that line. Camera and lens display names, and links to their /uses entry, are in `_data/cameras.json`.
+
+**Removing the images from git history** (one time, after the R2 move is merged and pushed; it changes every commit id). On your Mac, with `brew install git-filter-repo`:
+
+```sh
+git clone --mirror git@github.com:chrisspiegl/ChrisSpiegl.com.git chrisspiegl-com-rewrite.git
+cd chrisspiegl-com-rewrite.git
+git filter-repo --invert-paths --path assets/images/gear --path assets/images/post --path assets/images/book
+git push --force --mirror origin
+```
+
+GitHub refuses the hidden `refs/pull/*` refs in a mirror push; those errors are expected and the branches still update. Then delete and re-clone your working copies (or `git fetch && git reset --hard origin/main` on each branch), and keep your local `assets/images` folder: those files are your originals.
+
 ## Cloudflare settings this site depends on
 
-- Images > Transformations: enabled for the chrisspiegl.com zone.
+- Images > Transformations: enabled for the chrisspiegl.com zone. Sources from the same zone (r2.chrisspiegl.com) are allowed by default.
+- R2 bucket `chrisspiegl-com` in the EU jurisdiction, public only through the custom domain `r2.chrisspiegl.com` (no r2.dev URL).
 - Speed > Settings > Content Optimization: Cloudflare Fonts on.
 - Web Analytics: enabled for chrisspiegl.com with automatic setup.
 - Workers & Pages > chrisspiegl-com: Workers Builds connected to this repo (build `pnpm ci:build`, deploy `pnpm ci:deploy`, non-production branches `pnpm ci:preview`), build variables `YOUTUBE_API_KEY`, `INSTAGRAM_ACCESS_TOKEN` (secret), `PUSHNOTICE_CHAT_IDCHAT`, `PUSHNOTICE_CHAT_SECRET` (optional `CF_BUILDS_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`), Worker secrets `DEPLOY_HOOK`, `PUSHNOTICE_CHAT_SECRET` (`PUSHNOTICE_CHAT_IDCHAT` is a plain var in `wrangler.jsonc`).

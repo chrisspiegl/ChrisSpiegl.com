@@ -1,0 +1,18 @@
+{
+  "_about": "Display names for the EXIF camera and lens names in _data/images.json, used by `!!! figure exif`. Keys are the EXIF Model / LensModel exactly. `gear` is a slug from _data/gear.csv: the name then links to that item on /uses. `fixedLens` hides the lens for cameras with a built-in one.",
+  "cameras": {
+    "LEICA Q3": { "name": "Leica Q3", "gear": "leica-q3", "fixedLens": true },
+    "LEICA Q2": { "name": "Leica Q2", "fixedLens": true },
+    "Canon EOS R6 Mark III": { "name": "Canon EOS R6 III", "gear": "canon-eos-r6-iii" },
+    "Canon EOS R5 C": { "name": "Canon EOS R5 C" },
+    "Canon EOS R": { "name": "Canon EOS R" },
+    "ILCE-7M2": { "name": "Sony a7 II" },
+    "ILCE-7SM2": { "name": "Sony a7S II" }
+  },
+  "lenses": {
+    "RF15-35mm F2.8 L IS USM": { "name": "Canon RF 15-35mm f/2.8", "gear": "canon-rf-15-35mm-f-2-8" },
+    "RF24-105mm F4 L IS USM": { "name": "Canon RF 24-105mm f/4", "gear": "canon-rf-24-105-f-4" },
+    "RF70-200mm F4 L IS USM": { "name": "Canon RF 70-200mm f/4", "gear": "canon-rf-70-200mm-f-4" },
+    "RF35mm F1.8 MACRO IS STM": { "name": "Canon RF 35mm f/1.8", "gear": "canon-rf-35mm-f-1-8" }
+  }
+}
