@@ -1,14 +1,15 @@
 .book-list, .movie-list {
   display: flex;
-  padding-bottom: 2rem;
+  padding-bottom: var(--space-6);
 
   .cover-photo {
     img {
       max-width: 200px;
       width: 20vw;
-      border: 1px solid black;
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-sm);
     }
-    padding-right: 1rem;
+    padding-right: var(--space-4);
   }
   .details {}
 }

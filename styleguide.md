@@ -43,45 +43,27 @@ objective sold more misheard dear hello.
 
 ## Weights
 
+Spectral is loaded in these weights only.
+
 <div>
-<p style="font-weight: 100; margin-top: 0">
-Taped mammoth adroit woefully aboard much  100
-</p>
-
-<p style="font-weight: 200">
-Taped mammoth adroit woefully aboard much  200
-</p>
-
-<p style="font-weight: 300">
-Taped mammoth adroit woefully aboard much  300
-<code>dateline-date</code>
-</p>
-
-<p style="font-weight: 400">
+<p style="font-weight: 400; margin-top: 0">
 Taped mammoth adroit woefully aboard much  400
-<code>body, dateline</code>
+<code>body, lists, captions</code>
 </p>
 
-<p style="font-weight: 500">
-Taped mammoth adroit woefully aboard much  500
-<code>summary</code>
+<p style="font-weight: 400; font-style: italic">
+Taped mammoth adroit woefully aboard much  400 italic
+<code>em, cite, blockquote</code>
 </p>
 
 <p style="font-weight: 600">
 Taped mammoth adroit woefully aboard much  600
+<code>buttons, footnote buttons</code>
 </p>
 
 <p style="font-weight: 700">
 Taped mammoth adroit woefully aboard much  700
-<code>logo, nav</code>
-</p>
-
-<p style="font-weight: 800">
-Taped mammoth adroit woefully aboard much  800
-</p>
-
-<p style="font-weight: 900">
-Taped mammoth adroit woefully aboard much  900
+<code>headings, site name, strong</code>
 </p>
 
 </div>
