@@ -252,44 +252,159 @@ const variants = [
   },
 ]
 
-// Drafts for Chris's personal signature, shown next to the current one.
-// Gmail can use one signature for new emails and another for replies.
-const placeAndLinks = [
-  ['Written in Nimman, Chiang Mai'],
-  [
-    chris.links,
-    SEP,
-    'What I\'m doing ',
-    chris.now,
-  ],
+// Drafts, shown next to the signature they would replace (`replaces`).
+// Gmail can use one signature for new emails and another for replies:
+// replies drop the founder or assistant line, new emails keep it.
+// Only the personal ones say where Chris is writing from.
+const chrisLinks = [
+  chris.links,
+  SEP,
+  'What I\'m doing ',
+  chris.now,
+]
+const chrisFounder = [
+  'Founder of ',
+  chris.niyama,
+  ' & ',
+  chris.bolstair,
+]
+const niyamaBlock = [
+  {
+    bold: [
+      { ...chris.niyama, plain: true },
+      ' ~ Dein Online Yoga Studio',
+    ],
+  },
+  'br',
+  'Community, Live Yoga, und Kurse: ',
+  { ...chris.niyama, link: 'www.Niyama.Academy' },
+]
+const ryanLinks = [
+  { ...chris.links, title: 'Chris\'s Field Notes, YouTube, Instagram and everything else.' },
+  SEP,
+  'What Chris is doing ',
+  { ...chris.now, title: 'What Chris is doing now.' },
 ]
 
 const drafts = [
   {
-    id: 'draft-new',
-    label: 'Draft · New emails',
+    replaces: 'chris-personal',
+    id: 'draft-personal-new',
+    label: 'Draft · Personal, new emails',
     use: 'For new emails.',
     lines: [
       ['Chris Spiegl'],
       [],
-      ...placeAndLinks,
+      ['Written in Nimman, Chiang Mai'],
+      chrisLinks,
+      chrisFounder,
+      [],
+    ],
+  },
+  {
+    replaces: 'chris-personal',
+    id: 'draft-personal-reply',
+    label: 'Draft · Personal, replies',
+    use: 'For replies and forwards.',
+    lines: [
+      ['Chris'],
+      [],
+      ['Written in Nimman, Chiang Mai'],
+      chrisLinks,
+      [],
+    ],
+  },
+  {
+    replaces: 'ryan-assistant',
+    id: 'draft-ryan-new',
+    name: 'Ryan',
+    label: 'Draft · Assistant, new emails',
+    use: 'For new emails.',
+    lines: [
+      ['Ryan'],
+      [],
+      ryanLinks,
       [
-        'Founder of ',
+        'Assistant to Chris Spiegl, his work & life, and responsibilities at ',
         chris.niyama,
         ' & ',
         chris.bolstair,
+        '.',
       ],
       [],
     ],
   },
   {
-    id: 'draft-reply',
-    label: 'Draft · Replies',
+    replaces: 'ryan-assistant',
+    id: 'draft-ryan-reply',
+    name: 'Ryan',
+    label: 'Draft · Assistant, replies',
+    use: 'For replies and forwards.',
+    lines: [
+      ['Ryan'],
+      [],
+      ryanLinks,
+      [],
+    ],
+  },
+  {
+    replaces: 'chris-niyama',
+    id: 'draft-niyama-new',
+    label: 'Draft · Niyama.Academy, new emails',
+    use: 'For new emails.',
+    lines: [
+      ['Namasté'],
+      ['Chris Spiegl'],
+      [],
+      niyamaBlock,
+      chrisLinks,
+      chrisFounder,
+      [],
+    ],
+  },
+  {
+    replaces: 'chris-niyama',
+    id: 'draft-niyama-reply',
+    label: 'Draft · Niyama.Academy, replies',
+    use: 'For replies and forwards.',
+    lines: [
+      ['Namasté'],
+      ['Chris'],
+      [],
+      niyamaBlock,
+      chrisLinks,
+      [],
+    ],
+  },
+  {
+    replaces: 'chris-bolstair',
+    id: 'draft-bolstair-new',
+    label: 'Draft · BOLSTair, new emails',
+    use: 'For new emails.',
+    lines: [
+      ['Chris Spiegl'],
+      [],
+      bolstairBlock,
+      chrisLinks,
+      [
+        'Founder of ',
+        chris.bolstair,
+        ' & ',
+        chris.niyama,
+      ],
+      [],
+    ],
+  },
+  {
+    replaces: 'chris-bolstair',
+    id: 'draft-bolstair-reply',
+    label: 'Draft · BOLSTair, replies',
     use: 'For replies and forwards.',
     lines: [
       ['Chris'],
       [],
-      ...placeAndLinks,
+      bolstairBlock,
+      chrisLinks,
       [],
     ],
   },

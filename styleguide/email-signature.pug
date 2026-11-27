@@ -148,13 +148,15 @@ each sig in emailSignatures.variants
 
 h2#drafts Drafts
 
-p The next version of Chris's personal signature, next to the current one. Not in use yet. In Gmail, under #[strong Signature defaults], pick the new-emails one for #[strong For new emails use] and the replies one for #[strong On reply/forward use].
+p The next versions, each next to the signature it would replace. Not in use yet. In Gmail, under #[strong Signature defaults], pick the new-emails one for #[strong For new emails use] and the replies one for #[strong On reply/forward use].
 
-- const current = emailSignatures.variants.find(sig => sig.id === 'chris-personal')
-div.sig-compare
-  +sigCard(Object.assign({}, current, { id: "current-personal", use: "In use now." }), "Current · Personal")
-  each sig in emailSignatures.drafts
-    +sigCard(sig, sig.label)
+each current in emailSignatures.variants
+  - const next = emailSignatures.drafts.filter(sig => sig.replaces === current.id)
+  if next.length
+    div.sig-compare
+      +sigCard(Object.assign({}, current, { id: `current-${current.id}`, use: "In use now." }), `Current · ${current.name} · ${current.label}`)
+      each sig in next
+        +sigCard(sig, sig.label)
 
 script.
   (() => {
