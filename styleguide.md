@@ -541,6 +541,17 @@ There are two, both in `assets/scss/_variables.scss`. Don't add others.
 
 The text column is `--content-width` (980px) wide at most, and 90% of the screen below that.
 
+## Search visibility
+
+Every page is in search results unless `_data/searchVisibility.js` says otherwise. That one list sets the robots meta tag, the `X-Robots-Tag` header in `_headers`, the canonical link and the sitemap. To hide a page, add it there. Don't block pages in `robots.txt`: a crawler that can't fetch a page never sees its noindex.
+
+| Path | Search | Why |
+| :--- | :--- | :--- |
+{%- for rule in searchVisibility.rules %}
+| `{{ rule.path }}` | {% if rule.robots == "noindex" %}Hidden{% else %}Points to [{{ rule.canonical }}]({{ rule.canonical }}){% endif %} | {{ rule.why }} |
+{%- endfor %}
+| Everything else | Indexed | |
+
 ## Email signatures
 
 The signatures for Chris, Ryan and Nicole, ready to copy into Gmail, are on [Email signatures](/styleguide/email-signature). Their data is in `_data/emailSignatures.js`.

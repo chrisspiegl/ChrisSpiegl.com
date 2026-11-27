@@ -2,8 +2,6 @@
 title: Hello, close reader
 description: "You looked closely at my email signature. I'm glad you did."
 permalink: /signature/
-# Only reached from the links in my email signature (utm_source=chrisspiegl.com/signature).
-noindex: true
 eleventyExcludeFromCollections: true
 ---
 

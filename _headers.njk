@@ -1,3 +1,8 @@
+---
+permalink: _headers
+layout: blank
+eleventyExcludeFromCollections: true
+---
 # Response headers for the static site (Cloudflare Workers static assets and
 # Pages read this file from the output root). Rules apply in file order: to
 # change a header a broader rule already set, detach it with "! Name" first.
@@ -26,16 +31,10 @@
   ! Cache-Control
   Cache-Control: public, max-age=600, must-revalidate
 
-# Working pages that should never show up in search. Their front matter has
-# `noindex: true`, which adds the matching robots meta tag as well.
-/styleguide/email-signature
-  X-Robots-Tag: noindex, nofollow
-/styleguide/email-signature/*
-  X-Robots-Tag: noindex, nofollow
-/signature
-  X-Robots-Tag: noindex, nofollow
-/signature/*
-  X-Robots-Tag: noindex, nofollow
+# Pages kept out of search, generated from _data/searchVisibility.js.
+{%- for rule in searchVisibility.rules %}{% if rule.robots == "noindex" %}{% for path in searchVisibility.headerPaths(rule) %}
+{{ path }}
+  X-Robots-Tag: noindex, nofollow{% endfor %}{% endif %}{% endfor %}
 
 # Keep preview and workers.dev / pages.dev addresses out of search results.
 # Cloudflare adds noindex to workers.dev Previews itself, but not to Previews

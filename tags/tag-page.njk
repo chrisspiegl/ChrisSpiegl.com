@@ -12,9 +12,6 @@ pagination:
   addAllPagesToCollections: true
 layout: archive
 permalink: /tag/{{ tag }}/
-# Internal tags stay out of search (an empty string means "index it").
-eleventyComputed:
-  noindex: "{{ 'yes' if tag in ['drafts', 'sitemap'] }}"
 ---
 
 <h1>Posts tagged "{{ tag }}"</h1>

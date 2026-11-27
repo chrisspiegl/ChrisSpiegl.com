@@ -8,6 +8,7 @@ const markdownItContainer = require('markdown-it-container')
 const markdownItFootnote = require('markdown-it-footnote')
 
 const meta = require('./_data/meta')
+const searchVisibility = require('./_data/searchVisibility')
 const buildStats = require('./utils/buildStats')
 const canonicalLink = require('./utils/canonicalLink')
 const { toDate, isValidDate } = require('./utils/dates')
@@ -23,8 +24,8 @@ const transforms = require('./utils/transforms.js')
 
 const now = new Date()
 
-const sitemapExcludedPrefixes = ['/tag/', '/tags/', '/gear/view/']
-const sitemapExcludedPaths = new Set(['/styleguide', '/404.html'])
+const sitemapExcludedPrefixes = ['/tag/', '/tags/']
+const sitemapExcludedPaths = new Set(['/404.html'])
 
 function includeInSitemap(item) {
   const url = item.url
@@ -37,6 +38,9 @@ function includeInSitemap(item) {
   if (sitemapExcludedPrefixes.some(prefix => url.startsWith(prefix) || `${url}/` === prefix))
     return false
   if (sitemapExcludedPaths.has(url))
+    return false
+  // Pages kept out of search, or pointing elsewhere (_data/searchVisibility.js).
+  if (searchVisibility.forUrl(url))
     return false
   if (inputPath.includes('/draft') || inputPath.includes('draft.md') || inputPath.includes('draft-'))
     return false
@@ -151,7 +155,6 @@ module.exports = (config) => {
   }
 
   config.addGlobalData('r2Folders', () => imageStore.r2Folders())
-  config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('assets/favicon')
   // Originals only: Cloudflare Images resizes and converts them on request.
   // On CI this is just the site images in the repo; content images come from
