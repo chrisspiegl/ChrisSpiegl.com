@@ -253,8 +253,8 @@ const variants = [
 ]
 
 // Drafts, shown next to the signature they would replace (`replaces`).
-// Gmail can use one signature for new emails and another for replies. The
-// personal and assistant replies drop the founder or assistant line.
+// Gmail can use one signature for new emails and another for replies. Only
+// the personal one has a reply version, without the founder line.
 // Only the personal ones say where Chris is writing from.
 const chrisLinks = [
   chris.links,
@@ -316,14 +316,13 @@ const drafts = [
   },
   {
     replaces: 'ryan-assistant',
-    id: 'draft-ryan-new',
+    id: 'draft-ryan',
     name: 'Ryan',
-    label: 'Draft · Assistant, new emails',
-    use: 'For new emails.',
+    label: 'Draft · Assistant',
+    use: 'For new emails and replies.',
     lines: [
       ['Ryan'],
       [],
-      ryanLinks,
       [
         'Assistant to Chris Spiegl, his work & life, and responsibilities at ',
         chris.niyama,
@@ -331,18 +330,6 @@ const drafts = [
         chris.bolstair,
         '.',
       ],
-      [],
-    ],
-  },
-  {
-    replaces: 'ryan-assistant',
-    id: 'draft-ryan-reply',
-    name: 'Ryan',
-    label: 'Draft · Assistant, replies',
-    use: 'For replies and forwards.',
-    lines: [
-      ['Ryan'],
-      [],
       ryanLinks,
       [],
     ],
