@@ -17,7 +17,11 @@ html(lang="en")
 
     title= fullTitle
     meta(name="description" content=pageDescription)
-    link(rel="canonical" href=canonicalUrl)
+    //- Search visibility comes from _data/searchVisibility.js.
+    - var visibility = searchVisibility.forUrl(page.url)
+    link(rel="canonical" href=(visibility && visibility.canonical ? helpers.absoluteUrl(visibility.canonical) : canonicalUrl))
+    if visibility && visibility.robots === 'noindex'
+      meta(name="robots" content="noindex, nofollow")
 
     //- Open Graph and Twitter cards (link previews on Substack, Instagram, X, LinkedIn, iMessage, ...)
     meta(property="og:type" content=(layout === 'post' ? 'article' : 'website'))
