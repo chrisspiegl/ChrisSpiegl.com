@@ -96,20 +96,10 @@ style(type='text/css' media='screen').
   .sig-status.is-error {
     color: var(--color-red);
   }
-  /* Current signature and drafts side by side once there's room. */
-  .sig-compare {
-    display: grid;
-    gap: 0 var(--space-5);
-  }
-  @media (min-width: 820px) {
-    .sig-compare {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
 
 h1 Email Signatures
 
-p One signature per mailbox. Press #[strong Copy signature], then paste it into the signature box of your mail app. The formatting and links come along. #[strong Copy HTML] is for apps that ask for the raw code instead.
+p One signature per mailbox, plus a reply version for Chris's personal mail. Press #[strong Copy signature], then paste it into the signature box of your mail app. The formatting and links come along. #[strong Copy HTML] is for apps that ask for the raw code instead.
 
 mixin sigCard(sig, title)
   section.sig-card(id=sig.id aria-labelledby=`${sig.id}-title`)
@@ -127,7 +117,6 @@ ul.sig-jump
   li: a(href='#gmail') Gmail setup
   each sig in emailSignatures.variants
     li: a(href=`#${sig.id}`)= `${sig.name} · ${sig.label}`
-  li: a(href='#drafts') Drafts
 
 h2#gmail Set it up in Gmail
 
@@ -136,7 +125,7 @@ ol
   li On the #[strong General] tab, under #[strong Default text style], pick #[strong Sans Serif], size #[strong Normal], and leave the color as it is.
   li Scroll to #[strong Signature], click #[strong Create new], and name it after the card here (for example "Chris · Personal").
   li Press #[strong Copy signature] on this page, click into Gmail's signature box and paste (⌘V or Ctrl+V).
-  li Under #[strong Signature defaults], pick the signature for new mail and for replies, once for each address you send from.
+  li Under #[strong Signature defaults], pick the signature for each address you send from. For chris@chrisspiegl.com, pick #[strong Personal] for #[strong For new emails use] and #[strong Personal, replies] for #[strong On reply/forward use]. The other addresses use the same signature for both.
   li Tick #[strong Insert signature before quoted text in replies], then #[strong Save changes] at the bottom.
 
 p To change a signature, edit #[code _data/emailSignatures.js] in the website repo. After it's live, copy and paste it into Gmail again.
@@ -145,18 +134,6 @@ h2#in-use Signatures in use
 
 each sig in emailSignatures.variants
   +sigCard(sig)
-
-h2#drafts Drafts
-
-p The next versions, each next to the signature it would replace. Not in use yet. Where there are two, in Gmail under #[strong Signature defaults], pick the new-emails one for #[strong For new emails use] and the replies one for #[strong On reply/forward use].
-
-each current in emailSignatures.variants
-  - const next = emailSignatures.drafts.filter(sig => sig.replaces === current.id)
-  if next.length
-    div.sig-compare
-      +sigCard(Object.assign({}, current, { id: `current-${current.id}`, use: "In use now." }), `Current · ${current.name} · ${current.label}`)
-      each sig in next
-        +sigCard(sig, sig.label)
 
 script.
   (() => {

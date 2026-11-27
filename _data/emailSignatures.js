@@ -81,8 +81,6 @@ const chris = {
   niyama: { link: 'Niyama.Academy', href: 'https://niyama.academy/', title: 'Echtes Yoga für Dein Echtes Leben!' },
   bolstair: { link: 'BOLSTair', href: 'https://bolstair.com/', title: 'The only blowup yoga bolster for fitness & relaxation with built in blow-up mechanism.' },
 }
-const chrisSocial = [chris.youtube, SEP, chris.instagram]
-
 const nicole = {
   niyama: { link: 'Niyama.Academy ~ Dein Online Yoga Studio', href: 'https://niyama.academy/', title: 'Echtes Yoga für Dein Echtes Leben - Live Yoga, Kurse, und eine wundervolle Yoga Community' },
   bolstair: { link: 'BOLSTair ~ Das einzige luftgefüllte Yoga Kissen', href: 'https://bolstair.com/', title: 'Für Yoga, Fitness, und vor allem zum Reisen genial! Mit eingebauter Pumpe und nur 280g leicht.' },
@@ -91,6 +89,31 @@ const nicole = {
 }
 const nicoleSocial = [nicole.youtube, SEP, nicole.instagram]
 
+// /links holds Field Notes, YouTube, Instagram and everything else, so the
+// signatures only need it and /now.
+const chrisLinks = [
+  chris.links,
+  SEP,
+  'What I\'m doing ',
+  chris.now,
+]
+const chrisFounder = [
+  'Founder of ',
+  chris.niyama,
+  ' & ',
+  chris.bolstair,
+]
+const niyamaBlock = [
+  {
+    bold: [
+      { ...chris.niyama, plain: true },
+      ' ~ Dein Online Yoga Studio',
+    ],
+  },
+  'br',
+  'Community, Live Yoga, und Kurse: ',
+  { ...chris.niyama, link: 'www.Niyama.Academy' },
+]
 const bolstairBlock = [
   {
     bold: ['BOLSTair ~ The Blowup Yoga & Fitness Bolster'],
@@ -107,30 +130,35 @@ const chrisDefaults = {
   source: CHRIS_SOURCE,
 }
 
+// Gmail can use one signature for new emails and another for replies. Only
+// Chris's personal mail has a reply version: "Chris", without the founder
+// line. Only the personal ones say where Chris is writing from. In the
+// business and assistant signatures the position comes first after the name.
 const variants = [
   {
     ...chrisDefaults,
     id: 'chris-personal',
     label: 'Personal',
-    use: 'chris@chrisspiegl.com and everyday mail.',
+    use: 'chris@chrisspiegl.com, for new emails.',
     lines: [
       ['Chris Spiegl'],
       [],
-      [
-        'Founder of ',
-        chris.niyama,
-        ' & ',
-        chris.bolstair,
-      ],
-      [
-        chris.hub,
-        SEP,
-        chris.fieldNotes,
-        SEP,
-        'What I am doing ',
-        chris.now,
-      ],
-      chrisSocial,
+      ['Written in Nimman, Chiang Mai'],
+      chrisLinks,
+      chrisFounder,
+      [],
+    ],
+  },
+  {
+    ...chrisDefaults,
+    id: 'chris-personal-reply',
+    label: 'Personal, replies',
+    use: 'chris@chrisspiegl.com, for replies and forwards.',
+    lines: [
+      ['Chris'],
+      [],
+      ['Written in Nimman, Chiang Mai'],
+      chrisLinks,
       [],
     ],
   },
@@ -151,14 +179,11 @@ const variants = [
         '.',
       ],
       [
-        { ...chris.hub, title: 'Chris\'s online hub for everything.' },
-        SEP,
-        { ...chris.fieldNotes, title: 'Chris\'s essays on traveling slowly through life.' },
+        { ...chris.links, title: 'Chris\'s Field Notes, YouTube, Instagram and everything else.' },
         SEP,
         'What Chris is doing ',
         { ...chris.now, title: 'What Chris is doing now.' },
       ],
-      chrisSocial,
       [],
     ],
   },
@@ -171,24 +196,9 @@ const variants = [
       ['Namasté'],
       ['Chris Spiegl'],
       [],
-      [
-        'Founder of ',
-        chris.niyama,
-        ' & ',
-        chris.bolstair,
-      ],
-      [
-        {
-          bold: [
-            { ...chris.niyama, plain: true },
-            ' ~ Dein Online Yoga Studio',
-          ],
-        },
-        'br',
-        'Community, Live Yoga, und Kurse: ',
-        { ...chris.niyama, link: 'www.Niyama.Academy' },
-      ],
-      [chris.hub, SEP, ...chrisSocial],
+      chrisFounder,
+      niyamaBlock,
+      chrisLinks,
       [],
     ],
   },
@@ -207,7 +217,7 @@ const variants = [
         chris.niyama,
       ],
       bolstairBlock,
-      [chris.hub, SEP, ...chrisSocial],
+      chrisLinks,
       [],
     ],
   },
@@ -252,130 +262,6 @@ const variants = [
   },
 ]
 
-// Drafts, shown next to the signature they would replace (`replaces`).
-// Gmail can use one signature for new emails and another for replies. Only
-// the personal one has a reply version, without the founder line.
-// Only the personal ones say where Chris is writing from.
-const chrisLinks = [
-  chris.links,
-  SEP,
-  'What I\'m doing ',
-  chris.now,
-]
-const chrisFounder = [
-  'Founder of ',
-  chris.niyama,
-  ' & ',
-  chris.bolstair,
-]
-const niyamaBlock = [
-  {
-    bold: [
-      { ...chris.niyama, plain: true },
-      ' ~ Dein Online Yoga Studio',
-    ],
-  },
-  'br',
-  'Community, Live Yoga, und Kurse: ',
-  { ...chris.niyama, link: 'www.Niyama.Academy' },
-]
-const ryanLinks = [
-  { ...chris.links, title: 'Chris\'s Field Notes, YouTube, Instagram and everything else.' },
-  SEP,
-  'What Chris is doing ',
-  { ...chris.now, title: 'What Chris is doing now.' },
-]
-
-const drafts = [
-  {
-    replaces: 'chris-personal',
-    id: 'draft-personal-new',
-    label: 'Draft · Personal, new emails',
-    use: 'For new emails.',
-    lines: [
-      ['Chris Spiegl'],
-      [],
-      ['Written in Nimman, Chiang Mai'],
-      chrisLinks,
-      chrisFounder,
-      [],
-    ],
-  },
-  {
-    replaces: 'chris-personal',
-    id: 'draft-personal-reply',
-    label: 'Draft · Personal, replies',
-    use: 'For replies and forwards.',
-    lines: [
-      ['Chris'],
-      [],
-      ['Written in Nimman, Chiang Mai'],
-      chrisLinks,
-      [],
-    ],
-  },
-  {
-    replaces: 'ryan-assistant',
-    id: 'draft-ryan',
-    name: 'Ryan',
-    label: 'Draft · Assistant',
-    use: 'For new emails and replies.',
-    lines: [
-      ['Ryan'],
-      [],
-      [
-        'Assistant to Chris Spiegl, his work & life, and responsibilities at ',
-        chris.niyama,
-        ' & ',
-        chris.bolstair,
-        '.',
-      ],
-      ryanLinks,
-      [],
-    ],
-  },
-  // Business mailboxes: one signature for new emails and replies. The
-  // founder line comes first (the position), then the company, then Chris.
-  {
-    replaces: 'chris-niyama',
-    id: 'draft-niyama',
-    label: 'Draft · Niyama.Academy',
-    use: 'For new emails and replies.',
-    lines: [
-      ['Namasté'],
-      ['Chris Spiegl'],
-      [],
-      chrisFounder,
-      niyamaBlock,
-      chrisLinks,
-      [],
-    ],
-  },
-  {
-    replaces: 'chris-bolstair',
-    id: 'draft-bolstair',
-    label: 'Draft · BOLSTair',
-    use: 'For new emails and replies.',
-    lines: [
-      ['Chris Spiegl'],
-      [],
-      [
-        'Founder of ',
-        chris.bolstair,
-        ' & ',
-        chris.niyama,
-      ],
-      bolstairBlock,
-      chrisLinks,
-      [],
-    ],
-  },
-].map(draft => ({
-  ...chrisDefaults,
-  ...draft,
-  kind: 'draft',
-}))
-
 function build(variant) {
   return {
     ...variant,
@@ -385,5 +271,4 @@ function build(variant) {
 
 module.exports = {
   variants: variants.map(build),
-  drafts: drafts.map(build),
 }
