@@ -333,6 +333,34 @@ const drafts = [
     ],
   },
   {
+    id: 'draft-zero-d',
+    label: 'Draft 0D · Grouped, place first',
+    lines: [
+      [
+        'Chris Spiegl',
+        'br',
+        'Written in Nimman, Chiang Mai',
+      ],
+      [
+        chris.hub,
+        SEP,
+        chris.fieldNotes,
+        SEP,
+        'What I\'m doing ',
+        chris.now,
+        'br',
+        ...chrisSocial,
+      ],
+      [
+        'Founder of ',
+        chris.niyama,
+        ' & ',
+        chris.bolstair,
+      ],
+      [],
+    ],
+  },
+  {
     id: 'draft-zero-c',
     label: 'Draft 0C · Cut to four lines',
     lines: [
