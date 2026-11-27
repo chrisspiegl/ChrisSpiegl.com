@@ -10,7 +10,6 @@
 //
 // Don't block these pages in robots.txt: a crawler that may not fetch a page
 // never sees its noindex, and the page can still show up as a bare link.
-// The table on /styleguide (Search visibility) lists these rules.
 
 const rules = [
   { path: '/styleguide/*', robots: 'noindex', why: 'Internal design reference, including the email signatures.' },
