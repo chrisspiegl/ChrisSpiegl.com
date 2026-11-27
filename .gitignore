@@ -97,3 +97,6 @@ typings/
 /_archive/
 .wrangler
 /_site_production/
+
+### macOS ###
+.DS_Store
