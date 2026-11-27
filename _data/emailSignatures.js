@@ -1,7 +1,7 @@
 // Email signatures shown on /styleguide/email-signature.
 // Each one renders to inline-styled HTML (email clients drop <style> blocks).
 // Links go straight to their destination, never through a redirect, and carry
-// utm_source, utm_medium and utm_campaign.
+// only utm_source, kept short so the links stay uncluttered.
 
 // Matches Gmail's "Sans Serif" default text style, which Gmail sends as Arial.
 const SANS = 'Arial, Helvetica, sans-serif'
@@ -16,7 +16,6 @@ const PURPLE = '#ac8bd4'
 const CHRIS_SOURCE = 'chrisspiegl.com/signature'
 // Nicole's site gets its own /signature page.
 const NICOLE_SOURCE = 'nicolereiher.com/signature'
-const UTM_MEDIUM = 'email'
 
 function escapeHtml(text) {
   return String(text)
@@ -28,13 +27,11 @@ function escapeHtml(text) {
 
 // Built by hand so the slash in utm_source stays a slash (it is valid in a
 // query string) instead of becoming %2F.
-function trackedUrl(href, { source, campaign }) {
+function trackedUrl(href, source) {
   const url = new URL(href)
   const query = [
     url.search.slice(1),
     `utm_source=${source}`,
-    `utm_medium=${UTM_MEDIUM}`,
-    `utm_campaign=${encodeURIComponent(campaign)}`,
   ].filter(Boolean).join('&')
   return `${url.origin}${url.pathname}?${query}${url.hash}`
 }
@@ -43,7 +40,7 @@ function trackedUrl(href, { source, campaign }) {
 // A part is plain text, { link, href, title, plain }, { bold: [parts] },
 // or 'br' for a line break. An empty line is a spacer paragraph (&nbsp;),
 // which every client keeps, unlike margins.
-function render({ font, color, source, campaign, lines }) {
+function render({ font, color, source, lines }) {
   const pStyle = `font-family: ${font}; letter-spacing: normal; margin: 0 0 12px 0; line-height: normal;`
   const aStyle = plain => `font-family: ${font}; color: ${color};${plain ? ' text-decoration: none;' : ''}`
 
@@ -53,7 +50,7 @@ function render({ font, color, source, campaign, lines }) {
     if (typeof item === 'string')
       return escapeHtml(item)
     if (item.link) {
-      const href = escapeHtml(trackedUrl(item.href, { source, campaign }))
+      const href = escapeHtml(trackedUrl(item.href, source))
       const title = item.title
         ? ` title="${escapeHtml(item.title)}"`
         : ''
@@ -78,6 +75,7 @@ const chris = {
   hub: { link: 'ChrisSpiegl.com', href: 'https://chrisspiegl.com/', title: 'My digital hub for everything.' },
   fieldNotes: { link: 'Field Notes', href: 'https://chrisspiegl.substack.com/', title: 'Be a traveler, not a tourist. Essays on traveling slowly through life.' },
   now: { link: '/now', href: 'https://chrisspiegl.com/now', title: 'What I am doing now.' },
+  links: { link: 'ChrisSpiegl.com/links', href: 'https://chrisspiegl.com/links', title: 'Field Notes, YouTube, Instagram and everything else.' },
   youtube: { link: 'YouTube.com/@ChrisSpiegl', href: 'https://www.youtube.com/@ChrisSpiegl', title: 'Longer stories, cameras, and deep dives.' },
   instagram: { link: 'Instagram.com/ChrisSpiegl', href: 'https://www.instagram.com/chrisspiegl/', title: 'Photos about life, the road less traveled, and the in-between.' },
   niyama: { link: 'Niyama.Academy', href: 'https://niyama.academy/', title: 'Echtes Yoga für Dein Echtes Leben!' },
@@ -386,6 +384,28 @@ const drafts = [
     ],
   },
   {
+    id: 'draft-zero-f',
+    label: 'Draft 0F · One link page',
+    lines: [
+      ['Chris Spiegl'],
+      [],
+      ['Written in Nimman, Chiang Mai'],
+      [
+        chris.links,
+        SEP,
+        'What I\'m doing ',
+        chris.now,
+      ],
+      [
+        'Founder of ',
+        chris.niyama,
+        ' & ',
+        chris.bolstair,
+      ],
+      [],
+    ],
+  },
+  {
     id: 'draft-zero-c',
     label: 'Draft 0C · Cut to four lines',
     lines: [
@@ -479,8 +499,7 @@ const drafts = [
 function build(variant) {
   return {
     ...variant,
-    campaign: variant.id,
-    html: render({ ...variant, campaign: variant.id }),
+    html: render(variant),
   }
 }
 
