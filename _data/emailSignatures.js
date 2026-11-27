@@ -253,149 +253,26 @@ const variants = [
 ]
 
 // Drafts for Chris's personal signature, shown next to the current one.
+// Gmail can use one signature for new emails and another for replies.
+const placeAndLinks = [
+  ['Written in Nimman, Chiang Mai'],
+  [
+    chris.links,
+    SEP,
+    'What I\'m doing ',
+    chris.now,
+  ],
+]
+
 const drafts = [
   {
-    id: 'draft-zero',
-    label: 'Draft 0 · Founder, links, place',
-    lines: [
-      ['Chris Spiegl'],
-      [
-        'Founder of ',
-        chris.niyama,
-        ' & ',
-        chris.bolstair,
-      ],
-      [
-        chris.hub,
-        SEP,
-        chris.fieldNotes,
-        SEP,
-        'What I\'m doing ',
-        chris.now,
-      ],
-      chrisSocial,
-      ['Written in Nimman, Chiang Mai'],
-      [],
-    ],
-  },
-  {
-    id: 'draft-zero-a',
-    label: 'Draft 0A · Plain labels',
-    lines: [
-      [
-        'Chris Spiegl',
-        SEP,
-        chris.hub,
-        'br',
-        'Founder of ',
-        chris.niyama,
-        ' & ',
-        chris.bolstair,
-        'br',
-        'What I\'m doing now: ',
-        { ...chris.now, link: 'ChrisSpiegl.com/now' },
-        'br',
-        chris.fieldNotes,
-        SEP,
-        ...chrisSocial,
-        'br',
-        'Written in Nimman, Chiang Mai',
-      ],
-      [],
-    ],
-  },
-  {
-    id: 'draft-zero-b',
-    label: 'Draft 0B · Grouped',
-    lines: [
-      [
-        'Chris Spiegl',
-        'br',
-        'Founder of ',
-        chris.niyama,
-        ' & ',
-        chris.bolstair,
-      ],
-      [
-        chris.hub,
-        SEP,
-        chris.fieldNotes,
-        SEP,
-        'What I\'m doing ',
-        chris.now,
-        'br',
-        ...chrisSocial,
-      ],
-      ['Written in Nimman, Chiang Mai'],
-      [],
-    ],
-  },
-  {
-    id: 'draft-zero-d',
-    label: 'Draft 0D · Grouped, place first',
-    lines: [
-      [
-        'Chris Spiegl',
-        'br',
-        'Written in Nimman, Chiang Mai',
-      ],
-      [
-        chris.hub,
-        SEP,
-        chris.fieldNotes,
-        SEP,
-        'What I\'m doing ',
-        chris.now,
-        'br',
-        ...chrisSocial,
-      ],
-      [
-        'Founder of ',
-        chris.niyama,
-        ' & ',
-        chris.bolstair,
-      ],
-      [],
-    ],
-  },
-  {
-    id: 'draft-zero-e',
-    label: 'Draft 0E · Name on its own',
-    lines: [
-      ['Chris Spiegl'],
-      ['Written in Nimman, Chiang Mai'],
-      [
-        chris.hub,
-        SEP,
-        chris.fieldNotes,
-        SEP,
-        'What I\'m doing ',
-        chris.now,
-        'br',
-        ...chrisSocial,
-      ],
-      [
-        'Founder of ',
-        chris.niyama,
-        ' & ',
-        chris.bolstair,
-      ],
-      [],
-    ],
-  },
-  {
-    id: 'draft-zero-f',
-    label: 'Draft 0F · One link page',
+    id: 'draft-new',
+    label: 'Draft · New emails',
+    use: 'For new emails.',
     lines: [
       ['Chris Spiegl'],
       [],
-      ['Written in Nimman, Chiang Mai'],
-      [
-        chris.links,
-        SEP,
-        'What I\'m doing ',
-        chris.now,
-      ],
+      ...placeAndLinks,
       [
         'Founder of ',
         chris.niyama,
@@ -406,87 +283,13 @@ const drafts = [
     ],
   },
   {
-    id: 'draft-zero-c',
-    label: 'Draft 0C · Cut to four lines',
+    id: 'draft-reply',
+    label: 'Draft · Replies',
+    use: 'For replies and forwards.',
     lines: [
-      [
-        {
-          bold: ['Chris Spiegl'],
-        },
-        ', founder of ',
-        chris.niyama,
-        ' & ',
-        chris.bolstair,
-        'br',
-        chris.hub,
-        SEP,
-        chris.fieldNotes,
-        SEP,
-        'What I\'m doing ',
-        chris.now,
-        'br',
-        ...chrisSocial,
-        'br',
-        'Nimman, Chiang Mai',
-      ],
+      ['Chris'],
       [],
-    ],
-  },
-  {
-    id: 'draft-plain',
-    label: 'Draft 1 · Plain',
-    lines: [
-      ['Chris Spiegl'],
-      [
-        chris.hub,
-        SEP,
-        'what I\'m doing ',
-        chris.now,
-      ],
-      [],
-    ],
-  },
-  {
-    id: 'draft-field-notes',
-    label: 'Draft 2 · Field Notes first',
-    lines: [
-      [
-        {
-          bold: ['Chris Spiegl'],
-        },
-      ],
-      ['Father. Traveler. Photographer. Thinker.'],
-      [],
-      [chris.fieldNotes, ': on traveling slowly, seeing closely, and growing up for real.'],
-      [
-        chris.hub,
-        SEP,
-        { ...chris.now, link: 'Now' },
-        SEP,
-        { ...chris.youtube, link: 'YouTube' },
-        SEP,
-        { ...chris.instagram, link: 'Instagram' },
-      ],
-      [],
-    ],
-  },
-  {
-    id: 'draft-place',
-    label: 'Draft 4 · Place line',
-    lines: [
-      ['Chris Spiegl'],
-      [
-        {
-          bold: ['Written in Nimman, Chiang Mai'],
-        },
-      ],
-      [
-        chris.fieldNotes,
-        SEP,
-        chris.hub,
-        SEP,
-        { ...chris.instagram, link: 'Instagram' },
-      ],
+      ...placeAndLinks,
       [],
     ],
   },
