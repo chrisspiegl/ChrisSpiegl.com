@@ -28,9 +28,13 @@
 
 # Working pages that should never show up in search. Their front matter has
 # `noindex: true`, which adds the matching robots meta tag as well.
-/email-signature
+/styleguide/email-signature
   X-Robots-Tag: noindex, nofollow
-/email-signature/*
+/styleguide/email-signature/*
+  X-Robots-Tag: noindex, nofollow
+/signature
+  X-Robots-Tag: noindex, nofollow
+/signature/*
   X-Robots-Tag: noindex, nofollow
 
 # Keep preview and workers.dev / pages.dev addresses out of search results.
@@ -38,12 +42,12 @@
 # on a custom domain: <branch>.preview.chrisspiegl.com and
 # <deployment>-<branch>.preview.chrisspiegl.com.
 https://preview.chrisspiegl.com/*
-  X-Robots-Tag: noindex
+  X-Robots-Tag: noindex, nofollow
 https://:name.preview.chrisspiegl.com/*
-  X-Robots-Tag: noindex
+  X-Robots-Tag: noindex, nofollow
 https://:name.:account.workers.dev/*
-  X-Robots-Tag: noindex
+  X-Robots-Tag: noindex, nofollow
 https://:project.pages.dev/*
-  X-Robots-Tag: noindex
+  X-Robots-Tag: noindex, nofollow
 https://:deployment.:project.pages.dev/*
-  X-Robots-Tag: noindex
+  X-Robots-Tag: noindex, nofollow

@@ -1,20 +1,21 @@
-// Email signatures shown on /email-signature, one entry per variant.
-// Each one renders to inline-styled HTML (email clients drop <style> blocks),
-// and every link gets utm_source, utm_medium and utm_campaign. The old
-// ref=signature-* stays as well, so existing reports keep working.
+// Email signatures shown on /styleguide/email-signature.
+// Each one renders to inline-styled HTML (email clients drop <style> blocks).
+// Links go straight to their destination, never through a redirect, and carry
+// utm_source, utm_medium and utm_campaign.
 
-// Gmail only offers a short font list. Georgia is the closest serif to Spectral
-// that every desktop and iPhone has; Android falls back to its own serif.
-const SERIF = 'Georgia, \'Times New Roman\', serif'
-const SANS = 'Helvetica, Arial, sans-serif'
+// Matches Gmail's "Sans Serif" default text style, which Gmail sends as Arial.
+const SANS = 'Arial, Helvetica, sans-serif'
 
 // Chris's signature orange. It must stay exactly #cc5630.
 const ORANGE = '#cc5630'
 // Nicole's own purple, kept from her original signature.
 const PURPLE = '#ac8bd4'
 
-const UTM_SOURCE = 'email'
-const UTM_MEDIUM = 'signature'
+// Readable on purpose: anyone who looks at a link sees where it came from, and
+// chrisspiegl.com/signature is a real page for them (signature.md).
+const CHRIS_SOURCE = 'chrisspiegl.com/signature'
+const NICOLE_SOURCE = 'email-signature'
+const UTM_MEDIUM = 'email'
 
 function escapeHtml(text) {
   return String(text)
@@ -24,21 +25,24 @@ function escapeHtml(text) {
     .replaceAll('"', '&quot;')
 }
 
-function trackedUrl(href, { campaign, ref }) {
+// Built by hand so the slash in utm_source stays a slash (it is valid in a
+// query string) instead of becoming %2F.
+function trackedUrl(href, { source, campaign }) {
   const url = new URL(href)
-  if (ref)
-    url.searchParams.set('ref', ref)
-  url.searchParams.set('utm_source', UTM_SOURCE)
-  url.searchParams.set('utm_medium', UTM_MEDIUM)
-  url.searchParams.set('utm_campaign', campaign)
-  return url.toString()
+  const query = [
+    url.search.slice(1),
+    `utm_source=${source}`,
+    `utm_medium=${UTM_MEDIUM}`,
+    `utm_campaign=${encodeURIComponent(campaign)}`,
+  ].filter(Boolean).join('&')
+  return `${url.origin}${url.pathname}?${query}${url.hash}`
 }
 
 // One signature: `lines` is a list of paragraphs, each a list of parts.
-// A part is plain text, { link, href, title, bold, plain }, { bold: 'text' },
+// A part is plain text, { link, href, title, plain }, { bold: [parts] },
 // or 'br' for a line break. An empty line is a spacer paragraph (&nbsp;),
 // which every client keeps, unlike margins.
-function render({ font, color, campaign, ref, lines }) {
+function render({ font, color, source, campaign, lines }) {
   const pStyle = `font-family: ${font}; letter-spacing: normal; margin: 0 0 12px 0; line-height: normal;`
   const aStyle = plain => `font-family: ${font}; color: ${color};${plain ? ' text-decoration: none;' : ''}`
 
@@ -48,7 +52,7 @@ function render({ font, color, campaign, ref, lines }) {
     if (typeof item === 'string')
       return escapeHtml(item)
     if (item.link) {
-      const href = escapeHtml(trackedUrl(item.href, { campaign, ref }))
+      const href = escapeHtml(trackedUrl(item.href, { source, campaign }))
       const title = item.title
         ? ` title="${escapeHtml(item.title)}"`
         : ''
@@ -68,56 +72,55 @@ function render({ font, color, campaign, ref, lines }) {
 
 const SEP = ' · '
 
-// Links Chris's signatures share.
+// Links Chris's signatures share. No LinkedIn: it isn't a platform we use.
 const chris = {
   hub: { link: 'ChrisSpiegl.com', href: 'https://chrisspiegl.com/', title: 'My digital hub for everything.' },
   fieldNotes: { link: 'Field Notes', href: 'https://chrisspiegl.substack.com/', title: 'Be a traveler, not a tourist. Essays on traveling slowly through life.' },
   now: { link: '/now', href: 'https://chrisspiegl.com/now', title: 'What I am doing now.' },
-  youtube: { link: 'YouTube.com/ChrisSpiegl', href: 'https://chrisspiegl.com/youtube', title: 'New videos every week.' },
-  instagram: { link: 'Instagram.com/ChrisSpiegl', href: 'https://chrisspiegl.com/instagram', title: 'Business, personal, and tech!' },
-  linkedin: { link: 'LinkedIn.com/in/ChrisSpiegl', href: 'https://chrisspiegl.com/linkedin', title: 'Let\'s connect and build together!' },
+  youtube: { link: 'YouTube.com/@ChrisSpiegl', href: 'https://www.youtube.com/@ChrisSpiegl', title: 'Longer stories, cameras, and deep dives.' },
+  instagram: { link: 'Instagram.com/ChrisSpiegl', href: 'https://www.instagram.com/chrisspiegl/', title: 'Photos about life, the road less traveled, and the in-between.' },
   niyama: { link: 'Niyama.Academy', href: 'https://niyama.academy/', title: 'Echtes Yoga für Dein Echtes Leben!' },
   bolstair: { link: 'BOLSTair', href: 'https://bolstair.com/', title: 'The only blowup yoga bolster for fitness & relaxation with built in blow-up mechanism.' },
 }
-const chrisSocial = [
-  chris.youtube,
-  SEP,
-  chris.instagram,
-  SEP,
-  chris.linkedin,
-]
+const chrisSocial = [chris.youtube, SEP, chris.instagram]
 
 const nicole = {
   niyama: { link: 'Niyama.Academy ~ Dein Online Yoga Studio', href: 'https://niyama.academy/', title: 'Echtes Yoga für Dein Echtes Leben - Live Yoga, Kurse, und eine wundervolle Yoga Community' },
   bolstair: { link: 'BOLSTair ~ Das einzige luftgefüllte Yoga Kissen', href: 'https://bolstair.com/', title: 'Für Yoga, Fitness, und vor allem zum Reisen genial! Mit eingebauter Pumpe und nur 280g leicht.' },
-  youtube: { link: 'YouTube.com/NicoleReiher', href: 'https://youtube.com/NicoleReiher/', title: 'Online Yoga mit Liebe & Herz für Motivation und Gesundheit' },
-  instagram: { link: 'Instagram.com/NicoleReiher1', href: 'https://instagram.com/NicoleReiher1/', title: 'Motivation, Inspiration, Leben und das große Leben' },
-  linkedin: { link: 'LinkedIn.com/in/NicoleReiher', href: 'https://www.linkedin.com/in/nicolereiher/', title: 'Gemeinsam Vorwärts um Bildung, Leben, und Business zu verändern' },
+  youtube: { link: 'YouTube.com/NicoleReiher', href: 'https://www.youtube.com/NicoleReiher', title: 'Online Yoga mit Liebe & Herz für Motivation und Gesundheit' },
+  instagram: { link: 'Instagram.com/NicoleReiher1', href: 'https://www.instagram.com/NicoleReiher1/', title: 'Motivation, Inspiration, Leben und das große Leben' },
 }
-const nicoleSocial = [
-  nicole.youtube,
-  SEP,
-  nicole.instagram,
-  SEP,
-  nicole.linkedin,
+const nicoleSocial = [nicole.youtube, SEP, nicole.instagram]
+
+const bolstairBlock = [
+  {
+    bold: ['BOLSTair ~ The Blowup Yoga & Fitness Bolster'],
+  },
+  'br',
+  'Website & Shop: ',
+  { ...chris.bolstair, link: 'www.BOLSTair.com' },
 ]
+
+const chrisDefaults = {
+  name: 'Chris Spiegl',
+  font: SANS,
+  color: ORANGE,
+  source: CHRIS_SOURCE,
+}
 
 const variants = [
   {
+    ...chrisDefaults,
     id: 'chris-personal',
-    name: 'Chris Spiegl',
     label: 'Personal',
     use: 'chris@chrisspiegl.com and everyday mail.',
-    font: SERIF,
-    color: ORANGE,
-    ref: 'signature-chris',
     lines: [
       ['Chris Spiegl'],
       [],
       [
-        'Co-Founder at ',
+        'Founder of ',
         chris.niyama,
-        ' and ',
+        ' & ',
         chris.bolstair,
       ],
       [
@@ -133,18 +136,16 @@ const variants = [
     ],
   },
   {
+    ...chrisDefaults,
     id: 'ryan-assistant',
     name: 'Ryan',
     label: 'Assistant to Chris',
     use: 'Mail Ryan sends on Chris\'s behalf.',
-    font: SERIF,
-    color: ORANGE,
-    ref: 'signature-ryan',
     lines: [
       ['Ryan'],
       [],
       [
-        'Assistant to Chris Spiegl, his personal brand & life, and responsibilities at ',
+        'Assistant to Chris Spiegl, his work & life, and responsibilities at ',
         chris.niyama,
         ' & ',
         chris.bolstair,
@@ -163,21 +164,18 @@ const variants = [
     ],
   },
   {
+    ...chrisDefaults,
     id: 'chris-niyama',
-    name: 'Chris Spiegl',
     label: 'Niyama.Academy',
-    use: 'The Niyama.Academy mailbox. German greeting.',
-    font: SERIF,
-    color: ORANGE,
-    ref: 'signature-chris',
+    use: 'The Niyama.Academy mailbox.',
     lines: [
       ['Namasté'],
       ['Chris Spiegl'],
       [],
       [
-        'Co-Founder at ',
+        'Founder of ',
         chris.niyama,
-        ' and ',
+        ' & ',
         chris.bolstair,
       ],
       [
@@ -196,30 +194,20 @@ const variants = [
     ],
   },
   {
+    ...chrisDefaults,
     id: 'chris-bolstair',
-    name: 'Chris Spiegl',
     label: 'BOLSTair',
     use: 'The BOLSTair mailbox.',
-    font: SERIF,
-    color: ORANGE,
-    ref: 'signature-chris',
     lines: [
       ['Chris Spiegl'],
       [],
       [
-        'Co-Founder at ',
+        'Founder of ',
         chris.bolstair,
-        ' and ',
+        ' & ',
         chris.niyama,
       ],
-      [
-        {
-          bold: ['BOLSTair ~ The Blowup Yoga & Fitness Bolster'],
-        },
-        'br',
-        'Website & Shop: ',
-        { ...chris.bolstair, link: 'www.BOLSTair.com' },
-      ],
+      bolstairBlock,
       [chris.hub, SEP, ...chrisSocial],
       [],
     ],
@@ -228,10 +216,10 @@ const variants = [
     id: 'nicole-personal',
     name: 'Nicole Reiher',
     label: 'Personal',
-    use: 'Nicole\'s everyday mail. Her purple and sans-serif, as before.',
+    use: 'Nicole\'s everyday mail.',
     font: SANS,
     color: PURPLE,
-    ref: 'signature-nicole',
+    source: NICOLE_SOURCE,
     lines: [
       ['Namasté'],
       ['Nicole Reiher'],
@@ -250,7 +238,7 @@ const variants = [
     use: 'Nicole\'s BOLSTair mail.',
     font: SANS,
     color: PURPLE,
-    ref: 'signature-nicole',
+    source: NICOLE_SOURCE,
     lines: [
       ['Namasté'],
       ['Nicole Reiher'],
@@ -258,22 +246,88 @@ const variants = [
       ['Yoga-Lehrerin von Herzen (B. Ed., E-RYT500)'],
       ['Co-Founder bei ', nicole.bolstair],
       ['Gründerin der ', nicole.niyama],
-      [
-        {
-          bold: ['BOLSTair ~ The Blowup Yoga & Fitness Bolster'],
-        },
-        'br',
-        'Website & Shop: ',
-        { ...chris.bolstair, link: 'www.BOLSTair.com' },
-      ],
+      bolstairBlock,
       nicoleSocial,
       [],
     ],
   },
 ]
 
-module.exports = variants.map(variant => ({
-  ...variant,
-  campaign: variant.id,
-  html: render({ ...variant, campaign: variant.id }),
+// Drafts for Chris's personal signature, shown next to the current one.
+const drafts = [
+  {
+    id: 'draft-plain',
+    label: 'Draft 1 · Plain',
+    lines: [
+      ['Chris Spiegl'],
+      [
+        chris.hub,
+        SEP,
+        'what I\'m doing ',
+        chris.now,
+      ],
+      [],
+    ],
+  },
+  {
+    id: 'draft-field-notes',
+    label: 'Draft 2 · Field Notes first',
+    lines: [
+      [
+        {
+          bold: ['Chris Spiegl'],
+        },
+      ],
+      ['Father. Traveler. Photographer. Thinker.'],
+      [],
+      [chris.fieldNotes, ': on traveling slowly, seeing closely, and growing up for real.'],
+      [
+        chris.hub,
+        SEP,
+        { ...chris.now, link: 'Now' },
+        SEP,
+        { ...chris.youtube, link: 'YouTube' },
+        SEP,
+        { ...chris.instagram, link: 'Instagram' },
+      ],
+      [],
+    ],
+  },
+  {
+    id: 'draft-place',
+    label: 'Draft 4 · Place line',
+    lines: [
+      ['Chris Spiegl'],
+      [
+        {
+          bold: ['Written in Nimman, Chiang Mai'],
+        },
+      ],
+      [
+        chris.fieldNotes,
+        SEP,
+        chris.hub,
+        SEP,
+        { ...chris.instagram, link: 'Instagram' },
+      ],
+      [],
+    ],
+  },
+].map(draft => ({
+  ...chrisDefaults,
+  ...draft,
+  kind: 'draft',
 }))
+
+function build(variant) {
+  return {
+    ...variant,
+    campaign: variant.id,
+    html: render({ ...variant, campaign: variant.id }),
+  }
+}
+
+module.exports = {
+  variants: variants.map(build),
+  drafts: drafts.map(build),
+}

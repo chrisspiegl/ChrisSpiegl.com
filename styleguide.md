@@ -541,6 +541,10 @@ There are two, both in `assets/scss/_variables.scss`. Don't add others.
 
 The text column is `--content-width` (980px) wide at most, and 90% of the screen below that.
 
+## Email signatures
+
+The signatures for Chris, Ryan and Nicole, ready to copy into Gmail, are on [Email signatures](/styleguide/email-signature). Their data is in `_data/emailSignatures.js`.
+
 ## Before you push
 
 Check a change on this page and on [/](/), [/uses](/uses) and [/links](/links), at desktop and phone width. Then run `pnpm build` and `pnpm lint`.
