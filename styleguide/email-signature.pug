@@ -148,7 +148,7 @@ each sig in emailSignatures.variants
 
 h2#drafts Drafts
 
-p The next versions, each next to the signature it would replace. Not in use yet. In Gmail, under #[strong Signature defaults], pick the new-emails one for #[strong For new emails use] and the replies one for #[strong On reply/forward use].
+p The next versions, each next to the signature it would replace. Not in use yet. Where there are two, in Gmail under #[strong Signature defaults], pick the new-emails one for #[strong For new emails use] and the replies one for #[strong On reply/forward use].
 
 each current in emailSignatures.variants
   - const next = emailSignatures.drafts.filter(sig => sig.replaces === current.id)

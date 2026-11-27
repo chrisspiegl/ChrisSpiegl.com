@@ -253,8 +253,8 @@ const variants = [
 ]
 
 // Drafts, shown next to the signature they would replace (`replaces`).
-// Gmail can use one signature for new emails and another for replies:
-// replies drop the founder or assistant line, new emails keep it.
+// Gmail can use one signature for new emails and another for replies. The
+// personal and assistant replies drop the founder or assistant line.
 // Only the personal ones say where Chris is writing from.
 const chrisLinks = [
   chris.links,
@@ -347,30 +347,18 @@ const drafts = [
       [],
     ],
   },
+  // Business mailboxes: one signature for new emails and replies. The
+  // founder line comes first (the position), then the company, then Chris.
   {
     replaces: 'chris-niyama',
-    id: 'draft-niyama-new',
-    label: 'Draft · Niyama.Academy, new emails',
-    use: 'For new emails.',
+    id: 'draft-niyama',
+    label: 'Draft · Niyama.Academy',
+    use: 'For new emails and replies.',
     lines: [
       ['Namasté'],
       ['Chris Spiegl'],
       [],
-      niyamaBlock,
-      chrisLinks,
       chrisFounder,
-      [],
-    ],
-  },
-  {
-    replaces: 'chris-niyama',
-    id: 'draft-niyama-reply',
-    label: 'Draft · Niyama.Academy, replies',
-    use: 'For replies and forwards.',
-    lines: [
-      ['Namasté'],
-      ['Chris'],
-      [],
       niyamaBlock,
       chrisLinks,
       [],
@@ -378,31 +366,18 @@ const drafts = [
   },
   {
     replaces: 'chris-bolstair',
-    id: 'draft-bolstair-new',
-    label: 'Draft · BOLSTair, new emails',
-    use: 'For new emails.',
+    id: 'draft-bolstair',
+    label: 'Draft · BOLSTair',
+    use: 'For new emails and replies.',
     lines: [
       ['Chris Spiegl'],
       [],
-      bolstairBlock,
-      chrisLinks,
       [
         'Founder of ',
         chris.bolstair,
         ' & ',
         chris.niyama,
       ],
-      [],
-    ],
-  },
-  {
-    replaces: 'chris-bolstair',
-    id: 'draft-bolstair-reply',
-    label: 'Draft · BOLSTair, replies',
-    use: 'For replies and forwards.',
-    lines: [
-      ['Chris'],
-      [],
       bolstairBlock,
       chrisLinks,
       [],
