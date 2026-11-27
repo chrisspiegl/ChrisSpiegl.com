@@ -337,10 +337,5 @@
     "destination": "/tools/compound-interest-calculator",
     "slug": "compound-interest-calculator",
     "status": 301
-  },
-  {
-    "destination": "/styleguide/email-signature",
-    "slug": "email-signature",
-    "status": 301
   }
 ]

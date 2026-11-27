@@ -14,7 +14,8 @@ const PURPLE = '#ac8bd4'
 // Readable on purpose: anyone who looks at a link sees where it came from, and
 // chrisspiegl.com/signature is a real page for them (signature.md).
 const CHRIS_SOURCE = 'chrisspiegl.com/signature'
-const NICOLE_SOURCE = 'email-signature'
+// Nicole's site gets its own /signature page.
+const NICOLE_SOURCE = 'nicolereiher.com/signature'
 const UTM_MEDIUM = 'email'
 
 function escapeHtml(text) {
