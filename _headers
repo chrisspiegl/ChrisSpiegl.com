@@ -26,6 +26,13 @@
   ! Cache-Control
   Cache-Control: public, max-age=600, must-revalidate
 
+# Working pages that should never show up in search. Their front matter has
+# `noindex: true`, which adds the matching robots meta tag as well.
+/email-signature
+  X-Robots-Tag: noindex, nofollow
+/email-signature/*
+  X-Robots-Tag: noindex, nofollow
+
 # Keep preview and workers.dev / pages.dev addresses out of search results.
 # Cloudflare adds noindex to workers.dev Previews itself, but not to Previews
 # on a custom domain: <branch>.preview.chrisspiegl.com and

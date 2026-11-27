@@ -18,6 +18,9 @@ html(lang="en")
     title= fullTitle
     meta(name="description" content=pageDescription)
     link(rel="canonical" href=canonicalUrl)
+    //- Working pages (front matter `noindex: true`) stay out of search results.
+    if noindex
+      meta(name="robots" content="noindex, nofollow")
 
     //- Open Graph and Twitter cards (link previews on Substack, Instagram, X, LinkedIn, iMessage, ...)
     meta(property="og:type" content=(layout === 'post' ? 'article' : 'website'))

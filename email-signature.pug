@@ -1,0 +1,226 @@
+---
+title: Email Signatures
+description: "Copy-ready email signatures for Chris, Ryan and Nicole, with setup notes for Gmail."
+permalink: /email-signature/
+# A working page, not content: keep it out of search, the sitemap and llms.txt.
+noindex: true
+eleventyExcludeFromCollections: true
+---
+//- The signatures themselves live in _data/emailSignatures.js.
+
+style(type='text/css' media='screen').
+  .sig-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: 0;
+    margin: 0 0 var(--space-6);
+    list-style: none;
+  }
+  .sig-jump li {
+    margin: 0;
+  }
+  .sig-jump a {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--font-size-small);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+  }
+  .sig-card {
+    margin: 0 0 var(--space-7);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .sig-card-head {
+    padding: var(--space-4) var(--space-5) 0;
+  }
+  .sig-card-head h2 {
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-size-h3);
+  }
+  .sig-card-head p {
+    margin: var(--space-1) 0 0;
+    padding: 0;
+    font-size: var(--font-size-small);
+    color: var(--color-ink-muted);
+  }
+  /* Shown at roughly the size Gmail uses, on a plain surface like a mail body. */
+  .sig-preview {
+    margin: var(--space-4) var(--space-5);
+    padding: var(--space-4);
+    font-size: var(--font-size-small);
+    color: var(--color-ink-strong);
+    background-color: var(--color-paper);
+    border-radius: var(--radius-md);
+    overflow-wrap: anywhere;
+  }
+  /* The site pads paragraphs; a mail body doesn't, so only the inline margins count. */
+  .sig-preview p {
+    padding: 0;
+  }
+  .sig-preview p:last-child {
+    margin-bottom: 0 !important;
+  }
+  .sig-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-4);
+    padding: 0 var(--space-5) var(--space-4);
+  }
+  .sig-copy-html {
+    padding: 0;
+    font-family: var(--font-controls);
+    font-size: var(--font-size-small);
+    color: var(--color-accent);
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .sig-copy-html:hover {
+    color: var(--color-accent-dark);
+  }
+  .sig-copy-html:focus-visible,
+  .sig-copy:focus-visible {
+    outline: var(--focus-ring);
+  }
+  .sig-status {
+    font-size: var(--font-size-small);
+    color: var(--color-ink-muted);
+  }
+  .sig-status.is-error {
+    color: var(--color-red);
+  }
+  .sig-utm code {
+    overflow-wrap: anywhere;
+  }
+
+h1 Email Signatures
+
+p One signature per mailbox. Press #[strong Copy signature], then paste it into the signature box of your mail app. The formatting and links come along. #[strong Copy HTML] is for apps that ask for the raw code instead.
+
+ul.sig-jump
+  each sig in emailSignatures
+    li: a(href=`#${sig.id}`)= `${sig.name} · ${sig.label}`
+
+each sig in emailSignatures
+  section.sig-card(id=sig.id aria-labelledby=`${sig.id}-title`)
+    div.sig-card-head
+      h2(id=`${sig.id}-title`)= `${sig.name} · ${sig.label}`
+      p= sig.use
+    div.sig-preview(data-signature=sig.id)!= sig.html
+    div.sig-actions
+      button.btn.sig-copy(type='button' data-copy=sig.id data-format='rich') Copy signature
+      button.sig-copy-html(type='button' data-copy=sig.id data-format='html') Copy HTML
+      span.sig-status(role='status' aria-live='polite')
+
+h2#gmail Set it up in Gmail
+
+ol
+  li Open Gmail on a computer, click the gear, then #[strong See all settings].
+  li
+    | On the #[strong General] tab, under #[strong Default text style], pick #[strong Georgia] and size #[strong Normal], and leave the color as it is.
+  li Scroll to #[strong Signature], click #[strong Create new], and name it after the card here (for example "Chris · Personal").
+  li Press #[strong Copy signature] on this page, click into Gmail's signature box and paste (⌘V or Ctrl+V).
+  li Under #[strong Signature defaults], pick the signature for new mail and for replies, once for each address you send from.
+  li Tick #[strong Insert signature before quoted text in replies], then #[strong Save changes] at the bottom.
+
+h3 Why Georgia
+
+p The website is set in Spectral, a serif. Gmail can't send Spectral: it only offers a short list of fonts (Sans Serif, Serif, Fixed Width, Wide, Narrow, Comic Sans, Garamond, Georgia, Tahoma, Trebuchet and Verdana), and it only uses fonts the reader already has. Georgia is the closest match to Spectral that comes with every Mac, Windows PC and iPhone. Garamond looks closer, but most Windows and Android readers don't have it and get Times instead. Chris's and Ryan's signatures use Georgia too, so the mail and the signature match. Nicole's keep her sans-serif and purple.
+
+p Keep the size at Normal. Gmail doesn't set a size in the signature, so it follows what you type and what the reader's app uses.
+
+h2#tracking Link tracking
+
+p.sig-utm
+  | Every link carries#{' '}
+  code utm_source=email
+  | ,#{' '}
+  code utm_medium=signature
+  |  and#{' '}
+  code utm_campaign=
+  | the card's name (for example#{' '}
+  code chris-personal
+  | ), next to the old#{' '}
+  code ref=signature-…
+  |  tag. Links to ChrisSpiegl.com/youtube, /instagram and /linkedin go through the site's redirects, which don't pass the tags on, so those clicks show up in the redirect counts rather than on the platform.
+
+p To change a signature, edit #[code _data/emailSignatures.js] in the website repo. After it's live, copy and paste it into Gmail again.
+
+script.
+  (() => {
+    const messages = { rich: 'Copied. Paste it into your signature box.', html: 'HTML copied.' }
+
+    // Fallback for browsers without the async clipboard: copy a selection.
+    function copySelection(node) {
+      const selection = window.getSelection()
+      const range = document.createRange()
+      range.selectNodeContents(node)
+      selection.removeAllRanges()
+      selection.addRange(range)
+      const ok = document.execCommand('copy')
+      selection.removeAllRanges()
+      return ok
+    }
+
+    function copyText(text) {
+      const area = document.createElement('textarea')
+      area.value = text
+      area.setAttribute('readonly', '')
+      area.style.position = 'fixed'
+      area.style.opacity = '0'
+      document.body.append(area)
+      area.select()
+      const ok = document.execCommand('copy')
+      area.remove()
+      return ok
+    }
+
+    async function copy(preview, format) {
+      const html = preview.innerHTML.trim()
+      if (format === 'html') {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          try {
+            await navigator.clipboard.writeText(html)
+            return true
+          }
+          catch {}
+        }
+        return copyText(html)
+      }
+      // Copy only the signature's own markup and inline styles, never the
+      // page's styles, so the paste looks the same in every mail app.
+      if (navigator.clipboard && window.ClipboardItem) {
+        try {
+          await navigator.clipboard.write([new ClipboardItem({
+            'text/html': new Blob([html], { type: 'text/html' }),
+            'text/plain': new Blob([preview.innerText.trim()], { type: 'text/plain' }),
+          })])
+          return true
+        }
+        catch {}
+      }
+      return copySelection(preview)
+    }
+
+    document.querySelectorAll('[data-copy]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const card = button.closest('.sig-card')
+        const preview = card.querySelector('[data-signature]')
+        const status = card.querySelector('.sig-status')
+        const ok = await copy(preview, button.dataset.format)
+        status.classList.toggle('is-error', !ok)
+        status.textContent = ok ? messages[button.dataset.format] : 'Couldn\'t copy. Select the signature above and copy it by hand.'
+        clearTimeout(status.timer)
+        status.timer = setTimeout(() => { status.textContent = '' }, 6000)
+      })
+    })
+  })()
