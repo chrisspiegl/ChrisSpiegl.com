@@ -257,6 +257,30 @@ const variants = [
 // Drafts for Chris's personal signature, shown next to the current one.
 const drafts = [
   {
+    id: 'draft-zero',
+    label: 'Draft 0 · Founder, links, place',
+    lines: [
+      ['Chris Spiegl'],
+      [
+        'Founder of ',
+        chris.niyama,
+        ' & ',
+        chris.bolstair,
+      ],
+      [
+        chris.hub,
+        SEP,
+        chris.fieldNotes,
+        SEP,
+        'What I\'m doing ',
+        chris.now,
+      ],
+      chrisSocial,
+      ['Written in Nimman, Chiang Mai'],
+      [],
+    ],
+  },
+  {
     id: 'draft-plain',
     label: 'Draft 1 · Plain',
     lines: [
